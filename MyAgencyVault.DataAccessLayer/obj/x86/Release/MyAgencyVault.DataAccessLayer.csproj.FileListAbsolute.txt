@@ -1,0 +1,14 @@
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\MyAgencyVault.DataAccessLayer\bin\x86\Release\MyAgencyVault.DataAccessLayer.dll.config
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\MyAgencyVault.DataAccessLayer\bin\x86\Release\MyAgencyVault.DataAccessLayer.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\MyAgencyVault.DataAccessLayer\bin\x86\Release\MyAgencyVault.DataAccessLayer.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\MyAgencyVault.DataAccessLayer\bin\x86\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\MyAgencyVault.DataAccessLayer\bin\x86\Release\Microsoft.Practices.EnterpriseLibrary.Validation.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\MyAgencyVault.DataAccessLayer\bin\x86\Release\Microsoft.Practices.Unity.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\MyAgencyVault.DataAccessLayer\bin\x86\Release\Microsoft.Practices.ServiceLocation.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\MyAgencyVault.DataAccessLayer\bin\x86\Release\Microsoft.Practices.Unity.Interception.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\MyAgencyVault.DataAccessLayer\bin\x86\Release\Microsoft.Practices.Unity.Configuration.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\MyAgencyVault.DataAccessLayer\obj\x86\Release\MyAgencyVault.DataAccessLayer.csproj.CoreCompileInputs.cache
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\MyAgencyVault.DataAccessLayer\obj\x86\Release\MyAgencyVault.DataAccessLayer.csproj.CopyComplete
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\MyAgencyVault.DataAccessLayer\obj\x86\Release\MyAgencyVault.DataAccessLayer.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\MyAgencyVault.DataAccessLayer\obj\x86\Release\MyAgencyVault.DataAccessLayer.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\MyAgencyVault.DataAccessLayer\obj\x86\Release\MyAgencyVault.DataAccessLayer.csprojAssemblyReference.cache

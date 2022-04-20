@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="MyAgencyVault.WcfService.MavService" CodeBehind="MavService.svc.cs" %>

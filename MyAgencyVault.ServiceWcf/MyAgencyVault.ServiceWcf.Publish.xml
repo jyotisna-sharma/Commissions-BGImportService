@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3093_trunk\MyAgencyVault.ServiceWcf\Publish" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/MyAgencyVault.EmailFax.pdb" publishTime="09/07/2017 16:13:01" />
+    <file relUrl="bin/ActionLogger.dll" publishTime="09/07/2017 16:12:58" />
+    <file relUrl="bin/MyAgencyVault.DataAccessLayer.dll" publishTime="09/07/2017 16:13:00" />
+    <file relUrl="bin/ActionLogger.pdb" publishTime="09/07/2017 16:12:58" />
+    <file relUrl="packages.config" publishTime="05/31/2017 12:14:30" />
+    <file relUrl="bin/MyAgencyVault.BusinessLibrary.pdb" publishTime="09/08/2017 15:40:47" />
+    <file relUrl="bin/MyAgencyVault.WcfService.dll" publishTime="09/08/2017 15:40:47" />
+    <file relUrl="bin/Excel.dll" publishTime="05/31/2017 12:14:27" />
+    <file relUrl="bin/Excel.pdb" publishTime="05/31/2017 12:14:27" />
+    <file relUrl="bin/MyAgencyVault.BusinessLibrary.dll" publishTime="09/08/2017 15:40:47" />
+    <file relUrl="bin/WcfHttpCompressionEnabler.dll" publishTime="04/06/2017 12:57:56" />
+    <file relUrl="bin/PGK.Extensions.dll" publishTime="04/22/2015 12:52:59" />
+    <file relUrl="bin/MyAgencyVault.DataAccessLayer.pdb" publishTime="09/07/2017 16:13:00" />
+    <file relUrl="bin/Newtonsoft.Json.dll" publishTime="06/16/2015 15:34:53" />
+    <file relUrl="MavService.svc" publishTime="04/17/2017 10:20:29" />
+    <file relUrl="bin/WcfHttpCompressionEnabler.pdb" publishTime="04/06/2017 12:57:56" />
+    <file relUrl="Web.config" publishTime="09/08/2017 16:00:59" />
+    <file relUrl="bin/ICSharpCode.SharpZipLib.dll" publishTime="05/31/2017 12:14:27" />
+    <file relUrl="bin/MyAgencyVault.EmailFax.dll" publishTime="09/07/2017 16:13:01" />
+    <file relUrl="bin/MyAgencyVault.WcfService.pdb" publishTime="09/08/2017 15:40:47" />
+  </publishProfile>
+</publishData>

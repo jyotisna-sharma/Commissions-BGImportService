@@ -1,0 +1,2083 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="CommissionDepartmentEntities">
+    <EntitySetMapping Name="AutoDEUEntries">
+      <EntityTypeMapping TypeName="Model.AutoDEUEntry">
+        <MappingFragment StoreEntitySet="AutoDEUEntries">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="OriginalEffectiveDate" ColumnName="OriginalEffectiveDate" />
+          <ScalarProperty Name="PaymentReceived" ColumnName="PaymentReceived" />
+          <ScalarProperty Name="CommissionPercentage" ColumnName="CommissionPercentage" />
+          <ScalarProperty Name="Insured" ColumnName="Insured" />
+          <ScalarProperty Name="PolicyNumber" ColumnName="PolicyNumber" />
+          <ScalarProperty Name="Enrolled" ColumnName="Enrolled" />
+          <ScalarProperty Name="Eligible" ColumnName="Eligible" />
+          <ScalarProperty Name="SplitPer" ColumnName="SplitPer" />
+          <ScalarProperty Name="PolicyModeValue" ColumnName="PolicyModeValue" />
+          <ScalarProperty Name="CompTypeID" ColumnName="CompTypeID" />
+          <ScalarProperty Name="StatementID" ColumnName="StatementID" />
+          <ScalarProperty Name="PostStatusID" ColumnName="PostStatusID" />
+          <ScalarProperty Name="PolicyID" ColumnName="PolicyID" />
+          <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+          <ScalarProperty Name="PayorId" ColumnName="PayorId" />
+          <ScalarProperty Name="NumberOfUnits" ColumnName="NumberOfUnits" />
+          <ScalarProperty Name="DollerPerUnit" ColumnName="DollerPerUnit" />
+          <ScalarProperty Name="Fee" ColumnName="Fee" />
+          <ScalarProperty Name="Bonus" ColumnName="Bonus" />
+          <ScalarProperty Name="CommissionTotal" ColumnName="CommissionTotal" />
+          <ScalarProperty Name="PayorSysID" ColumnName="PayorSysID" />
+          <ScalarProperty Name="Renewal" ColumnName="Renewal" />
+          <ScalarProperty Name="Carrier" ColumnName="Carrier" />
+          <ScalarProperty Name="Coverage" ColumnName="Coverage" />
+          <ScalarProperty Name="IsEntrybyCommissiondashBoard" ColumnName="IsEntrybyCommissiondashBoard" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="PostCompleteStatus" ColumnName="PostCompleteStatus" />
+          <ScalarProperty Name="ModalAvgPremium" ColumnName="ModalAvgPremium" />
+          <ScalarProperty Name="CompScheduleType" ColumnName="CompScheduleType" />
+          <ScalarProperty Name="ClientValue" ColumnName="ClientValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Batches">
+      <EntityTypeMapping TypeName="Model.Batch">
+        <MappingFragment StoreEntitySet="Batches">
+          <ScalarProperty Name="BatchNote" ColumnName="BatchNote" />
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="BatchNumber" ColumnName="BatchNumber" />
+          <ScalarProperty Name="LicenseeId" ColumnName="LicenseeId" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="FileType" ColumnName="FileType" />
+          <ScalarProperty Name="EntryStatusId" ColumnName="EntryStatusId" />
+          <ScalarProperty Name="AssignedUserCredentialId" ColumnName="AssignedUserCredentialId" />
+          <ScalarProperty Name="CreatedFromUpload" ColumnName="CreatedFromUpload" />
+          <ScalarProperty Name="UploadStatusId" ColumnName="UploadStatusId" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+          <ScalarProperty Name="IsManuallyUploaded" ColumnName="IsManuallyUploaded" />
+          <ScalarProperty Name="SiteLoginID" ColumnName="SiteLoginID" />
+          <ScalarProperty Name="PayorId" ColumnName="PayorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CarrierNickNames">
+      <EntityTypeMapping TypeName="Model.CarrierNickName">
+        <MappingFragment StoreEntitySet="CarrierNickName">
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="PayorId" ColumnName="PayorId" />
+          <ScalarProperty Name="CarrierId" ColumnName="CarrierId" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsTrackMissingMonth" ColumnName="IsTrackMissingMonth" />
+          <ScalarProperty Name="IsTrackIncomingPercentage" ColumnName="IsTrackIncomingPercentage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Carriers">
+      <EntityTypeMapping TypeName="Model.Carrier">
+        <MappingFragment StoreEntitySet="Carriers">
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CarrierId" ColumnName="CarrierId" />
+          <ScalarProperty Name="CarrierName" ColumnName="CarrierName" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsGlobal" ColumnName="IsGlobal" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="LicenseeId" ColumnName="LicenseeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="Model.Client">
+        <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="LicenseeId" ColumnName="LicenseeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Coverages">
+      <EntityTypeMapping TypeName="Model.Coverage">
+        <MappingFragment StoreEntitySet="Coverages">
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CoverageId" ColumnName="CoverageId" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsGlobal" ColumnName="IsGlobal" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="LicenseeId" ColumnName="LicenseeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EntriesByDEUs">
+      <EntityTypeMapping TypeName="Model.EntriesByDEU">
+        <MappingFragment StoreEntitySet="EntriesByDEU">
+          <ScalarProperty Name="CarrierNickName" ColumnName="CarrierNickName" />
+          <ScalarProperty Name="CoverageNickName" ColumnName="CoverageNickName" />
+          <ScalarProperty Name="UnlinkClientName" ColumnName="UnlinkClientName" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="CarrierName" ColumnName="CarrierName" />
+          <ScalarProperty Name="DEUEntryID" ColumnName="DEUEntryID" />
+          <ScalarProperty Name="OriginalEffectiveDate" ColumnName="OriginalEffectiveDate" />
+          <ScalarProperty Name="PaymentReceived" ColumnName="PaymentReceived" />
+          <ScalarProperty Name="CommissionPercentage" ColumnName="CommissionPercentage" />
+          <ScalarProperty Name="OtherData" ColumnName="OtherData" />
+          <ScalarProperty Name="Insured" ColumnName="Insured" />
+          <ScalarProperty Name="PolicyNumber" ColumnName="PolicyNumber" />
+          <ScalarProperty Name="Enrolled" ColumnName="Enrolled" />
+          <ScalarProperty Name="Eligible" ColumnName="Eligible" />
+          <ScalarProperty Name="Link1" ColumnName="Link1" />
+          <ScalarProperty Name="SplitPer" ColumnName="SplitPer" />
+          <ScalarProperty Name="PolicyModeID" ColumnName="PolicyModeID" />
+          <ScalarProperty Name="PolicyModeValue" ColumnName="PolicyModeValue" />
+          <ScalarProperty Name="TrackFromDate" ColumnName="TrackFromDate" />
+          <ScalarProperty Name="CompTypeID" ColumnName="CompTypeID" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="StatementID" ColumnName="StatementID" />
+          <ScalarProperty Name="PostStatusID" ColumnName="PostStatusID" />
+          <ScalarProperty Name="PolicyID" ColumnName="PolicyID" />
+          <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+          <ScalarProperty Name="PayorId" ColumnName="PayorId" />
+          <ScalarProperty Name="NumberOfUnits" ColumnName="NumberOfUnits" />
+          <ScalarProperty Name="DollerPerUnit" ColumnName="DollerPerUnit" />
+          <ScalarProperty Name="Fee" ColumnName="Fee" />
+          <ScalarProperty Name="Bonus" ColumnName="Bonus" />
+          <ScalarProperty Name="CommissionTotal" ColumnName="CommissionTotal" />
+          <ScalarProperty Name="PayorSysID" ColumnName="PayorSysID" />
+          <ScalarProperty Name="Renewal" ColumnName="Renewal" />
+          <ScalarProperty Name="CarrierId" ColumnName="CarrierId" />
+          <ScalarProperty Name="CoverageId" ColumnName="CoverageId" />
+          <ScalarProperty Name="IsEntrybyCommissiondashBoard" ColumnName="IsEntrybyCommissiondashBoard" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="PostCompleteStatus" ColumnName="PostCompleteStatus" />
+          <ScalarProperty Name="ModalAvgPremium" ColumnName="ModalAvgPremium" />
+          <ScalarProperty Name="CompScheduleType" ColumnName="CompScheduleType" />
+          <ScalarProperty Name="ClientValue" ColumnName="ClientValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExportBatchFiles">
+      <EntityTypeMapping TypeName="Model.ExportBatchFile">
+        <MappingFragment StoreEntitySet="ExportBatchFiles">
+          <ScalarProperty Name="ExportBatchId" ColumnName="ExportBatchId" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsFileImported" ColumnName="IsFileImported" />
+          <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FieldMappings">
+      <EntityTypeMapping TypeName="Model.FieldMapping">
+        <MappingFragment StoreEntitySet="FieldMapping">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ExcelFieldNo" ColumnName="ExcelFieldNo" />
+          <ScalarProperty Name="DBFieldName" ColumnName="DBFieldName" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="PayorID" ColumnName="PayorID" />
+          <ScalarProperty Name="ExcelFieldName" ColumnName="ExcelFieldName" />
+          <ScalarProperty Name="ExcelFieldFormat" ColumnName="ExcelFieldFormat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Formulas">
+      <EntityTypeMapping TypeName="Model.Formula">
+        <MappingFragment StoreEntitySet="Formulas">
+          <ScalarProperty Name="FormulaId" ColumnName="FormulaId" />
+          <ScalarProperty Name="FormulaTtitle" ColumnName="FormulaTtitle" />
+          <ScalarProperty Name="FormulaExpression" ColumnName="FormulaExpression" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GlobalCoveragesSchedules">
+      <EntityTypeMapping TypeName="Model.GlobalCoveragesSchedule">
+        <MappingFragment StoreEntitySet="GlobalCoveragesSchedules">
+          <ScalarProperty Name="CoveragesScheduleId" ColumnName="CoveragesScheduleId" />
+          <ScalarProperty Name="CarrierId" ColumnName="CarrierId" />
+          <ScalarProperty Name="CoverageId" ColumnName="CoverageId" />
+          <ScalarProperty Name="ScheduleTypeId" ColumnName="ScheduleTypeId" />
+          <ScalarProperty Name="FromRange" ColumnName="FromRange" />
+          <ScalarProperty Name="ToRange" ColumnName="ToRange" />
+          <ScalarProperty Name="EffectiveFromDate" ColumnName="EffectiveFromDate" />
+          <ScalarProperty Name="EffectiveToDate" ColumnName="EffectiveToDate" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GlobalPayorContacts">
+      <EntityTypeMapping TypeName="Model.GlobalPayorContact">
+        <MappingFragment StoreEntitySet="GlobalPayorContacts">
+          <ScalarProperty Name="PayorContactId" ColumnName="PayorContactId" />
+          <ScalarProperty Name="GlobalPayorId" ColumnName="GlobalPayorId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="OfficePhone" ColumnName="OfficePhone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="ContactPref" ColumnName="ContactPref" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GlobalPayorDefaults">
+      <EntityTypeMapping TypeName="Model.GlobalPayorDefault">
+        <MappingFragment StoreEntitySet="GlobalPayorDefaults">
+          <ScalarProperty Name="PayorDefaultSettingsId" ColumnName="PayorDefaultSettingsId" />
+          <ScalarProperty Name="GlobalPayorId" ColumnName="GlobalPayorId" />
+          <ScalarProperty Name="FirstPaymentOnRow" ColumnName="FirstPaymentOnRow" />
+          <ScalarProperty Name="FieldNamesRow" ColumnName="FieldNamesRow" />
+          <ScalarProperty Name="IsTotalExists" ColumnName="IsTotalExists" />
+          <ScalarProperty Name="LocationColumn" ColumnName="LocationColumn" />
+          <ScalarProperty Name="LocationRow" ColumnName="LocationRow" />
+          <ScalarProperty Name="FileTypeId" ColumnName="FileTypeId" />
+          <ScalarProperty Name="WebSiteUrl" ColumnName="WebSiteUrl" />
+          <ScalarProperty Name="NavigationInstructions" ColumnName="NavigationInstructions" />
+          <ScalarProperty Name="LoginControl" ColumnName="LoginControl" />
+          <ScalarProperty Name="PasswordControl" ColumnName="PasswordControl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GlobalPayorStatementDates">
+      <EntityTypeMapping TypeName="Model.GlobalPayorStatementDate">
+        <MappingFragment StoreEntitySet="GlobalPayorStatementDate">
+          <ScalarProperty Name="PayorStatementDateID" ColumnName="PayorStatementDateID" />
+          <ScalarProperty Name="PayorID" ColumnName="PayorID" />
+          <ScalarProperty Name="StatementDate" ColumnName="StatementDate" />
+          <ScalarProperty Name="IsBatchCreated" ColumnName="IsBatchCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImportBatchFiles">
+      <EntityTypeMapping TypeName="Model.ImportBatchFile">
+        <MappingFragment StoreEntitySet="ImportBatchFiles">
+          <ScalarProperty Name="ImportBatchId" ColumnName="ImportBatchId" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvoiceBillingLineDetails">
+      <EntityTypeMapping TypeName="Model.InvoiceBillingLineDetail">
+        <MappingFragment StoreEntitySet="InvoiceBillingLineDetail">
+          <ScalarProperty Name="BillingLineId" ColumnName="BillingLineId" />
+          <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="ConsumedUnit" ColumnName="ConsumedUnit" />
+          <ScalarProperty Name="ChargedAmount" ColumnName="ChargedAmount" />
+          <ScalarProperty Name="Min" ColumnName="Min" />
+          <ScalarProperty Name="Range1" ColumnName="Range1" />
+          <ScalarProperty Name="Range2" ColumnName="Range2" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="Tax" ColumnName="Tax" />
+          <ScalarProperty Name="ServiceChargeTypeId" ColumnName="ServiceChargeTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Invoices">
+      <EntityTypeMapping TypeName="Model.Invoice">
+        <MappingFragment StoreEntitySet="Invoices">
+          <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+          <ScalarProperty Name="LicenseeId" ColumnName="LicenseeId" />
+          <ScalarProperty Name="BillingStartDate" ColumnName="BillingStartDate" />
+          <ScalarProperty Name="BillingDate" ColumnName="BillingDate" />
+          <ScalarProperty Name="InvoiceAmount" ColumnName="InvoiceAmount" />
+          <ScalarProperty Name="DueBalance" ColumnName="DueBalance" />
+          <ScalarProperty Name="InvoiceGeneratedOn" ColumnName="InvoiceGeneratedOn" />
+          <ScalarProperty Name="ExportBatchId" ColumnName="ExportBatchId" />
+          <ScalarProperty Name="BillingEndDate" ColumnName="BillingEndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IssuedFiles">
+      <EntityTypeMapping TypeName="Model.IssuedFile">
+        <MappingFragment StoreEntitySet="IssuedFiles">
+          <ScalarProperty Name="PayorID" ColumnName="PayorID" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Issuelogs">
+      <EntityTypeMapping TypeName="Model.Issuelog">
+        <MappingFragment StoreEntitySet="Issuelog">
+          <ScalarProperty Name="IssueId" ColumnName="IssueId" />
+          <ScalarProperty Name="Issue" ColumnName="Issue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Journals">
+      <EntityTypeMapping TypeName="Model.Journal">
+        <MappingFragment StoreEntitySet="Journals">
+          <ScalarProperty Name="JournalId" ColumnName="JournalId" />
+          <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+          <ScalarProperty Name="ImportBatchId" ColumnName="ImportBatchId" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="ReceivedDate" ColumnName="ReceivedDate" />
+          <ScalarProperty Name="BillingEndDate" ColumnName="BillingEndDate" />
+          <ScalarProperty Name="TypeOfEntry" ColumnName="TypeOfEntry" />
+          <ScalarProperty Name="JournalAmount" ColumnName="JournalAmount" />
+          <ScalarProperty Name="TransactionDateTime" ColumnName="TransactionDateTime" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="IsManuallEntry" ColumnName="IsManuallEntry" />
+          <ScalarProperty Name="LicenseeId" ColumnName="LicenseeId" />
+          <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LastPolicyVieweds">
+      <EntityTypeMapping TypeName="Model.LastPolicyViewed">
+        <MappingFragment StoreEntitySet="LastPolicyViewed">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserCredentialId" ColumnName="UserCredentialId" />
+          <ScalarProperty Name="Clientid" ColumnName="Clientid" />
+          <ScalarProperty Name="SNo" ColumnName="SNo" />
+          <ScalarProperty Name="PolicyId" ColumnName="PolicyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LicenseeNotes">
+      <EntityTypeMapping TypeName="Model.LicenseeNote">
+        <MappingFragment StoreEntitySet="LicenseeNotes">
+          <ScalarProperty Name="LicenseeNoteId" ColumnName="LicenseeNoteId" />
+          <ScalarProperty Name="LicenseeId" ColumnName="LicenseeId" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LicenseePayors">
+      <EntityTypeMapping TypeName="Model.LicenseePayor">
+        <MappingFragment StoreEntitySet="LicenseePayors">
+          <ScalarProperty Name="LicenseePayorId" ColumnName="LicenseePayorId" />
+          <ScalarProperty Name="PayorId" ColumnName="PayorId" />
+          <ScalarProperty Name="LicenseeId" ColumnName="LicenseeId" />
+          <ScalarProperty Name="SourceTypeId" ColumnName="SourceTypeId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LicenseePayorSiteInfoes">
+      <EntityTypeMapping TypeName="Model.LicenseePayorSiteInfo">
+        <MappingFragment StoreEntitySet="LicenseePayorSiteInfo">
+          <ScalarProperty Name="LicenseePayorSiteInfoId" ColumnName="LicenseePayorSiteInfoId" />
+          <ScalarProperty Name="LicenseePayorId" ColumnName="LicenseePayorId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Licensees">
+      <EntityTypeMapping TypeName="Model.Licensee">
+        <MappingFragment StoreEntitySet="Licensees">
+          <ScalarProperty Name="IsClientEnable" ColumnName="IsClientEnable" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LicenseeId" ColumnName="LicenseeId" />
+          <ScalarProperty Name="LicenseStatusId" ColumnName="LicenseStatusId" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="ContactFirst" ColumnName="ContactFirst" />
+          <ScalarProperty Name="ContactLast" ColumnName="ContactLast" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="LicensePaymentModeId" ColumnName="LicensePaymentModeId" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="LicenseeSource" ColumnName="LicenseeSource" />
+          <ScalarProperty Name="Commissionable" ColumnName="Commissionable" />
+          <ScalarProperty Name="TrackDateDefault" ColumnName="TrackDateDefault" />
+          <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+          <ScalarProperty Name="CutOffDay1" ColumnName="CutOffDay1" />
+          <ScalarProperty Name="CutOffDay2" ColumnName="CutOffDay2" />
+          <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+          <ScalarProperty Name="LastUpload" ColumnName="LastUpload" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DueBalance" ColumnName="DueBalance" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LicenseeServices">
+      <EntityTypeMapping TypeName="Model.LicenseeService">
+        <MappingFragment StoreEntitySet="LicenseeServices">
+          <ScalarProperty Name="LicenseeServiceId" ColumnName="LicenseeServiceId" />
+          <ScalarProperty Name="LicenseeId" ColumnName="LicenseeId" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterAccessRights">
+      <EntityTypeMapping TypeName="Model.MasterAccessRight">
+        <MappingFragment StoreEntitySet="MasterAccessRights">
+          <ScalarProperty Name="AccessRightId" ColumnName="AccessRightId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterAlertTypes">
+      <EntityTypeMapping TypeName="Model.MasterAlertType">
+        <MappingFragment StoreEntitySet="MasterAlertTypes">
+          <ScalarProperty Name="AlertTypeId" ColumnName="AlertTypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterBasicIncomingSchedules">
+      <EntityTypeMapping TypeName="Model.MasterBasicIncomingSchedule">
+        <MappingFragment StoreEntitySet="MasterBasicIncomingSchedule">
+          <ScalarProperty Name="ScheduleId" ColumnName="ScheduleId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterBasicOutgoingSchedules">
+      <EntityTypeMapping TypeName="Model.MasterBasicOutgoingSchedule">
+        <MappingFragment StoreEntitySet="MasterBasicOutgoingSchedule">
+          <ScalarProperty Name="ScheduleId" ColumnName="ScheduleId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterBatchDownloadStatus">
+      <EntityTypeMapping TypeName="Model.MasterBatchDownloadStatu">
+        <MappingFragment StoreEntitySet="MasterBatchDownloadStatus">
+          <ScalarProperty Name="BatchDownloadStatusId" ColumnName="BatchDownloadStatusId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterBatchEntryStatus">
+      <EntityTypeMapping TypeName="Model.MasterBatchEntryStatu">
+        <MappingFragment StoreEntitySet="MasterBatchEntryStatus">
+          <ScalarProperty Name="BatchEntryStatusId" ColumnName="BatchEntryStatusId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterBatchUploadStatus">
+      <EntityTypeMapping TypeName="Model.MasterBatchUploadStatu">
+        <MappingFragment StoreEntitySet="MasterBatchUploadStatus">
+          <ScalarProperty Name="BatchUploadStatusId" ColumnName="BatchUploadStatusId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterBillPaymentTypes">
+      <EntityTypeMapping TypeName="Model.MasterBillPaymentType">
+        <MappingFragment StoreEntitySet="MasterBillPaymentTypes">
+          <ScalarProperty Name="BillPaymentTypeId" ColumnName="BillPaymentTypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterFileTypes">
+      <EntityTypeMapping TypeName="Model.MasterFileType">
+        <MappingFragment StoreEntitySet="MasterFileTypes">
+          <ScalarProperty Name="FileTypeId" ColumnName="FileTypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterIncomingPaymentTypes">
+      <EntityTypeMapping TypeName="Model.MasterIncomingPaymentType">
+        <MappingFragment StoreEntitySet="MasterIncomingPaymentTypes">
+          <ScalarProperty Name="IncomingPaymentTypeId" ColumnName="IncomingPaymentTypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterIssueCategories">
+      <EntityTypeMapping TypeName="Model.MasterIssueCategory">
+        <MappingFragment StoreEntitySet="MasterIssueCategories">
+          <ScalarProperty Name="IssueCategoryId" ColumnName="IssueCategoryId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterIssueReasons">
+      <EntityTypeMapping TypeName="Model.MasterIssueReason">
+        <MappingFragment StoreEntitySet="MasterIssueReasons">
+          <ScalarProperty Name="IssueReasonId" ColumnName="IssueReasonId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterIssueResults">
+      <EntityTypeMapping TypeName="Model.MasterIssueResult">
+        <MappingFragment StoreEntitySet="MasterIssueResults">
+          <ScalarProperty Name="IssueResultId" ColumnName="IssueResultId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterIssueStatus">
+      <EntityTypeMapping TypeName="Model.MasterIssueStatu">
+        <MappingFragment StoreEntitySet="MasterIssueStatus">
+          <ScalarProperty Name="IssueStatusId" ColumnName="IssueStatusId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterLicensePaymentModes">
+      <EntityTypeMapping TypeName="Model.MasterLicensePaymentMode">
+        <MappingFragment StoreEntitySet="MasterLicensePaymentModes">
+          <ScalarProperty Name="LicensePaymentModeId" ColumnName="LicensePaymentModeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterLicenseStatus">
+      <EntityTypeMapping TypeName="Model.MasterLicenseStatu">
+        <MappingFragment StoreEntitySet="MasterLicenseStatus">
+          <ScalarProperty Name="LicenseStatusId" ColumnName="LicenseStatusId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterManagementReportsOrderByTypes">
+      <EntityTypeMapping TypeName="Model.MasterManagementReportsOrderByType">
+        <MappingFragment StoreEntitySet="MasterManagementReportsOrderByTypes">
+          <ScalarProperty Name="MROrderByTypeId" ColumnName="MROrderByTypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterModules">
+      <EntityTypeMapping TypeName="Model.MasterModule">
+        <MappingFragment StoreEntitySet="MasterModules">
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterPasswordHintQuestions">
+      <EntityTypeMapping TypeName="Model.MasterPasswordHintQuestion">
+        <MappingFragment StoreEntitySet="MasterPasswordHintQuestions">
+          <ScalarProperty Name="PHQuestionId" ColumnName="PHQuestionId" />
+          <ScalarProperty Name="Qestion" ColumnName="Qestion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterPaymentStatus">
+      <EntityTypeMapping TypeName="Model.MasterPaymentStatu">
+        <MappingFragment StoreEntitySet="MasterPaymentStatus">
+          <ScalarProperty Name="PaymentStatusId" ColumnName="PaymentStatusId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterPayorRegions">
+      <EntityTypeMapping TypeName="Model.MasterPayorRegion">
+        <MappingFragment StoreEntitySet="MasterPayorRegions">
+          <ScalarProperty Name="PayorRegionId" ColumnName="PayorRegionId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterPayorSourceTypes">
+      <EntityTypeMapping TypeName="Model.MasterPayorSourceType">
+        <MappingFragment StoreEntitySet="MasterPayorSourceTypes">
+          <ScalarProperty Name="SourceTypeId" ColumnName="SourceTypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterPayorStatus">
+      <EntityTypeMapping TypeName="Model.MasterPayorStatu">
+        <MappingFragment StoreEntitySet="MasterPayorStatus">
+          <ScalarProperty Name="PayorStatusId" ColumnName="PayorStatusId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterPayorToolAvailableFields">
+      <EntityTypeMapping TypeName="Model.MasterPayorToolAvailableField">
+        <MappingFragment StoreEntitySet="MasterPayorToolAvailableFields">
+          <ScalarProperty Name="PTAvailableFieldId" ColumnName="PTAvailableFieldId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="LabelOnImage" ColumnName="LabelOnImage" />
+          <ScalarProperty Name="FieldStatus" ColumnName="FieldStatus" />
+          <ScalarProperty Name="FieldOrder" ColumnName="FieldOrder" />
+          <ScalarProperty Name="IsPartOfPrimary" ColumnName="IsPartOfPrimary" />
+          <ScalarProperty Name="IsPopulatedIfLinked" ColumnName="IsPopulatedIfLinked" />
+          <ScalarProperty Name="IsTabbedToNextFieldIfLinked" ColumnName="IsTabbedToNextFieldIfLinked" />
+          <ScalarProperty Name="IsCalculatedField" ColumnName="IsCalculatedField" />
+          <ScalarProperty Name="IsOverrideOfCalcAllowed" ColumnName="IsOverrideOfCalcAllowed" />
+          <ScalarProperty Name="DefaultNumeric" ColumnName="DefaultNumeric" />
+          <ScalarProperty Name="IsOorBlankAllowed" ColumnName="IsOorBlankAllowed" />
+          <ScalarProperty Name="AllignedDirection" ColumnName="AllignedDirection" />
+          <ScalarProperty Name="EquivalentIncomingField" ColumnName="EquivalentIncomingField" />
+          <ScalarProperty Name="EquivalentLearnedField" ColumnName="EquivalentLearnedField" />
+          <ScalarProperty Name="EquivalentDeuField" ColumnName="EquivalentDeuField" />
+          <ScalarProperty Name="HelpText" ColumnName="HelpText" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsDeletable" ColumnName="IsDeletable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterPayorToolIncomingFields">
+      <EntityTypeMapping TypeName="Model.MasterPayorToolIncomingField">
+        <MappingFragment StoreEntitySet="MasterPayorToolIncomingFields">
+          <ScalarProperty Name="PTIncomingFieldId" ColumnName="PTIncomingFieldId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterPayorToolLearnedFields">
+      <EntityTypeMapping TypeName="Model.MasterPayorToolLearnedField">
+        <MappingFragment StoreEntitySet="MasterPayorToolLearnedFields">
+          <ScalarProperty Name="PTLearnedFieldId" ColumnName="PTLearnedFieldId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterPayorToolMaskFieldTypes">
+      <EntityTypeMapping TypeName="Model.MasterPayorToolMaskFieldType">
+        <MappingFragment StoreEntitySet="MasterPayorToolMaskFieldTypes">
+          <ScalarProperty Name="PTMaskFieldTypeId" ColumnName="PTMaskFieldTypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterPayorTypes">
+      <EntityTypeMapping TypeName="Model.MasterPayorType">
+        <MappingFragment StoreEntitySet="MasterPayorTypes">
+          <ScalarProperty Name="PayorType" ColumnName="PayorType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterPermissionTypes">
+      <EntityTypeMapping TypeName="Model.MasterPermissionType">
+        <MappingFragment StoreEntitySet="MasterPermissionTypes">
+          <ScalarProperty Name="PermissionTypeId" ColumnName="PermissionTypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterPolicyModes">
+      <EntityTypeMapping TypeName="Model.MasterPolicyMode">
+        <MappingFragment StoreEntitySet="MasterPolicyModes">
+          <ScalarProperty Name="PolicyModeId" ColumnName="PolicyModeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterPolicyStatus">
+      <EntityTypeMapping TypeName="Model.MasterPolicyStatu">
+        <MappingFragment StoreEntitySet="MasterPolicyStatus">
+          <ScalarProperty Name="PolicyStatusId" ColumnName="PolicyStatusId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterPolicyTerminationReasons">
+      <EntityTypeMapping TypeName="Model.MasterPolicyTerminationReason">
+        <MappingFragment StoreEntitySet="MasterPolicyTerminationReasons">
+          <ScalarProperty Name="PTReasonId" ColumnName="PTReasonId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterPostStatus">
+      <EntityTypeMapping TypeName="Model.MasterPostStatu">
+        <MappingFragment StoreEntitySet="MasterPostStatus">
+          <ScalarProperty Name="PostStatusID" ColumnName="PostStatusID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterReportLists">
+      <EntityTypeMapping TypeName="Model.MasterReportList">
+        <MappingFragment StoreEntitySet="MasterReportList">
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="ReportId" ColumnName="ReportId" />
+          <ScalarProperty Name="ReportCode" ColumnName="ReportCode" />
+          <ScalarProperty Name="ReportName" ColumnName="ReportName" />
+          <ScalarProperty Name="ReportGroupName" ColumnName="ReportGroupName" />
+          <ScalarProperty Name="ReportDescription" ColumnName="ReportDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterRoles">
+      <EntityTypeMapping TypeName="Model.MasterRole">
+        <MappingFragment StoreEntitySet="MasterRoles">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterScheduleTypes">
+      <EntityTypeMapping TypeName="Model.MasterScheduleType">
+        <MappingFragment StoreEntitySet="MasterScheduleTypes">
+          <ScalarProperty Name="ScheduleTypeId" ColumnName="ScheduleTypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterServiceChargeTypes">
+      <EntityTypeMapping TypeName="Model.MasterServiceChargeType">
+        <MappingFragment StoreEntitySet="MasterServiceChargeTypes">
+          <ScalarProperty Name="SCTypeId" ColumnName="SCTypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterServicePaymentModes">
+      <EntityTypeMapping TypeName="Model.MasterServicePaymentMode">
+        <MappingFragment StoreEntitySet="MasterServicePaymentModes">
+          <ScalarProperty Name="SPModeId" ColumnName="SPModeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterServices">
+      <EntityTypeMapping TypeName="Model.MasterService">
+        <MappingFragment StoreEntitySet="MasterServices">
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterSourceTypes">
+      <EntityTypeMapping TypeName="Model.MasterSourceType">
+        <MappingFragment StoreEntitySet="MasterSourceTypes">
+          <ScalarProperty Name="SourceTypeId" ColumnName="SourceTypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterStatementStatus">
+      <EntityTypeMapping TypeName="Model.MasterStatementStatu">
+        <MappingFragment StoreEntitySet="MasterStatementStatus">
+          <ScalarProperty Name="StatementStatusId" ColumnName="StatementStatusId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterSystemConstants">
+      <EntityTypeMapping TypeName="Model.MasterSystemConstant">
+        <MappingFragment StoreEntitySet="MasterSystemConstants">
+          <ScalarProperty Name="SystemConstantId" ColumnName="SystemConstantId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterSystemEmails">
+      <EntityTypeMapping TypeName="Model.MasterSystemEmail">
+        <MappingFragment StoreEntitySet="MasterSystemEmails">
+          <ScalarProperty Name="SystemEmailId" ColumnName="SystemEmailId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Purpose" ColumnName="Purpose" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterZipCodes">
+      <EntityTypeMapping TypeName="Model.MasterZipCode">
+        <MappingFragment StoreEntitySet="MasterZipCodes">
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News">
+      <EntityTypeMapping TypeName="Model.News">
+        <MappingFragment StoreEntitySet="News">
+          <ScalarProperty Name="NewsId" ColumnName="NewsId" />
+          <ScalarProperty Name="NewsTtitle" ColumnName="NewsTtitle" />
+          <ScalarProperty Name="NewsContent" ColumnName="NewsContent" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="LastModifiedOn" ColumnName="LastModifiedOn" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payors">
+      <EntityTypeMapping TypeName="Model.Payor">
+        <MappingFragment StoreEntitySet="Payors">
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="PayorId" ColumnName="PayorId" />
+          <ScalarProperty Name="PayorName" ColumnName="PayorName" />
+          <ScalarProperty Name="PayorRegionId" ColumnName="PayorRegionId" />
+          <ScalarProperty Name="PayorTypeId" ColumnName="PayorTypeId" />
+          <ScalarProperty Name="PayorStatusId" ColumnName="PayorStatusId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsGlobal" ColumnName="IsGlobal" />
+          <ScalarProperty Name="SourceID" ColumnName="SourceID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="LicenseeId" ColumnName="LicenseeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayorSiteLoginInfoes">
+      <EntityTypeMapping TypeName="Model.PayorSiteLoginInfo">
+        <MappingFragment StoreEntitySet="PayorSiteLoginInfo">
+          <ScalarProperty Name="SiteLoginID" ColumnName="SiteLoginID" />
+          <ScalarProperty Name="PayorID" ColumnName="PayorID" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="LicenseeId" ColumnName="LicenseeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayorSources">
+      <EntityTypeMapping TypeName="Model.PayorSource">
+        <MappingFragment StoreEntitySet="PayorSource">
+          <ScalarProperty Name="ConfigNotes" ColumnName="ConfigNotes" />
+          <ScalarProperty Name="PayorId" ColumnName="PayorId" />
+          <ScalarProperty Name="LicenseeId" ColumnName="LicenseeId" />
+          <ScalarProperty Name="SourceType" ColumnName="SourceType" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayorToolFields">
+      <EntityTypeMapping TypeName="Model.PayorToolField">
+        <MappingFragment StoreEntitySet="PayorToolFields">
+          <ScalarProperty Name="TemplateID" ColumnName="TemplateID" />
+          <ScalarProperty Name="PayorToolFieldId" ColumnName="PayorToolFieldId" />
+          <ScalarProperty Name="PayorToolId" ColumnName="PayorToolId" />
+          <ScalarProperty Name="LabelOnImage" ColumnName="LabelOnImage" />
+          <ScalarProperty Name="FieldStatus" ColumnName="FieldStatus" />
+          <ScalarProperty Name="FieldOrder" ColumnName="FieldOrder" />
+          <ScalarProperty Name="IsPartOfPrimary" ColumnName="IsPartOfPrimary" />
+          <ScalarProperty Name="IsPopulatedIfLinked" ColumnName="IsPopulatedIfLinked" />
+          <ScalarProperty Name="IsTabbedToNextFieldIfLinked" ColumnName="IsTabbedToNextFieldIfLinked" />
+          <ScalarProperty Name="IsCalculatedField" ColumnName="IsCalculatedField" />
+          <ScalarProperty Name="IsOverrideOfCalcAllowed" ColumnName="IsOverrideOfCalcAllowed" />
+          <ScalarProperty Name="DefaultNumeric" ColumnName="DefaultNumeric" />
+          <ScalarProperty Name="IsOorBlankAllowed" ColumnName="IsOorBlankAllowed" />
+          <ScalarProperty Name="AllignedDirection" ColumnName="AllignedDirection" />
+          <ScalarProperty Name="EquivalentIncomingField" ColumnName="EquivalentIncomingField" />
+          <ScalarProperty Name="EquivalentLearnedField" ColumnName="EquivalentLearnedField" />
+          <ScalarProperty Name="EquivalentDeuField" ColumnName="EquivalentDeuField" />
+          <ScalarProperty Name="FormulaId" ColumnName="FormulaId" />
+          <ScalarProperty Name="HelpText" ColumnName="HelpText" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="FieldPositionX" ColumnName="FieldPositionX" />
+          <ScalarProperty Name="FieldPositionY" ColumnName="FieldPositionY" />
+          <ScalarProperty Name="FieldWidth" ColumnName="FieldWidth" />
+          <ScalarProperty Name="FieldHeight" ColumnName="FieldHeight" />
+          <ScalarProperty Name="PTAvailableFieldId" ColumnName="PTAvailableFieldId" />
+          <ScalarProperty Name="MaskFieldTypeId" ColumnName="MaskFieldTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayorTools">
+      <EntityTypeMapping TypeName="Model.PayorTool">
+        <MappingFragment StoreEntitySet="PayorTools">
+          <ScalarProperty Name="TemplateID" ColumnName="TemplateID" />
+          <ScalarProperty Name="PayorToolId" ColumnName="PayorToolId" />
+          <ScalarProperty Name="PayorId" ColumnName="PayorId" />
+          <ScalarProperty Name="StatementImageFile" ColumnName="StatementImageFile" />
+          <ScalarProperty Name="ChequeImageFile" ColumnName="ChequeImageFile" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Policies">
+      <EntityTypeMapping TypeName="Model.Policy">
+        <MappingFragment StoreEntitySet="Policies">
+          <ScalarProperty Name="IsTieredSchedule" ColumnName="IsTieredSchedule" />
+          <ScalarProperty Name="PrimaryAgent" ColumnName="PrimaryAgent" />
+          <ScalarProperty Name="CustomScheduleDateType" ColumnName="CustomScheduleDateType" />
+          <ScalarProperty Name="IsCustomBasicSchedule" ColumnName="IsCustomBasicSchedule" />
+          <ScalarProperty Name="LastNoVarIssueDate" ColumnName="LastNoVarIssueDate" />
+          <ScalarProperty Name="LastNoMissIssueDate" ColumnName="LastNoMissIssueDate" />
+          <ScalarProperty Name="AccoutExec" ColumnName="AccoutExec" />
+          <ScalarProperty Name="UserCredentialId" ColumnName="UserCredentialId" />
+          <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+          <ScalarProperty Name="Advance" ColumnName="Advance" />
+          <ScalarProperty Name="PolicyId" ColumnName="PolicyId" />
+          <ScalarProperty Name="PolicyNumber" ColumnName="PolicyNumber" />
+          <ScalarProperty Name="PolicyStatusId" ColumnName="PolicyStatusId" />
+          <ScalarProperty Name="PolicyType" ColumnName="PolicyType" />
+          <ScalarProperty Name="PolicyClientId" ColumnName="PolicyClientId" />
+          <ScalarProperty Name="PolicyLicenseeId" ColumnName="PolicyLicenseeId" />
+          <ScalarProperty Name="OriginalEffectiveDate" ColumnName="OriginalEffectiveDate" />
+          <ScalarProperty Name="TrackFromDate" ColumnName="TrackFromDate" />
+          <ScalarProperty Name="PolicyModeId" ColumnName="PolicyModeId" />
+          <ScalarProperty Name="MonthlyPremium" ColumnName="MonthlyPremium" />
+          <ScalarProperty Name="CoverageId" ColumnName="CoverageId" />
+          <ScalarProperty Name="SubmittedThrough" ColumnName="SubmittedThrough" />
+          <ScalarProperty Name="Enrolled" ColumnName="Enrolled" />
+          <ScalarProperty Name="Eligible" ColumnName="Eligible" />
+          <ScalarProperty Name="PolicyTerminationDate" ColumnName="PolicyTerminationDate" />
+          <ScalarProperty Name="TerminationReasonId" ColumnName="TerminationReasonId" />
+          <ScalarProperty Name="IsTrackMissingMonth" ColumnName="IsTrackMissingMonth" />
+          <ScalarProperty Name="IsTrackIncomingPercentage" ColumnName="IsTrackIncomingPercentage" />
+          <ScalarProperty Name="IsTrackPayment" ColumnName="IsTrackPayment" />
+          <ScalarProperty Name="IncomingPaymentTypeId" ColumnName="IncomingPaymentTypeId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ReplacedBy" ColumnName="ReplacedBy" />
+          <ScalarProperty Name="PayorId" ColumnName="PayorId" />
+          <ScalarProperty Name="DuplicateFrom" ColumnName="DuplicateFrom" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsIncomingBasicSchedule" ColumnName="IsIncomingBasicSchedule" />
+          <ScalarProperty Name="IsOutGoingBasicSchedule" ColumnName="IsOutGoingBasicSchedule" />
+          <ScalarProperty Name="CarrierId" ColumnName="CarrierId" />
+          <ScalarProperty Name="SplitPercentage" ColumnName="SplitPercentage" />
+          <ScalarProperty Name="Insured" ColumnName="Insured" />
+          <ScalarProperty Name="ActivatedOn" ColumnName="ActivatedOn" />
+          <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+          <ScalarProperty Name="LastFollowUpRuns" ColumnName="LastFollowUpRuns" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="LastModifiedOn" ColumnName="LastModifiedOn" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="IsCreatedFromWeb" ColumnName="IsCreatedFromWeb" />
+          <ScalarProperty Name="IslastModifiedFromWeb" ColumnName="IslastModifiedFromWeb" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PoliciesHistories">
+      <EntityTypeMapping TypeName="Model.PoliciesHistory">
+        <MappingFragment StoreEntitySet="PoliciesHistory">
+          <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+          <ScalarProperty Name="Advance" ColumnName="Advance" />
+          <ScalarProperty Name="PolicyId" ColumnName="PolicyId" />
+          <ScalarProperty Name="PolicyNumber" ColumnName="PolicyNumber" />
+          <ScalarProperty Name="PolicyStatusId" ColumnName="PolicyStatusId" />
+          <ScalarProperty Name="PolicyType" ColumnName="PolicyType" />
+          <ScalarProperty Name="PolicyClientId" ColumnName="PolicyClientId" />
+          <ScalarProperty Name="PolicyLicenseeId" ColumnName="PolicyLicenseeId" />
+          <ScalarProperty Name="OriginalEffectiveDate" ColumnName="OriginalEffectiveDate" />
+          <ScalarProperty Name="TrackFromDate" ColumnName="TrackFromDate" />
+          <ScalarProperty Name="PolicyModeId" ColumnName="PolicyModeId" />
+          <ScalarProperty Name="MonthlyPremium" ColumnName="MonthlyPremium" />
+          <ScalarProperty Name="CoverageId" ColumnName="CoverageId" />
+          <ScalarProperty Name="SubmittedThrough" ColumnName="SubmittedThrough" />
+          <ScalarProperty Name="Enrolled" ColumnName="Enrolled" />
+          <ScalarProperty Name="Eligible" ColumnName="Eligible" />
+          <ScalarProperty Name="PolicyTerminationDate" ColumnName="PolicyTerminationDate" />
+          <ScalarProperty Name="TerminationReasonId" ColumnName="TerminationReasonId" />
+          <ScalarProperty Name="IsTrackMissingMonth" ColumnName="IsTrackMissingMonth" />
+          <ScalarProperty Name="IsTrackIncomingPercentage" ColumnName="IsTrackIncomingPercentage" />
+          <ScalarProperty Name="IsTrackPayment" ColumnName="IsTrackPayment" />
+          <ScalarProperty Name="IncomingPaymentTypeId" ColumnName="IncomingPaymentTypeId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ReplacedBy" ColumnName="ReplacedBy" />
+          <ScalarProperty Name="PayorId" ColumnName="PayorId" />
+          <ScalarProperty Name="DuplicateFrom" ColumnName="DuplicateFrom" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsIncomingBasicSchedule" ColumnName="IsIncomingBasicSchedule" />
+          <ScalarProperty Name="IsOutGoingBasicSchedule" ColumnName="IsOutGoingBasicSchedule" />
+          <ScalarProperty Name="CarrierId" ColumnName="CarrierId" />
+          <ScalarProperty Name="SplitPercentage" ColumnName="SplitPercentage" />
+          <ScalarProperty Name="Insured" ColumnName="Insured" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PolicyIncomingAdvancedSchedules">
+      <EntityTypeMapping TypeName="Model.PolicyIncomingAdvancedSchedule">
+        <MappingFragment StoreEntitySet="PolicyIncomingAdvancedSchedules">
+          <ScalarProperty Name="IncomingAdvancedScheduleId" ColumnName="IncomingAdvancedScheduleId" />
+          <ScalarProperty Name="PolicyId" ColumnName="PolicyId" />
+          <ScalarProperty Name="ScheduleTypeId" ColumnName="ScheduleTypeId" />
+          <ScalarProperty Name="FromRange" ColumnName="FromRange" />
+          <ScalarProperty Name="ToRange" ColumnName="ToRange" />
+          <ScalarProperty Name="EffectiveFromDate" ColumnName="EffectiveFromDate" />
+          <ScalarProperty Name="EffectiveToDate" ColumnName="EffectiveToDate" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PolicyIncomingSchedules">
+      <EntityTypeMapping TypeName="Model.PolicyIncomingSchedule">
+        <MappingFragment StoreEntitySet="PolicyIncomingSchedules">
+          <ScalarProperty Name="IncomingScheduleId" ColumnName="IncomingScheduleId" />
+          <ScalarProperty Name="PolicyId" ColumnName="PolicyId" />
+          <ScalarProperty Name="FirstYearPercentage" ColumnName="FirstYearPercentage" />
+          <ScalarProperty Name="RenewalPercentage" ColumnName="RenewalPercentage" />
+          <ScalarProperty Name="ScheduleTypeId" ColumnName="ScheduleTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PolicyLevelBillingDetails">
+      <EntityTypeMapping TypeName="Model.PolicyLevelBillingDetail">
+        <MappingFragment StoreEntitySet="PolicyLevelBillingDetail">
+          <ScalarProperty Name="BillingLineId" ColumnName="BillingLineId" />
+          <ScalarProperty Name="TotalUnits" ColumnName="TotalUnits" />
+          <ScalarProperty Name="PolicyId" ColumnName="PolicyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PolicyNotes">
+      <EntityTypeMapping TypeName="Model.PolicyNote">
+        <MappingFragment StoreEntitySet="PolicyNotes">
+          <ScalarProperty Name="PolicyNoteId" ColumnName="PolicyNoteId" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="PolicyId" ColumnName="PolicyId" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="LastModifiedOn" ColumnName="LastModifiedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PolicyOutgoingAdvancedSchedules">
+      <EntityTypeMapping TypeName="Model.PolicyOutgoingAdvancedSchedule">
+        <MappingFragment StoreEntitySet="PolicyOutgoingAdvancedSchedules">
+          <ScalarProperty Name="OutgoingAdvancedScheduleId" ColumnName="OutgoingAdvancedScheduleId" />
+          <ScalarProperty Name="PolicyId" ColumnName="PolicyId" />
+          <ScalarProperty Name="ScheduleTypeId" ColumnName="ScheduleTypeId" />
+          <ScalarProperty Name="FromRange" ColumnName="FromRange" />
+          <ScalarProperty Name="ToRange" ColumnName="ToRange" />
+          <ScalarProperty Name="EffectiveFromDate" ColumnName="EffectiveFromDate" />
+          <ScalarProperty Name="EffectiveToDate" ColumnName="EffectiveToDate" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="PayeeUserCredentialId" ColumnName="PayeeUserCredentialId" />
+          <ScalarProperty Name="IsPrimaryAgent" ColumnName="IsPrimaryAgent" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="PayeeName" ColumnName="PayeeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PolicyOutgoingSchedules">
+      <EntityTypeMapping TypeName="Model.PolicyOutgoingSchedule">
+        <MappingFragment StoreEntitySet="PolicyOutgoingSchedules">
+          <ScalarProperty Name="TierNumber" ColumnName="TierNumber" />
+          <ScalarProperty Name="SplitPercent" ColumnName="SplitPercent" />
+          <ScalarProperty Name="CustomEndDate" ColumnName="CustomEndDate" />
+          <ScalarProperty Name="CustomStartDate" ColumnName="CustomStartDate" />
+          <ScalarProperty Name="OutgoingScheduleId" ColumnName="OutgoingScheduleId" />
+          <ScalarProperty Name="PolicyId" ColumnName="PolicyId" />
+          <ScalarProperty Name="PayeeUserCredentialId" ColumnName="PayeeUserCredentialId" />
+          <ScalarProperty Name="IsPrimaryAgent" ColumnName="IsPrimaryAgent" />
+          <ScalarProperty Name="FirstYearPercentage" ColumnName="FirstYearPercentage" />
+          <ScalarProperty Name="RenewalPercentage" ColumnName="RenewalPercentage" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="ScheduleTypeId" ColumnName="ScheduleTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PolicyPaymentAlerts">
+      <EntityTypeMapping TypeName="Model.PolicyPaymentAlert">
+        <MappingFragment StoreEntitySet="PolicyPaymentAlerts">
+          <ScalarProperty Name="PaymentAlertId" ColumnName="PaymentAlertId" />
+          <ScalarProperty Name="PaymentEntryId" ColumnName="PaymentEntryId" />
+          <ScalarProperty Name="AlertTypeId" ColumnName="AlertTypeId" />
+          <ScalarProperty Name="UserCredentialId" ColumnName="UserCredentialId" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PolicyPaymentEntries">
+      <EntityTypeMapping TypeName="Model.PolicyPaymentEntry">
+        <MappingFragment StoreEntitySet="PolicyPaymentEntries">
+          <ScalarProperty Name="IsLinkPayment" ColumnName="IsLinkPayment" />
+          <ScalarProperty Name="FollowUpIssueResolveOrClosed" ColumnName="FollowUpIssueResolveOrClosed" />
+          <ScalarProperty Name="PaymentEntryId" ColumnName="PaymentEntryId" />
+          <ScalarProperty Name="StatementId" ColumnName="StatementId" />
+          <ScalarProperty Name="PolicyId" ColumnName="PolicyId" />
+          <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+          <ScalarProperty Name="PaymentRecived" ColumnName="PaymentRecived" />
+          <ScalarProperty Name="CommissionPercentage" ColumnName="CommissionPercentage" />
+          <ScalarProperty Name="NumberOfUnits" ColumnName="NumberOfUnits" />
+          <ScalarProperty Name="Fee" ColumnName="Fee" />
+          <ScalarProperty Name="SplitPercentage" ColumnName="SplitPercentage" />
+          <ScalarProperty Name="TotalPayment" ColumnName="TotalPayment" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="PostStatusID" ColumnName="PostStatusID" />
+          <ScalarProperty Name="Bonus" ColumnName="Bonus" />
+          <ScalarProperty Name="DollerPerUnit" ColumnName="DollerPerUnit" />
+          <ScalarProperty Name="DEUEntryId" ColumnName="DEUEntryId" />
+          <ScalarProperty Name="ExpectedPayment" ColumnName="ExpectedPayment" />
+          <ScalarProperty Name="FollowUpVarIssueId" ColumnName="FollowUpVarIssueId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceLines">
+      <EntityTypeMapping TypeName="Model.ServiceLine">
+        <MappingFragment StoreEntitySet="ServiceLines">
+          <ScalarProperty Name="ServiceLineId" ColumnName="ServiceLineId" />
+          <ScalarProperty Name="LicenseeId" ColumnName="LicenseeId" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="ServiceChargeTypeId" ColumnName="ServiceChargeTypeId" />
+          <ScalarProperty Name="Min" ColumnName="Min" />
+          <ScalarProperty Name="Range1" ColumnName="Range1" />
+          <ScalarProperty Name="Range2" ColumnName="Range2" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="IsTaxable" ColumnName="IsTaxable" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ConsumedUnit" ColumnName="ConsumedUnit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Supports">
+      <EntityTypeMapping TypeName="Model.Support">
+        <MappingFragment StoreEntitySet="Supports">
+          <ScalarProperty Name="SupportFileId" ColumnName="SupportFileId" />
+          <ScalarProperty Name="SupportFileName" ColumnName="SupportFileName" />
+          <ScalarProperty Name="ContentDescription" ColumnName="ContentDescription" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="LastModifiedOn" ColumnName="LastModifiedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Templates">
+      <EntityTypeMapping TypeName="Model.Template">
+        <MappingFragment StoreEntitySet="Templates">
+          <ScalarProperty Name="ExcelColumnList" ColumnName="ExcelColumnList" />
+          <ScalarProperty Name="SheetName" ColumnName="SheetName" />
+          <ScalarProperty Name="DataStartIndex" ColumnName="DataStartIndex" />
+          <ScalarProperty Name="PayorID" ColumnName="PayorID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastRowsToSkip" ColumnName="LastRowsToSkip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserCredentials">
+      <EntityTypeMapping TypeName="Model.UserCredential">
+        <MappingFragment StoreEntitySet="UserCredentials">
+          <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="PasswordResetKeyInsertDateTime" ColumnName="PasswordResetKeyInsertDateTime" />
+          <ScalarProperty Name="PasswordResetKey" ColumnName="PasswordResetKey" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="IsUserActiveOnWeb" ColumnName="IsUserActiveOnWeb" />
+          <ScalarProperty Name="BGUserId" ColumnName="BGUserId" />
+          <ScalarProperty Name="IsAccountExec" ColumnName="IsAccountExec" />
+          <ScalarProperty Name="UserCredentialId" ColumnName="UserCredentialId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="PasswordHintQuestion" ColumnName="PasswordHintQuestion" />
+          <ScalarProperty Name="PasswordHintAnswer" ColumnName="PasswordHintAnswer" />
+          <ScalarProperty Name="IsHouseAccount" ColumnName="IsHouseAccount" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsNewsToFlash" ColumnName="IsNewsToFlash" />
+          <ScalarProperty Name="LicenseeId" ColumnName="LicenseeId" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDetails">
+      <EntityTypeMapping TypeName="Model.UserDetail">
+        <MappingFragment StoreEntitySet="UserDetail">
+          <ScalarProperty Name="Place_Id" ColumnName="Place_Id" />
+          <ScalarProperty Name="FormattedAddress" ColumnName="FormattedAddress" />
+          <ScalarProperty Name="Fax_CountryCode" ColumnName="Fax_CountryCode" />
+          <ScalarProperty Name="CellPhone_CountryCode" ColumnName="CellPhone_CountryCode" />
+          <ScalarProperty Name="OfficePhone_CountryCode" ColumnName="OfficePhone_CountryCode" />
+          <ScalarProperty Name="Fax_DialCode" ColumnName="Fax_DialCode" />
+          <ScalarProperty Name="CellPhone_DialCode" ColumnName="CellPhone_DialCode" />
+          <ScalarProperty Name="OfficePhone_DialCode" ColumnName="OfficePhone_DialCode" />
+          <ScalarProperty Name="DisableAgentEditing" ColumnName="DisableAgentEditing" />
+          <ScalarProperty Name="UserCredentialId" ColumnName="UserCredentialId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="OfficePhone" ColumnName="OfficePhone" />
+          <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="FirstYearDefault" ColumnName="FirstYearDefault" />
+          <ScalarProperty Name="RenewalDefault" ColumnName="RenewalDefault" />
+          <ScalarProperty Name="ReportForEntireAgency" ColumnName="ReportForEntireAgency" />
+          <ScalarProperty Name="ReportForOwnBusiness" ColumnName="ReportForOwnBusiness" />
+          <ScalarProperty Name="AddPayeeOn" ColumnName="AddPayeeOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserPermissions">
+      <EntityTypeMapping TypeName="Model.UserPermission">
+        <MappingFragment StoreEntitySet="UserPermissions">
+          <ScalarProperty Name="UserPermissionId" ColumnName="UserPermissionId" />
+          <ScalarProperty Name="UserCredentialId" ColumnName="UserCredentialId" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="AccessRightId" ColumnName="AccessRightId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VariablesForBillingLines">
+      <EntityTypeMapping TypeName="Model.VariablesForBillingLine">
+        <MappingFragment StoreEntitySet="VariablesForBillingLine">
+          <ScalarProperty Name="NoOfPolicies" ColumnName="NoOfPolicies" />
+          <ScalarProperty Name="NoOfUsers" ColumnName="NoOfUsers" />
+          <ScalarProperty Name="NoOfPayees" ColumnName="NoOfPayees" />
+          <ScalarProperty Name="NoOfEntries" ColumnName="NoOfEntries" />
+          <ScalarProperty Name="NoOfAdjustment" ColumnName="NoOfAdjustment" />
+          <ScalarProperty Name="NoOfWebstatement" ColumnName="NoOfWebstatement" />
+          <ScalarProperty Name="NoOfEDI" ColumnName="NoOfEDI" />
+          <ScalarProperty Name="NoOfTrackableMonth" ColumnName="NoOfTrackableMonth" />
+          <ScalarProperty Name="UnbilledTrackableMonth" ColumnName="UnbilledTrackableMonth" />
+          <ScalarProperty Name="BillingLineId" ColumnName="BillingLineId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="CarrierCoverage" TypeName="Model.CarrierCoverage" StoreEntitySet="CarrierCoverage">
+      <EndProperty Name="Carriers">
+        <ScalarProperty Name="CarrierId" ColumnName="CarrierId" />
+      </EndProperty>
+      <EndProperty Name="Coverages">
+        <ScalarProperty Name="CoverageId" ColumnName="CoverageId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="LinkedAgent" TypeName="Model.LinkedAgent" StoreEntitySet="LinkedAgent">
+      <EndProperty Name="UserCredentials">
+        <ScalarProperty Name="UserCredentialId" ColumnName="UserConnectedID" />
+      </EndProperty>
+      <EndProperty Name="UserCredentials1">
+        <ScalarProperty Name="UserCredentialId" ColumnName="UserID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="CalculatePMC" FunctionName="Model.Store.sp_GetMonthlyRevenue">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.CalculatePMC_Result">
+          <ScalarProperty Name="PMC" ColumnName="PMC" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="LockPolicy" FunctionName="Model.Store.sp_LockPolicyIfNot" />
+    <FunctionImportMapping FunctionImportName="UnlockPolicy" FunctionName="Model.Store.sp_UnlockPolicy" />
+    <FunctionImportMapping FunctionImportName="CalculatePAC" FunctionName="Model.Store.sp_GetAnnualRevenue">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.CalculatePAC_Result">
+          <ScalarProperty Name="PAC" ColumnName="PAC" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Model.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Sp_SelectFollowupRecord" FunctionName="Model.Store.Sp_SelectFollowupRecord">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.Sp_SelectFollowupRecord_Result">
+          <ScalarProperty Name="IssueId" ColumnName="IssueId" />
+          <ScalarProperty Name="IssueStatusId" ColumnName="IssueStatusId" />
+          <ScalarProperty Name="IssueCategoryId" ColumnName="IssueCategoryId" />
+          <ScalarProperty Name="IssueResultId" ColumnName="IssueResultId" />
+          <ScalarProperty Name="IssueReasonId" ColumnName="IssueReasonId" />
+          <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+          <ScalarProperty Name="NextFollowUpDate" ColumnName="NextFollowUpDate" />
+          <ScalarProperty Name="PolicyIssueNote" ColumnName="PolicyIssueNote" />
+          <ScalarProperty Name="Payment" ColumnName="Payment" />
+          <ScalarProperty Name="PolicyId" ColumnName="PolicyId" />
+          <ScalarProperty Name="Payor" ColumnName="Payor" />
+          <ScalarProperty Name="Agency" ColumnName="Agency" />
+          <ScalarProperty Name="Insured" ColumnName="Insured" />
+          <ScalarProperty Name="PolicyNumber" ColumnName="PolicyNumber" />
+          <ScalarProperty Name="PreviousStatusId" ColumnName="PreviousStatusId" />
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+          <ScalarProperty Name="IssueTrackNumber" ColumnName="IssueTrackNumber" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="PayorID" ColumnName="PayorID" />
+          <ScalarProperty Name="LicenseeId" ColumnName="LicenseeId" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="SendAlertMails">
+      <EntityTypeMapping TypeName="Model.SendAlertMail">
+        <MappingFragment StoreEntitySet="SendAlertMail">
+          <ScalarProperty Name="SendStatus" ColumnName="SendStatus" />
+          <ScalarProperty Name="MailDate" ColumnName="MailDate" />
+          <ScalarProperty Name="LicensesID" ColumnName="LicensesID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditReports">
+      <EntityTypeMapping TypeName="Model.AuditReport">
+        <MappingFragment StoreEntitySet="AuditReports">
+          <ScalarProperty Name="FilterBy" ColumnName="FilterBy" />
+          <ScalarProperty Name="ReportOn" ColumnName="ReportOn" />
+          <ScalarProperty Name="OrderBy" ColumnName="OrderBy" />
+          <ScalarProperty Name="InvoiceTo" ColumnName="InvoiceTo" />
+          <ScalarProperty Name="InvoiceFrom" ColumnName="InvoiceFrom" />
+          <ScalarProperty Name="Reports" ColumnName="Reports" />
+          <ScalarProperty Name="Payee" ColumnName="Payee" />
+          <ScalarProperty Name="Payor" ColumnName="Payor" />
+          <ScalarProperty Name="LicenceID" ColumnName="LicenceID" />
+          <ScalarProperty Name="ReportId" ColumnName="ReportId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ManagementReports">
+      <EntityTypeMapping TypeName="Model.ManagementReport">
+        <MappingFragment StoreEntitySet="ManagementReports">
+          <ScalarProperty Name="EffectiveMonth" ColumnName="EffectiveMonth" />
+          <ScalarProperty Name="InvoiceTo" ColumnName="InvoiceTo" />
+          <ScalarProperty Name="InvoiceFrom" ColumnName="InvoiceFrom" />
+          <ScalarProperty Name="ReportOn" ColumnName="ReportOn" />
+          <ScalarProperty Name="EligibleTo" ColumnName="EligibleTo" />
+          <ScalarProperty Name="EligibleFrom" ColumnName="EligibleFrom" />
+          <ScalarProperty Name="EnrolledTo" ColumnName="EnrolledTo" />
+          <ScalarProperty Name="EnrolledFrom" ColumnName="EnrolledFrom" />
+          <ScalarProperty Name="PremiumTo" ColumnName="PremiumTo" />
+          <ScalarProperty Name="PremiumFrom" ColumnName="PremiumFrom" />
+          <ScalarProperty Name="TermReason" ColumnName="TermReason" />
+          <ScalarProperty Name="TermTo" ColumnName="TermTo" />
+          <ScalarProperty Name="TermFrom" ColumnName="TermFrom" />
+          <ScalarProperty Name="TrackTo" ColumnName="TrackTo" />
+          <ScalarProperty Name="TrackFrom" ColumnName="TrackFrom" />
+          <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+          <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+          <ScalarProperty Name="TrackPayment" ColumnName="TrackPayment" />
+          <ScalarProperty Name="PolicyMode" ColumnName="PolicyMode" />
+          <ScalarProperty Name="PolicyType" ColumnName="PolicyType" />
+          <ScalarProperty Name="OrderBy" ColumnName="OrderBy" />
+          <ScalarProperty Name="Reports" ColumnName="Reports" />
+          <ScalarProperty Name="Payee" ColumnName="Payee" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="Carrier" ColumnName="Carrier" />
+          <ScalarProperty Name="Payor" ColumnName="Payor" />
+          <ScalarProperty Name="LicenceID" ColumnName="LicenceID" />
+          <ScalarProperty Name="ReportId" ColumnName="ReportId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayeeStatementReports">
+      <EntityTypeMapping TypeName="Model.PayeeStatementReport">
+        <MappingFragment StoreEntitySet="PayeeStatementReports">
+          <ScalarProperty Name="IsSubTotal" ColumnName="IsSubTotal" />
+          <ScalarProperty Name="IsPayorRate" ColumnName="IsPayorRate" />
+          <ScalarProperty Name="IsSplit" ColumnName="IsSplit" />
+          <ScalarProperty Name="Zero" ColumnName="Zero" />
+          <ScalarProperty Name="ReportOn" ColumnName="ReportOn" />
+          <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+          <ScalarProperty Name="Reports" ColumnName="Reports" />
+          <ScalarProperty Name="Payee" ColumnName="Payee" />
+          <ScalarProperty Name="Batch" ColumnName="Batch" />
+          <ScalarProperty Name="LicenceID" ColumnName="LicenceID" />
+          <ScalarProperty Name="ReportId" ColumnName="ReportId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="FollowupFilter" FunctionName="Model.Store.FollowupFilter">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.FollowupFilter_Result">
+          <ScalarProperty Name="IssueId" ColumnName="IssueId" />
+          <ScalarProperty Name="IssueStatusId" ColumnName="IssueStatusId" />
+          <ScalarProperty Name="IssueCategoryId" ColumnName="IssueCategoryId" />
+          <ScalarProperty Name="IssueResultId" ColumnName="IssueResultId" />
+          <ScalarProperty Name="IssueReasonId" ColumnName="IssueReasonId" />
+          <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+          <ScalarProperty Name="NextFollowUpDate" ColumnName="NextFollowUpDate" />
+          <ScalarProperty Name="PolicyIssueNote" ColumnName="PolicyIssueNote" />
+          <ScalarProperty Name="Payment" ColumnName="Payment" />
+          <ScalarProperty Name="PolicyId" ColumnName="PolicyId" />
+          <ScalarProperty Name="Payor" ColumnName="Payor" />
+          <ScalarProperty Name="Agency" ColumnName="Agency" />
+          <ScalarProperty Name="Insured" ColumnName="Insured" />
+          <ScalarProperty Name="PolicyNumber" ColumnName="PolicyNumber" />
+          <ScalarProperty Name="PreviousStatusId" ColumnName="PreviousStatusId" />
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+          <ScalarProperty Name="IssueTrackNumber" ColumnName="IssueTrackNumber" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="PayorID" ColumnName="PayorID" />
+          <ScalarProperty Name="LicenseeId" ColumnName="LicenseeId" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="IsTrackMissingMonth" ColumnName="IsTrackMissingMonth" />
+          <ScalarProperty Name="IsTrackIncomingPercentage" ColumnName="IsTrackIncomingPercentage" />
+          <ScalarProperty Name="IsTrackPayment" ColumnName="IsTrackPayment" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="FollowupIssues">
+      <EntityTypeMapping TypeName="Model.FollowupIssue">
+        <MappingFragment StoreEntitySet="FollowupIssues">
+          <ScalarProperty Name="IsPMCVariance" ColumnName="IsPMCVariance" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IssueTrackNumber" ColumnName="IssueTrackNumber" />
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+          <ScalarProperty Name="PreviousStatusId" ColumnName="PreviousStatusId" />
+          <ScalarProperty Name="PolicyId" ColumnName="PolicyId" />
+          <ScalarProperty Name="Payment" ColumnName="Payment" />
+          <ScalarProperty Name="NextFollowUpDate" ColumnName="NextFollowUpDate" />
+          <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="IssueReasonId" ColumnName="IssueReasonId" />
+          <ScalarProperty Name="IssueResultId" ColumnName="IssueResultId" />
+          <ScalarProperty Name="IssueStatusId" ColumnName="IssueStatusId" />
+          <ScalarProperty Name="IssueCategoryId" ColumnName="IssueCategoryId" />
+          <ScalarProperty Name="IssueId" ColumnName="IssueId" />
+          <ScalarProperty Name="IsResolvedFromCommDashboard" ColumnName="IsResolvedFromCommDashboard" />
+          <ScalarProperty Name="IsRemovedFromCommDashboard" ColumnName="IsRemovedFromCommDashboard" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Statements">
+      <EntityTypeMapping TypeName="Model.Statement">
+        <MappingFragment StoreEntitySet="Statements">
+          <ScalarProperty Name="ToPage" ColumnName="ToPage" />
+          <ScalarProperty Name="FromPage" ColumnName="FromPage" />
+          <ScalarProperty Name="TemplateID" ColumnName="TemplateID" />
+          <ScalarProperty Name="StatementDate" ColumnName="StatementDate" />
+          <ScalarProperty Name="EnteredAmount" ColumnName="EnteredAmount" />
+          <ScalarProperty Name="BalAdj" ColumnName="BalAdj" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Entries" ColumnName="Entries" />
+          <ScalarProperty Name="StatementStatusId" ColumnName="StatementStatusId" />
+          <ScalarProperty Name="CheckAmount" ColumnName="CheckAmount" />
+          <ScalarProperty Name="PayorId" ColumnName="PayorId" />
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="StatementNumber" ColumnName="StatementNumber" />
+          <ScalarProperty Name="StatementId" ColumnName="StatementId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AllFollowupFilter" FunctionName="Model.Store.AllFollowupFilter">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.AllFollowupFilter_Result">
+          <ScalarProperty Name="IssueId" ColumnName="IssueId" />
+          <ScalarProperty Name="IssueStatusId" ColumnName="IssueStatusId" />
+          <ScalarProperty Name="IssueCategoryId" ColumnName="IssueCategoryId" />
+          <ScalarProperty Name="IssueResultId" ColumnName="IssueResultId" />
+          <ScalarProperty Name="IssueReasonId" ColumnName="IssueReasonId" />
+          <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+          <ScalarProperty Name="NextFollowUpDate" ColumnName="NextFollowUpDate" />
+          <ScalarProperty Name="PolicyIssueNote" ColumnName="PolicyIssueNote" />
+          <ScalarProperty Name="Payment" ColumnName="Payment" />
+          <ScalarProperty Name="PolicyId" ColumnName="PolicyId" />
+          <ScalarProperty Name="Payor" ColumnName="Payor" />
+          <ScalarProperty Name="Agency" ColumnName="Agency" />
+          <ScalarProperty Name="Client" ColumnName="Client" />
+          <ScalarProperty Name="Insured" ColumnName="Insured" />
+          <ScalarProperty Name="PolicyNumber" ColumnName="PolicyNumber" />
+          <ScalarProperty Name="IsTrackMissingMonth" ColumnName="IsTrackMissingMonth" />
+          <ScalarProperty Name="IsTrackIncomingPercentage" ColumnName="IsTrackIncomingPercentage" />
+          <ScalarProperty Name="IsTrackPayment" ColumnName="IsTrackPayment" />
+          <ScalarProperty Name="PreviousStatusId" ColumnName="PreviousStatusId" />
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+          <ScalarProperty Name="IssueTrackNumber" ColumnName="IssueTrackNumber" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="PayorID" ColumnName="PayorID" />
+          <ScalarProperty Name="LicenseeId" ColumnName="LicenseeId" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UpdatelastFollowupRuns" FunctionName="Model.Store.newUpdateLastFollowupRunsWithTodayDate" />
+    <FunctionImportMapping FunctionImportName="GetPolicyPaymentEntryPolicyIDWise" FunctionName="Model.Store.GetPolicyPaymentEntryPolicyIDWise">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetPolicyPaymentEntryPolicyIDWise_Result">
+          <ScalarProperty Name="PaymentEntryID" ColumnName="PaymentEntryID" />
+          <ScalarProperty Name="StatementId" ColumnName="StatementId" />
+          <ScalarProperty Name="PolicyID" ColumnName="PolicyID" />
+          <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+          <ScalarProperty Name="PaymentRecived" ColumnName="PaymentRecived" />
+          <ScalarProperty Name="CommissionPercentage" ColumnName="CommissionPercentage" />
+          <ScalarProperty Name="NumberOfUnits" ColumnName="NumberOfUnits" />
+          <ScalarProperty Name="DollerPerUnit" ColumnName="DollerPerUnit" />
+          <ScalarProperty Name="Fee" ColumnName="Fee" />
+          <ScalarProperty Name="SplitPercentage" ColumnName="SplitPercentage" />
+          <ScalarProperty Name="TotalPayment" ColumnName="TotalPayment" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="PostStatusID" ColumnName="PostStatusID" />
+          <ScalarProperty Name="DEUEntryId" ColumnName="DEUEntryId" />
+          <ScalarProperty Name="StatementNumber" ColumnName="StatementNumber" />
+          <ScalarProperty Name="FollowUpVarIssueId" ColumnName="FollowUpVarIssueId" />
+          <ScalarProperty Name="BatchNumber" ColumnName="BatchNumber" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="Pageno" ColumnName="Pageno" />
+          <ScalarProperty Name="IsLinkPayment" ColumnName="IsLinkPayment" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="FillPolicy" FunctionName="Model.Store.FillinAllData">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.FillPolicy_Result">
+          <ScalarProperty Name="PolicyId" ColumnName="PolicyId" />
+          <ScalarProperty Name="PolicyNumber" ColumnName="PolicyNumber" />
+          <ScalarProperty Name="PolicyStatusId" ColumnName="PolicyStatusId" />
+          <ScalarProperty Name="PolicyStatusName" ColumnName="PolicyStatusName" />
+          <ScalarProperty Name="PolicyType" ColumnName="PolicyType" />
+          <ScalarProperty Name="LicenseeId" ColumnName="LicenseeId" />
+          <ScalarProperty Name="Insured" ColumnName="Insured" />
+          <ScalarProperty Name="OriginalEffectiveDate" ColumnName="OriginalEffectiveDate" />
+          <ScalarProperty Name="TrackFromDate" ColumnName="TrackFromDate" />
+          <ScalarProperty Name="PolicyModeId" ColumnName="PolicyModeId" />
+          <ScalarProperty Name="MonthlyPremium" ColumnName="MonthlyPremium" />
+          <ScalarProperty Name="SubmittedThrough" ColumnName="SubmittedThrough" />
+          <ScalarProperty Name="Enrolled" ColumnName="Enrolled" />
+          <ScalarProperty Name="Eligible" ColumnName="Eligible" />
+          <ScalarProperty Name="PolicyTerminationDate" ColumnName="PolicyTerminationDate" />
+          <ScalarProperty Name="TerminationReasonId" ColumnName="TerminationReasonId" />
+          <ScalarProperty Name="IsTrackMissingMonth" ColumnName="IsTrackMissingMonth" />
+          <ScalarProperty Name="IsTrackIncomingPercentage" ColumnName="IsTrackIncomingPercentage" />
+          <ScalarProperty Name="IsTrackPayment" ColumnName="IsTrackPayment" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CarrierID" ColumnName="CarrierID" />
+          <ScalarProperty Name="CarrierName" ColumnName="CarrierName" />
+          <ScalarProperty Name="CoverageId" ColumnName="CoverageId" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="ClientsName" ColumnName="ClientsName" />
+          <ScalarProperty Name="ReplacedBy" ColumnName="ReplacedBy" />
+          <ScalarProperty Name="DuplicateFrom" ColumnName="DuplicateFrom" />
+          <ScalarProperty Name="IsIncomingBasicSchedule" ColumnName="IsIncomingBasicSchedule" />
+          <ScalarProperty Name="IsOutGoingBasicSchedule" ColumnName="IsOutGoingBasicSchedule" />
+          <ScalarProperty Name="PayorID" ColumnName="PayorID" />
+          <ScalarProperty Name="PayorName" ColumnName="PayorName" />
+          <ScalarProperty Name="PayorNickName" ColumnName="PayorNickName" />
+          <ScalarProperty Name="SplitPercentage" ColumnName="SplitPercentage" />
+          <ScalarProperty Name="IncomingPaymentTypeId" ColumnName="IncomingPaymentTypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CompTypeID" ColumnName="CompTypeID" />
+          <ScalarProperty Name="CompScheduleType" ColumnName="CompScheduleType" />
+          <ScalarProperty Name="LastFollowUpRuns" ColumnName="LastFollowUpRuns" />
+          <ScalarProperty Name="Advance" ColumnName="Advance" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetPolicyLearnedFieldsPolicyWise" FunctionName="Model.Store.GetPolicyLearnedFieldsPolicyWise">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetPolicyLearnedFieldsPolicyWise_Result">
+          <ScalarProperty Name="PolicyId" ColumnName="PolicyId" />
+          <ScalarProperty Name="Insured" ColumnName="Insured" />
+          <ScalarProperty Name="PolicyNumber" ColumnName="PolicyNumber" />
+          <ScalarProperty Name="Effective" ColumnName="Effective" />
+          <ScalarProperty Name="TrackFrom" ColumnName="TrackFrom" />
+          <ScalarProperty Name="PAC" ColumnName="PAC" />
+          <ScalarProperty Name="PMC" ColumnName="PMC" />
+          <ScalarProperty Name="ModalAvgPremium" ColumnName="ModalAvgPremium" />
+          <ScalarProperty Name="PolicyModeId" ColumnName="PolicyModeId" />
+          <ScalarProperty Name="CarrierId" ColumnName="CarrierId" />
+          <ScalarProperty Name="CoverageId" ColumnName="CoverageId" />
+          <ScalarProperty Name="CompTypeID" ColumnName="CompTypeID" />
+          <ScalarProperty Name="CarrierNickName" ColumnName="CarrierNickName" />
+          <ScalarProperty Name="CoverageNickName" ColumnName="CoverageNickName" />
+          <ScalarProperty Name="PolicyModeId1" ColumnName="PolicyModeId1" />
+          <ScalarProperty Name="Enrolled" ColumnName="Enrolled" />
+          <ScalarProperty Name="Eligible" ColumnName="Eligible" />
+          <ScalarProperty Name="AutoTerminationDate" ColumnName="AutoTerminationDate" />
+          <ScalarProperty Name="PayorSysID" ColumnName="PayorSysID" />
+          <ScalarProperty Name="Link1" ColumnName="Link1" />
+          <ScalarProperty Name="Link2" ColumnName="Link2" />
+          <ScalarProperty Name="LastModifiedOn" ColumnName="LastModifiedOn" />
+          <ScalarProperty Name="LastModifiedUserCredentialid" ColumnName="LastModifiedUserCredentialid" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="CompScheduleType" ColumnName="CompScheduleType" />
+          <ScalarProperty Name="PayorName" ColumnName="PayorName" />
+          <ScalarProperty Name="PreviousEffectiveDate" ColumnName="PreviousEffectiveDate" />
+          <ScalarProperty Name="PreviousPolicyModeId" ColumnName="PreviousPolicyModeId" />
+          <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetDeuEntriesforStatement" FunctionName="Model.Store.GetDeuEntriesforStatement">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetDeuEntriesforStatement_Result">
+          <ScalarProperty Name="DEUEntryID" ColumnName="DEUEntryID" />
+          <ScalarProperty Name="ClientValue" ColumnName="ClientValue" />
+          <ScalarProperty Name="Insured" ColumnName="Insured" />
+          <ScalarProperty Name="PaymentReceived" ColumnName="PaymentReceived" />
+          <ScalarProperty Name="PolicyNumber" ColumnName="PolicyNumber" />
+          <ScalarProperty Name="NumberOfUnits" ColumnName="NumberOfUnits" />
+          <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+          <ScalarProperty Name="CommissionTotal" ColumnName="CommissionTotal" />
+          <ScalarProperty Name="Fee" ColumnName="Fee" />
+          <ScalarProperty Name="SplitPer" ColumnName="SplitPer" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="CarrierNickName" ColumnName="CarrierNickName" />
+          <ScalarProperty Name="CoverageNickName" ColumnName="CoverageNickName" />
+          <ScalarProperty Name="CarrierName" ColumnName="CarrierName" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="PostCompleteStatus" ColumnName="PostCompleteStatus" />
+          <ScalarProperty Name="CommissionPercentage" ColumnName="CommissionPercentage" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetStatementList" FunctionName="Model.Store.GetStatementList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetStatementList_Result">
+          <ScalarProperty Name="StatementID" ColumnName="StatementID" />
+          <ScalarProperty Name="StatementNumber" ColumnName="StatementNumber" />
+          <ScalarProperty Name="StatementDate" ColumnName="StatementDate" />
+          <ScalarProperty Name="CheckAmount" ColumnName="CheckAmount" />
+          <ScalarProperty Name="BalAdj" ColumnName="BalAdj" />
+          <ScalarProperty Name="EnteredAmount" ColumnName="EnteredAmount" />
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="Entries" ColumnName="Entries" />
+          <ScalarProperty Name="Createdon" ColumnName="Createdon" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="PayorId" ColumnName="PayorId" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="TemplateID" ColumnName="TemplateID" />
+          <ScalarProperty Name="FromPage" ColumnName="FromPage" />
+          <ScalarProperty Name="ToPage" ColumnName="ToPage" />
+          <ScalarProperty Name="StatementStatusId" ColumnName="StatementStatusId" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetBatchesForDeuEntries" FunctionName="Model.Store.Sp_GetBatchesForDeuEntries">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetBatchesForDeuEntries_Result">
+          <ScalarProperty Name="BatchNumber" ColumnName="BatchNumber" />
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="UploadStatusId" ColumnName="UploadStatusId" />
+          <ScalarProperty Name="EntryStatusId" ColumnName="EntryStatusId" />
+          <ScalarProperty Name="LicenseeId" ColumnName="LicenseeId" />
+          <ScalarProperty Name="LicenseeName" ColumnName="LicenseeName" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="SiteLoginID" ColumnName="SiteLoginID" />
+          <ScalarProperty Name="AssignedDeuUserName" ColumnName="AssignedDeuUserName" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="BrokerCodes">
+      <EntityTypeMapping TypeName="Model.BrokerCode">
+        <MappingFragment StoreEntitySet="BrokerCode">
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+          <ScalarProperty Name="Createddate" ColumnName="Createddate" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="PayorId" ColumnName="PayorId" />
+          <ScalarProperty Name="LicenseeId" ColumnName="LicenseeId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LinkedUserLists">
+      <EntityTypeMapping TypeName="Model.LinkedUserList">
+        <MappingFragment StoreEntitySet="LinkedUserList">
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="LinkedUserID" ColumnName="LinkedUserID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImportToolBrokersSettings">
+      <EntityTypeMapping TypeName="Model.ImportToolBrokersSetting">
+        <MappingFragment StoreEntitySet="ImportToolBrokersSetting">
+          <ScalarProperty Name="RelativeColumns" ColumnName="RelativeColumns" />
+          <ScalarProperty Name="RelativeRows" ColumnName="RelativeRows" />
+          <ScalarProperty Name="RelativeSearchtext" ColumnName="RelativeSearchtext" />
+          <ScalarProperty Name="FixedColumns" ColumnName="FixedColumns" />
+          <ScalarProperty Name="FixedRows" ColumnName="FixedRows" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImportToolMasterStatementDatas">
+      <EntityTypeMapping TypeName="Model.ImportToolMasterStatementData">
+        <MappingFragment StoreEntitySet="ImportToolMasterStatementData">
+          <ScalarProperty Name="StatementDataType" ColumnName="StatementDataType" />
+          <ScalarProperty Name="Statementdata" ColumnName="Statementdata" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImportToolTemplatePhrases">
+      <EntityTypeMapping TypeName="Model.ImportToolTemplatePhrase">
+        <MappingFragment StoreEntitySet="ImportToolTemplatePhrase">
+          <ScalarProperty Name="MasterStatementDataID" ColumnName="MasterStatementDataID" />
+          <ScalarProperty Name="StatementDataSettingsID" ColumnName="StatementDataSettingsID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImportToolPayorPhrases">
+      <EntityTypeMapping TypeName="Model.ImportToolPayorPhrase">
+        <MappingFragment StoreEntitySet="ImportToolPayorPhrase">
+          <ScalarProperty Name="PayorPhrases" ColumnName="PayorPhrases" />
+          <ScalarProperty Name="RelativeColLocation" ColumnName="RelativeColLocation" />
+          <ScalarProperty Name="RelativeRowLocation" ColumnName="RelativeRowLocation" />
+          <ScalarProperty Name="RelativeSearchText" ColumnName="RelativeSearchText" />
+          <ScalarProperty Name="FixedColLocation" ColumnName="FixedColLocation" />
+          <ScalarProperty Name="FixedRowLocation" ColumnName="FixedRowLocation" />
+          <ScalarProperty Name="FileFormat" ColumnName="FileFormat" />
+          <ScalarProperty Name="FileType" ColumnName="FileType" />
+          <ScalarProperty Name="TemplateName" ColumnName="TemplateName" />
+          <ScalarProperty Name="TemplateID" ColumnName="TemplateID" />
+          <ScalarProperty Name="PayorName" ColumnName="PayorName" />
+          <ScalarProperty Name="PayorID" ColumnName="PayorID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImportToolSeletedPaymentDatas">
+      <EntityTypeMapping TypeName="Model.ImportToolSeletedPaymentData">
+        <MappingFragment StoreEntitySet="ImportToolSeletedPaymentData">
+          <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+          <ScalarProperty Name="FieldID" ColumnName="FieldID" />
+          <ScalarProperty Name="PayorToolAvailableFieldId" ColumnName="PayorToolAvailableFieldId" />
+          <ScalarProperty Name="TemplateID" ColumnName="TemplateID" />
+          <ScalarProperty Name="PayorID" ColumnName="PayorID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImportToolStatementDataSettings">
+      <EntityTypeMapping TypeName="Model.ImportToolStatementDataSetting">
+        <MappingFragment StoreEntitySet="ImportToolStatementDataSettings">
+          <ScalarProperty Name="BlankFieldsIndicator" ColumnName="BlankFieldsIndicator" />
+          <ScalarProperty Name="IsBlankFieldsIndicatorAvailable" ColumnName="IsBlankFieldsIndicatorAvailable" />
+          <ScalarProperty Name="RelativeColsLocation" ColumnName="RelativeColsLocation" />
+          <ScalarProperty Name="RelativeRowsLocation" ColumnName="RelativeRowsLocation" />
+          <ScalarProperty Name="RelativeSearch" ColumnName="RelativeSearch" />
+          <ScalarProperty Name="FixedColsLocation" ColumnName="FixedColsLocation" />
+          <ScalarProperty Name="FixedRowsLocation" ColumnName="FixedRowsLocation" />
+          <ScalarProperty Name="MasterStatementDataID" ColumnName="MasterStatementDataID" />
+          <ScalarProperty Name="TemplateID" ColumnName="TemplateID" />
+          <ScalarProperty Name="PayorID" ColumnName="PayorID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImportToolPaymentDataFieldsSettings">
+      <EntityTypeMapping TypeName="Model.ImportToolPaymentDataFieldsSetting">
+        <MappingFragment StoreEntitySet="ImportToolPaymentDataFieldsSettings">
+          <ScalarProperty Name="DefaultText" ColumnName="DefaultText" />
+          <ScalarProperty Name="TransName" ColumnName="TransName" />
+          <ScalarProperty Name="TransID" ColumnName="TransID" />
+          <ScalarProperty Name="EndColLocation" ColumnName="EndColLocation" />
+          <ScalarProperty Name="EndRowLocation" ColumnName="EndRowLocation" />
+          <ScalarProperty Name="StartColLocation" ColumnName="StartColLocation" />
+          <ScalarProperty Name="StartRowLocation" ColumnName="StartRowLocation" />
+          <ScalarProperty Name="PayorToolMaskFieldTypeId" ColumnName="PayorToolMaskFieldTypeId" />
+          <ScalarProperty Name="FormulaExpression" ColumnName="FormulaExpression" />
+          <ScalarProperty Name="CalculatedFields" ColumnName="CalculatedFields" />
+          <ScalarProperty Name="PartOfPrimaryKey" ColumnName="PartOfPrimaryKey" />
+          <ScalarProperty Name="RelativeColLocation" ColumnName="RelativeColLocation" />
+          <ScalarProperty Name="RelativeRowLocation" ColumnName="RelativeRowLocation" />
+          <ScalarProperty Name="HeaderSearch" ColumnName="HeaderSearch" />
+          <ScalarProperty Name="FixedColLocation" ColumnName="FixedColLocation" />
+          <ScalarProperty Name="FixedRowLocation" ColumnName="FixedRowLocation" />
+          <ScalarProperty Name="FieldsName" ColumnName="FieldsName" />
+          <ScalarProperty Name="FieldsID" ColumnName="FieldsID" />
+          <ScalarProperty Name="PayorToolAvailableFeildsID" ColumnName="PayorToolAvailableFeildsID" />
+          <ScalarProperty Name="TemplateID" ColumnName="TemplateID" />
+          <ScalarProperty Name="PayorID" ColumnName="PayorID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImportToolAvailableFields">
+      <EntityTypeMapping TypeName="Model.ImportToolAvailableField">
+        <MappingFragment StoreEntitySet="ImportToolAvailableFields">
+          <ScalarProperty Name="IsDeletable" ColumnName="IsDeletable" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="HelpText" ColumnName="HelpText" />
+          <ScalarProperty Name="EquivalentDeuField" ColumnName="EquivalentDeuField" />
+          <ScalarProperty Name="EquivalentLearnedField" ColumnName="EquivalentLearnedField" />
+          <ScalarProperty Name="EquivalentIncomingField" ColumnName="EquivalentIncomingField" />
+          <ScalarProperty Name="AllignedDirection" ColumnName="AllignedDirection" />
+          <ScalarProperty Name="IsOorBlankAllowed" ColumnName="IsOorBlankAllowed" />
+          <ScalarProperty Name="DefaultNumeric" ColumnName="DefaultNumeric" />
+          <ScalarProperty Name="IsOverrideOfCalcAllowed" ColumnName="IsOverrideOfCalcAllowed" />
+          <ScalarProperty Name="IsCalculatedField" ColumnName="IsCalculatedField" />
+          <ScalarProperty Name="IsTabbedToNextFieldIfLinked" ColumnName="IsTabbedToNextFieldIfLinked" />
+          <ScalarProperty Name="IsPopulatedIfLinked" ColumnName="IsPopulatedIfLinked" />
+          <ScalarProperty Name="IsPartOfPrimary" ColumnName="IsPartOfPrimary" />
+          <ScalarProperty Name="FieldOrder" ColumnName="FieldOrder" />
+          <ScalarProperty Name="FieldStatus" ColumnName="FieldStatus" />
+          <ScalarProperty Name="LabelOnImage" ColumnName="LabelOnImage" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PTAvailableFieldId" ColumnName="PTAvailableFieldId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PolicyLearnedFields">
+      <EntityTypeMapping TypeName="Model.PolicyLearnedField">
+        <MappingFragment StoreEntitySet="PolicyLearnedFields">
+          <ScalarProperty Name="ImportPolicyID" ColumnName="ImportPolicyID" />
+          <ScalarProperty Name="AccoutExec" ColumnName="AccoutExec" />
+          <ScalarProperty Name="UserCredentialId" ColumnName="UserCredentialId" />
+          <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+          <ScalarProperty Name="Advance" ColumnName="Advance" />
+          <ScalarProperty Name="CoverageNickName" ColumnName="CoverageNickName" />
+          <ScalarProperty Name="CarrierNickName" ColumnName="CarrierNickName" />
+          <ScalarProperty Name="PreviousPolicyModeId" ColumnName="PreviousPolicyModeId" />
+          <ScalarProperty Name="PreviousEffectiveDate" ColumnName="PreviousEffectiveDate" />
+          <ScalarProperty Name="PayorId" ColumnName="PayorId" />
+          <ScalarProperty Name="CoverageId" ColumnName="CoverageId" />
+          <ScalarProperty Name="CarrierId" ColumnName="CarrierId" />
+          <ScalarProperty Name="CompScheduleType" ColumnName="CompScheduleType" />
+          <ScalarProperty Name="SplitPercentage" ColumnName="SplitPercentage" />
+          <ScalarProperty Name="Renewal" ColumnName="Renewal" />
+          <ScalarProperty Name="PayorSysID" ColumnName="PayorSysID" />
+          <ScalarProperty Name="CompTypeID" ColumnName="CompTypeID" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="LastModifiedUserCredentialid" ColumnName="LastModifiedUserCredentialid" />
+          <ScalarProperty Name="LastModifiedOn" ColumnName="LastModifiedOn" />
+          <ScalarProperty Name="Link1" ColumnName="Link1" />
+          <ScalarProperty Name="AutoTerminationDate" ColumnName="AutoTerminationDate" />
+          <ScalarProperty Name="Eligible" ColumnName="Eligible" />
+          <ScalarProperty Name="Enrolled" ColumnName="Enrolled" />
+          <ScalarProperty Name="PolicyModeId" ColumnName="PolicyModeId" />
+          <ScalarProperty Name="ModalAvgPremium" ColumnName="ModalAvgPremium" />
+          <ScalarProperty Name="PMC" ColumnName="PMC" />
+          <ScalarProperty Name="PAC" ColumnName="PAC" />
+          <ScalarProperty Name="TrackFrom" ColumnName="TrackFrom" />
+          <ScalarProperty Name="Effective" ColumnName="Effective" />
+          <ScalarProperty Name="PolicyNumber" ColumnName="PolicyNumber" />
+          <ScalarProperty Name="Insured" ColumnName="Insured" />
+          <ScalarProperty Name="PolicyId" ColumnName="PolicyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PolicyLearnedFieldsHistories">
+      <EntityTypeMapping TypeName="Model.PolicyLearnedFieldsHistory">
+        <MappingFragment StoreEntitySet="PolicyLearnedFieldsHistory">
+          <ScalarProperty Name="ImportPolicyID" ColumnName="ImportPolicyID" />
+          <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+          <ScalarProperty Name="Advance" ColumnName="Advance" />
+          <ScalarProperty Name="CoverageNickName" ColumnName="CoverageNickName" />
+          <ScalarProperty Name="CarrierNickName" ColumnName="CarrierNickName" />
+          <ScalarProperty Name="PreviousPolicyModeId" ColumnName="PreviousPolicyModeId" />
+          <ScalarProperty Name="PreviousEffectiveDate" ColumnName="PreviousEffectiveDate" />
+          <ScalarProperty Name="PayorId" ColumnName="PayorId" />
+          <ScalarProperty Name="CoverageId" ColumnName="CoverageId" />
+          <ScalarProperty Name="CarrierId" ColumnName="CarrierId" />
+          <ScalarProperty Name="CompScheduleType" ColumnName="CompScheduleType" />
+          <ScalarProperty Name="SplitPercentage" ColumnName="SplitPercentage" />
+          <ScalarProperty Name="Renewal" ColumnName="Renewal" />
+          <ScalarProperty Name="PayorSysID" ColumnName="PayorSysID" />
+          <ScalarProperty Name="CompTypeID" ColumnName="CompTypeID" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="LastModifiedUserCredentialid" ColumnName="LastModifiedUserCredentialid" />
+          <ScalarProperty Name="LastModifiedOn" ColumnName="LastModifiedOn" />
+          <ScalarProperty Name="Link1" ColumnName="Link1" />
+          <ScalarProperty Name="AutoTerminationDate" ColumnName="AutoTerminationDate" />
+          <ScalarProperty Name="Eligible" ColumnName="Eligible" />
+          <ScalarProperty Name="Enrolled" ColumnName="Enrolled" />
+          <ScalarProperty Name="PolicyModeId" ColumnName="PolicyModeId" />
+          <ScalarProperty Name="ModalAvgPremium" ColumnName="ModalAvgPremium" />
+          <ScalarProperty Name="PMC" ColumnName="PMC" />
+          <ScalarProperty Name="PAC" ColumnName="PAC" />
+          <ScalarProperty Name="TrackFrom" ColumnName="TrackFrom" />
+          <ScalarProperty Name="Effective" ColumnName="Effective" />
+          <ScalarProperty Name="PolicyNumber" ColumnName="PolicyNumber" />
+          <ScalarProperty Name="Insured" ColumnName="Insured" />
+          <ScalarProperty Name="PolicyId" ColumnName="PolicyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImportToolCommTranslators">
+      <EntityTypeMapping TypeName="Model.ImportToolCommTranslator">
+        <MappingFragment StoreEntitySet="ImportToolCommTranslator">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="TransID" ColumnName="TransID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CoverageNickNames">
+      <EntityTypeMapping TypeName="Model.CoverageNickName">
+        <MappingFragment StoreEntitySet="CoverageNickName">
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="CoverageId" ColumnName="CoverageId" />
+          <ScalarProperty Name="CarrierId" ColumnName="CarrierId" />
+          <ScalarProperty Name="PayorId" ColumnName="PayorId" />
+          <ScalarProperty Name="CoverageNickID" ColumnName="CoverageNickID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayorTemplates">
+      <EntityTypeMapping TypeName="Model.PayorTemplate">
+        <MappingFragment StoreEntitySet="PayorTemplate">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TemplateName" ColumnName="TemplateName" />
+          <ScalarProperty Name="PayorId" ColumnName="PayorId" />
+          <ScalarProperty Name="TemplateID" ColumnName="TemplateID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImportToolPayorTemplates">
+      <EntityTypeMapping TypeName="Model.ImportToolPayorTemplate">
+        <MappingFragment StoreEntitySet="ImportToolPayorTemplate">
+          <ScalarProperty Name="IsForceImport" ColumnName="IsForceImport" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TemplateName" ColumnName="TemplateName" />
+          <ScalarProperty Name="PayorID" ColumnName="PayorID" />
+          <ScalarProperty Name="TemplateID" ColumnName="TemplateID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncomingCompTypes">
+      <EntityTypeMapping TypeName="Model.IncomingCompType">
+        <MappingFragment StoreEntitySet="IncomingCompType">
+          <ScalarProperty Name="Names" ColumnName="Names" />
+          <ScalarProperty Name="PaymentTypeName" ColumnName="PaymentTypeName" />
+          <ScalarProperty Name="IncomingPaymentTypeID" ColumnName="IncomingPaymentTypeID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PolicyOutgoingPayments">
+      <EntityTypeMapping TypeName="Model.PolicyOutgoingPayment">
+        <MappingFragment StoreEntitySet="PolicyOutgoingPayments">
+          <ScalarProperty Name="Payment" ColumnName="Payment" />
+          <ScalarProperty Name="OutgoingPerUnit" ColumnName="OutgoingPerUnit" />
+          <ScalarProperty Name="Premium" ColumnName="Premium" />
+          <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+          <ScalarProperty Name="RecipientUserCredentialId" ColumnName="RecipientUserCredentialId" />
+          <ScalarProperty Name="PaymentEntryId" ColumnName="PaymentEntryId" />
+          <ScalarProperty Name="OutgoingPaymentId" ColumnName="OutgoingPaymentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbPMCVarianceSlabs">
+      <EntityTypeMapping TypeName="Model.tbPMCVarianceSlab">
+        <MappingFragment StoreEntitySet="tbPMCVarianceSlab">
+          <ScalarProperty Name="VarPercentLimit" ColumnName="VarPercentLimit" />
+          <ScalarProperty Name="PMCTo" ColumnName="PMCTo" />
+          <ScalarProperty Name="PMCFrom" ColumnName="PMCFrom" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetIssues" FunctionName="Model.Store.GetIssues">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetIssues_Result">
+          <ScalarProperty Name="IssueId" ColumnName="IssueId" />
+          <ScalarProperty Name="IssueStatusId" ColumnName="IssueStatusId" />
+          <ScalarProperty Name="IssueCategoryId" ColumnName="IssueCategoryId" />
+          <ScalarProperty Name="IssueResultId" ColumnName="IssueResultId" />
+          <ScalarProperty Name="IssueReasonId" ColumnName="IssueReasonId" />
+          <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+          <ScalarProperty Name="NextFollowUpDate" ColumnName="NextFollowUpDate" />
+          <ScalarProperty Name="PolicyIssueNote" ColumnName="PolicyIssueNote" />
+          <ScalarProperty Name="Payment" ColumnName="Payment" />
+          <ScalarProperty Name="PolicyId" ColumnName="PolicyId" />
+          <ScalarProperty Name="PayorName" ColumnName="PayorName" />
+          <ScalarProperty Name="Agency" ColumnName="Agency" />
+          <ScalarProperty Name="Insured" ColumnName="Insured" />
+          <ScalarProperty Name="PolicyNumber" ColumnName="PolicyNumber" />
+          <ScalarProperty Name="PreviousStatusId" ColumnName="PreviousStatusId" />
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+          <ScalarProperty Name="IssueTrackNumber" ColumnName="IssueTrackNumber" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="PayorId" ColumnName="PayorId" />
+          <ScalarProperty Name="LicenseeId" ColumnName="LicenseeId" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="IsTrackIncomingPercentage" ColumnName="IsTrackIncomingPercentage" />
+          <ScalarProperty Name="IsTrackMissingMonth" ColumnName="IsTrackMissingMonth" />
+          <ScalarProperty Name="IsTrackPayment" ColumnName="IsTrackPayment" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsPMCVariance" ColumnName="IsPMCVariance" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

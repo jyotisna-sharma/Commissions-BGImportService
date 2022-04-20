@@ -1,0 +1,285 @@
+D:\Projects\WPF\EricWood\MyAgencyVaultLatest\MyAgencySolution\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.dll
+D:\Projects\WPF\EricWood\MyAgencyVaultLatest\MyAgencySolution\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.pdb
+D:\Projects\WPF\EricWood\MyAgencyVaultLatest\MyAgencySolution\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.dll
+D:\Projects\WPF\EricWood\MyAgencyVaultLatest\MyAgencySolution\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.dll
+D:\Projects\WPF\EricWood\MyAgencyVaultLatest\MyAgencySolution\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.dll
+D:\Projects\WPF\EricWood\MyAgencyVaultLatest\MyAgencySolution\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.dll
+D:\Projects\WPF\EricWood\MyAgencyVaultLatest\MyAgencySolution\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.dll
+D:\Projects\WPF\EricWood\MyAgencyVaultLatest\MyAgencySolution\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.pdb
+D:\Projects\WPF\EricWood\MyAgencyVaultLatest\MyAgencySolution\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.pdb
+D:\Projects\WPF\EricWood\MyAgencyVaultLatest\MyAgencySolution\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.pdb
+D:\Projects\WPF\EricWood\MyAgencyVaultLatest\MyAgencySolution\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.pdb
+D:\Projects\WPF\EricWood\MyAgencyVaultLatest\MyAgencySolution\MyAgencyVault.ServiceWcf\obj\x64\Debug\ResolveAssemblyReference.cache
+D:\Projects\WPF\EricWood\MyAgencyVaultLatest\MyAgencySolution\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.dll
+D:\Projects\WPF\EricWood\MyAgencyVaultLatest\MyAgencySolution\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.pdb
+E:\Production\Working\ericproject\ericproject\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.ServiceWcf.csprojResolveAssemblyReference.cache
+E:\Production\Working\ericproject\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.ServiceWcf.csprojResolveAssemblyReference.cache
+E:\Production\Working\ericproject\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.dll
+E:\Production\Working\ericproject\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.pdb
+E:\Production\Working\ericproject\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.dll
+E:\Production\Working\ericproject\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.dll
+E:\Production\Working\ericproject\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.dll
+E:\Production\Working\ericproject\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.dll
+E:\Production\Working\ericproject\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.dll
+E:\Production\Working\ericproject\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.pdb
+E:\Production\Working\ericproject\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.pdb
+E:\Production\Working\ericproject\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.pdb
+E:\Production\Working\ericproject\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.pdb
+E:\Production\Working\ericproject\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.pdb
+E:\Production\Working\ericproject\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.dll
+E:\Production\Working\ericproject\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_Aug192016\vinod yadav - ericproject (2)\ericproject\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.ServiceWcf.csprojResolveAssemblyReference.cache
+C:\Jyotisna\My Projects\Projects\Commissions_Aug192016\vinod yadav - ericproject (2)\ericproject\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.dll
+C:\Jyotisna\My Projects\Projects\Commissions_Aug192016\vinod yadav - ericproject (2)\ericproject\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_Aug192016\vinod yadav - ericproject (2)\ericproject\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.dll
+C:\Jyotisna\My Projects\Projects\Commissions_Aug192016\vinod yadav - ericproject (2)\ericproject\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.dll
+C:\Jyotisna\My Projects\Projects\Commissions_Aug192016\vinod yadav - ericproject (2)\ericproject\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.dll
+C:\Jyotisna\My Projects\Projects\Commissions_Aug192016\vinod yadav - ericproject (2)\ericproject\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.dll
+C:\Jyotisna\My Projects\Projects\Commissions_Aug192016\vinod yadav - ericproject (2)\ericproject\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_Aug192016\vinod yadav - ericproject (2)\ericproject\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_Aug192016\vinod yadav - ericproject (2)\ericproject\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_Aug192016\vinod yadav - ericproject (2)\ericproject\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_Aug192016\vinod yadav - ericproject (2)\ericproject\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_Aug192016\vinod yadav - ericproject (2)\ericproject\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_Aug192016\vinod yadav - ericproject (2)\ericproject\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.dll
+C:\Jyotisna\My Projects\Projects\Commissions_Aug192016\vinod yadav - ericproject (2)\ericproject\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Latest_Jan042017\Build_01012017\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.ServiceWcf.csprojResolveAssemblyReference.cache
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Latest_Jan042017\Build_01012017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Latest_Jan042017\Build_01012017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Latest_Jan042017\Build_01012017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Latest_Jan042017\Build_01012017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Latest_Jan042017\Build_01012017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Latest_Jan042017\Build_01012017\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Latest_Jan042017\Build_01012017\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Latest_Jan042017\Build_01012017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Latest_Jan042017\Build_01012017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Latest_Jan042017\Build_01012017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Latest_Jan042017\Build_01012017\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Latest_Jan042017\Build_01012017\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Latest_Jan042017\Build_01012017\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Latest_Jan042017\Build_01012017\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan102017\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.ServiceWcf.csprojResolveAssemblyReference.cache
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan102017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan102017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan102017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan102017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan102017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan102017\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan102017\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan102017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan102017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan102017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan102017\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan102017\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan102017\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan102017\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan242017\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.ServiceWcf.csprojResolveAssemblyReference.cache
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan242017\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan242017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan242017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan242017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan242017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan242017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan242017\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan242017\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan242017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan242017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan242017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan242017\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan242017\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan242017\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Other\Production_Jan242017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Other\Production_Jan242017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Other\Production_Jan242017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Other\Production_Jan242017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Other\Production_Jan242017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Other\Production_Jan242017\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Other\Production_Jan242017\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Other\Production_Jan242017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Other\Production_Jan242017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Other\Production_Jan242017\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Other\Production_Jan242017\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Other\Production_Jan242017\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Other\Production_Jan242017\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.ServiceWcf.csprojResolveAssemblyReference.cache
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Other\Production_Jan242017\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Other\Production_Jan242017\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3.0.9.3\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3.0.9.3\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3.0.9.3\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3.0.9.3\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3.0.9.3\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3.0.9.3\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3.0.9.3\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3.0.9.3\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3.0.9.3\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3.0.9.3\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3.0.9.3\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3.0.9.3\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3.0.9.3\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.ServiceWcf.csprojResolveAssemblyReference.cache
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3.0.9.3\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3.0.9.3\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3093_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3093_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3093_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3093_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3093_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3093_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3093_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3093_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3093_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3093_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3093_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3093_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3093_trunk\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.ServiceWcf.csprojResolveAssemblyReference.cache
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3093_trunk\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3093_trunk\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3093_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\Excel.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3093_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\ICSharpCode.SharpZipLib.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3093_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\Newtonsoft.Json.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3093_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\Excel.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.ServiceWcf.csprojResolveAssemblyReference.cache
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.ServiceWcf.csproj.CoreCompileInputs.cache
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.dll.config
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\Excel.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\ICSharpCode.SharpZipLib.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\Newtonsoft.Json.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\PGK.Extensions.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.dll.config
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.dll.config
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\Excel.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.ServiceWcf.csproj.CopyComplete
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.pdb
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.dll.config
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.dll
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.pdb
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.dll
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.ServiceWcf\bin\x64\Debug\Excel.dll
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.ServiceWcf\bin\x64\Debug\ICSharpCode.SharpZipLib.dll
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.dll
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.dll
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.dll
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.ServiceWcf\bin\x64\Debug\Newtonsoft.Json.dll
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.ServiceWcf\bin\x64\Debug\PGK.Extensions.dll
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.dll
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.pdb
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.pdb
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.dll.config
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.pdb
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.pdb
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.dll.config
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.ServiceWcf\bin\x64\Debug\Excel.pdb
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.pdb
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.ServiceWcf.csprojResolveAssemblyReference.cache
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.ServiceWcf.csproj.CoreCompileInputs.cache
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.dll
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.pdb
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.dll.config
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.dll
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.pdb
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.dll
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.ServiceWcf\bin\x64\Debug\Excel.dll
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.ServiceWcf\bin\x64\Debug\ICSharpCode.SharpZipLib.dll
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.dll
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.dll
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.dll
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.ServiceWcf\bin\x64\Debug\Newtonsoft.Json.dll
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.ServiceWcf\bin\x64\Debug\PGK.Extensions.dll
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.dll
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.pdb
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.pdb
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.dll.config
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.pdb
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.ServiceWcf\bin\x64\Debug\Excel.pdb
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.pdb
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.dll.config
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.pdb
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.ServiceWcf.csprojResolveAssemblyReference.cache
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.ServiceWcf.csproj.CoreCompileInputs.cache
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.dll
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.pdb
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.dll.config
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.dll
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.pdb
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.dll
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.ServiceWcf\bin\x64\Debug\Excel.dll
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.ServiceWcf\bin\x64\Debug\ICSharpCode.SharpZipLib.dll
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.dll
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.dll
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.dll
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.ServiceWcf\bin\x64\Debug\Newtonsoft.Json.dll
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.ServiceWcf\bin\x64\Debug\PGK.Extensions.dll
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.dll
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.pdb
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.pdb
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.dll.config
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.pdb
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.pdb
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.dll.config
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.ServiceWcf\bin\x64\Debug\Excel.pdb
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.pdb
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.ServiceWcf.csprojResolveAssemblyReference.cache
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.ServiceWcf.csproj.CoreCompileInputs.cache
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.dll
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.pdb
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.dll.config
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.dll
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.pdb
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.dll
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.ServiceWcf\bin\x64\Debug\Excel.dll
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.ServiceWcf\bin\x64\Debug\ICSharpCode.SharpZipLib.dll
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.dll
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.dll
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.dll
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.ServiceWcf\bin\x64\Debug\Newtonsoft.Json.dll
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.ServiceWcf\bin\x64\Debug\PGK.Extensions.dll
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.dll
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.pdb
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.pdb
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.dll.config
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.pdb
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.pdb
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.dll.config
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.ServiceWcf\bin\x64\Debug\Excel.pdb
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.pdb
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.ServiceWcf.csprojResolveAssemblyReference.cache
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.ServiceWcf.csproj.CoreCompileInputs.cache
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.dll
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.pdb
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.dll.config
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.dll
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.WcfService.pdb
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.dll
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\Excel.dll
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\ICSharpCode.SharpZipLib.dll
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.dll
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.dll
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.dll
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\Newtonsoft.Json.dll
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\PGK.Extensions.dll
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.dll
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\ActionLogger.pdb
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.pdb
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.BusinessLibrary.dll.config
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.EmailFax.pdb
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.pdb
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\MyAgencyVault.DataAccessLayer.dll.config
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\Excel.pdb
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.ServiceWcf\bin\x64\Debug\WcfHttpCompressionEnabler.pdb
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.ServiceWcf.csprojAssemblyReference.cache
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.ServiceWcf.csproj.CoreCompileInputs.cache
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.ServiceWcf.csproj.CopyComplete
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.dll
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.ServiceWcf\obj\x64\Debug\MyAgencyVault.WcfService.pdb

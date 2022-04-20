@@ -1,0 +1,5 @@
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\ActionLogger\bin\Release\ActionLogger.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\ActionLogger\bin\Release\ActionLogger.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\ActionLogger\obj\Release\ActionLogger.csproj.CoreCompileInputs.cache
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\ActionLogger\obj\Release\ActionLogger.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\ActionLogger\obj\Release\ActionLogger.pdb

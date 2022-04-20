@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EEE1FA9E-FF1E-4E88-87DE-AEC013AC1124}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyAgencyVault.BusinessLibrary</RootNamespace>
+    <AssemblyName>MyAgencyVault.BusinessLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>http://localhost/MyAgencyVault.BusinessLibrary/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\MyAgencyVault.BusinessLibrary.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\MyAgencyVault.BusinessLibrary.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ActionLogger">
+      <HintPath>..\ActionLogger\bin\Debug\ActionLogger.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>.\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WinForms.10.0.40219.1\lib\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MyAgencyVault.ServiceWcf\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PGK.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f93e897f802ddcb7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\PGK.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdvancedPayee.cs" />
+    <Compile Include="AESEncrypt.cs" />
+    <Compile Include="ApplicationFault.cs" />
+    <Compile Include="Base\HelperClass.cs" />
+    <Compile Include="Base\IEditable.cs" />
+    <Compile Include="Base\IFile.cs" />
+    <Compile Include="Base\IOutgoingSchedule.cs" />
+    <Compile Include="Base\IIncomingSchedule.cs" />
+    <Compile Include="Batch.cs" />
+    <Compile Include="BatchFiles.cs" />
+    <Compile Include="BillingLineDetail.cs" />
+    <Compile Include="BLHelper.cs" />
+    <Compile Include="Brokercode.cs" />
+    <Compile Include="Calculations.cs" />
+    <Compile Include="Carrier.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="ClientAndPayment.cs" />
+    <Compile Include="ComDeptService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommissionEntry.cs" />
+    <Compile Include="CompManager\BatchInsuredRecored.cs" />
+    <Compile Include="CompManager\BatchStatmentRecords.cs" />
+    <Compile Include="CompType.cs" />
+    <Compile Include="ExcelUtility.cs" />
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="DBConnection.cs" />
+    <Compile Include="Masters\PolicyDetailMasterData.cs" />
+    <Compile Include="PostProcess\DeuPostProcessWrapper.cs" />
+    <Compile Include="PostProcess\FollowUpProcedure.cs" />
+    <Compile Include="PostProcess\GenricMapperPost.cs" />
+    <Compile Include="PostProcess\PolicyLocking.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Report.cs" />
+    <Compile Include="Coverage.cs" />
+    <Compile Include="DEU.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="PayorTemplate.cs" />
+    <Compile Include="ExportCardPayeeInfo.cs" />
+    <Compile Include="ExportDate.cs" />
+    <Compile Include="FollowupIncomingPament.cs" />
+    <Compile Include="FollowupIssue.cs" />
+    <Compile Include="FollowUPPayorContacts.cs" />
+    <Compile Include="Formula.cs" />
+    <Compile Include="GlobalIncomingSchedule.cs" />
+    <Compile Include="GlobalPayorContact.cs" />
+    <Compile Include="ImportTransactionFile.cs" />
+    <Compile Include="IncomingPament.cs" />
+    <Compile Include="IncomingSchedule.cs" />
+    <Compile Include="Invoice.cs" />
+    <Compile Include="IssuePolicyDetail.cs" />
+    <Compile Include="Journal.cs" />
+    <Compile Include="LastViewPolicy.cs" />
+    <Compile Include="Licensee.cs" />
+    <Compile Include="LicenseeInvoice.cs" />
+    <Compile Include="LicenseeNote.cs" />
+    <Compile Include="LinkedUser.cs" />
+    <Compile Include="CompManager\LinkPaymentReciptRecords.cs" />
+    <Compile Include="MailServerDetail.cs" />
+    <Compile Include="Masters\BatchDownloadStatus.cs" />
+    <Compile Include="Masters\ComDeptSupport.cs" />
+    <Compile Include="Masters\FileUtility.cs" />
+    <Compile Include="Masters\IssueCategory.cs" />
+    <Compile Include="Masters\IssueReasons.cs" />
+    <Compile Include="Masters\IssueResults.cs" />
+    <Compile Include="Masters\IssueStatus.cs" />
+    <Compile Include="Masters\ReferenceMaster.cs" />
+    <Compile Include="Masters\FileType.cs" />
+    <Compile Include="Masters\LicenseeStatus.cs" />
+    <Compile Include="Masters\PayorToolAvailablelFieldType.cs" />
+    <Compile Include="Masters\PayorToolIncomingFieldType.cs" />
+    <Compile Include="Masters\PayorToolLearnedlFieldType.cs" />
+    <Compile Include="Masters\PayorToolMaskedFieldType.cs" />
+    <Compile Include="Masters\PolicyIncomingPaymentType.cs" />
+    <Compile Include="Masters\PolicyIncomingScheduleType.cs" />
+    <Compile Include="Masters\PolicyOutgoingScheduleType.cs" />
+    <Compile Include="Masters\Question.cs" />
+    <Compile Include="Masters\Region.cs" />
+    <Compile Include="Masters\ServiceChargeType.cs" />
+    <Compile Include="Masters\SystemConstant.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Masters\Zip.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="News.cs" />
+    <Compile Include="Note.cs" />
+    <Compile Include="OutGoingPayment.cs" />
+    <Compile Include="OutgoingShedule.cs" />
+    <Compile Include="Payee.cs" />
+    <Compile Include="Payor.cs" />
+    <Compile Include="PayorDefaults.cs" />
+    <Compile Include="PayorSource.cs" />
+    <Compile Include="PayorTool.cs" />
+    <Compile Include="PayorToolField.cs" />
+    <Compile Include="PayorSiteLoginInfo.cs" />
+    <Compile Include="PolicyNotes.cs" />
+    <Compile Include="PolicyOutgoingDistribution.cs" />
+    <Compile Include="PolicySearched.cs" />
+    <Compile Include="PolicyToolIncommingShedule.cs" />
+    <Compile Include="Policy.cs" />
+    <Compile Include="PolicyDetails.cs" />
+    <Compile Include="PolicyLearnedField.cs" />
+    <Compile Include="Masters\PolicyMode.cs" />
+    <Compile Include="PolicySettings.cs" />
+    <Compile Include="Masters\PolicyStatus.cs" />
+    <Compile Include="Masters\PolicyTerminationReason.cs" />
+    <Compile Include="PostProcess\CommissionDashboard.cs" />
+    <Compile Include="PostProcess\DEULearnedPost.cs" />
+    <Compile Include="PostProcess\DeuSearchedPolicies.cs" />
+    <Compile Include="PostProcess\ExcelUpload.cs" />
+    <Compile Include="PostProcess\LearnedToPolicyPost.cs" />
+    <Compile Include="PostProcess\MasterConst.cs" />
+    <Compile Include="PostProcess\PolicyPaymentEntriesPost.cs" />
+    <Compile Include="PostProcess\PolicyToLearnPost.cs" />
+    <Compile Include="PostProcess\PostUtill.cs" />
+    <Compile Include="PostProcess\ServerLog.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Masters\ServiceProduct.cs" />
+    <Compile Include="ReportingService\ReportExecutionService.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Statement.cs" />
+    <Compile Include="StatementDates.cs" />
+    <Compile Include="PostProcess\LinkPaymentPolicies.cs" />
+    <Compile Include="TempCollection\PostBackUp.cs" />
+    <Compile Include="User .cs" />
+    <Compile Include="UserDetail.cs" />
+    <Compile Include="UserPermissions.cs" />
+    <Compile Include="UserRole.cs" />
+    <Compile Include="VariableCalculation.cs" />
+    <Compile Include="WebDevPath.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyAgencyVault.DataAccessLayer\MyAgencyVault.DataAccessLayer.csproj">
+      <Project>{dc1b4809-28a9-4192-8bea-2fac0d68c291}</Project>
+      <Name>MyAgencyVault.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyAgencyVault.EmailFax\MyAgencyVault.EmailFax.csproj">
+      <Project>{284093B8-C59A-4274-8446-D7C0C624ED08}</Project>
+      <Name>MyAgencyVault.EmailFax</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PostProcess\TextFile1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

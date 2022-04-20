@@ -1,0 +1,160 @@
+E:\Gajender\Projects\MyAgentVaultLatest\MyAgencySolution\ActionLogger\bin\Debug\ActionLogger.dll
+E:\Gajender\Projects\MyAgentVaultLatest\MyAgencySolution\ActionLogger\bin\Debug\ActionLogger.pdb
+E:\Gajender\Projects\MyAgentVaultLatest\MyAgencySolution\ActionLogger\obj\Debug\ResolveAssemblyReference.cache
+E:\Gajender\Projects\MyAgentVaultLatest\MyAgencySolution\ActionLogger\obj\Debug\ActionLogger.dll
+E:\Gajender\Projects\MyAgentVaultLatest\MyAgencySolution\ActionLogger\obj\Debug\ActionLogger.pdb
+D:\ericproject\ActionLogger\bin\Debug\ActionLogger.dll
+D:\ericproject\ActionLogger\bin\Debug\ActionLogger.pdb
+D:\ericproject\ActionLogger\obj\Debug\ActionLogger.dll
+D:\ericproject\ActionLogger\obj\Debug\ActionLogger.pdb
+E:\ericproject\ActionLogger\bin\Debug\ActionLogger.dll
+E:\ericproject\ActionLogger\bin\Debug\ActionLogger.pdb
+E:\ericproject\ActionLogger\obj\Debug\ResolveAssemblyReference.cache
+E:\ericproject\ActionLogger\obj\Debug\ActionLogger.dll
+E:\ericproject\ActionLogger\obj\Debug\ActionLogger.pdb
+E:\Backup\ericproject\ActionLogger\bin\Debug\ActionLogger.dll
+E:\Backup\ericproject\ActionLogger\bin\Debug\ActionLogger.pdb
+E:\Backup\ericproject\ActionLogger\obj\Debug\ResolveAssemblyReference.cache
+E:\Backup\ericproject\ActionLogger\obj\Debug\ActionLogger.dll
+E:\Backup\ericproject\ActionLogger\obj\Debug\ActionLogger.pdb
+E:\Workingfolder\ericproject\ActionLogger\bin\Debug\ActionLogger.dll
+E:\Workingfolder\ericproject\ActionLogger\bin\Debug\ActionLogger.pdb
+E:\Workingfolder\ericproject\ActionLogger\obj\Debug\ResolveAssemblyReference.cache
+E:\Workingfolder\ericproject\ActionLogger\obj\Debug\ActionLogger.dll
+E:\Workingfolder\ericproject\ActionLogger\obj\Debug\ActionLogger.pdb
+E:\Workingfolder\ericproject\ericproject\ActionLogger\bin\Debug\ActionLogger.dll
+E:\Workingfolder\ericproject\ericproject\ActionLogger\bin\Debug\ActionLogger.pdb
+E:\Workingfolder\ericproject\ericproject\ActionLogger\obj\Debug\ActionLogger.dll
+E:\Workingfolder\ericproject\ericproject\ActionLogger\obj\Debug\ActionLogger.pdb
+E:\Production\16012016\ericproject\ericproject\ActionLogger\bin\Debug\ActionLogger.dll
+E:\Production\16012016\ericproject\ericproject\ActionLogger\bin\Debug\ActionLogger.pdb
+E:\Production\16012016\ericproject\ericproject\ActionLogger\obj\Debug\ActionLogger.dll
+E:\Production\16012016\ericproject\ericproject\ActionLogger\obj\Debug\ActionLogger.pdb
+E:\Production\Working\ericproject\ericproject\ActionLogger\bin\Debug\ActionLogger.dll
+E:\Production\Working\ericproject\ericproject\ActionLogger\bin\Debug\ActionLogger.pdb
+E:\Production\Working\ericproject\ericproject\ActionLogger\obj\Debug\ActionLogger.dll
+E:\Production\Working\ericproject\ericproject\ActionLogger\obj\Debug\ActionLogger.pdb
+E:\Production\Working\ericproject\ActionLogger\bin\Debug\ActionLogger.dll
+E:\Production\Working\ericproject\ActionLogger\bin\Debug\ActionLogger.pdb
+E:\Production\Working\ericproject\ActionLogger\obj\Debug\ActionLogger.dll
+E:\Production\Working\ericproject\ActionLogger\obj\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_Aug192016\vinod yadav - ericproject (2)\ericproject\ActionLogger\bin\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_Aug192016\vinod yadav - ericproject (2)\ericproject\ActionLogger\bin\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_Aug192016\vinod yadav - ericproject (2)\ericproject\ActionLogger\obj\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_Aug192016\vinod yadav - ericproject (2)\ericproject\ActionLogger\obj\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Latest_Jan042017\Build_01012017\ActionLogger\bin\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Latest_Jan042017\Build_01012017\ActionLogger\bin\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Latest_Jan042017\Build_01012017\ActionLogger\obj\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Latest_Jan042017\Build_01012017\ActionLogger\obj\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan102017\ActionLogger\bin\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan102017\ActionLogger\bin\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan102017\ActionLogger\obj\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan102017\ActionLogger\obj\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan242017\ActionLogger\bin\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan242017\ActionLogger\bin\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan242017\ActionLogger\obj\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan242017\ActionLogger\obj\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Other\Production_Jan242017\ActionLogger\bin\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Other\Production_Jan242017\ActionLogger\bin\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Other\Production_Jan242017\ActionLogger\obj\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Other\Production_Jan242017\ActionLogger\obj\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3.0.9.3\ActionLogger\bin\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3.0.9.3\ActionLogger\bin\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3.0.9.3\ActionLogger\obj\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3.0.9.3\ActionLogger\obj\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\ActionLogger\bin\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\ActionLogger\bin\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\ActionLogger\obj\Debug\ActionLogger.csprojResolveAssemblyReference.cache
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\ActionLogger\obj\Debug\ActionLogger.csproj.CoreCompileInputs.cache
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\ActionLogger\obj\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\ActionLogger\obj\Debug\ActionLogger.pdb
+E:\Projects\commission Project\Commission Application\Production 25-09-18\ActionLogger\bin\Debug\ActionLogger.dll
+E:\Projects\commission Project\Commission Application\Production 25-09-18\ActionLogger\bin\Debug\ActionLogger.pdb
+E:\Projects\commission Project\Commission Application\Production 25-09-18\ActionLogger\obj\Debug\ActionLogger.csproj.CoreCompileInputs.cache
+E:\Projects\commission Project\Commission Application\Production 25-09-18\ActionLogger\obj\Debug\ActionLogger.dll
+E:\Projects\commission Project\Commission Application\Production 25-09-18\ActionLogger\obj\Debug\ActionLogger.pdb
+E:\Projects\commission Project\Commission Application\09-10-2018\ActionLogger\bin\Debug\ActionLogger.dll
+E:\Projects\commission Project\Commission Application\09-10-2018\ActionLogger\bin\Debug\ActionLogger.pdb
+E:\Projects\commission Project\Commission Application\09-10-2018\ActionLogger\obj\Debug\ActionLogger.csproj.CoreCompileInputs.cache
+E:\Projects\commission Project\Commission Application\09-10-2018\ActionLogger\obj\Debug\ActionLogger.dll
+E:\Projects\commission Project\Commission Application\09-10-2018\ActionLogger\obj\Debug\ActionLogger.pdb
+E:\Projects\commission Project\issue fix\Application\ActionLogger\bin\Debug\ActionLogger.dll
+E:\Projects\commission Project\issue fix\Application\ActionLogger\bin\Debug\ActionLogger.pdb
+E:\Projects\commission Project\issue fix\Application\ActionLogger\obj\Debug\ActionLogger.csprojResolveAssemblyReference.cache
+E:\Projects\commission Project\issue fix\Application\ActionLogger\obj\Debug\ActionLogger.csproj.CoreCompileInputs.cache
+E:\Projects\commission Project\issue fix\Application\ActionLogger\obj\Debug\ActionLogger.dll
+E:\Projects\commission Project\issue fix\Application\ActionLogger\obj\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\branches\3.1.1.6\ActionLogger\bin\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\branches\3.1.1.6\ActionLogger\bin\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\branches\3.1.1.6\ActionLogger\obj\Debug\ActionLogger.csprojResolveAssemblyReference.cache
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\branches\3.1.1.6\ActionLogger\obj\Debug\ActionLogger.csproj.CoreCompileInputs.cache
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\branches\3.1.1.6\ActionLogger\obj\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\branches\3.1.1.6\ActionLogger\obj\Debug\ActionLogger.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.1.7\ActionLogger\bin\Debug\ActionLogger.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.1.7\ActionLogger\bin\Debug\ActionLogger.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.1.7\ActionLogger\obj\Debug\ActionLogger.csproj.CoreCompileInputs.cache
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.1.7\ActionLogger\obj\Debug\ActionLogger.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.1.7\ActionLogger\obj\Debug\ActionLogger.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.1.8\ActionLogger\bin\Debug\ActionLogger.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.1.8\ActionLogger\bin\Debug\ActionLogger.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.1.8\ActionLogger\obj\Debug\ActionLogger.csproj.CoreCompileInputs.cache
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.1.8\ActionLogger\obj\Debug\ActionLogger.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.1.8\ActionLogger\obj\Debug\ActionLogger.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.2\ActionLogger\bin\Debug\ActionLogger.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.2\ActionLogger\bin\Debug\ActionLogger.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.2\ActionLogger\obj\Debug\ActionLogger.csproj.CoreCompileInputs.cache
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.2\ActionLogger\obj\Debug\ActionLogger.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.2\ActionLogger\obj\Debug\ActionLogger.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.2\ActionLogger\obj\Debug\ActionLogger.csprojAssemblyReference.cache
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.4\ActionLogger\bin\Debug\ActionLogger.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.4\ActionLogger\bin\Debug\ActionLogger.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.4\ActionLogger\obj\Debug\ActionLogger.csproj.CoreCompileInputs.cache
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.4\ActionLogger\obj\Debug\ActionLogger.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.4\ActionLogger\obj\Debug\ActionLogger.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.4\ActionLogger\obj\Debug\ActionLogger.csprojAssemblyReference.cache
+D:\Projects\Commission_desktop\10-17-2019\ActionLogger\bin\Debug\ActionLogger.dll
+D:\Projects\Commission_desktop\10-17-2019\ActionLogger\bin\Debug\ActionLogger.pdb
+D:\Projects\Commission_desktop\10-17-2019\ActionLogger\obj\Debug\ActionLogger.csprojAssemblyReference.cache
+D:\Projects\Commission_desktop\10-17-2019\ActionLogger\obj\Debug\ActionLogger.csproj.CoreCompileInputs.cache
+D:\Projects\Commission_desktop\10-17-2019\ActionLogger\obj\Debug\ActionLogger.dll
+D:\Projects\Commission_desktop\10-17-2019\ActionLogger\obj\Debug\ActionLogger.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\ActionLogger\bin\Debug\ActionLogger.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\ActionLogger\bin\Debug\ActionLogger.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\ActionLogger\obj\Debug\ActionLogger.csproj.CoreCompileInputs.cache
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\ActionLogger\obj\Debug\ActionLogger.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\ActionLogger\obj\Debug\ActionLogger.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\ActionLogger\obj\Debug\ActionLogger.csprojAssemblyReference.cache
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\ActionLogger\bin\Debug\ActionLogger.dll
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\ActionLogger\bin\Debug\ActionLogger.pdb
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\ActionLogger\obj\Debug\ActionLogger.csproj.CoreCompileInputs.cache
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\ActionLogger\obj\Debug\ActionLogger.dll
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\ActionLogger\obj\Debug\ActionLogger.pdb
+E:\Projects\Commissions\Desktop\Latest_Trunk\ActionLogger\bin\Debug\ActionLogger.dll
+E:\Projects\Commissions\Desktop\Latest_Trunk\ActionLogger\bin\Debug\ActionLogger.pdb
+E:\Projects\Commissions\Desktop\Latest_Trunk\ActionLogger\obj\Debug\ActionLogger.csprojAssemblyReference.cache
+E:\Projects\Commissions\Desktop\Latest_Trunk\ActionLogger\obj\Debug\ActionLogger.csproj.CoreCompileInputs.cache
+E:\Projects\Commissions\Desktop\Latest_Trunk\ActionLogger\obj\Debug\ActionLogger.dll
+E:\Projects\Commissions\Desktop\Latest_Trunk\ActionLogger\obj\Debug\ActionLogger.pdb
+E:\Projects\Commissions\ImportPOlicyService\ActionLogger\bin\Debug\ActionLogger.dll
+E:\Projects\Commissions\ImportPOlicyService\ActionLogger\bin\Debug\ActionLogger.pdb
+E:\Projects\Commissions\ImportPOlicyService\ActionLogger\obj\Debug\ActionLogger.csproj.CoreCompileInputs.cache
+E:\Projects\Commissions\ImportPOlicyService\ActionLogger\obj\Debug\ActionLogger.dll
+E:\Projects\Commissions\ImportPOlicyService\ActionLogger\obj\Debug\ActionLogger.pdb
+E:\Jyotisna\Projects\New BG\trunk\ActionLogger\bin\Debug\ActionLogger.dll
+E:\Jyotisna\Projects\New BG\trunk\ActionLogger\bin\Debug\ActionLogger.pdb
+E:\Jyotisna\Projects\New BG\trunk\ActionLogger\obj\Debug\ActionLogger.csprojAssemblyReference.cache
+E:\Jyotisna\Projects\New BG\trunk\ActionLogger\obj\Debug\ActionLogger.csproj.CoreCompileInputs.cache
+E:\Jyotisna\Projects\New BG\trunk\ActionLogger\obj\Debug\ActionLogger.dll
+E:\Jyotisna\Projects\New BG\trunk\ActionLogger\obj\Debug\ActionLogger.pdb
+E:\Jyotisna\Projects\NewBG\trunk\ActionLogger\bin\Debug\ActionLogger.dll
+E:\Jyotisna\Projects\NewBG\trunk\ActionLogger\bin\Debug\ActionLogger.pdb
+E:\Jyotisna\Projects\NewBG\trunk\ActionLogger\obj\Debug\ActionLogger.csproj.CoreCompileInputs.cache
+E:\Jyotisna\Projects\NewBG\trunk\ActionLogger\obj\Debug\ActionLogger.dll
+E:\Jyotisna\Projects\NewBG\trunk\ActionLogger\obj\Debug\ActionLogger.pdb
+C:\Rohit\Code\copy trunk - Copy\trunk\ActionLogger\bin\Debug\ActionLogger.dll
+C:\Rohit\Code\copy trunk - Copy\trunk\ActionLogger\bin\Debug\ActionLogger.pdb
+C:\Rohit\Code\copy trunk - Copy\trunk\ActionLogger\obj\Debug\ActionLogger.csprojAssemblyReference.cache
+C:\Rohit\Code\copy trunk - Copy\trunk\ActionLogger\obj\Debug\ActionLogger.csproj.CoreCompileInputs.cache
+C:\Rohit\Code\copy trunk - Copy\trunk\ActionLogger\obj\Debug\ActionLogger.dll
+C:\Rohit\Code\copy trunk - Copy\trunk\ActionLogger\obj\Debug\ActionLogger.pdb
+E:\Jyotisna\Projects\NewBG\trunk\ActionLogger\obj\Debug\ActionLogger.csprojAssemblyReference.cache

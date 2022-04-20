@@ -1,0 +1,25 @@
+﻿March 22, 2011
+1) LinkedAgent
+	-> Remove the IsConnected(bit,null) column from the table.
+	-> Change UserID and UserConnectedID from null to not null.
+2) UserDetail
+	-> Change relationship between UserCredentials and UserDetail one to one.
+
+Database Changes - 18May 2011 by Gaurav Prajapati
+	Change data type of MonthlyPremium column from varchar(50) to money in following table.
+
+	Policies - MonthlyPremium
+	PoliciesHistory - MonthlyPremium
+	PolicyLearnedFields - MonthlyPremium
+	PolicyLearnedFieldsHistory - MonthlyPremium
+
+	Change the SpitPercentage and CommissionPercentage to float field in following table.
+	PoliciesPaymentEntries
+	EntriesByDeu
+	AutoDeuEntries
+
+Database Changes - 19May 2011 by Gaurav Prajapati
+	Change data type of Premium and Payment column from money to float PolicyOutgoingPayments in following table.
+
+	Database changes-16 october by vinod Yadav
+	 Add new table "ImportToolCommTranslator" for import tool commission translator

@@ -1,0 +1,242 @@
+D:\Projects\WPF\EricWood\MyAgencyVaultLatest\MyAgencySolution\MyAgencyVault.EmailFax\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\WPF\EricWood\MyAgencyVaultLatest\MyAgencySolution\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+D:\Projects\WPF\EricWood\MyAgencyVaultLatest\MyAgencySolution\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+D:\Projects\WPF\EricWood\MyAgencyVaultLatest\MyAgencySolution\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+D:\Projects\WPF\EricWood\MyAgencyVaultLatest\MyAgencySolution\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+D:\Projects\WPF\EricWood\MyAgencyVaultLatest\MyAgencySolution\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+D:\Projects\WPF\EricWood\MyAgencyVaultLatest\MyAgencySolution\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+E:\Gajender\Projects\MyAgentVaultLatest\MyAgencySolution\MyAgencyVault.EmailFax\obj\Debug\ResolveAssemblyReference.cache
+D:\ericproject\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+D:\ericproject\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+D:\ericproject\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+D:\ericproject\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+D:\ericproject\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+D:\ericproject\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+E:\ericproject\MyAgencyVault.EmailFax\obj\Debug\ResolveAssemblyReference.cache
+E:\ericproject\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+E:\ericproject\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+E:\ericproject\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+E:\ericproject\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+E:\ericproject\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+E:\ericproject\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+E:\Backup\ericproject\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+E:\Backup\ericproject\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+E:\Backup\ericproject\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+E:\Backup\ericproject\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+E:\Backup\ericproject\MyAgencyVault.EmailFax\obj\Debug\ResolveAssemblyReference.cache
+E:\Backup\ericproject\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+E:\Backup\ericproject\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+E:\Workingfolder\ericproject\MyAgencyVault.EmailFax\obj\Debug\ResolveAssemblyReference.cache
+E:\Workingfolder\ericproject\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+E:\Workingfolder\ericproject\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+E:\Workingfolder\ericproject\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+E:\Workingfolder\ericproject\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+E:\Workingfolder\ericproject\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+E:\Workingfolder\ericproject\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+E:\Production\16012016\ericproject\ericproject\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csprojResolveAssemblyReference.cache
+E:\Production\Working\ericproject\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+E:\Production\Working\ericproject\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+E:\Production\Working\ericproject\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+E:\Production\Working\ericproject\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+E:\Production\Working\ericproject\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csprojResolveAssemblyReference.cache
+E:\Production\Working\ericproject\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+E:\Production\Working\ericproject\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_Aug192016\vinod yadav - ericproject (2)\ericproject\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+C:\Jyotisna\My Projects\Projects\Commissions_Aug192016\vinod yadav - ericproject (2)\ericproject\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_Aug192016\vinod yadav - ericproject (2)\ericproject\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_Aug192016\vinod yadav - ericproject (2)\ericproject\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_Aug192016\vinod yadav - ericproject (2)\ericproject\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+C:\Jyotisna\My Projects\Projects\Commissions_Aug192016\vinod yadav - ericproject (2)\ericproject\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_Aug192016\vinod yadav - ericproject (2)\ericproject\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csprojResolveAssemblyReference.cache
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Latest_Jan042017\Build_01012017\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Latest_Jan042017\Build_01012017\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Latest_Jan042017\Build_01012017\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Latest_Jan042017\Build_01012017\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Latest_Jan042017\Build_01012017\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Latest_Jan042017\Build_01012017\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Latest_Jan042017\Build_01012017\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csprojResolveAssemblyReference.cache
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan102017\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan102017\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan102017\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan102017\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan102017\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan102017\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan242017\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan242017\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan242017\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan242017\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan242017\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan242017\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Production_Jan242017\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csprojResolveAssemblyReference.cache
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Other\Production_Jan242017\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Other\Production_Jan242017\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Other\Production_Jan242017\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Other\Production_Jan242017\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Other\Production_Jan242017\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Other\Production_Jan242017\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Other\Production_Jan242017\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csprojResolveAssemblyReference.cache
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3.0.9.3\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3.0.9.3\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3.0.9.3\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3.0.9.3\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3.0.9.3\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csprojResolveAssemblyReference.cache
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3.0.9.3\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\3.0.9.3\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csprojResolveAssemblyReference.cache
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CoreCompileInputs.cache
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CopyComplete
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\trunk\3.0.9.3_trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csprojResolveAssemblyReference.cache
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CoreCompileInputs.cache
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+E:\Projects\commission Project\10-07-18 production\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csprojResolveAssemblyReference.cache
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CoreCompileInputs.cache
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+E:\Projects\commission Project\Commission Application\Production 25-09-18\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csprojResolveAssemblyReference.cache
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CoreCompileInputs.cache
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+E:\Projects\commission Project\Commission Application\09-10-2018\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csprojResolveAssemblyReference.cache
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CoreCompileInputs.cache
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+E:\Projects\commission Project\issue fix\Application\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\branches\3.1.1.6\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\branches\3.1.1.6\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\branches\3.1.1.6\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\branches\3.1.1.6\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\branches\3.1.1.6\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csprojResolveAssemblyReference.cache
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\branches\3.1.1.6\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CoreCompileInputs.cache
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\branches\3.1.1.6\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CopyComplete
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\branches\3.1.1.6\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+C:\Jyotisna\My Projects\Projects\Commissions_CodeBase\Local SVN\Trunk\branches\3.1.1.6\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.1.7\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.1.7\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.1.7\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.1.7\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.1.7\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csprojAssemblyReference.cache
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.1.7\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CoreCompileInputs.cache
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.1.7\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CopyComplete
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.1.7\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.1.7\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.1.8\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.1.8\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.1.8\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.1.8\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.1.8\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csprojAssemblyReference.cache
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.1.8\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CoreCompileInputs.cache
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.1.8\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CopyComplete
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.1.8\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.1.8\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.2\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.2\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.2\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.2\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.2\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csprojAssemblyReference.cache
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.2\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CoreCompileInputs.cache
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.2\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CopyComplete
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.2\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.2\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.4\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.4\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.4\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.4\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.4\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csprojAssemblyReference.cache
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.4\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CoreCompileInputs.cache
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.4\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CopyComplete
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.4\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.4\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+D:\Projects\Commission_desktop\10-17-2019\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+D:\Projects\Commission_desktop\10-17-2019\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+D:\Projects\Commission_desktop\10-17-2019\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+D:\Projects\Commission_desktop\10-17-2019\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+D:\Projects\Commission_desktop\10-17-2019\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csprojAssemblyReference.cache
+D:\Projects\Commission_desktop\10-17-2019\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CoreCompileInputs.cache
+D:\Projects\Commission_desktop\10-17-2019\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CopyComplete
+D:\Projects\Commission_desktop\10-17-2019\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+D:\Projects\Commission_desktop\10-17-2019\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csprojAssemblyReference.cache
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CoreCompileInputs.cache
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CopyComplete
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+E:\Jyotisna\Projects\Local SVN\Trunk\branches\3.1.2.7\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csprojAssemblyReference.cache
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CoreCompileInputs.cache
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CopyComplete
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+E:\Jyotisna\Projects\Local SVN\Latest_Trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+E:\Projects\Commissions\Desktop\Latest_Trunk\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+E:\Projects\Commissions\Desktop\Latest_Trunk\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+E:\Projects\Commissions\Desktop\Latest_Trunk\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+E:\Projects\Commissions\Desktop\Latest_Trunk\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+E:\Projects\Commissions\Desktop\Latest_Trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csprojAssemblyReference.cache
+E:\Projects\Commissions\Desktop\Latest_Trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CoreCompileInputs.cache
+E:\Projects\Commissions\Desktop\Latest_Trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CopyComplete
+E:\Projects\Commissions\Desktop\Latest_Trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+E:\Projects\Commissions\Desktop\Latest_Trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+E:\Projects\Commissions\ImportPOlicyService\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+E:\Projects\Commissions\ImportPOlicyService\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+E:\Projects\Commissions\ImportPOlicyService\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+E:\Projects\Commissions\ImportPOlicyService\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+E:\Projects\Commissions\ImportPOlicyService\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csprojAssemblyReference.cache
+E:\Projects\Commissions\ImportPOlicyService\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CoreCompileInputs.cache
+E:\Projects\Commissions\ImportPOlicyService\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CopyComplete
+E:\Projects\Commissions\ImportPOlicyService\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+E:\Projects\Commissions\ImportPOlicyService\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+E:\Jyotisna\Projects\New BG\trunk\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+E:\Jyotisna\Projects\New BG\trunk\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+E:\Jyotisna\Projects\New BG\trunk\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+E:\Jyotisna\Projects\New BG\trunk\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+E:\Jyotisna\Projects\New BG\trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csprojAssemblyReference.cache
+E:\Jyotisna\Projects\New BG\trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CoreCompileInputs.cache
+E:\Jyotisna\Projects\New BG\trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CopyComplete
+E:\Jyotisna\Projects\New BG\trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+E:\Jyotisna\Projects\New BG\trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+E:\Jyotisna\Projects\NewBG\trunk\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+E:\Jyotisna\Projects\NewBG\trunk\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+E:\Jyotisna\Projects\NewBG\trunk\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+E:\Jyotisna\Projects\NewBG\trunk\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+E:\Jyotisna\Projects\NewBG\trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csprojAssemblyReference.cache
+E:\Jyotisna\Projects\NewBG\trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CoreCompileInputs.cache
+E:\Jyotisna\Projects\NewBG\trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CopyComplete
+E:\Jyotisna\Projects\NewBG\trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+E:\Jyotisna\Projects\NewBG\trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+C:\Rohit\Code\copy trunk - Copy\trunk\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+C:\Rohit\Code\copy trunk - Copy\trunk\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+C:\Rohit\Code\copy trunk - Copy\trunk\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+C:\Rohit\Code\copy trunk - Copy\trunk\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+C:\Rohit\Code\copy trunk - Copy\trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csprojAssemblyReference.cache
+C:\Rohit\Code\copy trunk - Copy\trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CoreCompileInputs.cache
+C:\Rohit\Code\copy trunk - Copy\trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CopyComplete
+C:\Rohit\Code\copy trunk - Copy\trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+C:\Rohit\Code\copy trunk - Copy\trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb

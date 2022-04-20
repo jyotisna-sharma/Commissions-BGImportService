@@ -1,0 +1,279 @@
+﻿
+CommissionDepartmentEntities
+MyAgencyEntity.edmx
+
+Note--- [MasterIncomingPaymentTypes] is on policy level
+
+.......................................................
+(1)CheckForScheduleMatches in PostUtill.cs is to complete by me n discuss by Vikas 
+
+[DataContract]
+    public class DeuSearchedPolicy
+    {
+        [DataMember]
+        public Guid PolicyId { get; set; }
+        [DataMember]
+        public string ClientName { get; set; }
+        [DataMember]
+        public string Insured { get; set; }
+        [DataMember]
+        public string PolicyNumber { get; set; }
+        [DataMember]
+        public string CarrierName { get; set; }
+        [DataMember]
+        public string ProductName { get; set; }
+        [DataMember]
+        public string CompSchedule { get; set; }
+        [DataMember]
+        public string CompType { get; set; }
+        [DataMember]
+        public int PaymentMode { get; set; }
+        [DataMember]
+        public int PolicyStatus { get; set; }
+        [DataMember]
+        public DateTime LastModifiedDate { get; set; }//New Added—22-Feb-11//Ask Gaurav to add required place
+
+//Remove Created on and Created By in policy table
+    }
+
+
+I have to remember something before 
+
+
+Ask for Scheduling---
+	
+	Change in Policy table for 
+		Finding Schedule
+
+-)discuss with Gaurav  where to put Casdcade delete
+
+
+-)For Schedule-
+	
+	Policy table
+
+			IncomingAdvanceScheduleId.
+			OutG
+
+23-Feb [Ankur]
+----------------------
+	
+	*	I will Start from     private static Guid EntryInPoicyPamentEntries(DEUFields deuFields, BasicInformationForProcess _BasicInformationForProcess)
+        function
+
+	*	SplitPer Numeric(18,2) is change to all tables include PolicyPaymentEntries---Remaining
+	*	Doller Per Units  Shold be money Every where include PolicyPaymentEntries	----- Remaining
+	*	CreatdBy in PolicyPaymentEntries should have FK		----done---After Asking with pankaf sir no need to make relation
+	*	ClientID have no realtion in PolicyPaymentEntries	----done---After Asking with pankaf sir no need to make relation
+	*	SplitPer Numeric(18,2) is done in PolicyPaymentEntries	---done----
+	*	Commiission Paid is remove from the PolicyPaymentEntries	----Done
+	*	There is some changes in the tables policy and incoming schedule and advance schedlue-----remaining
+
+	*	Two Column "IsIncomingBasicSchedule" and "IsOutGoingBasicSchedule" is added to the Policy	------Done
+	*	Two Table needed to be created------------------Done
+			...	1)MasterBasicIncoimgSchdule
+			... 2)MasterBasicOutgoingSchedule
+	*	Add one column of Schedule type in incomingschedule n outgoing schedule for basic n relate them with master tables---Done
+	*	Add two column isIncomingBasicSchedule n isOutgoingBasicSchedule in policy-------------Done
+	*   For DEU----Remaining
+			Need to add following Column
+				PayorSysID varchar----it is a free text-----Done
+				CompScheduleTypeID need to remove
+				CompScheduleType varchar to add----it is a free text
+	* Deu drop all the relattion ship except statment table----Remaining
+	* drop the relation from followup  in PolicyPaymentEntries		----Remaining
+	* [MasterIncomingPaymentTypes] ,do some thing with Description column----Remaining
+	* PAC,PMC, ModaAvgPremium, AutoTerminationDate,Payment is gone from deu to learned after followup ----remain
+				
+	*********************
+	24 feb 2011
+	   batchStatementData.SearchedPolicy = PostUtill.GetSearchedDeuPolicy(policy.PolicyId);//  remain to complete in DEU.cs
+	   check AddUpdate ofPolicyLearnedFieldOf PolicyLearnedField.cs
+
+	*********************
+	25 feb 2011
+
+
+	**********************
+	26 fab 2011
+
+
+
+	**********************
+	27 feb 2011
+
+	DEu n incoming table add column % of Premium----remaining
+
+	**********************
+2- MAR-2011
+Keep Split in Policy Level....Remain
+Payment in Followup ----leave it---remain
+   ************************
+   1000 --- --- 30%
+
+
+   16-march-2011
+   * PolicyOutGoingSchedule-- PayeeUserCredentialId refferences UserCredentials
+   * policyIncomingScheduke-- SplitPercentage now in Policy
+
+
+
+   Two Way
+
+First Mode Change(priority)
+DateChange and Change Date Range
+
+(1) Mode Change
+	Delete All Issues
+	Recalculate From and To Date
+	Make Date Range 
+	
+	Register Missing Issues IF no payment for any Range
+	If thr any Paymet for range and thr is any open issue, Close that  missing Issue. 
+	Get All Payment For that Policy
+	Check for Varience
+	Create or open issue for that
+	other wise close it
+(2)
+	If Track Or Effective Date Change
+	Calculate From and To Date
+	Delete The Issues wt is outside of boundaries
+	iterate for each range
+	Also delete whome range is mismatch
+	
+	Register Missing Issues IF no payment for any Range
+	If thr any Paymet for range and thr is any open issue, Close that  missing Issue. 
+	Get All Payment For that Policy
+	Check for Varience
+	Create or open issue for that
+	other wise close it
+
+
+
+	Payment Comes
+
+
+
+	Pendings task
+	Link Payment to policy Locking   3313
+	Save Policy Locking
+	Smart field Locking
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   --------------------------
+	-Ankur--Task			-
+   --------------------------
+   2-mar-2011
+   --------------
+   *	Reimplement the Calculation		5 hr
+   *	verify calculation				1 hr
+   
+   3-mar-2011
+   --------------
+   *	GetInMemoryCollectionOfPolicyPaymentEntriesFromDEUInMemoryCollection 2 hr
+   *	Trucation Error is done												 1 hr
+   *	Done Local payor issue is display in followup grid					 2 hr	 	
+
+
+   MSDTC---
+   -----------------------------------
+   http://social.msdn.microsoft.com/Forums/en/adodotnetdataproviders/thread/7172223f-acbe-4472-8cdf-feec80fd2e64
+
+
+
+
+
+
+
+
+
