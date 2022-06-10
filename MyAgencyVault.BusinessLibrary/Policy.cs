@@ -4995,12 +4995,11 @@ namespace MyAgencyVault.BusinessLibrary
             }
 
             //Status
-            if (dt.Columns.Contains("PlanStatusDescription") && dt.Rows[rowIndex]["PlanStatusDescription"] != null && !String.IsNullOrEmpty(Convert.ToString(dt.Rows[rowIndex]["PlanStatusDescription"])))
+            if (dt.Columns.Contains("Status__c") && dt.Rows[rowIndex]["Status__c"] != null && !String.IsNullOrEmpty(Convert.ToString(dt.Rows[rowIndex]["Status__c"])))
             {
                 try
                 {
-                    string strStatus = dt.Rows[rowIndex]["PlanStatusDescription"].ToString();
-                    //objPolicy.PolicyStatusId = (strStatus.ToLower() == "active") ? 0 : (strStatus.ToLower() == "pending") ? 2 : 1;
+                    string strStatus = dt.Rows[rowIndex]["Status__c"].ToString();
 
                     if (strStatus.ToLower() == "active")
                     {
@@ -5008,36 +5007,6 @@ namespace MyAgencyVault.BusinessLibrary
                     }
                     else if (strStatus.ToLower() == "pending")
                     {
-                        //if (dt.Columns.Contains("OriginalPlanStartDate"))
-                        //{
-                        //    string effDate = Convert.ToString(dt.Rows[rowIndex]["OriginalPlanStartDate"]);
-                        //    ActionLogger.Logger.WriteImportPolicyLog("Import Policy string effDate in setting status of policy " + effDate, true, agencyName);
-                        //    //check if value in double, then fetch OA Date
-                        //    double dblEff = 0;
-                        //    Double.TryParse(effDate, out dblEff);
-                        //    if (dblEff > 0)
-                        //    {
-                        //        objPolicy.OriginalEffectiveDate = DateTime.FromOADate(dblEff);
-                        //    }
-                        //    else if (!string.IsNullOrEmpty(effDate))
-                        //    {
-                        //        objPolicy.OriginalEffectiveDate = DateTime.Parse(effDate, System.Globalization.CultureInfo.CurrentCulture); //Convert.ToDateTime(effDate);
-                        //    }
-
-                        //    if (objPolicy.OriginalEffectiveDate != null && (objPolicy.OriginalEffectiveDate > DateTime.Today))
-                        //    {
-                        //        objPolicy.PolicyStatusId = 0;
-                        //    }
-                        //    else
-                        //    {
-                        //        objPolicy.PolicyStatusId = 2;
-                        //    }
-                        //}
-                        //else
-                        //{
-                        //    objPolicy.PolicyStatusId = 2;
-                        //}
-
                         objPolicy.PolicyStatusId = 2;
                         if (objPolicy.OriginalEffectiveDate != null && objPolicy.OriginalEffectiveDate > DateTime.Today)
                         {
@@ -5051,9 +5020,73 @@ namespace MyAgencyVault.BusinessLibrary
                 }
                 catch (Exception ex)
                 {
-                    errMsgPolicy.Add("PlanStatusDescription", ex.Message);
-                    ActionLogger.Logger.WriteImportPolicyLog("Import Policy exception: PlanStatusDescription fields  : " + ex.Message, true, agencyName);
+                    errMsgPolicy.Add("Status__c", ex.Message);
+                    ActionLogger.Logger.WriteImportPolicyLog("Import Policy exception: Status__c fields  : " + ex.Message, true, agencyName);
                     AddImportStatusToDB(importedPolicyID, isNewPolicy, false, benefits_policyID, agencyName);
+                }
+            }
+            else
+            {
+                if (dt.Columns.Contains("PlanStatusDescription") && dt.Rows[rowIndex]["PlanStatusDescription"] != null && !String.IsNullOrEmpty(Convert.ToString(dt.Rows[rowIndex]["PlanStatusDescription"])))
+                {
+                    try
+                    {
+                        string strStatus = dt.Rows[rowIndex]["PlanStatusDescription"].ToString();
+                        //objPolicy.PolicyStatusId = (strStatus.ToLower() == "active") ? 0 : (strStatus.ToLower() == "pending") ? 2 : 1;
+
+                        if (strStatus.ToLower() == "active")
+                        {
+                            objPolicy.PolicyStatusId = 0;
+                        }
+                        else if (strStatus.ToLower() == "pending")
+                        {
+                            //if (dt.Columns.Contains("OriginalPlanStartDate"))
+                            //{
+                            //    string effDate = Convert.ToString(dt.Rows[rowIndex]["OriginalPlanStartDate"]);
+                            //    ActionLogger.Logger.WriteImportPolicyLog("Import Policy string effDate in setting status of policy " + effDate, true, agencyName);
+                            //    //check if value in double, then fetch OA Date
+                            //    double dblEff = 0;
+                            //    Double.TryParse(effDate, out dblEff);
+                            //    if (dblEff > 0)
+                            //    {
+                            //        objPolicy.OriginalEffectiveDate = DateTime.FromOADate(dblEff);
+                            //    }
+                            //    else if (!string.IsNullOrEmpty(effDate))
+                            //    {
+                            //        objPolicy.OriginalEffectiveDate = DateTime.Parse(effDate, System.Globalization.CultureInfo.CurrentCulture); //Convert.ToDateTime(effDate);
+                            //    }
+
+                            //    if (objPolicy.OriginalEffectiveDate != null && (objPolicy.OriginalEffectiveDate > DateTime.Today))
+                            //    {
+                            //        objPolicy.PolicyStatusId = 0;
+                            //    }
+                            //    else
+                            //    {
+                            //        objPolicy.PolicyStatusId = 2;
+                            //    }
+                            //}
+                            //else
+                            //{
+                            //    objPolicy.PolicyStatusId = 2;
+                            //}
+
+                            objPolicy.PolicyStatusId = 2;
+                            if (objPolicy.OriginalEffectiveDate != null && objPolicy.OriginalEffectiveDate > DateTime.Today)
+                            {
+                                objPolicy.PolicyStatusId = 0;
+                            }
+                        }
+                        else
+                        {
+                            objPolicy.PolicyStatusId = 1;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        errMsgPolicy.Add("PlanStatusDescription", ex.Message);
+                        ActionLogger.Logger.WriteImportPolicyLog("Import Policy exception: PlanStatusDescription fields  : " + ex.Message, true, agencyName);
+                        AddImportStatusToDB(importedPolicyID, isNewPolicy, false, benefits_policyID, agencyName);
+                    }
                 }
             }
 
@@ -5089,66 +5122,116 @@ namespace MyAgencyVault.BusinessLibrary
             }*/
 
             ActionLogger.Logger.WriteImportPolicyLog("Import Policy: status is terminated, so updating plan end date and reason ", true, agencyName);
-            if (dt.Columns.Contains("PlanEndDate"))
+            if (dt.Columns.Contains("Termination_Date__c"))
             {
-                if (dt.Rows[rowIndex]["PlanEndDate"] != null && !String.IsNullOrEmpty(Convert.ToString(dt.Rows[rowIndex]["PlanEndDate"])))
-                {
-                    try
-                    {
-                        string termDate = Convert.ToString(dt.Rows[rowIndex]["PlanEndDate"]);
-                        ActionLogger.Logger.WriteImportPolicyLog("Import Policy string termDate: " + termDate, true, agencyName);
-                        //check if value in double, then fetch OA Date
-                        double dblTerm = 0;
-                        Double.TryParse(termDate, out dblTerm);
-                        if (dblTerm > 0)
-                        {
-                            objPolicy.PolicyTerminationDate = DateTime.FromOADate(dblTerm);
-                        }
-                        else
-                        {
-                            objPolicy.PolicyTerminationDate = Convert.ToDateTime(termDate);
-                        }
-                    }
-                    //  objPolicy.PolicyTerminationDate = Convert.ToDateTime(termDate);
-                    catch (Exception ex)
-                    {
-                        errMsgPolicy.Add("PlanEndDate", ex.Message);
-                        //errorCount++;
-                        //Benefits_ErrorMsg m = new Benefits_ErrorMsg(importedPolicyID, benefits_policyID, "PlanEndDate: " + ex.Message);
-                        //errorList.Add(m);
-                        ActionLogger.Logger.WriteImportPolicyLog("Import Policy exception: PlanEndDate  fields  : " + ex.Message, true, agencyName);
-                        AddImportStatusToDB(importedPolicyID, isNewPolicy, false, benefits_policyID, agencyName);
-                        //continue;
-                    }
-                }
-
-
-                //Term reason
-                if (dt.Columns.Contains("TerminationReason"))
-                {
-                    if (dt.Rows[rowIndex]["TerminationReason"] != null && !String.IsNullOrEmpty(Convert.ToString(dt.Rows[rowIndex]["TerminationReason"])))
+                    if (dt.Rows[rowIndex]["Termination_Date__c"] != null && !String.IsNullOrEmpty(Convert.ToString(dt.Rows[rowIndex]["Termination_Date__c"])))
                     {
                         try
                         {
-                            objPolicy.TerminationReasonId = PolicTermisionID(Convert.ToString(dt.Rows[rowIndex]["TerminationReason"]));
+                            string termDate = Convert.ToString(dt.Rows[rowIndex]["Termination_Date__c"]);
+                            ActionLogger.Logger.WriteImportPolicyLog("Import Policy string termDate: " + termDate, true, agencyName);
+                            //check if value in double, then fetch OA Date
+                            double dblTerm = 0;
+                            Double.TryParse(termDate, out dblTerm);
+                            if (dblTerm > 0)
+                            {
+                                objPolicy.PolicyTerminationDate = DateTime.FromOADate(dblTerm);
+                            }
+                            else
+                            {
+                                objPolicy.PolicyTerminationDate = Convert.ToDateTime(termDate);
+                            }
                         }
                         catch (Exception ex)
                         {
-                            errMsgPolicy.Add("TerminationReason", ex.Message);
+                            errMsgPolicy.Add("PlanEndDate", ex.Message);
+                            ActionLogger.Logger.WriteImportPolicyLog("Import Policy exception: PlanEndDate  fields  : " + ex.Message, true, agencyName);
+                            AddImportStatusToDB(importedPolicyID, isNewPolicy, false, benefits_policyID, agencyName);
+                        }
+                    }
+                    //Term reason
+                    if (dt.Columns.Contains("TerminationReason"))
+                    {
+                        if (dt.Rows[rowIndex]["TerminationReason"] != null && !String.IsNullOrEmpty(Convert.ToString(dt.Rows[rowIndex]["TerminationReason"])))
+                        {
+                            try
+                            {
+                                objPolicy.TerminationReasonId = PolicTermisionID(Convert.ToString(dt.Rows[rowIndex]["TerminationReason"]));
+                            }
+                            catch (Exception ex)
+                            {
+                                errMsgPolicy.Add("TerminationReason", ex.Message);
+                                //errorCount++;
+                                //Benefits_ErrorMsg m = new Benefits_ErrorMsg(importedPolicyID, benefits_policyID, "TerminationReason: " + ex.Message);
+                                //errorList.Add(m);
+                                ActionLogger.Logger.WriteImportPolicyLog("Import Policy exception: TerminationReason  fields  : " + ex.Message, true, agencyName);
+                                AddImportStatusToDB(importedPolicyID, isNewPolicy, false, benefits_policyID, agencyName);
+                                //continue;
+                            }
+                        }
+                    }
+            }
+            else if (dt.Columns.Contains("PlanEndDate"))
+            {
+                    if (dt.Rows[rowIndex]["PlanEndDate"] != null && !String.IsNullOrEmpty(Convert.ToString(dt.Rows[rowIndex]["PlanEndDate"])))
+                    {
+                        try
+                        {
+                            string termDate = Convert.ToString(dt.Rows[rowIndex]["PlanEndDate"]);
+                            ActionLogger.Logger.WriteImportPolicyLog("Import Policy string termDate: " + termDate, true, agencyName);
+                            //check if value in double, then fetch OA Date
+                            double dblTerm = 0;
+                            Double.TryParse(termDate, out dblTerm);
+                            if (dblTerm > 0)
+                            {
+                                objPolicy.PolicyTerminationDate = DateTime.FromOADate(dblTerm);
+                            }
+                            else
+                            {
+                                objPolicy.PolicyTerminationDate = Convert.ToDateTime(termDate);
+                            }
+                        }
+                        //  objPolicy.PolicyTerminationDate = Convert.ToDateTime(termDate);
+                        catch (Exception ex)
+                        {
+                            errMsgPolicy.Add("PlanEndDate", ex.Message);
                             //errorCount++;
-                            //Benefits_ErrorMsg m = new Benefits_ErrorMsg(importedPolicyID, benefits_policyID, "TerminationReason: " + ex.Message);
+                            //Benefits_ErrorMsg m = new Benefits_ErrorMsg(importedPolicyID, benefits_policyID, "PlanEndDate: " + ex.Message);
                             //errorList.Add(m);
-                            ActionLogger.Logger.WriteImportPolicyLog("Import Policy exception: TerminationReason  fields  : " + ex.Message, true, agencyName);
+                            ActionLogger.Logger.WriteImportPolicyLog("Import Policy exception: PlanEndDate  fields  : " + ex.Message, true, agencyName);
                             AddImportStatusToDB(importedPolicyID, isNewPolicy, false, benefits_policyID, agencyName);
                             //continue;
                         }
                     }
-                }
+
+
+                    //Term reason
+                    if (dt.Columns.Contains("TerminationReason"))
+                    {
+                        if (dt.Rows[rowIndex]["TerminationReason"] != null && !String.IsNullOrEmpty(Convert.ToString(dt.Rows[rowIndex]["TerminationReason"])))
+                        {
+                            try
+                            {
+                                objPolicy.TerminationReasonId = PolicTermisionID(Convert.ToString(dt.Rows[rowIndex]["TerminationReason"]));
+                            }
+                            catch (Exception ex)
+                            {
+                                errMsgPolicy.Add("TerminationReason", ex.Message);
+                                //errorCount++;
+                                //Benefits_ErrorMsg m = new Benefits_ErrorMsg(importedPolicyID, benefits_policyID, "TerminationReason: " + ex.Message);
+                                //errorList.Add(m);
+                                ActionLogger.Logger.WriteImportPolicyLog("Import Policy exception: TerminationReason  fields  : " + ex.Message, true, agencyName);
+                                AddImportStatusToDB(importedPolicyID, isNewPolicy, false, benefits_policyID, agencyName);
+                                //continue;
+                            }
+                        }
+                    }
             }
             else
             {
                 ActionLogger.Logger.WriteImportPolicyLog("Import Policy: status is NOT terminated, so ignoring plan end date and reason ", true, agencyName);
             }
+
         }
 
         static void UpdateBenefitsAccountOwner(DataTable dt, int rowIndex, string importedPolicyID, string benefits_policyID, bool isNewPolicy, List<dynamic> AgentList, ref DLinq.Policy objPolicy, ref Dictionary<string, string> errMsgPolicy, string agencyName = "")
@@ -5339,25 +5422,8 @@ namespace MyAgencyVault.BusinessLibrary
             Guid houseOwner = Guid.Empty;
             #endregion
 
-            #region Agents List
             using (DLinq.CommissionDepartmentEntities DataModel = Entity.DataModel)
             {
-                ActionLogger.Logger.WriteImportPolicyLog("Import Policy: Data model init", true, agencyName);
-                var AgentList = (from p in DataModel.UserCredentials
-                                 join o in DataModel.UserDetails on p.UserCredentialId equals o.UserCredentialId
-                                 where p.LicenseeId == LicID && p.IsDeleted == false
-                                 select new
-                                 {
-                                     p.UserCredentialId,
-                                     o.NickName,
-                                     p.UserName,
-                                     p.RoleId,
-                                     o.FirstName,
-                                     o.LastName,
-                                     p.BGUserId
-                                 }).ToList();
-                #endregion
-
                 #region Get Agency's track date default 
                 DateTime? dtTrack = DateTime.MinValue;
                 try
@@ -5535,6 +5601,24 @@ namespace MyAgencyVault.BusinessLibrary
 
             using (DLinq.CommissionDepartmentEntities DataModel = Entity.DataModel)
             {
+                #region Agents List
+                ActionLogger.Logger.WriteImportPolicyLog("Import Policy: Data model init", true, agencyName);
+                var AgentList = (from p in DataModel.UserCredentials
+                                 join o in DataModel.UserDetails on p.UserCredentialId equals o.UserCredentialId
+                                 where p.LicenseeId == LicID && p.IsDeleted == false
+                                 select new
+                                 {
+                                     p.UserCredentialId,
+                                     o.NickName,
+                                     p.UserName,
+                                     p.RoleId,
+                                     o.FirstName,
+                                     o.LastName,
+                                     p.BGUserId
+                                 }).ToList();
+                ActionLogger.Logger.WriteImportPolicyLog("Import Policy: Agent list fetched " + AgentList.ToStringDump(), true, agencyName);
+                #endregion
+
                 for (int j = 0; j < i; j++)
                 {
                     //if importedID is null or empty
@@ -5756,117 +5840,122 @@ namespace MyAgencyVault.BusinessLibrary
                             objPolicy.SplitPercentage = splitPer == 0 ? 100 : splitPer;
                             ActionLogger.Logger.WriteImportPolicyLog("Import Policy - Split % read as : " + splitPer + ", set as: " + objPolicy.SplitPercentage, true, agencyName);
                         }
-                    }
-
-                    //First check excel for any incoming schdule present then import 
-                    if (inSchedule.Mode == Mode.Standard && ((dt.Columns.Contains("Commissions - First Year %") || dt.Columns.Contains("CommissionsFirstYear")) && ((dt.Columns.Contains("Commissions - Renewal %") || dt.Columns.Contains("CommissionsRenewal")))))
-                    {
-                        string strInFirstYear = dt.Columns.Contains("Commissions - First Year %") ? Convert.ToString(dt.Rows[i]["Commissions - First Year %"]) : dt.Columns.Contains("CommissionsFirstYear") ? Convert.ToString(dt.Rows[i]["CommissionsFirstYear"]) : "0";
-                        string strInRenewYear = dt.Columns.Contains("Commissions - Renewal %") ? Convert.ToString(dt.Rows[i]["Commissions - Renewal %"]) : dt.Columns.Contains("CommissionsRenewal") ? Convert.ToString(dt.Rows[i]["CommissionsRenewal"]) : "0";
-                        double frst = 0; double renew = 0;
-                        double.TryParse(strInFirstYear, out frst);
-                        double.TryParse(strInRenewYear, out renew);
-
-                        inSchedule.FirstYearPercentage = frst;
-                        inSchedule.RenewalPercentage = renew;
-
-                        ActionLogger.Logger.WriteImportPolicyLog("Import Policy - first year% read as : " + frst + ", renewal as: " + renew, true, agencyName);
-
-                        if (frst == 0 && renew == 0)
+                        //First check excel for any incoming schdule present then import 
+                        if (inSchedule.Mode == Mode.Standard && ((dt.Columns.Contains("Commissions - First Year %") || dt.Columns.Contains("CommissionsFirstYear")) && ((dt.Columns.Contains("Commissions - Renewal %") || dt.Columns.Contains("CommissionsRenewal")))))
                         {
-                            //get payor configuration if present
-                            if (objPolicy.PayorId != null && objPolicy.CarrierId != null && objPolicy.CoverageId != null && incomingPaymentType != null && !string.IsNullOrEmpty(objPolicy.ProductType))
+                            string strInFirstYear = dt.Columns.Contains("Commissions - First Year %") ? Convert.ToString(dt.Rows[i]["Commissions - First Year %"]) : dt.Columns.Contains("CommissionsFirstYear") ? Convert.ToString(dt.Rows[i]["CommissionsFirstYear"]) : "0";
+                            string strInRenewYear = dt.Columns.Contains("Commissions - Renewal %") ? Convert.ToString(dt.Rows[i]["Commissions - Renewal %"]) : dt.Columns.Contains("CommissionsRenewal") ? Convert.ToString(dt.Rows[i]["CommissionsRenewal"]) : "0";
+                            double frst = 0; double renew = 0;
+                            double.TryParse(strInFirstYear, out frst);
+                            double.TryParse(strInRenewYear, out renew);
+
+                            inSchedule.FirstYearPercentage = frst;
+                            inSchedule.RenewalPercentage = renew;
+
+                            ActionLogger.Logger.WriteImportPolicyLog("Import Policy - first year% read as : " + frst + ", renewal as: " + renew, true, agencyName);
+
+                            if (frst == 0 && renew == 0)
                             {
-                                ActionLogger.Logger.WriteImportPolicyLog("Import Policy reading payor configuration : ", true, agencyName);
-                                payorSchedule = PayorIncomingSchedule.GetPayorScheduleDetails((Guid)objPolicy.PayorId, (Guid)objPolicy.CarrierId, (Guid)objPolicy.CoverageId, (Guid)objPolicy.PolicyLicenseeId, objPolicy.ProductType, (int)incomingPaymentType, agencyName);
-                                if (payorSchedule != null && payorSchedule.IncomingScheduleID != Guid.Empty)
+                                //get payor configuration if present
+                                if (objPolicy.PayorId != null && objPolicy.CarrierId != null && objPolicy.CoverageId != null && incomingPaymentType != null && !string.IsNullOrEmpty(objPolicy.ProductType))
                                 {
-                                    allowImportedSchedule = false;
-                                    SettingsScheduleID = payorSchedule.IncomingScheduleID;
-                                    ActionLogger.Logger.WriteImportPolicyLog("Import Policy payor configuration found: SettingsScheduleID - " + SettingsScheduleID, true, agencyName);
-                                    //apply later after policy is saved.
-                                }
-                                else
-                                {
-                                    ActionLogger.Logger.WriteImportPolicyLog("Import Policy payor configuration NOT found: " + incomingPaymentType, true, agencyName);
+                                    ActionLogger.Logger.WriteImportPolicyLog("Import Policy reading payor configuration : ", true, agencyName);
+                                    payorSchedule = PayorIncomingSchedule.GetPayorScheduleDetails((Guid)objPolicy.PayorId, (Guid)objPolicy.CarrierId, (Guid)objPolicy.CoverageId, (Guid)objPolicy.PolicyLicenseeId, objPolicy.ProductType, (int)incomingPaymentType, agencyName);
+                                    if (payorSchedule != null && payorSchedule.IncomingScheduleID != Guid.Empty)
+                                    {
+                                        allowImportedSchedule = false;
+                                        SettingsScheduleID = payorSchedule.IncomingScheduleID;
+                                        ActionLogger.Logger.WriteImportPolicyLog("Import Policy payor configuration found: SettingsScheduleID - " + SettingsScheduleID, true, agencyName);
+                                        //apply later after policy is saved.
+                                    }
+                                    else
+                                    {
+                                        ActionLogger.Logger.WriteImportPolicyLog("Import Policy payor configuration NOT found: " + incomingPaymentType, true, agencyName);
+                                    }
                                 }
                             }
-                        }
-                        else
-                        {
-                            ActionLogger.Logger.WriteImportPolicyLog("Import Policy: Incoming schedule init as in excel 1st : " + frst + ", renewal: " + renew, true, agencyName);
-                        }
-                    }
-                    else if (inSchedule.Mode == Mode.Custom)
-                    {
-                        if (dt.Columns.Contains("IncomingCustomList"))
-                        {
-                            DataTable dtIncoming = (dt.Rows[i]["IncomingCustomList"] as DataTable);
-                            inSchedule.GradedSchedule = new List<Graded>();
-                            inSchedule.NonGradedSchedule = new List<NonGraded>();
-                            if (dtIncoming != null && dtIncoming.Rows.Count > 0)
+                            else
                             {
-                                try
+                                ActionLogger.Logger.WriteImportPolicyLog("Import Policy: Incoming schedule init as in excel 1st : " + frst + ", renewal: " + renew, true, agencyName);
+                            }
+                        }
+                        else if (inSchedule.Mode == Mode.Custom)
+                        {
+                            if (dt.Columns.Contains("IncomingCustomList"))
+                            {
+                                DataTable dtIncoming = (dt.Rows[i]["IncomingCustomList"] as DataTable);
+                                inSchedule.GradedSchedule = new List<Graded>();
+                                inSchedule.NonGradedSchedule = new List<NonGraded>();
+                                if (dtIncoming != null && dtIncoming.Rows.Count > 0)
                                 {
-                                    foreach (DataRow row in dtIncoming.Rows)
+                                    try
                                     {
-                                        if (row.ItemArray == null || row.ItemArray.Count() == 0)
+                                        foreach (DataRow row in dtIncoming.Rows)
                                         {
-                                            ActionLogger.Logger.WriteImportPolicyLog("Import Policy: Incoming schedule row found blank", true, agencyName);
-                                            continue;
+                                            if (row.ItemArray == null || row.ItemArray.Count() == 0)
+                                            {
+                                                ActionLogger.Logger.WriteImportPolicyLog("Import Policy: Incoming schedule row found blank", true, agencyName);
+                                                continue;
+                                            }
+                                            if (inSchedule.CustomType == CustomMode.Graded)
+                                            {
+                                                Graded objGraded = new Graded();
+
+                                                double from = 0;
+                                                string strFrom = Convert.ToString(row["From"]);
+                                                double.TryParse(strFrom, out from);
+                                                objGraded.From = from;
+
+                                                double to = 0;
+                                                string strTo = Convert.ToString(row["To"]);
+                                                double.TryParse(strTo, out to);
+                                                objGraded.To = to;
+
+                                                double percnt = 0;
+                                                string strPercnt = Convert.ToString(row["Value"]);
+                                                double.TryParse(strPercnt, out percnt);
+                                                objGraded.Percent = percnt;
+
+                                                inSchedule.GradedSchedule.Add(objGraded);
+                                            }
+                                            else
+                                            {
+                                                NonGraded objNonGraded = new NonGraded();
+
+                                                int year = 0;
+                                                string strYear = Convert.ToString(row["Year"]);
+                                                int.TryParse(strYear, out year);
+                                                objNonGraded.Year = year;
+
+                                                double percnt = 0;
+                                                string strPercnt = Convert.ToString(row["Value"]);
+                                                double.TryParse(strPercnt, out percnt);
+                                                objNonGraded.Percent = percnt;
+
+                                                inSchedule.NonGradedSchedule.Add(objNonGraded);
+                                            }
                                         }
-                                        if (inSchedule.CustomType == CustomMode.Graded)
+
+                                        //Validation of the list
+                                        string errIncoming = ValidateIncomingSchedule(inSchedule.GradedSchedule, inSchedule.NonGradedSchedule, (inSchedule.CustomType == CustomMode.Graded), inSchedule.Mode.ToString(), inSchedule.ScheduleTypeId, agencyName);
+                                        if (!string.IsNullOrEmpty(errIncoming))
                                         {
-                                            Graded objGraded = new Graded();
-
-                                            double from = 0;
-                                            string strFrom = Convert.ToString(row["From"]);
-                                            double.TryParse(strFrom, out from);
-                                            objGraded.From = from;
-
-                                            double to = 0;
-                                            string strTo = Convert.ToString(row["To"]);
-                                            double.TryParse(strTo, out to);
-                                            objGraded.To = to;
-
-                                            double percnt = 0;
-                                            string strPercnt = Convert.ToString(row["Value"]);
-                                            double.TryParse(strPercnt, out percnt);
-                                            objGraded.Percent = percnt;
-
-                                            inSchedule.GradedSchedule.Add(objGraded);
-                                        }
-                                        else
-                                        {
-                                            NonGraded objNonGraded = new NonGraded();
-
-                                            int year = 0;
-                                            string strYear = Convert.ToString(row["Year"]);
-                                            int.TryParse(strYear, out year);
-                                            objNonGraded.Year = year;
-
-                                            double percnt = 0;
-                                            string strPercnt = Convert.ToString(row["Value"]);
-                                            double.TryParse(strPercnt, out percnt);
-                                            objNonGraded.Percent = percnt;
-
-                                            inSchedule.NonGradedSchedule.Add(objNonGraded);
+                                            errMsgPolicy.Add("IncomingSchedule", errIncoming);
+                                            ActionLogger.Logger.WriteImportPolicyLog("Import Policy Exception: IncomingSchedule fields error : " + errIncoming, true, agencyName);
+                                            AddImportStatusToDB(_PolicyObj.importedPolicyID, isNewPolicy, false, _PolicyObj.PolicyPlanID, agencyName);
                                         }
                                     }
-
-                                    //Validation of the list
-                                    string errIncoming = ValidateIncomingSchedule(inSchedule.GradedSchedule, inSchedule.NonGradedSchedule, (inSchedule.CustomType == CustomMode.Graded), inSchedule.Mode.ToString(), inSchedule.ScheduleTypeId, agencyName);
-                                    if (!string.IsNullOrEmpty(errIncoming))
+                                    catch (Exception ex)
                                     {
-                                        errMsgPolicy.Add("IncomingSchedule", errIncoming);
-                                        ActionLogger.Logger.WriteImportPolicyLog("Import Policy Exception: IncomingSchedule fields error : " + errIncoming, true, agencyName);
+                                        errMsgPolicy.Add("IncomingSchedule", "Error adding Custom Schedule: " + ex.Message);
+                                        ActionLogger.Logger.WriteImportPolicyLog("Import Policy Exception: IncomingSchedule fields missing ", true, agencyName);
                                         AddImportStatusToDB(_PolicyObj.importedPolicyID, isNewPolicy, false, _PolicyObj.PolicyPlanID, agencyName);
                                     }
                                 }
-                                catch (Exception ex)
+                                else
                                 {
-                                    errMsgPolicy.Add("IncomingSchedule", "Error adding Custom Schedule: " + ex.Message);
-                                    ActionLogger.Logger.WriteImportPolicyLog("Import Policy Exception: IncomingSchedule fields missing ", true, agencyName);
+                                    errMsgPolicy.Add("IncomingSchedule", "Custom Schedule list is missing");
+                                    ActionLogger.Logger.WriteImportPolicyLog("Import Policy Exception: IncomingSchedule fields missing", true, agencyName);
                                     AddImportStatusToDB(_PolicyObj.importedPolicyID, isNewPolicy, false, _PolicyObj.PolicyPlanID, agencyName);
                                 }
                             }
@@ -5876,18 +5965,52 @@ namespace MyAgencyVault.BusinessLibrary
                                 ActionLogger.Logger.WriteImportPolicyLog("Import Policy Exception: IncomingSchedule fields missing", true, agencyName);
                                 AddImportStatusToDB(_PolicyObj.importedPolicyID, isNewPolicy, false, _PolicyObj.PolicyPlanID, agencyName);
                             }
-                        }
-                        else
-                        {
-                            errMsgPolicy.Add("IncomingSchedule", "Custom Schedule list is missing");
-                            ActionLogger.Logger.WriteImportPolicyLog("Import Policy Exception: IncomingSchedule fields missing", true, agencyName);
-                            AddImportStatusToDB(_PolicyObj.importedPolicyID, isNewPolicy, false, _PolicyObj.PolicyPlanID, agencyName);
-                        }
 
+                        }
+                        else //Lastly apply payor config if found 
+                        {
+                            ActionLogger.Logger.WriteImportPolicyLog("Import Policy: Frst/renewal columns not found in excel, looking for payor config", true, agencyName);
+                            if (objPolicy.PayorId != null && objPolicy.CarrierId != null && objPolicy.CoverageId != null && incomingPaymentType != null && !string.IsNullOrEmpty(objPolicy.ProductType))
+                            {
+                                ActionLogger.Logger.WriteImportPolicyLog("Import Policy reading payor configuration : ", true, agencyName);
+                                PayorIncomingSchedule schedule = PayorIncomingSchedule.GetPayorScheduleDetails((Guid)objPolicy.PayorId, (Guid)objPolicy.CarrierId, (Guid)objPolicy.CoverageId, (Guid)objPolicy.PolicyLicenseeId, objPolicy.ProductType, (int)incomingPaymentType, agencyName);
+                                if (schedule != null && schedule.IncomingScheduleID != Guid.Empty)
+                                {
+                                    allowImportedSchedule = false;
+                                    SettingsScheduleID = schedule.IncomingScheduleID;
+                                    ActionLogger.Logger.WriteImportPolicyLog("Import Policy payor configuration found: SettingsScheduleID - " + SettingsScheduleID, true, agencyName);
+                                    //apply later after policy is saved.
+                                }
+                                else
+                                {
+                                    ActionLogger.Logger.WriteImportPolicyLog("Import Policy payor configuration NOT found: " + incomingPaymentType, true, agencyName);
+                                }
+                            }
+
+
+                        }
                     }
 
                     #endregion
 
+                    #region Commn fields - alwasys update with insert/Update
+
+                    bool OutPercentOfPremium = false;
+
+                    //Advance - Moved to update always as per Kevin - Aug 21, 2019
+                    UpdateBenefitsMandatoryFields(dt, i, _PolicyObj.importedPolicyID, _PolicyObj.PolicyPlanID, isNewPolicy, ref objPolicy, ref errMsgPolicy, agencyName);
+
+                    //Account Exec
+                    UpdateBenefitsAccountOwner(dt, i, _PolicyObj.importedPolicyID, _PolicyObj.PolicyPlanID, isNewPolicy, AgentList.ToList<dynamic>(), ref objPolicy, ref errMsgPolicy, agencyName);
+
+                    ActionLogger.Logger.WriteImportPolicyLog("Import Policy: mandatory fields init done : " + _PolicyObj.importedPolicyID, true, agencyName);
+                    #endregion
+
+                    #region Outgoin Split
+
+
+
+                    #endregion
 
                 }
             }
