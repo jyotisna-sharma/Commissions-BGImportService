@@ -12,6 +12,7 @@ using System.Data;
 using System.Collections.ObjectModel;
 using System.Data.SqlClient;
 using System.Data.EntityClient;
+using System.Linq;
 
 namespace MyAgencyVault.WcfService
 {
@@ -25,6 +26,10 @@ namespace MyAgencyVault.WcfService
         [OperationContract]
         [WebInvoke(ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         JSONResponse ImportPolicyService(string PolicyTable, Guid LicenseeID);
+        //New added
+        [OperationContract]
+        [WebInvoke(ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        JSONResponse ImportForUIS(string PolicyTable, Guid LicenseeID);
 
         [OperationContract]
         [WebInvoke(ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.WrappedRequest)]
@@ -200,6 +205,83 @@ namespace MyAgencyVault.WcfService
                 ActionLogger.Logger.WriteImportPolicyLog("GetPayorCarrierList - exception: " + ex.Message, true);
                 return res;
             }
+        }
+
+        //new import process
+        public JSONResponse ImportForUIS(string strExcel, Guid LicenseeID)
+        {
+            JSONResponse jres = null;
+            string agencyName = GetLicenseeByID(LicenseeID).Company;
+
+            //var agencyName = (from l  in DataModel.Licensees
+            //                  where (l.LicenseeId == LicenseeID) && (s.IsDeleted == false || s.IsDeleted == null) select { l.Company });
+
+            string notificationMail = System.Configuration.ConfigurationSettings.AppSettings["NotificationMail"];
+
+            //Read header and return if not present
+            try
+            {
+                if (WebOperationContext.Current.IncomingRequest.Headers["UniqueKey"] != null)
+                {
+                    string val = Convert.ToString(WebOperationContext.Current.IncomingRequest.Headers["UniqueKey"]);
+                    ActionLogger.Logger.WriteImportPolicyLog("Import policy - header key:  " + val, true, agencyName);
+                    if (val != "CommDept1973")
+                    {
+                        jres = new JSONResponse("Import process cannot be started as the incoming request is not valid", Convert.ToInt16(404), "Unauthorized request");
+                        ActionLogger.Logger.WriteImportPolicyLog("Import policy - Authentication failure ", true, agencyName);
+                        return jres;
+                    }
+                }
+                else
+                {
+                    jres = new JSONResponse("Import process cannot be started as the incoming request is not valid", Convert.ToInt16(404), "Unauthorized request");
+                    ActionLogger.Logger.WriteImportPolicyLog("Import policy - Authentication failure ", true, agencyName);
+                    return jres;
+                }
+            }
+            catch (Exception ex)
+            {
+                jres = new JSONResponse("Import process cannot be started as the incoming request is not valid", Convert.ToInt16(404), "Unauthorized request");
+                ActionLogger.Logger.WriteImportPolicyLog("Import policy - Authentication failure , no key in header", true, agencyName);
+                return jres;
+            }
+
+            try
+            {
+                string inRequest = "Incoming table: " + strExcel + ", LicenseeID: " + LicenseeID;
+
+                ActionLogger.Logger.WriteImportPolicyLog(inRequest, true, agencyName);
+                strExcel = strExcel.Replace("'", "");
+
+                strExcel = strExcel.Replace("[]", "[{}]");
+
+                List<CompType> lstComp = (new CompType()).GetAllComptype(agencyName);
+
+                ObservableCollection<CompType> compList = new ObservableCollection<CompType>(lstComp);
+
+                DataTable tbExcel = (DataTable)Newtonsoft.Json.JsonConvert.DeserializeObject(strExcel, (typeof(DataTable)));
+
+                MailServerDetail.sendMail(notificationMail, "Import started by BG for agency '" + agencyName + "' at " + DateTime.Now.ToString(), inRequest);
+                ActionLogger.Logger.WriteImportPolicyLog("BG request ", true, agencyName);
+
+                Benefits_PolicyImportStatus status = Policy.ImportPolicy_Uis_Insurance(tbExcel, LicenseeID, compList, agencyName);
+
+                jres = new JSONResponse(string.Format("Import process execution completed"), Convert.ToInt16(200), "");
+                jres.ImportStatus = status;
+
+                ActionLogger.Logger.WriteImportPolicyLog("Import Process Execution completed ", true, agencyName);
+            }
+            catch(Exception ex)
+            {
+                jres = new JSONResponse("Import process execution failed", Convert.ToInt16(210), ex.Message);
+                ActionLogger.Logger.WriteImportPolicyLog("Import process execution  failure: " + ex.Message, true, agencyName);
+                if (ex.InnerException != null)
+                {
+                    ActionLogger.Logger.WriteImportPolicyLog("Inner exception: " + ex.InnerException, true, agencyName);
+                }
+
+            }
+            return jres;
         }
 
         public JSONResponse ImportPolicyService(string strExcel, Guid LicenseeID/*, string uniqueKey*/)

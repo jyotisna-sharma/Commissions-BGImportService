@@ -551,3 +551,23 @@ C:\Rohit\Code\copy trunk - Copy\trunk\MyAgencyVault.ServiceWcf\obj\Debug\MyAgenc
 C:\Rohit\Code\copy trunk - Copy\trunk\MyAgencyVault.ServiceWcf\obj\Debug\MyAgencyVault.ServiceWcf.csproj.CopyComplete
 C:\Rohit\Code\copy trunk - Copy\trunk\MyAgencyVault.ServiceWcf\obj\Debug\MyAgencyVault.WcfService.dll
 C:\Rohit\Code\copy trunk - Copy\trunk\MyAgencyVault.ServiceWcf\obj\Debug\MyAgencyVault.WcfService.pdb
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.ServiceWcf\bin\MyAgencyVault.WcfService.dll.config
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.ServiceWcf\bin\MyAgencyVault.WcfService.dll
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.ServiceWcf\bin\MyAgencyVault.WcfService.pdb
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.ServiceWcf\bin\ActionLogger.dll
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.ServiceWcf\bin\MyAgencyVault.BusinessLibrary.dll
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.ServiceWcf\bin\MyAgencyVault.DataAccessLayer.dll
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.ServiceWcf\bin\MyAgencyVault.EmailFax.dll
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.ServiceWcf\bin\Newtonsoft.Json.dll
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.ServiceWcf\bin\PGK.Extensions.dll
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.ServiceWcf\bin\ActionLogger.pdb
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.ServiceWcf\bin\MyAgencyVault.BusinessLibrary.pdb
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.ServiceWcf\bin\MyAgencyVault.BusinessLibrary.dll.config
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.ServiceWcf\bin\MyAgencyVault.DataAccessLayer.pdb
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.ServiceWcf\bin\MyAgencyVault.DataAccessLayer.dll.config
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.ServiceWcf\bin\MyAgencyVault.EmailFax.pdb
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.ServiceWcf\obj\Debug\MyAgencyVault.ServiceWcf.csprojAssemblyReference.cache
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.ServiceWcf\obj\Debug\MyAgencyVault.ServiceWcf.csproj.CoreCompileInputs.cache
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.ServiceWcf\obj\Debug\MyAgencyVault.ServiceWcf.csproj.CopyComplete
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.ServiceWcf\obj\Debug\MyAgencyVault.WcfService.dll
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.ServiceWcf\obj\Debug\MyAgencyVault.WcfService.pdb

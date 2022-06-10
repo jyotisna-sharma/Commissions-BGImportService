@@ -240,3 +240,12 @@ C:\Rohit\Code\copy trunk - Copy\trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyV
 C:\Rohit\Code\copy trunk - Copy\trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CopyComplete
 C:\Rohit\Code\copy trunk - Copy\trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
 C:\Rohit\Code\copy trunk - Copy\trunk\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.dll
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.EmailFax\bin\Debug\MyAgencyVault.EmailFax.pdb
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.dll
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.EmailFax\bin\Debug\ActionLogger.pdb
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csprojAssemblyReference.cache
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CoreCompileInputs.cache
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.csproj.CopyComplete
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.dll
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\MyAgencyVault.EmailFax\obj\Debug\MyAgencyVault.EmailFax.pdb

@@ -158,3 +158,9 @@ C:\Rohit\Code\copy trunk - Copy\trunk\ActionLogger\obj\Debug\ActionLogger.csproj
 C:\Rohit\Code\copy trunk - Copy\trunk\ActionLogger\obj\Debug\ActionLogger.dll
 C:\Rohit\Code\copy trunk - Copy\trunk\ActionLogger\obj\Debug\ActionLogger.pdb
 E:\Jyotisna\Projects\NewBG\trunk\ActionLogger\obj\Debug\ActionLogger.csprojAssemblyReference.cache
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\ActionLogger\bin\Debug\ActionLogger.dll
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\ActionLogger\bin\Debug\ActionLogger.pdb
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\ActionLogger\obj\Debug\ActionLogger.csprojAssemblyReference.cache
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\ActionLogger\obj\Debug\ActionLogger.csproj.CoreCompileInputs.cache
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\ActionLogger\obj\Debug\ActionLogger.dll
+E:\amit\amit 30-02-2022\project\BGImportService\UIS Import\ActionLogger\obj\Debug\ActionLogger.pdb
