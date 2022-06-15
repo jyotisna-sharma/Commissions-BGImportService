@@ -264,7 +264,7 @@ namespace MyAgencyVault.WcfService
                 MailServerDetail.sendMail(notificationMail, "Import started by BG for agency '" + agencyName + "' at " + DateTime.Now.ToString(), inRequest);
                 ActionLogger.Logger.WriteImportPolicyLog("BG request ", true, agencyName);
 
-                Benefits_PolicyImportStatus status = Policy.ImportPolicy_Uis_Insurance(tbExcel, LicenseeID, compList, agencyName);
+                Benefits_PolicyImportStatus status = ImportPolicyUIS.ImportPolicy_Uis_Insurance(tbExcel, LicenseeID, compList, agencyName);
 
                 jres = new JSONResponse(string.Format("Import process execution completed"), Convert.ToInt16(200), "");
                 jres.ImportStatus = status;

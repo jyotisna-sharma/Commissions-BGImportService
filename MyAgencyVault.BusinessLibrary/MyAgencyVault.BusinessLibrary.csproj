@@ -168,6 +168,7 @@
     <Compile Include="ExcelUtility.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="DBConnection.cs" />
+    <Compile Include="ImportPolicyUIS.cs" />
     <Compile Include="Masters\PolicyDetailMasterData.cs" />
     <Compile Include="PostProcess\DeuPostProcessWrapper.cs" />
     <Compile Include="PostProcess\FollowUpProcedure.cs" />
