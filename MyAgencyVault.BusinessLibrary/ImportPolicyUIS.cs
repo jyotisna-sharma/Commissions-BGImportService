@@ -578,57 +578,8 @@ namespace MyAgencyVault.BusinessLibrary
                     inSchedule.CustomType = CustomMode.Graded;
 
                     //Set default value
-                    AttachedDefaulPolicyFields(ref inSchedule, initialPolicyData,ref objPolicy);
+                    AttachedDefaulPolicyFields(ref inSchedule, initialPolicyData,ref objPolicy,ref errMsgPolicy, isNewPolicy);
 
-                    /************ July 03, 2020 - custom incoming from BG***************/
-                    //Mode  //default mode is 0
-                  //  int mod = 0;
-                    //Int32.TryParse(Convert.ToString(initialPolicyData.IncomingMode), out mod); // mode should be 0 or 1
-                   // inSchedule.Mode = (Mode)mod; 
-
-                    /* //uncomment this code when receive this column IncomingCustomModeType in request
-                    if (inSchedule.Mode == Mode.Custom)
-                    {
-                        int customMod = 1;
-                        Int32.TryParse(initialPolicyData.IncomingCustomModeType, out customMod); // CustomMode should be 1 or 2
-                        inSchedule.CustomType = (CustomMode)customMod;
-                    }  
-                    */
-
-                    //Custom Type
-                    //int CustomMod = 1;
-                    //inSchedule.CustomType = (CustomMode)CustomMod;
-
-                    //inSchedule.FirstYearPercentage = 0;
-                    //inSchedule.RenewalPercentage = 0;
-
-                    //ScheduleTypeId
-                    //inSchedule.ScheduleTypeId = 1;
-                    //ActionLogger.Logger.WriteImportPolicyLog("Import Policy - incoming schedule init with default values : ", true, initialPolicyData.agencyName);
-
-                    /* if come this PaymentType column in request
-                    string strOutPercentOfPremium = "";
-                    if (!String.IsNullOrEmpty(initialPolicyData.PaymentType))
-                    {
-                        strOutPercentOfPremium = initialPolicyData.PaymentType;
-                    }
-                    else
-                    {
-                        strOutPercentOfPremium = "% of Premium";
-                    }
-                    inSchedule.ScheduleTypeId = (!string.IsNullOrEmpty(strOutPercentOfPremium) && strOutPercentOfPremium.ToLower().Contains("head")) ? 2 : 1;
-                    */
-
-                    /* when come this CoBrokerSplit column in request
-                    if (initialPolicyData.CoBrokerFlag)
-                    {
-                        string strSplit = initialPolicyData.CoBrokerSplit;
-                        double splitPer = 0;
-                        double.TryParse(strSplit, out splitPer);
-                        objPolicy.SplitPercentage = splitPer == 0 ? 100 : splitPer;
-                        ActionLogger.Logger.WriteImportPolicyLog("Import Policy - Split % read as : " + splitPer + ", set as: " + objPolicy.SplitPercentage, true, initialPolicyData.agencyName);
-                    }
-                    */
                 }
 
 
@@ -639,10 +590,39 @@ namespace MyAgencyVault.BusinessLibrary
                 bool OutPercentOfPremium = false;
 
                 //Advance - Moved to update always
-                UpdateBenefitsMandatoryFields(initialPolicyData, isNewPolicy, ref objPolicy, ref errMsgPolicy);
+                AddUpdateMandatoryFields(initialPolicyData, isNewPolicy, ref objPolicy, ref errMsgPolicy);
 
                 //Account Exec
-                getAccountOwner(initialPolicyData, isNewPolicy, AgentList,ref objPolicy, ref errMsgPolicy);
+                if (!String.IsNullOrEmpty(initialPolicyData.AccoutExec))
+                {
+                    ActionLogger.Logger.WriteImportPolicyLog("Import Policy AccountOwner Name found ", true, initialPolicyData.agencyName);
+                    string AccoutExec = "";
+                    Guid UserCredentialId;
+                    string errMsg = "";
+                    //return AccoutExec detail
+                    getAccountOwner(AgentList,initialPolicyData , out AccoutExec, out UserCredentialId,out errMsg);
+
+                    if (String.IsNullOrEmpty(errMsg))
+                    {
+                        if (!String.IsNullOrEmpty(AccoutExec) && UserCredentialId != null)
+                        {
+                            objPolicy.AccoutExec = AccoutExec;
+                            objPolicy.UserCredentialId = UserCredentialId;
+                        }
+                        else
+                        {
+                            errMsgPolicy.Add("AccountOwnerName", "AccountOwner not available");
+                            ActionLogger.Logger.WriteImportPolicyLog("Account owner NOT found in system by name : ", true, initialPolicyData.agencyName);
+                            AddImportStatusToDB(initialPolicyData.importedPolicyID, isNewPolicy, false, initialPolicyData.PolicyPlanID, initialPolicyData.agencyName);
+                        }
+                    }
+                    else
+                    {
+                        errMsgPolicy.Add("AccountOwnerName", errMsg);
+                        ActionLogger.Logger.WriteImportPolicyLog("Import Policy exception: AccountOwnerName  fields  : " + errMsg, true, initialPolicyData.agencyName);
+                        AddImportStatusToDB(initialPolicyData.importedPolicyID, isNewPolicy, false, initialPolicyData.PolicyPlanID, initialPolicyData.agencyName);
+                    }
+                }
 
                 ActionLogger.Logger.WriteImportPolicyLog("Import Policy: mandatory fields init done : " + initialPolicyData.importedPolicyID, true, initialPolicyData.agencyName);
                 #endregion
@@ -733,7 +713,7 @@ namespace MyAgencyVault.BusinessLibrary
                 }
             }
             //PolicyModeId
-            if (isNewPolicy || (objPolicy.PolicyModeId == null || String.IsNullOrEmpty(Convert.ToString(objPolicy.PolicyModeId))))
+            if (isNewPolicy || String.IsNullOrEmpty(Convert.ToString(objPolicy.PolicyModeId)))
             {
                 try
                 {
@@ -760,7 +740,7 @@ namespace MyAgencyVault.BusinessLibrary
                 try
                 {
                     //string strPremiuum = Convert.ToString(dt.Rows[rowIndex]["MonthlyPremium__c"]);
-                    string strPremiuum = Convert.ToString(initialPolicyData.MonthlyPremium);
+                    string strPremiuum = initialPolicyData.MonthlyPremium;
                     decimal prem = 0;
                     decimal.TryParse(strPremiuum, out prem);
                     if (prem == 0)
@@ -782,7 +762,7 @@ namespace MyAgencyVault.BusinessLibrary
                 try
                 {
                     // string effDate = Convert.ToString(dt.Rows[rowIndex]["StartDate__c"]);
-                    string effDate = Convert.ToString(initialPolicyData);
+                    string effDate = initialPolicyData.OriginalEffectiveDate;
                     ActionLogger.Logger.WriteImportPolicyLog("Import Policy string effDate: " + effDate, true, initialPolicyData.agencyName);
                     //check if value in double, then fetch OA Date
                     double dblEff = 0;
@@ -1029,7 +1009,7 @@ namespace MyAgencyVault.BusinessLibrary
             return intStatus;
         }
 
-        static void UpdateBenefitsMandatoryFields (IPolicyObj initialPolicyData, bool isNewPolicy, ref DLinq.Policy objPolicy, ref Dictionary<string, string> errMsgPolicy)
+        static void AddUpdateMandatoryFields (IPolicyObj initialPolicyData, bool isNewPolicy, ref DLinq.Policy objPolicy, ref Dictionary<string, string> errMsgPolicy)
         {
             //Status
             objPolicy.PolicyStatusId = initialPolicyData.PolicyStatusId;
@@ -1079,46 +1059,40 @@ namespace MyAgencyVault.BusinessLibrary
             }
         }
         //Account Exec
-        static void getAccountOwner(IPolicyObj initialPolicyData,bool isNewPolicy, IEnumerable<dynamic> AgentList, ref DLinq.Policy objPolicy, ref Dictionary<string, string> errMsgPolicy)
+        static void getAccountOwner(IEnumerable<dynamic> AgentList,IPolicyObj initialPolicyData, out string AccoutExec, out Guid UserCredentialId, out string errMsg)
         {
-            if (initialPolicyData.AccoutExec != null &&!String.IsNullOrEmpty(initialPolicyData.AccoutExec))
+            AccoutExec = "";
+            UserCredentialId = Guid.Empty;
+            errMsg = "";
+            try
             {
-                ActionLogger.Logger.WriteImportPolicyLog("Import Policy AccountOwner Name found ", true, initialPolicyData.agencyName);
-                try
+                if (AgentList != null)
                 {
-                    string acctExec = Convert.ToString(initialPolicyData.AccoutExec).Trim();
-                    var objUser = AgentList.FirstOrDefault(d => (d.FirstName + " " + d.LastName).ToLower() == acctExec.ToLower() || (!string.IsNullOrEmpty(d.NickName) && d.NickName.ToLower() == acctExec.ToLower()));
-
+                    var objUser = AgentList.FirstOrDefault(d => (d.FirstName + " " + d.LastName).ToLower() == initialPolicyData.AccoutExec.ToLower() || (!string.IsNullOrEmpty(d.NickName)
+                                                               && d.NickName.ToLower() == initialPolicyData.AccoutExec.ToLower()));
                     if (objUser != null)
                     {
                         ActionLogger.Logger.WriteImportPolicyLog("Account owner found in system", true, initialPolicyData.agencyName);
                         //Need to get nick name
                         if (!String.IsNullOrEmpty(objUser.NickName))
                         {
-                            objPolicy.AccoutExec = objUser.NickName;
-                            objPolicy.UserCredentialId = objUser.UserCredentialId; //tempGuid;
+                            AccoutExec = objUser.NickName;
+                            UserCredentialId = Convert.ToString(objUser.UserCredentialId); //tempGuid;
                         }
                         else
                         {
-                            objPolicy.AccoutExec = objUser.UserName;
-                            objPolicy.UserCredentialId = objUser.UserCredentialId; //tempGuid;
+                            AccoutExec = objUser.UserName;
+                            UserCredentialId = objUser.UserCredentialId; //tempGuid;
                         }
                         bool isexec = (new User().CheckAccoutExec(objUser.UserCredentialId, initialPolicyData.agencyName));
                     }
-                    else
-                    {
-                        errMsgPolicy.Add("AccountOwnerName", "AccountOwner not available");
-                        ActionLogger.Logger.WriteImportPolicyLog("Account owner NOT found in system by name : ", true, initialPolicyData.agencyName);
-                        AddImportStatusToDB(initialPolicyData.importedPolicyID, isNewPolicy, false, initialPolicyData.PolicyPlanID, initialPolicyData.agencyName);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    errMsgPolicy.Add("AccountOwnerName", ex.Message);
-                    ActionLogger.Logger.WriteImportPolicyLog("Import Policy exception: AccountOwnerName  fields  : " + ex.Message, true, initialPolicyData.agencyName);
-                    AddImportStatusToDB(initialPolicyData.importedPolicyID, isNewPolicy, false, initialPolicyData.PolicyPlanID, initialPolicyData.agencyName);
                 }
             }
+            catch (Exception ex)
+            {
+                errMsg = ex.Message;
+            }
+
         }
 
         static int PolicTermisionID(string strTermReason)
@@ -1159,25 +1133,52 @@ namespace MyAgencyVault.BusinessLibrary
         }
 
 
-        static void AttachedDefaulPolicyFields (ref PolicyToolIncommingShedule inSchedule, IPolicyObj initialPolicyData,ref DLinq.Policy objPolicy)
+        static void AttachedDefaulPolicyFields (ref PolicyToolIncommingShedule inSchedule, IPolicyObj initialPolicyData,ref DLinq.Policy objPolicy, ref Dictionary<string, string> errMsgPolicy, bool isNewPolicy)
         {
-            objPolicy.IncomingPaymentTypeId = 1;
-            objPolicy.SplitPercentage = 100;
+            try
+            {
+                objPolicy.IncomingPaymentTypeId = 1;
+                objPolicy.SplitPercentage = 100;
 
-            //Mode
-            int mod = 0;
-            inSchedule.Mode = (Mode)mod;
+                //Mode
+                int mod = 0;
+                inSchedule.Mode = (Mode)mod;
 
-            //Custom Type
-            int CustomMod = 1;
-            inSchedule.CustomType = (CustomMode)CustomMod;
+                //Custom Type
+                int CustomMod = 1;
+                inSchedule.CustomType = (CustomMode)CustomMod;
 
-            inSchedule.FirstYearPercentage = 0;
-            inSchedule.RenewalPercentage = 0;
+                inSchedule.FirstYearPercentage = 0;
+                inSchedule.RenewalPercentage = 0;
 
-            //ScheduleTypeId
-            inSchedule.ScheduleTypeId = 1;
-            ActionLogger.Logger.WriteImportPolicyLog("Import Policy - incoming schedule init with default values : ", true, initialPolicyData.agencyName);
+                //ScheduleTypeId
+                inSchedule.ScheduleTypeId = 1;
+
+                //Policy Type
+                objPolicy.PolicyType = "New";
+
+                //Track From Date
+                string effDate = initialPolicyData.OriginalEffectiveDate;
+                double dblEff = 0;
+                Double.TryParse(effDate, out dblEff);
+                if (dblEff > 0)
+                {
+                    objPolicy.TrackFromDate = DateTime.FromOADate(dblEff);
+                }
+                else if (!string.IsNullOrEmpty(effDate))
+                {
+                    objPolicy.TrackFromDate = DateTime.Parse(effDate, System.Globalization.CultureInfo.CurrentCulture); //Convert.ToDateTime(effDate);
+                }
+
+                //Produt Type
+                objPolicy.ProductType = "";
+            }
+            catch (Exception ex)
+            {
+                errMsgPolicy.Add("NewBusiness", ex.Message);
+                ActionLogger.Logger.WriteImportPolicyLog("Import Policy Exception: New Business field  exception : " + ex.Message, true);
+                AddImportStatusToDB(initialPolicyData.importedPolicyID, isNewPolicy, false, initialPolicyData.PolicyPlanID, initialPolicyData.agencyName);
+            }
         }
     }
 }
