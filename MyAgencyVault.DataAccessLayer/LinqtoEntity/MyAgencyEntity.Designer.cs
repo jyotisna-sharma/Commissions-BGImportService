@@ -25,8 +25,8 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("Model", "FK_Batches_Payors", "Payors", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(DataAccessLayer.LinqtoEntity.Payor), "Batches", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DataAccessLayer.LinqtoEntity.Batch), true)]
 [assembly: EdmRelationshipAttribute("Model", "FK_PayorCarrier_Carriers", "Carriers", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DataAccessLayer.LinqtoEntity.Carrier), "CarrierNickName", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DataAccessLayer.LinqtoEntity.CarrierNickName), true)]
 [assembly: EdmRelationshipAttribute("Model", "FK_PayorCarrier_Payors", "Payors", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DataAccessLayer.LinqtoEntity.Payor), "CarrierNickName", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DataAccessLayer.LinqtoEntity.CarrierNickName), true)]
-[assembly: EdmRelationshipAttribute("Model", "FK_PayorCarrier_UserCredentials", "UserCredentials", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(DataAccessLayer.LinqtoEntity.UserCredential), "CarrierNickName", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DataAccessLayer.LinqtoEntity.CarrierNickName), true)]
-[assembly: EdmRelationshipAttribute("Model", "FK_PayorCarrier_UserCredentials1", "UserCredentials", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(DataAccessLayer.LinqtoEntity.UserCredential), "CarrierNickName", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DataAccessLayer.LinqtoEntity.CarrierNickName), true)]
+[assembly: EdmRelationshipAttribute("Model", "FK_PayorCarrier_UserCredentials", "UserCredentials", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DataAccessLayer.LinqtoEntity.UserCredential), "CarrierNickName", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DataAccessLayer.LinqtoEntity.CarrierNickName), true)]
+[assembly: EdmRelationshipAttribute("Model", "FK_PayorCarrier_UserCredentials1", "UserCredentials", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DataAccessLayer.LinqtoEntity.UserCredential), "CarrierNickName", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DataAccessLayer.LinqtoEntity.CarrierNickName), true)]
 [assembly: EdmRelationshipAttribute("Model", "FK_EntriesByDEU_Carriers", "Carriers", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(DataAccessLayer.LinqtoEntity.Carrier), "EntriesByDEU", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DataAccessLayer.LinqtoEntity.EntriesByDEU), true)]
 [assembly: EdmRelationshipAttribute("Model", "FK_GlobalCoveragesSchedules_Carriers", "Carriers", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DataAccessLayer.LinqtoEntity.Carrier), "GlobalCoveragesSchedules", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DataAccessLayer.LinqtoEntity.GlobalCoveragesSchedule), true)]
 [assembly: EdmRelationshipAttribute("Model", "FK_PayorCarriers_Licensees", "Licensees", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(DataAccessLayer.LinqtoEntity.Licensee), "Carriers", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DataAccessLayer.LinqtoEntity.Carrier), true)]
@@ -5529,30 +5529,6 @@ namespace DataAccessLayer.LinqtoEntity
         private Nullable<global::System.Guid> _LicenseeId;
         partial void OnLicenseeIdChanging(Nullable<global::System.Guid> value);
         partial void OnLicenseeIdChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> CreatedOn
-        {
-            get
-            {
-                return _CreatedOn;
-            }
-            set
-            {
-                OnCreatedOnChanging(value);
-                ReportPropertyChanging("CreatedOn");
-                _CreatedOn = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("CreatedOn");
-                OnCreatedOnChanged();
-            }
-        }
-        private Nullable<global::System.DateTime> _CreatedOn;
-        partial void OnCreatedOnChanging(Nullable<global::System.DateTime> value);
-        partial void OnCreatedOnChanged();
 
         #endregion
 
@@ -5852,14 +5828,18 @@ namespace DataAccessLayer.LinqtoEntity
         /// </summary>
         /// <param name="payorId">Initial value of the PayorId property.</param>
         /// <param name="carrierId">Initial value of the CarrierId property.</param>
+        /// <param name="createdBy">Initial value of the CreatedBy property.</param>
+        /// <param name="modifiedBy">Initial value of the ModifiedBy property.</param>
         /// <param name="modifiedOn">Initial value of the ModifiedOn property.</param>
         /// <param name="isTrackMissingMonth">Initial value of the IsTrackMissingMonth property.</param>
         /// <param name="isTrackIncomingPercentage">Initial value of the IsTrackIncomingPercentage property.</param>
-        public static CarrierNickName CreateCarrierNickName(global::System.Guid payorId, global::System.Guid carrierId, global::System.DateTime modifiedOn, global::System.Boolean isTrackMissingMonth, global::System.Boolean isTrackIncomingPercentage)
+        public static CarrierNickName CreateCarrierNickName(global::System.Guid payorId, global::System.Guid carrierId, global::System.Guid createdBy, global::System.Guid modifiedBy, global::System.DateTime modifiedOn, global::System.Boolean isTrackMissingMonth, global::System.Boolean isTrackIncomingPercentage)
         {
             CarrierNickName carrierNickName = new CarrierNickName();
             carrierNickName.PayorId = payorId;
             carrierNickName.CarrierId = carrierId;
+            carrierNickName.CreatedBy = createdBy;
+            carrierNickName.ModifiedBy = modifiedBy;
             carrierNickName.ModifiedOn = modifiedOn;
             carrierNickName.IsTrackMissingMonth = isTrackMissingMonth;
             carrierNickName.IsTrackIncomingPercentage = isTrackIncomingPercentage;
@@ -5951,9 +5931,9 @@ namespace DataAccessLayer.LinqtoEntity
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Guid> CreatedBy
+        public global::System.Guid CreatedBy
         {
             get
             {
@@ -5968,16 +5948,16 @@ namespace DataAccessLayer.LinqtoEntity
                 OnCreatedByChanged();
             }
         }
-        private Nullable<global::System.Guid> _CreatedBy;
-        partial void OnCreatedByChanging(Nullable<global::System.Guid> value);
+        private global::System.Guid _CreatedBy;
+        partial void OnCreatedByChanging(global::System.Guid value);
         partial void OnCreatedByChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Guid> ModifiedBy
+        public global::System.Guid ModifiedBy
         {
             get
             {
@@ -5992,8 +5972,8 @@ namespace DataAccessLayer.LinqtoEntity
                 OnModifiedByChanged();
             }
         }
-        private Nullable<global::System.Guid> _ModifiedBy;
-        partial void OnModifiedByChanging(Nullable<global::System.Guid> value);
+        private global::System.Guid _ModifiedBy;
+        partial void OnModifiedByChanging(global::System.Guid value);
         partial void OnModifiedByChanged();
     
         /// <summary>
@@ -6091,30 +6071,6 @@ namespace DataAccessLayer.LinqtoEntity
         private global::System.Boolean _IsTrackIncomingPercentage;
         partial void OnIsTrackIncomingPercentageChanging(global::System.Boolean value);
         partial void OnIsTrackIncomingPercentageChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> CreatedOn
-        {
-            get
-            {
-                return _CreatedOn;
-            }
-            set
-            {
-                OnCreatedOnChanging(value);
-                ReportPropertyChanging("CreatedOn");
-                _CreatedOn = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("CreatedOn");
-                OnCreatedOnChanged();
-            }
-        }
-        private Nullable<global::System.DateTime> _CreatedOn;
-        partial void OnCreatedOnChanging(Nullable<global::System.DateTime> value);
-        partial void OnCreatedOnChanged();
 
         #endregion
 
@@ -6520,30 +6476,6 @@ namespace DataAccessLayer.LinqtoEntity
         private Nullable<global::System.Boolean> _IsDeleted;
         partial void OnIsDeletedChanging(Nullable<global::System.Boolean> value);
         partial void OnIsDeletedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> CreatedOn
-        {
-            get
-            {
-                return _CreatedOn;
-            }
-            set
-            {
-                OnCreatedOnChanging(value);
-                ReportPropertyChanging("CreatedOn");
-                _CreatedOn = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("CreatedOn");
-                OnCreatedOnChanged();
-            }
-        }
-        private Nullable<global::System.DateTime> _CreatedOn;
-        partial void OnCreatedOnChanging(Nullable<global::System.DateTime> value);
-        partial void OnCreatedOnChanged();
 
         #endregion
 
@@ -6899,30 +6831,6 @@ namespace DataAccessLayer.LinqtoEntity
         private Nullable<global::System.Guid> _LicenseeId;
         partial void OnLicenseeIdChanging(Nullable<global::System.Guid> value);
         partial void OnLicenseeIdChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> CreatedOn
-        {
-            get
-            {
-                return _CreatedOn;
-            }
-            set
-            {
-                OnCreatedOnChanging(value);
-                ReportPropertyChanging("CreatedOn");
-                _CreatedOn = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("CreatedOn");
-                OnCreatedOnChanged();
-            }
-        }
-        private Nullable<global::System.DateTime> _CreatedOn;
-        partial void OnCreatedOnChanging(Nullable<global::System.DateTime> value);
-        partial void OnCreatedOnChanged();
 
         #endregion
 
@@ -7440,30 +7348,6 @@ namespace DataAccessLayer.LinqtoEntity
         private Nullable<global::System.Boolean> _IsDeleted;
         partial void OnIsDeletedChanging(Nullable<global::System.Boolean> value);
         partial void OnIsDeletedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> CreatedOn
-        {
-            get
-            {
-                return _CreatedOn;
-            }
-            set
-            {
-                OnCreatedOnChanging(value);
-                ReportPropertyChanging("CreatedOn");
-                _CreatedOn = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("CreatedOn");
-                OnCreatedOnChanged();
-            }
-        }
-        private Nullable<global::System.DateTime> _CreatedOn;
-        partial void OnCreatedOnChanging(Nullable<global::System.DateTime> value);
-        partial void OnCreatedOnChanged();
 
         #endregion
 
@@ -9986,54 +9870,6 @@ namespace DataAccessLayer.LinqtoEntity
         private Nullable<global::System.Boolean> _IsPMCVariance;
         partial void OnIsPMCVarianceChanging(Nullable<global::System.Boolean> value);
         partial void OnIsPMCVarianceChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Boolean> IsRemovedFromCommDashboard
-        {
-            get
-            {
-                return _IsRemovedFromCommDashboard;
-            }
-            set
-            {
-                OnIsRemovedFromCommDashboardChanging(value);
-                ReportPropertyChanging("IsRemovedFromCommDashboard");
-                _IsRemovedFromCommDashboard = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IsRemovedFromCommDashboard");
-                OnIsRemovedFromCommDashboardChanged();
-            }
-        }
-        private Nullable<global::System.Boolean> _IsRemovedFromCommDashboard;
-        partial void OnIsRemovedFromCommDashboardChanging(Nullable<global::System.Boolean> value);
-        partial void OnIsRemovedFromCommDashboardChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Boolean> IsResolvedFromCommDashboard
-        {
-            get
-            {
-                return _IsResolvedFromCommDashboard;
-            }
-            set
-            {
-                OnIsResolvedFromCommDashboardChanging(value);
-                ReportPropertyChanging("IsResolvedFromCommDashboard");
-                _IsResolvedFromCommDashboard = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IsResolvedFromCommDashboard");
-                OnIsResolvedFromCommDashboardChanged();
-            }
-        }
-        private Nullable<global::System.Boolean> _IsResolvedFromCommDashboard;
-        partial void OnIsResolvedFromCommDashboardChanging(Nullable<global::System.Boolean> value);
-        partial void OnIsResolvedFromCommDashboardChanged();
 
         #endregion
 
@@ -14156,7 +13992,7 @@ namespace DataAccessLayer.LinqtoEntity
         /// Create a new ImportToolStatementDataSetting object.
         /// </summary>
         /// <param name="id">Initial value of the ID property.</param>
-        public static ImportToolStatementDataSetting CreateImportToolStatementDataSetting(global::System.Int32 id)
+        public static ImportToolStatementDataSetting CreateImportToolStatementDataSetting(global::System.Byte id)
         {
             ImportToolStatementDataSetting importToolStatementDataSetting = new ImportToolStatementDataSetting();
             importToolStatementDataSetting.ID = id;
@@ -14172,7 +14008,7 @@ namespace DataAccessLayer.LinqtoEntity
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 ID
+        public global::System.Byte ID
         {
             get
             {
@@ -14190,8 +14026,8 @@ namespace DataAccessLayer.LinqtoEntity
                 }
             }
         }
-        private global::System.Int32 _ID;
-        partial void OnIDChanging(global::System.Int32 value);
+        private global::System.Byte _ID;
+        partial void OnIDChanging(global::System.Byte value);
         partial void OnIDChanged();
     
         /// <summary>
@@ -17272,30 +17108,6 @@ namespace DataAccessLayer.LinqtoEntity
         private Nullable<global::System.Boolean> _IsClientEnable;
         partial void OnIsClientEnableChanging(Nullable<global::System.Boolean> value);
         partial void OnIsClientEnableChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> CreatedDate
-        {
-            get
-            {
-                return _CreatedDate;
-            }
-            set
-            {
-                OnCreatedDateChanging(value);
-                ReportPropertyChanging("CreatedDate");
-                _CreatedDate = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("CreatedDate");
-                OnCreatedDateChanged();
-            }
-        }
-        private Nullable<global::System.DateTime> _CreatedDate;
-        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
-        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -24290,30 +24102,6 @@ namespace DataAccessLayer.LinqtoEntity
         private global::System.String _ReportDescription;
         partial void OnReportDescriptionChanging(global::System.String value);
         partial void OnReportDescriptionChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Boolean> IsVisible
-        {
-            get
-            {
-                return _IsVisible;
-            }
-            set
-            {
-                OnIsVisibleChanging(value);
-                ReportPropertyChanging("IsVisible");
-                _IsVisible = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IsVisible");
-                OnIsVisibleChanged();
-            }
-        }
-        private Nullable<global::System.Boolean> _IsVisible;
-        partial void OnIsVisibleChanging(Nullable<global::System.Boolean> value);
-        partial void OnIsVisibleChanged();
 
         #endregion
 
@@ -26160,30 +25948,6 @@ namespace DataAccessLayer.LinqtoEntity
         private Nullable<global::System.Boolean> _IsPayorRate;
         partial void OnIsPayorRateChanging(Nullable<global::System.Boolean> value);
         partial void OnIsPayorRateChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Boolean> IsSubTotal
-        {
-            get
-            {
-                return _IsSubTotal;
-            }
-            set
-            {
-                OnIsSubTotalChanging(value);
-                ReportPropertyChanging("IsSubTotal");
-                _IsSubTotal = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IsSubTotal");
-                OnIsSubTotalChanged();
-            }
-        }
-        private Nullable<global::System.Boolean> _IsSubTotal;
-        partial void OnIsSubTotalChanging(Nullable<global::System.Boolean> value);
-        partial void OnIsSubTotalChanged();
 
         #endregion
 
@@ -26485,30 +26249,6 @@ namespace DataAccessLayer.LinqtoEntity
         private Nullable<global::System.Guid> _LicenseeId;
         partial void OnLicenseeIdChanging(Nullable<global::System.Guid> value);
         partial void OnLicenseeIdChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> CreatedOn
-        {
-            get
-            {
-                return _CreatedOn;
-            }
-            set
-            {
-                OnCreatedOnChanging(value);
-                ReportPropertyChanging("CreatedOn");
-                _CreatedOn = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("CreatedOn");
-                OnCreatedOnChanged();
-            }
-        }
-        private Nullable<global::System.DateTime> _CreatedOn;
-        partial void OnCreatedOnChanging(Nullable<global::System.DateTime> value);
-        partial void OnCreatedOnChanged();
 
         #endregion
 
@@ -30881,30 +30621,6 @@ namespace DataAccessLayer.LinqtoEntity
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Boolean> IsManuallyChanged
-        {
-            get
-            {
-                return _IsManuallyChanged;
-            }
-            set
-            {
-                OnIsManuallyChangedChanging(value);
-                ReportPropertyChanging("IsManuallyChanged");
-                _IsManuallyChanged = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IsManuallyChanged");
-                OnIsManuallyChangedChanged();
-            }
-        }
-        private Nullable<global::System.Boolean> _IsManuallyChanged;
-        partial void OnIsManuallyChangedChanging(Nullable<global::System.Boolean> value);
-        partial void OnIsManuallyChangedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.Byte[] RowVersion
@@ -31069,198 +30785,6 @@ namespace DataAccessLayer.LinqtoEntity
         private Nullable<global::System.DateTime> _LastNoVarIssueDate;
         partial void OnLastNoVarIssueDateChanging(Nullable<global::System.DateTime> value);
         partial void OnLastNoVarIssueDateChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Boolean> IsCustomBasicSchedule
-        {
-            get
-            {
-                return _IsCustomBasicSchedule;
-            }
-            set
-            {
-                OnIsCustomBasicScheduleChanging(value);
-                ReportPropertyChanging("IsCustomBasicSchedule");
-                _IsCustomBasicSchedule = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IsCustomBasicSchedule");
-                OnIsCustomBasicScheduleChanged();
-            }
-        }
-        private Nullable<global::System.Boolean> _IsCustomBasicSchedule;
-        partial void OnIsCustomBasicScheduleChanging(Nullable<global::System.Boolean> value);
-        partial void OnIsCustomBasicScheduleChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String CustomScheduleDateType
-        {
-            get
-            {
-                return _CustomScheduleDateType;
-            }
-            set
-            {
-                OnCustomScheduleDateTypeChanging(value);
-                ReportPropertyChanging("CustomScheduleDateType");
-                _CustomScheduleDateType = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("CustomScheduleDateType");
-                OnCustomScheduleDateTypeChanged();
-            }
-        }
-        private global::System.String _CustomScheduleDateType;
-        partial void OnCustomScheduleDateTypeChanging(global::System.String value);
-        partial void OnCustomScheduleDateTypeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Guid> PrimaryAgent
-        {
-            get
-            {
-                return _PrimaryAgent;
-            }
-            set
-            {
-                OnPrimaryAgentChanging(value);
-                ReportPropertyChanging("PrimaryAgent");
-                _PrimaryAgent = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("PrimaryAgent");
-                OnPrimaryAgentChanged();
-            }
-        }
-        private Nullable<global::System.Guid> _PrimaryAgent;
-        partial void OnPrimaryAgentChanging(Nullable<global::System.Guid> value);
-        partial void OnPrimaryAgentChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Boolean> IsTieredSchedule
-        {
-            get
-            {
-                return _IsTieredSchedule;
-            }
-            set
-            {
-                OnIsTieredScheduleChanging(value);
-                ReportPropertyChanging("IsTieredSchedule");
-                _IsTieredSchedule = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IsTieredSchedule");
-                OnIsTieredScheduleChanged();
-            }
-        }
-        private Nullable<global::System.Boolean> _IsTieredSchedule;
-        partial void OnIsTieredScheduleChanging(Nullable<global::System.Boolean> value);
-        partial void OnIsTieredScheduleChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Guid> LastModifiedBy
-        {
-            get
-            {
-                return _LastModifiedBy;
-            }
-            set
-            {
-                OnLastModifiedByChanging(value);
-                ReportPropertyChanging("LastModifiedBy");
-                _LastModifiedBy = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("LastModifiedBy");
-                OnLastModifiedByChanged();
-            }
-        }
-        private Nullable<global::System.Guid> _LastModifiedBy;
-        partial void OnLastModifiedByChanging(Nullable<global::System.Guid> value);
-        partial void OnLastModifiedByChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> LastModifiedOn
-        {
-            get
-            {
-                return _LastModifiedOn;
-            }
-            set
-            {
-                OnLastModifiedOnChanging(value);
-                ReportPropertyChanging("LastModifiedOn");
-                _LastModifiedOn = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("LastModifiedOn");
-                OnLastModifiedOnChanged();
-            }
-        }
-        private Nullable<global::System.DateTime> _LastModifiedOn;
-        partial void OnLastModifiedOnChanging(Nullable<global::System.DateTime> value);
-        partial void OnLastModifiedOnChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Boolean> IsCreatedFromWeb
-        {
-            get
-            {
-                return _IsCreatedFromWeb;
-            }
-            set
-            {
-                OnIsCreatedFromWebChanging(value);
-                ReportPropertyChanging("IsCreatedFromWeb");
-                _IsCreatedFromWeb = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IsCreatedFromWeb");
-                OnIsCreatedFromWebChanged();
-            }
-        }
-        private Nullable<global::System.Boolean> _IsCreatedFromWeb;
-        partial void OnIsCreatedFromWebChanging(Nullable<global::System.Boolean> value);
-        partial void OnIsCreatedFromWebChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Boolean> IslastModifiedFromWeb
-        {
-            get
-            {
-                return _IslastModifiedFromWeb;
-            }
-            set
-            {
-                OnIslastModifiedFromWebChanging(value);
-                ReportPropertyChanging("IslastModifiedFromWeb");
-                _IslastModifiedFromWeb = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IslastModifiedFromWeb");
-                OnIslastModifiedFromWebChanged();
-            }
-        }
-        private Nullable<global::System.Boolean> _IslastModifiedFromWeb;
-        partial void OnIslastModifiedFromWebChanging(Nullable<global::System.Boolean> value);
-        partial void OnIslastModifiedFromWebChanged();
 
         #endregion
 
@@ -33304,102 +32828,6 @@ namespace DataAccessLayer.LinqtoEntity
         private global::System.String _ImportPolicyID;
         partial void OnImportPolicyIDChanging(global::System.String value);
         partial void OnImportPolicyIDChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String ImportProduct
-        {
-            get
-            {
-                return _ImportProduct;
-            }
-            set
-            {
-                OnImportProductChanging(value);
-                ReportPropertyChanging("ImportProduct");
-                _ImportProduct = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("ImportProduct");
-                OnImportProductChanged();
-            }
-        }
-        private global::System.String _ImportProduct;
-        partial void OnImportProductChanging(global::System.String value);
-        partial void OnImportProductChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String ImportCarrier
-        {
-            get
-            {
-                return _ImportCarrier;
-            }
-            set
-            {
-                OnImportCarrierChanging(value);
-                ReportPropertyChanging("ImportCarrier");
-                _ImportCarrier = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("ImportCarrier");
-                OnImportCarrierChanged();
-            }
-        }
-        private global::System.String _ImportCarrier;
-        partial void OnImportCarrierChanging(global::System.String value);
-        partial void OnImportCarrierChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String ImportPayor
-        {
-            get
-            {
-                return _ImportPayor;
-            }
-            set
-            {
-                OnImportPayorChanging(value);
-                ReportPropertyChanging("ImportPayor");
-                _ImportPayor = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("ImportPayor");
-                OnImportPayorChanged();
-            }
-        }
-        private global::System.String _ImportPayor;
-        partial void OnImportPayorChanging(global::System.String value);
-        partial void OnImportPayorChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String BG_PolicyPlanID
-        {
-            get
-            {
-                return _BG_PolicyPlanID;
-            }
-            set
-            {
-                OnBG_PolicyPlanIDChanging(value);
-                ReportPropertyChanging("BG_PolicyPlanID");
-                _BG_PolicyPlanID = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("BG_PolicyPlanID");
-                OnBG_PolicyPlanIDChanged();
-            }
-        }
-        private global::System.String _BG_PolicyPlanID;
-        partial void OnBG_PolicyPlanIDChanging(global::System.String value);
-        partial void OnBG_PolicyPlanIDChanged();
 
         #endregion
 
@@ -35060,78 +34488,6 @@ namespace DataAccessLayer.LinqtoEntity
         private Nullable<global::System.DateTime> _LastModifiedOn;
         partial void OnLastModifiedOnChanging(Nullable<global::System.DateTime> value);
         partial void OnLastModifiedOnChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Guid> CreatedBy
-        {
-            get
-            {
-                return _CreatedBy;
-            }
-            set
-            {
-                OnCreatedByChanging(value);
-                ReportPropertyChanging("CreatedBy");
-                _CreatedBy = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("CreatedBy");
-                OnCreatedByChanged();
-            }
-        }
-        private Nullable<global::System.Guid> _CreatedBy;
-        partial void OnCreatedByChanging(Nullable<global::System.Guid> value);
-        partial void OnCreatedByChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Guid> ModifiedBy
-        {
-            get
-            {
-                return _ModifiedBy;
-            }
-            set
-            {
-                OnModifiedByChanging(value);
-                ReportPropertyChanging("ModifiedBy");
-                _ModifiedBy = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("ModifiedBy");
-                OnModifiedByChanged();
-            }
-        }
-        private Nullable<global::System.Guid> _ModifiedBy;
-        partial void OnModifiedByChanging(Nullable<global::System.Guid> value);
-        partial void OnModifiedByChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Boolean> IsDeleted
-        {
-            get
-            {
-                return _IsDeleted;
-            }
-            set
-            {
-                OnIsDeletedChanging(value);
-                ReportPropertyChanging("IsDeleted");
-                _IsDeleted = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IsDeleted");
-                OnIsDeletedChanged();
-            }
-        }
-        private Nullable<global::System.Boolean> _IsDeleted;
-        partial void OnIsDeletedChanging(Nullable<global::System.Boolean> value);
-        partial void OnIsDeletedChanged();
 
         #endregion
 
@@ -36171,102 +35527,6 @@ namespace DataAccessLayer.LinqtoEntity
         private Nullable<global::System.Int32> _ScheduleTypeId;
         partial void OnScheduleTypeIdChanging(Nullable<global::System.Int32> value);
         partial void OnScheduleTypeIdChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> CustomStartDate
-        {
-            get
-            {
-                return _CustomStartDate;
-            }
-            set
-            {
-                OnCustomStartDateChanging(value);
-                ReportPropertyChanging("CustomStartDate");
-                _CustomStartDate = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("CustomStartDate");
-                OnCustomStartDateChanged();
-            }
-        }
-        private Nullable<global::System.DateTime> _CustomStartDate;
-        partial void OnCustomStartDateChanging(Nullable<global::System.DateTime> value);
-        partial void OnCustomStartDateChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> CustomEndDate
-        {
-            get
-            {
-                return _CustomEndDate;
-            }
-            set
-            {
-                OnCustomEndDateChanging(value);
-                ReportPropertyChanging("CustomEndDate");
-                _CustomEndDate = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("CustomEndDate");
-                OnCustomEndDateChanged();
-            }
-        }
-        private Nullable<global::System.DateTime> _CustomEndDate;
-        partial void OnCustomEndDateChanging(Nullable<global::System.DateTime> value);
-        partial void OnCustomEndDateChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Double> SplitPercent
-        {
-            get
-            {
-                return _SplitPercent;
-            }
-            set
-            {
-                OnSplitPercentChanging(value);
-                ReportPropertyChanging("SplitPercent");
-                _SplitPercent = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("SplitPercent");
-                OnSplitPercentChanged();
-            }
-        }
-        private Nullable<global::System.Double> _SplitPercent;
-        partial void OnSplitPercentChanging(Nullable<global::System.Double> value);
-        partial void OnSplitPercentChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int32> TierNumber
-        {
-            get
-            {
-                return _TierNumber;
-            }
-            set
-            {
-                OnTierNumberChanging(value);
-                ReportPropertyChanging("TierNumber");
-                _TierNumber = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("TierNumber");
-                OnTierNumberChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _TierNumber;
-        partial void OnTierNumberChanging(Nullable<global::System.Int32> value);
-        partial void OnTierNumberChanged();
 
         #endregion
 
@@ -39547,198 +38807,6 @@ namespace DataAccessLayer.LinqtoEntity
         private Nullable<global::System.Boolean> _IsAccountExec;
         partial void OnIsAccountExecChanging(Nullable<global::System.Boolean> value);
         partial void OnIsAccountExecChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String BGUserId
-        {
-            get
-            {
-                return _BGUserId;
-            }
-            set
-            {
-                OnBGUserIdChanging(value);
-                ReportPropertyChanging("BGUserId");
-                _BGUserId = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("BGUserId");
-                OnBGUserIdChanged();
-            }
-        }
-        private global::System.String _BGUserId;
-        partial void OnBGUserIdChanging(global::System.String value);
-        partial void OnBGUserIdChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Boolean> IsAdmin
-        {
-            get
-            {
-                return _IsAdmin;
-            }
-            set
-            {
-                OnIsAdminChanging(value);
-                ReportPropertyChanging("IsAdmin");
-                _IsAdmin = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IsAdmin");
-                OnIsAdminChanged();
-            }
-        }
-        private Nullable<global::System.Boolean> _IsAdmin;
-        partial void OnIsAdminChanging(Nullable<global::System.Boolean> value);
-        partial void OnIsAdminChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Boolean> IsUserActiveOnWeb
-        {
-            get
-            {
-                return _IsUserActiveOnWeb;
-            }
-            set
-            {
-                OnIsUserActiveOnWebChanging(value);
-                ReportPropertyChanging("IsUserActiveOnWeb");
-                _IsUserActiveOnWeb = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IsUserActiveOnWeb");
-                OnIsUserActiveOnWebChanged();
-            }
-        }
-        private Nullable<global::System.Boolean> _IsUserActiveOnWeb;
-        partial void OnIsUserActiveOnWebChanging(Nullable<global::System.Boolean> value);
-        partial void OnIsUserActiveOnWebChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> ModifiedOn
-        {
-            get
-            {
-                return _ModifiedOn;
-            }
-            set
-            {
-                OnModifiedOnChanging(value);
-                ReportPropertyChanging("ModifiedOn");
-                _ModifiedOn = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("ModifiedOn");
-                OnModifiedOnChanged();
-            }
-        }
-        private Nullable<global::System.DateTime> _ModifiedOn;
-        partial void OnModifiedOnChanging(Nullable<global::System.DateTime> value);
-        partial void OnModifiedOnChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Guid> ModifiedBy
-        {
-            get
-            {
-                return _ModifiedBy;
-            }
-            set
-            {
-                OnModifiedByChanging(value);
-                ReportPropertyChanging("ModifiedBy");
-                _ModifiedBy = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("ModifiedBy");
-                OnModifiedByChanged();
-            }
-        }
-        private Nullable<global::System.Guid> _ModifiedBy;
-        partial void OnModifiedByChanging(Nullable<global::System.Guid> value);
-        partial void OnModifiedByChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String PasswordResetKey
-        {
-            get
-            {
-                return _PasswordResetKey;
-            }
-            set
-            {
-                OnPasswordResetKeyChanging(value);
-                ReportPropertyChanging("PasswordResetKey");
-                _PasswordResetKey = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("PasswordResetKey");
-                OnPasswordResetKeyChanged();
-            }
-        }
-        private global::System.String _PasswordResetKey;
-        partial void OnPasswordResetKeyChanging(global::System.String value);
-        partial void OnPasswordResetKeyChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> PasswordResetKeyInsertDateTime
-        {
-            get
-            {
-                return _PasswordResetKeyInsertDateTime;
-            }
-            set
-            {
-                OnPasswordResetKeyInsertDateTimeChanging(value);
-                ReportPropertyChanging("PasswordResetKeyInsertDateTime");
-                _PasswordResetKeyInsertDateTime = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("PasswordResetKeyInsertDateTime");
-                OnPasswordResetKeyInsertDateTimeChanged();
-            }
-        }
-        private Nullable<global::System.DateTime> _PasswordResetKeyInsertDateTime;
-        partial void OnPasswordResetKeyInsertDateTimeChanging(Nullable<global::System.DateTime> value);
-        partial void OnPasswordResetKeyInsertDateTimeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Guid> CreatedBy
-        {
-            get
-            {
-                return _CreatedBy;
-            }
-            set
-            {
-                OnCreatedByChanging(value);
-                ReportPropertyChanging("CreatedBy");
-                _CreatedBy = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("CreatedBy");
-                OnCreatedByChanged();
-            }
-        }
-        private Nullable<global::System.Guid> _CreatedBy;
-        partial void OnCreatedByChanging(Nullable<global::System.Guid> value);
-        partial void OnCreatedByChanged();
 
         #endregion
 
@@ -40706,198 +39774,6 @@ namespace DataAccessLayer.LinqtoEntity
         private Nullable<global::System.Boolean> _DisableAgentEditing;
         partial void OnDisableAgentEditingChanging(Nullable<global::System.Boolean> value);
         partial void OnDisableAgentEditingChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String OfficePhone_DialCode
-        {
-            get
-            {
-                return _OfficePhone_DialCode;
-            }
-            set
-            {
-                OnOfficePhone_DialCodeChanging(value);
-                ReportPropertyChanging("OfficePhone_DialCode");
-                _OfficePhone_DialCode = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("OfficePhone_DialCode");
-                OnOfficePhone_DialCodeChanged();
-            }
-        }
-        private global::System.String _OfficePhone_DialCode;
-        partial void OnOfficePhone_DialCodeChanging(global::System.String value);
-        partial void OnOfficePhone_DialCodeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String CellPhone_DialCode
-        {
-            get
-            {
-                return _CellPhone_DialCode;
-            }
-            set
-            {
-                OnCellPhone_DialCodeChanging(value);
-                ReportPropertyChanging("CellPhone_DialCode");
-                _CellPhone_DialCode = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("CellPhone_DialCode");
-                OnCellPhone_DialCodeChanged();
-            }
-        }
-        private global::System.String _CellPhone_DialCode;
-        partial void OnCellPhone_DialCodeChanging(global::System.String value);
-        partial void OnCellPhone_DialCodeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String Fax_DialCode
-        {
-            get
-            {
-                return _Fax_DialCode;
-            }
-            set
-            {
-                OnFax_DialCodeChanging(value);
-                ReportPropertyChanging("Fax_DialCode");
-                _Fax_DialCode = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("Fax_DialCode");
-                OnFax_DialCodeChanged();
-            }
-        }
-        private global::System.String _Fax_DialCode;
-        partial void OnFax_DialCodeChanging(global::System.String value);
-        partial void OnFax_DialCodeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String OfficePhone_CountryCode
-        {
-            get
-            {
-                return _OfficePhone_CountryCode;
-            }
-            set
-            {
-                OnOfficePhone_CountryCodeChanging(value);
-                ReportPropertyChanging("OfficePhone_CountryCode");
-                _OfficePhone_CountryCode = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("OfficePhone_CountryCode");
-                OnOfficePhone_CountryCodeChanged();
-            }
-        }
-        private global::System.String _OfficePhone_CountryCode;
-        partial void OnOfficePhone_CountryCodeChanging(global::System.String value);
-        partial void OnOfficePhone_CountryCodeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String CellPhone_CountryCode
-        {
-            get
-            {
-                return _CellPhone_CountryCode;
-            }
-            set
-            {
-                OnCellPhone_CountryCodeChanging(value);
-                ReportPropertyChanging("CellPhone_CountryCode");
-                _CellPhone_CountryCode = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("CellPhone_CountryCode");
-                OnCellPhone_CountryCodeChanged();
-            }
-        }
-        private global::System.String _CellPhone_CountryCode;
-        partial void OnCellPhone_CountryCodeChanging(global::System.String value);
-        partial void OnCellPhone_CountryCodeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String FormattedAddress
-        {
-            get
-            {
-                return _FormattedAddress;
-            }
-            set
-            {
-                OnFormattedAddressChanging(value);
-                ReportPropertyChanging("FormattedAddress");
-                _FormattedAddress = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("FormattedAddress");
-                OnFormattedAddressChanged();
-            }
-        }
-        private global::System.String _FormattedAddress;
-        partial void OnFormattedAddressChanging(global::System.String value);
-        partial void OnFormattedAddressChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String Place_Id
-        {
-            get
-            {
-                return _Place_Id;
-            }
-            set
-            {
-                OnPlace_IdChanging(value);
-                ReportPropertyChanging("Place_Id");
-                _Place_Id = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("Place_Id");
-                OnPlace_IdChanged();
-            }
-        }
-        private global::System.String _Place_Id;
-        partial void OnPlace_IdChanging(global::System.String value);
-        partial void OnPlace_IdChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String Fax_CountryCode
-        {
-            get
-            {
-                return _Fax_CountryCode;
-            }
-            set
-            {
-                OnFax_CountryCodeChanging(value);
-                ReportPropertyChanging("Fax_CountryCode");
-                _Fax_CountryCode = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("Fax_CountryCode");
-                OnFax_CountryCodeChanged();
-            }
-        }
-        private global::System.String _Fax_CountryCode;
-        partial void OnFax_CountryCodeChanging(global::System.String value);
-        partial void OnFax_CountryCodeChanged();
 
         #endregion
 
@@ -45480,54 +44356,6 @@ namespace DataAccessLayer.LinqtoEntity
         private Nullable<global::System.Boolean> _IsPMCVariance;
         partial void OnIsPMCVarianceChanging(Nullable<global::System.Boolean> value);
         partial void OnIsPMCVarianceChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Boolean> IsResolvedFromCommDashboard
-        {
-            get
-            {
-                return _IsResolvedFromCommDashboard;
-            }
-            set
-            {
-                OnIsResolvedFromCommDashboardChanging(value);
-                ReportPropertyChanging("IsResolvedFromCommDashboard");
-                _IsResolvedFromCommDashboard = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IsResolvedFromCommDashboard");
-                OnIsResolvedFromCommDashboardChanged();
-            }
-        }
-        private Nullable<global::System.Boolean> _IsResolvedFromCommDashboard;
-        partial void OnIsResolvedFromCommDashboardChanging(Nullable<global::System.Boolean> value);
-        partial void OnIsResolvedFromCommDashboardChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Boolean> IsRemovedFromCommDashboard
-        {
-            get
-            {
-                return _IsRemovedFromCommDashboard;
-            }
-            set
-            {
-                OnIsRemovedFromCommDashboardChanging(value);
-                ReportPropertyChanging("IsRemovedFromCommDashboard");
-                _IsRemovedFromCommDashboard = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IsRemovedFromCommDashboard");
-                OnIsRemovedFromCommDashboardChanged();
-            }
-        }
-        private Nullable<global::System.Boolean> _IsRemovedFromCommDashboard;
-        partial void OnIsRemovedFromCommDashboardChanging(Nullable<global::System.Boolean> value);
-        partial void OnIsRemovedFromCommDashboardChanged();
 
         #endregion
 

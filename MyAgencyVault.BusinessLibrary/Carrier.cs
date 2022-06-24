@@ -379,102 +379,102 @@ namespace MyAgencyVault.BusinessLibrary
     /// </summary>
     /// <param name="?"></param>
     ///GetCarriers(all/all of a licensee/all viewable to a user/all of a given search criteria/)
-    public static List<Carrier> GetCarriers(Guid LicenseeId, bool isCoveragesRequired)
-    {
-      using (DLinq.CommissionDepartmentEntities DataModel = Entity.DataModel)
-      {
-        List<Carrier> carriers;
-        if (LicenseeId != Guid.Empty)
-        {
-          carriers = (from c in DataModel.Carriers
-                      where (c.IsDeleted == false) && ((c.LicenseeId == LicenseeId) || (c.IsGlobal == true))
-                      orderby c.CarrierName
-                      select new Carrier
-                      {
-                        CarrierId = c.CarrierId,
-                        CarrierName = c.CarrierName,
-                        IsGlobal = c.IsGlobal,
-                        LicenseeId = c.LicenseeId ?? Guid.Empty,
-                        UserID = c.CreatedBy.Value
-                      }).ToList();
+    //public static List<Carrier> GetCarriers(Guid LicenseeId, bool isCoveragesRequired)
+    //{
+    //  using (DLinq.CommissionDepartmentEntities DataModel = Entity.DataModel)
+    //  {
+    //    List<Carrier> carriers;
+    //    if (LicenseeId != Guid.Empty)
+    //    {
+    //      carriers = (from c in DataModel.Carriers
+    //                  where (c.IsDeleted == false) && ((c.LicenseeId == LicenseeId) || (c.IsGlobal == true))
+    //                  orderby c.CarrierName
+    //                  select new Carrier
+    //                  {
+    //                    CarrierId = c.CarrierId,
+    //                    CarrierName = c.CarrierName,
+    //                    IsGlobal = c.IsGlobal,
+    //                    LicenseeId = c.LicenseeId ?? Guid.Empty,
+    //                    UserID = c.CreatedBy.Value
+    //                  }).ToList();
 
-        }
-        else
-        {
-          carriers = (from c in DataModel.Carriers
-                      where (c.IsDeleted == false) && (c.IsGlobal == true)
-                      orderby c.CarrierName
-                      select new Carrier
-                      {
-                        CarrierId = c.CarrierId,
-                        CarrierName = c.CarrierName,
-                        IsGlobal = c.IsGlobal,
-                        LicenseeId = c.LicenseeId ?? Guid.Empty,
-                        UserID = c.CreatedBy.Value
-                      }).ToList();
-        }
+    //    }
+    //    else
+    //    {
+    //      carriers = (from c in DataModel.Carriers
+    //                  where (c.IsDeleted == false) && (c.IsGlobal == true)
+    //                  orderby c.CarrierName
+    //                  select new Carrier
+    //                  {
+    //                    CarrierId = c.CarrierId,
+    //                    CarrierName = c.CarrierName,
+    //                    IsGlobal = c.IsGlobal,
+    //                    LicenseeId = c.LicenseeId ?? Guid.Empty,
+    //                    UserID = c.CreatedBy.Value
+    //                  }).ToList();
+    //    }
 
 
-        foreach (Carrier carrier in carriers)
-        {
-          if (isCoveragesRequired)
-            carrier.Coverages = Coverage.GetCarrierCoverages(carrier.CarrierId);
-          else
-            carrier.Coverages = null;
-        }
+    //    foreach (Carrier carrier in carriers)
+    //    {
+    //      if (isCoveragesRequired)
+    //        carrier.Coverages = Coverage.GetCarrierCoverages(carrier.CarrierId);
+    //      else
+    //        carrier.Coverages = null;
+    //    }
 
-        return carriers;
-      }
-    }
+    //    return carriers;
+    //  }
+    //}
 
     /// <summary>
     /// 
     /// </summary>
     /// <param name="?"></param>
     ///GetCarriers(all/all of a licensee/all viewable to a user/all of a given search criteria/)
-    public static List<DisplayedCarrier> GetDispalyedCarriers(Guid LicenseeId, bool isCoveragesRequired)
-    {
-      using (DLinq.CommissionDepartmentEntities DataModel = Entity.DataModel)
-      {
-        List<DisplayedCarrier> carriers;
-        if (LicenseeId != Guid.Empty)
-        {
-          carriers = (from c in DataModel.Carriers
-                      where (c.IsDeleted == false) && ((c.LicenseeId == LicenseeId) || (c.IsGlobal == true))
-                      orderby c.CarrierName
-                      select new DisplayedCarrier
-                      {
-                        CarrierId = c.CarrierId,
-                        CarrierName = c.CarrierName,
-                        IsGlobal = c.IsGlobal
-                      }).ToList();
+    //public static List<DisplayedCarrier> GetDispalyedCarriers(Guid LicenseeId, bool isCoveragesRequired)
+    //{
+    //  using (DLinq.CommissionDepartmentEntities DataModel = Entity.DataModel)
+    //  {
+    //    List<DisplayedCarrier> carriers;
+    //    if (LicenseeId != Guid.Empty)
+    //    {
+    //      carriers = (from c in DataModel.Carriers
+    //                  where (c.IsDeleted == false) && ((c.LicenseeId == LicenseeId) || (c.IsGlobal == true))
+    //                  orderby c.CarrierName
+    //                  select new DisplayedCarrier
+    //                  {
+    //                    CarrierId = c.CarrierId,
+    //                    CarrierName = c.CarrierName,
+    //                    IsGlobal = c.IsGlobal
+    //                  }).ToList();
 
-        }
-        else
-        {
-          carriers = (from c in DataModel.Carriers
-                      where (c.IsDeleted == false) && (c.IsGlobal == true)
-                      orderby c.CarrierName
-                      select new DisplayedCarrier
-                      {
-                        CarrierId = c.CarrierId,
-                        CarrierName = c.CarrierName,
-                        IsGlobal = c.IsGlobal
-                      }).ToList();
-        }
+    //    }
+    //    else
+    //    {
+    //      carriers = (from c in DataModel.Carriers
+    //                  where (c.IsDeleted == false) && (c.IsGlobal == true)
+    //                  orderby c.CarrierName
+    //                  select new DisplayedCarrier
+    //                  {
+    //                    CarrierId = c.CarrierId,
+    //                    CarrierName = c.CarrierName,
+    //                    IsGlobal = c.IsGlobal
+    //                  }).ToList();
+    //    }
 
 
-        foreach (DisplayedCarrier carrier in carriers)
-        {
-          if (isCoveragesRequired)
-            carrier.Coverages = Coverage.GetCarrierCoverages(carrier.CarrierId);
-          else
-            carrier.Coverages = null;
-        }
+    //    foreach (DisplayedCarrier carrier in carriers)
+    //    {
+    //      if (isCoveragesRequired)
+    //        carrier.Coverages = Coverage.GetCarrierCoverages(carrier.CarrierId);
+    //      else
+    //        carrier.Coverages = null;
+    //    }
 
-        return carriers;
-      }
-    }
+    //    return carriers;
+    //  }
+    //}
 
     /// <summary>
     /// 
@@ -529,40 +529,40 @@ namespace MyAgencyVault.BusinessLibrary
     /// </summary>
     /// <param name="PayorId"></param>
     /// <returns></returns>
-    public static List<Carrier> GetPayorCarriers(Guid PayorId, bool isCoveragesRequired)
-    {
-      using (DLinq.CommissionDepartmentEntities DataModel = Entity.DataModel)
-      {
-        List<Carrier> carriers = (from c in DataModel.CarrierNickNames
-                                  where (c.IsDeleted == false) && (c.PayorId == PayorId)
-                                  orderby c.Carrier.CarrierName
-                                  select new Carrier
-                                  {
-                                    CarrierId = c.CarrierId,
-                                    PayerId = c.PayorId,
-                                    CarrierName = c.Carrier.CarrierName,
-                                    NickName = c.NickName,
-                                    IsTrackMissingMonth = c.IsTrackMissingMonth,
-                                    IsTrackIncomingPercentage = c.IsTrackIncomingPercentage,
-                                    IsDeleted = c.IsDeleted.Value,
-                                    IsGlobal = c.Carrier.IsGlobal,
-                                    LicenseeId = c.Carrier.LicenseeId ?? Guid.Empty,
-                                    UserID = (Guid)c.CreatedBy
-                                  }).ToList();
+    //public static List<Carrier> GetPayorCarriers(Guid PayorId, bool isCoveragesRequired)
+    //{
+    //  using (DLinq.CommissionDepartmentEntities DataModel = Entity.DataModel)
+    //  {
+    //    List<Carrier> carriers = (from c in DataModel.CarrierNickNames
+    //                              where (c.IsDeleted == false) && (c.PayorId == PayorId)
+    //                              orderby c.Carrier.CarrierName
+    //                              select new Carrier
+    //                              {
+    //                                CarrierId = c.CarrierId,
+    //                                PayerId = c.PayorId,
+    //                                CarrierName = c.Carrier.CarrierName,
+    //                                NickName = c.NickName,
+    //                                IsTrackMissingMonth = c.IsTrackMissingMonth,
+    //                                IsTrackIncomingPercentage = c.IsTrackIncomingPercentage,
+    //                                IsDeleted = c.IsDeleted.Value,
+    //                                IsGlobal = c.Carrier.IsGlobal,
+    //                                LicenseeId = c.Carrier.LicenseeId ?? Guid.Empty,
+    //                                UserID = (Guid)c.CreatedBy
+    //                              }).ToList();
 
 
 
-        foreach (Carrier car in carriers)
-        {
-          if (isCoveragesRequired)
-            car.Coverages = Coverage.GetCarrierCoverages(PayorId, car.CarrierId);
-          else
-            car.Coverages = null;
-        }
+    //    foreach (Carrier car in carriers)
+    //    {
+    //      if (isCoveragesRequired)
+    //        car.Coverages = Coverage.GetCarrierCoverages(PayorId, car.CarrierId);
+    //      else
+    //        car.Coverages = null;
+    //    }
 
-        return carriers;
-      }
-    }
+    //    return carriers;
+    //  }
+    //}
 
     /// <summary>
     /// 

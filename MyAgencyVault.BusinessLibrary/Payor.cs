@@ -1369,224 +1369,224 @@ namespace MyAgencyVault.BusinessLibrary
         /// </summary>
         /// <param name="LicenseeId"></param>
         /// <returns></returns>
-        public static List<Payor> GetPayors(Guid? LicenseeId, PayorFillInfo PayerfillInfo)
-        {
-            // ActionLogger.Logger.WriteImportPolicyLog("Filling Payor Begin: " + DateTime.Now.ToLongTimeString(), true);
-            using (DLinq.CommissionDepartmentEntities DataModel = Entity.DataModel)
-            {
-                List<Payor> lstPayors = null;
-                PayorStatus status = PayerfillInfo.PayorStatus;
+        //public static List<Payor> GetPayors(Guid? LicenseeId, PayorFillInfo PayerfillInfo)
+        //{
+        //    // ActionLogger.Logger.WriteImportPolicyLog("Filling Payor Begin: " + DateTime.Now.ToLongTimeString(), true);
+        //    using (DLinq.CommissionDepartmentEntities DataModel = Entity.DataModel)
+        //    {
+        //        List<Payor> lstPayors = null;
+        //        PayorStatus status = PayerfillInfo.PayorStatus;
 
-                if (LicenseeId.HasValue && LicenseeId.Value != Guid.Empty)
-                {
-                    if (status == PayorStatus.Active)
-                    {
-                        lstPayors = (from p in DataModel.Payors
-                                     where (p.IsDeleted == false) && ((p.IsGlobal == true) || (p.LicenseeId == LicenseeId)) && p.PayorStatusId == 0
-                                     select new Payor
-                                     {
-                                         PayorID = p.PayorId,
-                                         PayorName = p.PayorName,
-                                         PayorRegionID = p.MasterPayorRegion.PayorRegionId,
-                                         PayorTypeID = p.PayorTypeId.Value,
-                                         SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
-                                         StatusID = p.PayorStatusId.Value,
-                                         PayorLicensee = p.UserCredential.LicenseeId,//ARG--
-                                         UserID = p.CreatedBy.Value,
-                                         NickName = p.NickName,
-                                         ISGlobal = p.IsGlobal
-                                     }).ToList();
-                    }
-                    else if (status == PayorStatus.InActive)
-                    {
-                        lstPayors = (from p in DataModel.Payors
-                                     where (p.IsDeleted == false) && ((p.IsGlobal == true) || (p.LicenseeId == LicenseeId)) && p.PayorStatusId == 1
-                                     select new Payor
-                                     {
-                                         PayorID = p.PayorId,
-                                         PayorName = p.PayorName,
-                                         PayorRegionID = p.MasterPayorRegion.PayorRegionId,
-                                         PayorTypeID = p.PayorTypeId.Value,
-                                         SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
-                                         StatusID = p.PayorStatusId.Value,
-                                         PayorLicensee = p.UserCredential.LicenseeId,//ARG--
-                                         UserID = p.CreatedBy.Value,
-                                         NickName = p.NickName,
-                                         ISGlobal = p.IsGlobal
-                                     }).ToList();
-                    }
-                    else
-                    {
-                        lstPayors = (from p in DataModel.Payors
-                                     where (p.IsDeleted == false) && ((p.IsGlobal == true) || (p.LicenseeId == LicenseeId))
-                                     select new Payor
-                                     {
-                                         PayorID = p.PayorId,
-                                         PayorName = p.PayorName,
-                                         PayorRegionID = p.MasterPayorRegion.PayorRegionId,
-                                         PayorTypeID = p.PayorTypeId.Value,
-                                         SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
-                                         StatusID = p.PayorStatusId.Value,
-                                         PayorLicensee = p.UserCredential.LicenseeId,//ARG--
-                                         UserID = p.CreatedBy.Value,
-                                         NickName = p.NickName,
-                                         ISGlobal = p.IsGlobal
-                                     }).ToList();
-                    }
-                }
-                else if (LicenseeId == null)
-                {
-                    if (status == PayorStatus.Active)
-                    {
-                        lstPayors = (from p in DataModel.Payors
-                                     where (p.IsDeleted == false) && p.PayorStatusId == 0
-                                     select new Payor
-                                     {
-                                         PayorID = p.PayorId,
-                                         PayorName = p.PayorName,
-                                         PayorRegionID = p.MasterPayorRegion.PayorRegionId,
-                                         PayorTypeID = p.PayorTypeId.Value,
-                                         SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
-                                         StatusID = p.PayorStatusId.Value,
-                                         PayorLicensee = p.UserCredential.LicenseeId,//ARG--
-                                         UserID = p.CreatedBy.Value,
-                                         NickName = p.NickName,
-                                         ISGlobal = p.IsGlobal
-                                     }).ToList();
-                    }
-                    else if (status == PayorStatus.InActive)
-                    {
-                        lstPayors = (from p in DataModel.Payors
-                                     where (p.IsDeleted == false) && p.PayorStatusId == 1
-                                     select new Payor
-                                     {
-                                         PayorID = p.PayorId,
-                                         PayorName = p.PayorName,
-                                         PayorRegionID = p.MasterPayorRegion.PayorRegionId,
-                                         PayorTypeID = p.PayorTypeId.Value,
-                                         SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
-                                         StatusID = p.PayorStatusId.Value,
-                                         PayorLicensee = p.UserCredential.LicenseeId,//ARG--
-                                         UserID = p.CreatedBy.Value,
-                                         NickName = p.NickName,
-                                         ISGlobal = p.IsGlobal
-                                     }).ToList();
-                    }
-                    else
-                    {
-                        lstPayors = (from p in DataModel.Payors
-                                     where (p.IsDeleted == false)
-                                     select new Payor
-                                     {
-                                         PayorID = p.PayorId,
-                                         PayorName = p.PayorName,
-                                         PayorRegionID = p.MasterPayorRegion.PayorRegionId,
-                                         PayorTypeID = p.PayorTypeId.Value,
-                                         SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
-                                         StatusID = p.PayorStatusId.Value,
-                                         PayorLicensee = p.UserCredential.LicenseeId,//ARG--
-                                         UserID = p.CreatedBy.Value,
-                                         NickName = p.NickName,
-                                         ISGlobal = p.IsGlobal
-                                     }).ToList();
-                    }
-                }
-                else
-                {
-                    if (status == PayorStatus.Active)
-                    {
-                        lstPayors = (from p in DataModel.Payors
-                                     where (p.IsDeleted == false) && (p.IsGlobal == true) && p.PayorStatusId == 0
-                                     select new Payor
-                                     {
-                                         PayorID = p.PayorId,
-                                         PayorName = p.PayorName,
-                                         PayorRegionID = p.MasterPayorRegion.PayorRegionId,
-                                         PayorTypeID = p.PayorTypeId.Value,
-                                         SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
-                                         StatusID = p.PayorStatusId.Value,
-                                         PayorLicensee = p.UserCredential.LicenseeId,//ARG--
-                                         UserID = p.CreatedBy.Value,
-                                         NickName = p.NickName,
-                                         ISGlobal = p.IsGlobal
-                                     }).ToList();
-                    }
-                    else if (status == PayorStatus.InActive)
-                    {
-                        lstPayors = (from p in DataModel.Payors
-                                     where (p.IsDeleted == false) && (p.IsGlobal == true) && p.PayorStatusId == 1
-                                     select new Payor
-                                     {
-                                         PayorID = p.PayorId,
-                                         PayorName = p.PayorName,
-                                         PayorRegionID = p.MasterPayorRegion.PayorRegionId,
-                                         PayorTypeID = p.PayorTypeId.Value,
-                                         SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
-                                         StatusID = p.PayorStatusId.Value,
-                                         PayorLicensee = p.UserCredential.LicenseeId,//ARG--
-                                         UserID = p.CreatedBy.Value,
-                                         NickName = p.NickName,
-                                         ISGlobal = p.IsGlobal
-                                     }).ToList();
-                    }
-                    else
-                    {
-                        lstPayors = (from p in DataModel.Payors
-                                     where (p.IsDeleted == false) && (p.IsGlobal == true)
-                                     select new Payor
-                                     {
-                                         PayorID = p.PayorId,
-                                         PayorName = p.PayorName,
-                                         PayorRegionID = p.MasterPayorRegion.PayorRegionId,
-                                         PayorTypeID = p.PayorTypeId.Value,
-                                         SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
-                                         StatusID = p.PayorStatusId.Value,
-                                         PayorLicensee = p.UserCredential.LicenseeId,//ARG--
-                                         UserID = p.CreatedBy.Value,
-                                         NickName = p.NickName,
-                                         ISGlobal = p.IsGlobal
-                                     }).ToList();
-                    }
-                }
+        //        if (LicenseeId.HasValue && LicenseeId.Value != Guid.Empty)
+        //        {
+        //            if (status == PayorStatus.Active)
+        //            {
+        //                lstPayors = (from p in DataModel.Payors
+        //                             where (p.IsDeleted == false) && ((p.IsGlobal == true) || (p.LicenseeId == LicenseeId)) && p.PayorStatusId == 0
+        //                             select new Payor
+        //                             {
+        //                                 PayorID = p.PayorId,
+        //                                 PayorName = p.PayorName,
+        //                                 PayorRegionID = p.MasterPayorRegion.PayorRegionId,
+        //                                 PayorTypeID = p.PayorTypeId.Value,
+        //                                 SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
+        //                                 StatusID = p.PayorStatusId.Value,
+        //                                 PayorLicensee = p.UserCredential.LicenseeId,//ARG--
+        //                                 UserID = p.CreatedBy.Value,
+        //                                 NickName = p.NickName,
+        //                                 ISGlobal = p.IsGlobal
+        //                             }).ToList();
+        //            }
+        //            else if (status == PayorStatus.InActive)
+        //            {
+        //                lstPayors = (from p in DataModel.Payors
+        //                             where (p.IsDeleted == false) && ((p.IsGlobal == true) || (p.LicenseeId == LicenseeId)) && p.PayorStatusId == 1
+        //                             select new Payor
+        //                             {
+        //                                 PayorID = p.PayorId,
+        //                                 PayorName = p.PayorName,
+        //                                 PayorRegionID = p.MasterPayorRegion.PayorRegionId,
+        //                                 PayorTypeID = p.PayorTypeId.Value,
+        //                                 SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
+        //                                 StatusID = p.PayorStatusId.Value,
+        //                                 PayorLicensee = p.UserCredential.LicenseeId,//ARG--
+        //                                 UserID = p.CreatedBy.Value,
+        //                                 NickName = p.NickName,
+        //                                 ISGlobal = p.IsGlobal
+        //                             }).ToList();
+        //            }
+        //            else
+        //            {
+        //                lstPayors = (from p in DataModel.Payors
+        //                             where (p.IsDeleted == false) && ((p.IsGlobal == true) || (p.LicenseeId == LicenseeId))
+        //                             select new Payor
+        //                             {
+        //                                 PayorID = p.PayorId,
+        //                                 PayorName = p.PayorName,
+        //                                 PayorRegionID = p.MasterPayorRegion.PayorRegionId,
+        //                                 PayorTypeID = p.PayorTypeId.Value,
+        //                                 SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
+        //                                 StatusID = p.PayorStatusId.Value,
+        //                                 PayorLicensee = p.UserCredential.LicenseeId,//ARG--
+        //                                 UserID = p.CreatedBy.Value,
+        //                                 NickName = p.NickName,
+        //                                 ISGlobal = p.IsGlobal
+        //                             }).ToList();
+        //            }
+        //        }
+        //        else if (LicenseeId == null)
+        //        {
+        //            if (status == PayorStatus.Active)
+        //            {
+        //                lstPayors = (from p in DataModel.Payors
+        //                             where (p.IsDeleted == false) && p.PayorStatusId == 0
+        //                             select new Payor
+        //                             {
+        //                                 PayorID = p.PayorId,
+        //                                 PayorName = p.PayorName,
+        //                                 PayorRegionID = p.MasterPayorRegion.PayorRegionId,
+        //                                 PayorTypeID = p.PayorTypeId.Value,
+        //                                 SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
+        //                                 StatusID = p.PayorStatusId.Value,
+        //                                 PayorLicensee = p.UserCredential.LicenseeId,//ARG--
+        //                                 UserID = p.CreatedBy.Value,
+        //                                 NickName = p.NickName,
+        //                                 ISGlobal = p.IsGlobal
+        //                             }).ToList();
+        //            }
+        //            else if (status == PayorStatus.InActive)
+        //            {
+        //                lstPayors = (from p in DataModel.Payors
+        //                             where (p.IsDeleted == false) && p.PayorStatusId == 1
+        //                             select new Payor
+        //                             {
+        //                                 PayorID = p.PayorId,
+        //                                 PayorName = p.PayorName,
+        //                                 PayorRegionID = p.MasterPayorRegion.PayorRegionId,
+        //                                 PayorTypeID = p.PayorTypeId.Value,
+        //                                 SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
+        //                                 StatusID = p.PayorStatusId.Value,
+        //                                 PayorLicensee = p.UserCredential.LicenseeId,//ARG--
+        //                                 UserID = p.CreatedBy.Value,
+        //                                 NickName = p.NickName,
+        //                                 ISGlobal = p.IsGlobal
+        //                             }).ToList();
+        //            }
+        //            else
+        //            {
+        //                lstPayors = (from p in DataModel.Payors
+        //                             where (p.IsDeleted == false)
+        //                             select new Payor
+        //                             {
+        //                                 PayorID = p.PayorId,
+        //                                 PayorName = p.PayorName,
+        //                                 PayorRegionID = p.MasterPayorRegion.PayorRegionId,
+        //                                 PayorTypeID = p.PayorTypeId.Value,
+        //                                 SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
+        //                                 StatusID = p.PayorStatusId.Value,
+        //                                 PayorLicensee = p.UserCredential.LicenseeId,//ARG--
+        //                                 UserID = p.CreatedBy.Value,
+        //                                 NickName = p.NickName,
+        //                                 ISGlobal = p.IsGlobal
+        //                             }).ToList();
+        //            }
+        //        }
+        //        else
+        //        {
+        //            if (status == PayorStatus.Active)
+        //            {
+        //                lstPayors = (from p in DataModel.Payors
+        //                             where (p.IsDeleted == false) && (p.IsGlobal == true) && p.PayorStatusId == 0
+        //                             select new Payor
+        //                             {
+        //                                 PayorID = p.PayorId,
+        //                                 PayorName = p.PayorName,
+        //                                 PayorRegionID = p.MasterPayorRegion.PayorRegionId,
+        //                                 PayorTypeID = p.PayorTypeId.Value,
+        //                                 SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
+        //                                 StatusID = p.PayorStatusId.Value,
+        //                                 PayorLicensee = p.UserCredential.LicenseeId,//ARG--
+        //                                 UserID = p.CreatedBy.Value,
+        //                                 NickName = p.NickName,
+        //                                 ISGlobal = p.IsGlobal
+        //                             }).ToList();
+        //            }
+        //            else if (status == PayorStatus.InActive)
+        //            {
+        //                lstPayors = (from p in DataModel.Payors
+        //                             where (p.IsDeleted == false) && (p.IsGlobal == true) && p.PayorStatusId == 1
+        //                             select new Payor
+        //                             {
+        //                                 PayorID = p.PayorId,
+        //                                 PayorName = p.PayorName,
+        //                                 PayorRegionID = p.MasterPayorRegion.PayorRegionId,
+        //                                 PayorTypeID = p.PayorTypeId.Value,
+        //                                 SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
+        //                                 StatusID = p.PayorStatusId.Value,
+        //                                 PayorLicensee = p.UserCredential.LicenseeId,//ARG--
+        //                                 UserID = p.CreatedBy.Value,
+        //                                 NickName = p.NickName,
+        //                                 ISGlobal = p.IsGlobal
+        //                             }).ToList();
+        //            }
+        //            else
+        //            {
+        //                lstPayors = (from p in DataModel.Payors
+        //                             where (p.IsDeleted == false) && (p.IsGlobal == true)
+        //                             select new Payor
+        //                             {
+        //                                 PayorID = p.PayorId,
+        //                                 PayorName = p.PayorName,
+        //                                 PayorRegionID = p.MasterPayorRegion.PayorRegionId,
+        //                                 PayorTypeID = p.PayorTypeId.Value,
+        //                                 SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
+        //                                 StatusID = p.PayorStatusId.Value,
+        //                                 PayorLicensee = p.UserCredential.LicenseeId,//ARG--
+        //                                 UserID = p.CreatedBy.Value,
+        //                                 NickName = p.NickName,
+        //                                 ISGlobal = p.IsGlobal
+        //                             }).ToList();
+        //            }
+        //        }
 
-                List<Region> regions = new List<Region>();
-                foreach (Payor p in lstPayors)
-                {
-                    if (regions.Exists(s => s.RegionId == p.PayorRegionID))
-                        p.Region = regions.FirstOrDefault(s => s.RegionId == p.PayorRegionID);
-                    else
-                    {
-                        p.Region = DataModel.MasterPayorRegions.Where(s => s.PayorRegionId == p.PayorRegionID).Select(s => new Region { RegionId = s.PayorRegionId, RegionName = s.Name }).First();
-                        regions.Add(p.Region);
-                    }
+        //        List<Region> regions = new List<Region>();
+        //        foreach (Payor p in lstPayors)
+        //        {
+        //            if (regions.Exists(s => s.RegionId == p.PayorRegionID))
+        //                p.Region = regions.FirstOrDefault(s => s.RegionId == p.PayorRegionID);
+        //            else
+        //            {
+        //                p.Region = DataModel.MasterPayorRegions.Where(s => s.PayorRegionId == p.PayorRegionID).Select(s => new Region { RegionId = s.PayorRegionId, RegionName = s.Name }).First();
+        //                regions.Add(p.Region);
+        //            }
 
-                    if (PayerfillInfo != null && PayerfillInfo.IsCarriersRequired)
-                        p.Carriers = Carrier.GetPayorCarriers(p.PayorID, PayerfillInfo.IsCoveragesRequired);
-                    else
-                        p.Carriers = null;
+        //            if (PayerfillInfo != null && PayerfillInfo.IsCarriersRequired)
+        //                p.Carriers = Carrier.GetPayorCarriers(p.PayorID, PayerfillInfo.IsCoveragesRequired);
+        //            else
+        //                p.Carriers = null;
 
-                    if (PayerfillInfo != null && PayerfillInfo.IsWebsiteLoginsRequired)
-                        p.UserWebSiteInfo = PayorSiteLoginInfo.GetPayorSiteLogins(p.PayorID);
-                    else
-                        p.UserWebSiteInfo = null;
+        //            if (PayerfillInfo != null && PayerfillInfo.IsWebsiteLoginsRequired)
+        //                p.UserWebSiteInfo = PayorSiteLoginInfo.GetPayorSiteLogins(p.PayorID);
+        //            else
+        //                p.UserWebSiteInfo = null;
 
-                    if (PayerfillInfo != null && PayerfillInfo.IsContactsRequired)
-                        p.Contacts = GlobalPayorContact.getContacts(p.PayorID);
-                    else
-                        p.Contacts = null;
+        //            if (PayerfillInfo != null && PayerfillInfo.IsContactsRequired)
+        //                p.Contacts = GlobalPayorContact.getContacts(p.PayorID);
+        //            else
+        //                p.Contacts = null;
 
-                    DLinq.Payor tmpPayor = DataModel.Payors.FirstOrDefault(s => s.PayorId == p.PayorID);
+        //            DLinq.Payor tmpPayor = DataModel.Payors.FirstOrDefault(s => s.PayorId == p.PayorID);
 
-                    if (tmpPayor != null && tmpPayor.Batches != null)
-                        p.IssuedFiles = tmpPayor.Batches.Where(s => s.EntryStatusId == 3).Select(s => s.FileName).ToList();
-                    else
-                        p.IssuedFiles = null;
-                }
+        //            if (tmpPayor != null && tmpPayor.Batches != null)
+        //                p.IssuedFiles = tmpPayor.Batches.Where(s => s.EntryStatusId == 3).Select(s => s.FileName).ToList();
+        //            else
+        //                p.IssuedFiles = null;
+        //        }
 
-                // ActionLogger.Logger.WriteImportPolicyLog("Filling Payor End: " + DateTime.Now.ToLongTimeString(), true);
-                return lstPayors;
-            }
-        }
+        //        // ActionLogger.Logger.WriteImportPolicyLog("Filling Payor End: " + DateTime.Now.ToLongTimeString(), true);
+        //        return lstPayors;
+        //    }
+        //}
 
         /// <summary>
         /// 
@@ -1685,226 +1685,226 @@ namespace MyAgencyVault.BusinessLibrary
         /// <param name="skip"></param>
         /// <param name="take"></param>
         /// <returns></returns>
-        public static List<Payor> GetPayors(Guid? LicenseeId, PayorFillInfo PayerfillInfo, int skip, int take)
-        {
-            // ActionLogger.Logger.WriteImportPolicyLog("Filling Payor Begin: " + DateTime.Now.ToLongTimeString(), true);
-            using (DLinq.CommissionDepartmentEntities DataModel = Entity.DataModel)
-            {
-                List<Payor> lstPayors = null;
-                PayorStatus status = PayerfillInfo.PayorStatus;
+        //public static List<Payor> GetPayors(Guid? LicenseeId, PayorFillInfo PayerfillInfo, int skip, int take)
+        //{
+        //    // ActionLogger.Logger.WriteImportPolicyLog("Filling Payor Begin: " + DateTime.Now.ToLongTimeString(), true);
+        //    using (DLinq.CommissionDepartmentEntities DataModel = Entity.DataModel)
+        //    {
+        //        List<Payor> lstPayors = null;
+        //        PayorStatus status = PayerfillInfo.PayorStatus;
 
-                if (LicenseeId.HasValue && LicenseeId.Value != Guid.Empty)
-                {
-                    if (status == PayorStatus.Active)
-                    {
-                        lstPayors = (from p in DataModel.Payors
-                                     where (p.IsDeleted == false) && ((p.IsGlobal == true) || (p.LicenseeId == LicenseeId)) && p.PayorStatusId == 0
-                                     select new Payor
-                                     {
-                                         PayorID = p.PayorId,
-                                         PayorName = p.PayorName,
-                                         PayorRegionID = p.MasterPayorRegion.PayorRegionId,
-                                         PayorTypeID = p.PayorTypeId.Value,
-                                         SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
-                                         StatusID = p.PayorStatusId.Value,
-                                         PayorLicensee = p.UserCredential.LicenseeId,//ARG--
-                                         UserID = p.CreatedBy.Value,
-                                         NickName = p.NickName,
-                                         ISGlobal = p.IsGlobal
-                                     }).ToList();
-                    }
-                    else if (status == PayorStatus.InActive)
-                    {
-                        lstPayors = (from p in DataModel.Payors
-                                     where (p.IsDeleted == false) && ((p.IsGlobal == true) || (p.LicenseeId == LicenseeId)) && p.PayorStatusId == 1
-                                     select new Payor
-                                     {
-                                         PayorID = p.PayorId,
-                                         PayorName = p.PayorName,
-                                         PayorRegionID = p.MasterPayorRegion.PayorRegionId,
-                                         PayorTypeID = p.PayorTypeId.Value,
-                                         SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
-                                         StatusID = p.PayorStatusId.Value,
-                                         PayorLicensee = p.UserCredential.LicenseeId,//ARG--
-                                         UserID = p.CreatedBy.Value,
-                                         NickName = p.NickName,
-                                         ISGlobal = p.IsGlobal
-                                     }).ToList();
-                    }
-                    else
-                    {
-                        lstPayors = (from p in DataModel.Payors
-                                     where (p.IsDeleted == false) && ((p.IsGlobal == true) || (p.LicenseeId == LicenseeId))
-                                     select new Payor
-                                     {
-                                         PayorID = p.PayorId,
-                                         PayorName = p.PayorName,
-                                         PayorRegionID = p.MasterPayorRegion.PayorRegionId,
-                                         PayorTypeID = p.PayorTypeId.Value,
-                                         SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
-                                         StatusID = p.PayorStatusId.Value,
-                                         PayorLicensee = p.UserCredential.LicenseeId,//ARG--
-                                         UserID = p.CreatedBy.Value,
-                                         NickName = p.NickName,
-                                         ISGlobal = p.IsGlobal
-                                     }).ToList();
-                    }
-                }
-                else if (LicenseeId == null)
-                {
-                    if (status == PayorStatus.Active)
-                    {
-                        lstPayors = (from p in DataModel.Payors
-                                     where (p.IsDeleted == false) && p.PayorStatusId == 0
-                                     select new Payor
-                                     {
-                                         PayorID = p.PayorId,
-                                         PayorName = p.PayorName,
-                                         PayorRegionID = p.MasterPayorRegion.PayorRegionId,
-                                         PayorTypeID = p.PayorTypeId.Value,
-                                         SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
-                                         StatusID = p.PayorStatusId.Value,
-                                         PayorLicensee = p.UserCredential.LicenseeId,//ARG--
-                                         UserID = p.CreatedBy.Value,
-                                         NickName = p.NickName,
-                                         ISGlobal = p.IsGlobal
-                                     }).ToList();
-                    }
-                    else if (status == PayorStatus.InActive)
-                    {
-                        lstPayors = (from p in DataModel.Payors
-                                     where (p.IsDeleted == false) && p.PayorStatusId == 1
-                                     select new Payor
-                                     {
-                                         PayorID = p.PayorId,
-                                         PayorName = p.PayorName,
-                                         PayorRegionID = p.MasterPayorRegion.PayorRegionId,
-                                         PayorTypeID = p.PayorTypeId.Value,
-                                         SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
-                                         StatusID = p.PayorStatusId.Value,
-                                         PayorLicensee = p.UserCredential.LicenseeId,//ARG--
-                                         UserID = p.CreatedBy.Value,
-                                         NickName = p.NickName,
-                                         ISGlobal = p.IsGlobal
-                                     }).ToList();
-                    }
-                    else
-                    {
-                        lstPayors = (from p in DataModel.Payors
-                                     where (p.IsDeleted == false)
-                                     select new Payor
-                                     {
-                                         PayorID = p.PayorId,
-                                         PayorName = p.PayorName,
-                                         PayorRegionID = p.MasterPayorRegion.PayorRegionId,
-                                         PayorTypeID = p.PayorTypeId.Value,
-                                         SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
-                                         StatusID = p.PayorStatusId.Value,
-                                         PayorLicensee = p.UserCredential.LicenseeId,//ARG--
-                                         UserID = p.CreatedBy.Value,
-                                         NickName = p.NickName,
-                                         ISGlobal = p.IsGlobal
-                                     }).ToList();
-                    }
-                }
-                else
-                {
-                    if (status == PayorStatus.Active)
-                    {
-                        lstPayors = (from p in DataModel.Payors
-                                     where (p.IsDeleted == false) && (p.IsGlobal == true) && p.PayorStatusId == 0
-                                     select new Payor
-                                     {
-                                         PayorID = p.PayorId,
-                                         PayorName = p.PayorName,
-                                         PayorRegionID = p.MasterPayorRegion.PayorRegionId,
-                                         PayorTypeID = p.PayorTypeId.Value,
-                                         SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
-                                         StatusID = p.PayorStatusId.Value,
-                                         PayorLicensee = p.UserCredential.LicenseeId,//ARG--
-                                         UserID = p.CreatedBy.Value,
-                                         NickName = p.NickName,
-                                         ISGlobal = p.IsGlobal
-                                     }).ToList();
-                    }
-                    else if (status == PayorStatus.InActive)
-                    {
-                        lstPayors = (from p in DataModel.Payors
-                                     where (p.IsDeleted == false) && (p.IsGlobal == true) && p.PayorStatusId == 1
-                                     select new Payor
-                                     {
-                                         PayorID = p.PayorId,
-                                         PayorName = p.PayorName,
-                                         PayorRegionID = p.MasterPayorRegion.PayorRegionId,
-                                         PayorTypeID = p.PayorTypeId.Value,
-                                         SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
-                                         StatusID = p.PayorStatusId.Value,
-                                         PayorLicensee = p.UserCredential.LicenseeId,//ARG--
-                                         UserID = p.CreatedBy.Value,
-                                         NickName = p.NickName,
-                                         ISGlobal = p.IsGlobal
-                                     }).ToList();
-                    }
-                    else
-                    {
-                        lstPayors = (from p in DataModel.Payors
-                                     where (p.IsDeleted == false) && (p.IsGlobal == true)
-                                     select new Payor
-                                     {
-                                         PayorID = p.PayorId,
-                                         PayorName = p.PayorName,
-                                         PayorRegionID = p.MasterPayorRegion.PayorRegionId,
-                                         PayorTypeID = p.PayorTypeId.Value,
-                                         SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
-                                         StatusID = p.PayorStatusId.Value,
-                                         PayorLicensee = p.UserCredential.LicenseeId,//ARG--
-                                         UserID = p.CreatedBy.Value,
-                                         NickName = p.NickName,
-                                         ISGlobal = p.IsGlobal
-                                     }).ToList();
-                    }
-                }
+        //        if (LicenseeId.HasValue && LicenseeId.Value != Guid.Empty)
+        //        {
+        //            if (status == PayorStatus.Active)
+        //            {
+        //                lstPayors = (from p in DataModel.Payors
+        //                             where (p.IsDeleted == false) && ((p.IsGlobal == true) || (p.LicenseeId == LicenseeId)) && p.PayorStatusId == 0
+        //                             select new Payor
+        //                             {
+        //                                 PayorID = p.PayorId,
+        //                                 PayorName = p.PayorName,
+        //                                 PayorRegionID = p.MasterPayorRegion.PayorRegionId,
+        //                                 PayorTypeID = p.PayorTypeId.Value,
+        //                                 SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
+        //                                 StatusID = p.PayorStatusId.Value,
+        //                                 PayorLicensee = p.UserCredential.LicenseeId,//ARG--
+        //                                 UserID = p.CreatedBy.Value,
+        //                                 NickName = p.NickName,
+        //                                 ISGlobal = p.IsGlobal
+        //                             }).ToList();
+        //            }
+        //            else if (status == PayorStatus.InActive)
+        //            {
+        //                lstPayors = (from p in DataModel.Payors
+        //                             where (p.IsDeleted == false) && ((p.IsGlobal == true) || (p.LicenseeId == LicenseeId)) && p.PayorStatusId == 1
+        //                             select new Payor
+        //                             {
+        //                                 PayorID = p.PayorId,
+        //                                 PayorName = p.PayorName,
+        //                                 PayorRegionID = p.MasterPayorRegion.PayorRegionId,
+        //                                 PayorTypeID = p.PayorTypeId.Value,
+        //                                 SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
+        //                                 StatusID = p.PayorStatusId.Value,
+        //                                 PayorLicensee = p.UserCredential.LicenseeId,//ARG--
+        //                                 UserID = p.CreatedBy.Value,
+        //                                 NickName = p.NickName,
+        //                                 ISGlobal = p.IsGlobal
+        //                             }).ToList();
+        //            }
+        //            else
+        //            {
+        //                lstPayors = (from p in DataModel.Payors
+        //                             where (p.IsDeleted == false) && ((p.IsGlobal == true) || (p.LicenseeId == LicenseeId))
+        //                             select new Payor
+        //                             {
+        //                                 PayorID = p.PayorId,
+        //                                 PayorName = p.PayorName,
+        //                                 PayorRegionID = p.MasterPayorRegion.PayorRegionId,
+        //                                 PayorTypeID = p.PayorTypeId.Value,
+        //                                 SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
+        //                                 StatusID = p.PayorStatusId.Value,
+        //                                 PayorLicensee = p.UserCredential.LicenseeId,//ARG--
+        //                                 UserID = p.CreatedBy.Value,
+        //                                 NickName = p.NickName,
+        //                                 ISGlobal = p.IsGlobal
+        //                             }).ToList();
+        //            }
+        //        }
+        //        else if (LicenseeId == null)
+        //        {
+        //            if (status == PayorStatus.Active)
+        //            {
+        //                lstPayors = (from p in DataModel.Payors
+        //                             where (p.IsDeleted == false) && p.PayorStatusId == 0
+        //                             select new Payor
+        //                             {
+        //                                 PayorID = p.PayorId,
+        //                                 PayorName = p.PayorName,
+        //                                 PayorRegionID = p.MasterPayorRegion.PayorRegionId,
+        //                                 PayorTypeID = p.PayorTypeId.Value,
+        //                                 SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
+        //                                 StatusID = p.PayorStatusId.Value,
+        //                                 PayorLicensee = p.UserCredential.LicenseeId,//ARG--
+        //                                 UserID = p.CreatedBy.Value,
+        //                                 NickName = p.NickName,
+        //                                 ISGlobal = p.IsGlobal
+        //                             }).ToList();
+        //            }
+        //            else if (status == PayorStatus.InActive)
+        //            {
+        //                lstPayors = (from p in DataModel.Payors
+        //                             where (p.IsDeleted == false) && p.PayorStatusId == 1
+        //                             select new Payor
+        //                             {
+        //                                 PayorID = p.PayorId,
+        //                                 PayorName = p.PayorName,
+        //                                 PayorRegionID = p.MasterPayorRegion.PayorRegionId,
+        //                                 PayorTypeID = p.PayorTypeId.Value,
+        //                                 SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
+        //                                 StatusID = p.PayorStatusId.Value,
+        //                                 PayorLicensee = p.UserCredential.LicenseeId,//ARG--
+        //                                 UserID = p.CreatedBy.Value,
+        //                                 NickName = p.NickName,
+        //                                 ISGlobal = p.IsGlobal
+        //                             }).ToList();
+        //            }
+        //            else
+        //            {
+        //                lstPayors = (from p in DataModel.Payors
+        //                             where (p.IsDeleted == false)
+        //                             select new Payor
+        //                             {
+        //                                 PayorID = p.PayorId,
+        //                                 PayorName = p.PayorName,
+        //                                 PayorRegionID = p.MasterPayorRegion.PayorRegionId,
+        //                                 PayorTypeID = p.PayorTypeId.Value,
+        //                                 SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
+        //                                 StatusID = p.PayorStatusId.Value,
+        //                                 PayorLicensee = p.UserCredential.LicenseeId,//ARG--
+        //                                 UserID = p.CreatedBy.Value,
+        //                                 NickName = p.NickName,
+        //                                 ISGlobal = p.IsGlobal
+        //                             }).ToList();
+        //            }
+        //        }
+        //        else
+        //        {
+        //            if (status == PayorStatus.Active)
+        //            {
+        //                lstPayors = (from p in DataModel.Payors
+        //                             where (p.IsDeleted == false) && (p.IsGlobal == true) && p.PayorStatusId == 0
+        //                             select new Payor
+        //                             {
+        //                                 PayorID = p.PayorId,
+        //                                 PayorName = p.PayorName,
+        //                                 PayorRegionID = p.MasterPayorRegion.PayorRegionId,
+        //                                 PayorTypeID = p.PayorTypeId.Value,
+        //                                 SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
+        //                                 StatusID = p.PayorStatusId.Value,
+        //                                 PayorLicensee = p.UserCredential.LicenseeId,//ARG--
+        //                                 UserID = p.CreatedBy.Value,
+        //                                 NickName = p.NickName,
+        //                                 ISGlobal = p.IsGlobal
+        //                             }).ToList();
+        //            }
+        //            else if (status == PayorStatus.InActive)
+        //            {
+        //                lstPayors = (from p in DataModel.Payors
+        //                             where (p.IsDeleted == false) && (p.IsGlobal == true) && p.PayorStatusId == 1
+        //                             select new Payor
+        //                             {
+        //                                 PayorID = p.PayorId,
+        //                                 PayorName = p.PayorName,
+        //                                 PayorRegionID = p.MasterPayorRegion.PayorRegionId,
+        //                                 PayorTypeID = p.PayorTypeId.Value,
+        //                                 SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
+        //                                 StatusID = p.PayorStatusId.Value,
+        //                                 PayorLicensee = p.UserCredential.LicenseeId,//ARG--
+        //                                 UserID = p.CreatedBy.Value,
+        //                                 NickName = p.NickName,
+        //                                 ISGlobal = p.IsGlobal
+        //                             }).ToList();
+        //            }
+        //            else
+        //            {
+        //                lstPayors = (from p in DataModel.Payors
+        //                             where (p.IsDeleted == false) && (p.IsGlobal == true)
+        //                             select new Payor
+        //                             {
+        //                                 PayorID = p.PayorId,
+        //                                 PayorName = p.PayorName,
+        //                                 PayorRegionID = p.MasterPayorRegion.PayorRegionId,
+        //                                 PayorTypeID = p.PayorTypeId.Value,
+        //                                 SourceType = (int?)p.MasterSourceType.SourceTypeId ?? 0,
+        //                                 StatusID = p.PayorStatusId.Value,
+        //                                 PayorLicensee = p.UserCredential.LicenseeId,//ARG--
+        //                                 UserID = p.CreatedBy.Value,
+        //                                 NickName = p.NickName,
+        //                                 ISGlobal = p.IsGlobal
+        //                             }).ToList();
+        //            }
+        //        }
 
-                lstPayors = lstPayors.Skip(skip).Take(take).ToList();
+        //        lstPayors = lstPayors.Skip(skip).Take(take).ToList();
 
-                List<Region> regions = new List<Region>();
-                foreach (Payor p in lstPayors)
-                {
-                    if (regions.Exists(s => s.RegionId == p.PayorRegionID))
-                        p.Region = regions.FirstOrDefault(s => s.RegionId == p.PayorRegionID);
-                    else
-                    {
-                        p.Region = DataModel.MasterPayorRegions.Where(s => s.PayorRegionId == p.PayorRegionID).Select(s => new Region { RegionId = s.PayorRegionId, RegionName = s.Name }).First();
-                        regions.Add(p.Region);
-                    }
+        //        List<Region> regions = new List<Region>();
+        //        foreach (Payor p in lstPayors)
+        //        {
+        //            if (regions.Exists(s => s.RegionId == p.PayorRegionID))
+        //                p.Region = regions.FirstOrDefault(s => s.RegionId == p.PayorRegionID);
+        //            else
+        //            {
+        //                p.Region = DataModel.MasterPayorRegions.Where(s => s.PayorRegionId == p.PayorRegionID).Select(s => new Region { RegionId = s.PayorRegionId, RegionName = s.Name }).First();
+        //                regions.Add(p.Region);
+        //            }
 
-                    if (PayerfillInfo != null && PayerfillInfo.IsCarriersRequired)
-                        p.Carriers = Carrier.GetPayorCarriers(p.PayorID, PayerfillInfo.IsCoveragesRequired);
-                    else
-                        p.Carriers = null;
+        //            if (PayerfillInfo != null && PayerfillInfo.IsCarriersRequired)
+        //                p.Carriers = Carrier.GetPayorCarriers(p.PayorID, PayerfillInfo.IsCoveragesRequired);
+        //            else
+        //                p.Carriers = null;
 
-                    if (PayerfillInfo != null && PayerfillInfo.IsWebsiteLoginsRequired)
-                        p.UserWebSiteInfo = PayorSiteLoginInfo.GetPayorSiteLogins(p.PayorID);
-                    else
-                        p.UserWebSiteInfo = null;
+        //            if (PayerfillInfo != null && PayerfillInfo.IsWebsiteLoginsRequired)
+        //                p.UserWebSiteInfo = PayorSiteLoginInfo.GetPayorSiteLogins(p.PayorID);
+        //            else
+        //                p.UserWebSiteInfo = null;
 
-                    if (PayerfillInfo != null && PayerfillInfo.IsContactsRequired)
-                        p.Contacts = GlobalPayorContact.getContacts(p.PayorID);
-                    else
-                        p.Contacts = null;
+        //            if (PayerfillInfo != null && PayerfillInfo.IsContactsRequired)
+        //                p.Contacts = GlobalPayorContact.getContacts(p.PayorID);
+        //            else
+        //                p.Contacts = null;
 
-                    DLinq.Payor tmpPayor = DataModel.Payors.FirstOrDefault(s => s.PayorId == p.PayorID);
+        //            DLinq.Payor tmpPayor = DataModel.Payors.FirstOrDefault(s => s.PayorId == p.PayorID);
 
-                    if (tmpPayor != null && tmpPayor.Batches != null)
-                        p.IssuedFiles = tmpPayor.Batches.Where(s => s.EntryStatusId == 3).Select(s => s.FileName).ToList();
-                    else
-                        p.IssuedFiles = null;
-                }
+        //            if (tmpPayor != null && tmpPayor.Batches != null)
+        //                p.IssuedFiles = tmpPayor.Batches.Where(s => s.EntryStatusId == 3).Select(s => s.FileName).ToList();
+        //            else
+        //                p.IssuedFiles = null;
+        //        }
 
-                //ActionLogger.Logger.WriteImportPolicyLog("Filling Payor End: " + DateTime.Now.ToLongTimeString(), true);
-                return lstPayors;
-            }
-        }
+        //        //ActionLogger.Logger.WriteImportPolicyLog("Filling Payor End: " + DateTime.Now.ToLongTimeString(), true);
+        //        return lstPayors;
+        //    }
+        //}
 
         /// <summary>
         /// 

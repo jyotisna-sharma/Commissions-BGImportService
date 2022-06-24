@@ -10,19 +10,19 @@ namespace DataAccessLayer.LinqtoEntity
 {
     public partial class CommissionDepartmentEntities
     {
-        //public int CalculatePMC1(Nullable<global::System.Guid> policyID, ObjectParameter pMC)
-        //{
-        //    ObjectParameter policyIDParameter;
-        //    if (policyID.HasValue)
-        //    {
-        //        policyIDParameter = new ObjectParameter("PolicyID", policyID);
-        //    }
-        //    else
-        //    {
-        //        policyIDParameter = new ObjectParameter("PolicyID", typeof(global::System.Guid));
-        //    }
+        public int CalculatePMC1(Nullable<global::System.Guid> policyID, ObjectParameter pMC)
+        {
+            ObjectParameter policyIDParameter;
+            if (policyID.HasValue)
+            {
+                policyIDParameter = new ObjectParameter("PolicyID", policyID);
+            }
+            else
+            {
+                policyIDParameter = new ObjectParameter("PolicyID", typeof(global::System.Guid));
+            }
 
-        //    return base.ExecuteFunction("CalculatePMC", policyIDParameter, pMC);
-        //}
+            return base.ExecuteFunction("CalculatePMC", policyIDParameter, pMC);
+        }
     }
 }

@@ -276,7 +276,7 @@ namespace MyAgencyVault.BusinessLibrary
                 return false;
             }
         }
-        public static Guid IsPolicyExistingWithImportID(string ImportID, Guid LicID, string agencyName = "")
+        public static Guid IsPolicyExistingWithImportID(string ImportID, Guid LicID)
         {
             //Guid policyID = Guid.Empty;
             Guid policy = Guid.Empty;
@@ -5284,7 +5284,7 @@ namespace MyAgencyVault.BusinessLibrary
                     }
                     else
                     {
-                        policyID = IsPolicyExistingWithImportID(importedPolicyID, LicID, agencyName);
+                        policyID = IsPolicyExistingWithImportID(importedPolicyID, LicID);
                         if (policyID == Guid.Empty)
                         {
                             isExisting = false;
@@ -6280,7 +6280,7 @@ namespace MyAgencyVault.BusinessLibrary
             }
         }
 
-        static void UpdatePolicySchedule(Guid ScheduleID, Guid PolicyID, int? advance, PayorIncomingSchedule policyIncomingSchedule, string agencyName = "")
+        public static void UpdatePolicySchedule(Guid ScheduleID, Guid PolicyID, int? advance, PayorIncomingSchedule policyIncomingSchedule, string agencyName = "")
         {
             try
             {
@@ -7718,7 +7718,7 @@ namespace MyAgencyVault.BusinessLibrary
 
             return result;
         }
-        static string ValidateOutgoingSchedule(List<OutGoingPayment> OutGoingField, Guid LicID, bool? IsCustomDate, bool? IsTieredSchedule, DateTime? Effective, bool isOldIncomingPresent, PayorIncomingSchedule inSchedule, Guid settingsID, Guid policyID, string agencyName = "")
+        public static string ValidateOutgoingSchedule(List<OutGoingPayment> OutGoingField, Guid LicID, bool? IsCustomDate, bool? IsTieredSchedule, DateTime? Effective, bool isOldIncomingPresent, PayorIncomingSchedule inSchedule, Guid settingsID, Guid policyID, string agencyName = "")
         {
             string result = "";
             try
@@ -8142,7 +8142,7 @@ namespace MyAgencyVault.BusinessLibrary
                 return true;
         }
 
-        static List<OutGoingPayment> CompleteOutgoingSchedule(List<OutGoingPayment> OutGoingPayments, Guid PolicyID, Guid houseAcct, bool IsTiered, bool isTier2Present, bool isCustom, double incomingFrstYr, double incomingRenewalYr, double splitAmount, string agencyName = "", DateTime? customDate = null, DateTime? customEndDate = null)
+        public static List<OutGoingPayment> CompleteOutgoingSchedule(List<OutGoingPayment> OutGoingPayments, Guid PolicyID, Guid houseAcct, bool IsTiered, bool isTier2Present, bool isCustom, double incomingFrstYr, double incomingRenewalYr, double splitAmount, string agencyName = "", DateTime? customDate = null, DateTime? customEndDate = null)
         {
             ActionLogger.Logger.WriteImportPolicyLog(" CompleteOutgoingSchedule request:  " + OutGoingPayments.ToStringDump(), true, agencyName);
             ActionLogger.Logger.WriteImportPolicyLog(" CompleteOutgoingSchedule request: PolicyID - " + PolicyID + ", IsTiered: " + IsTiered + ", istier2present: " + isTier2Present, true, agencyName);
@@ -8235,7 +8235,7 @@ namespace MyAgencyVault.BusinessLibrary
             return OutGoingField;
         }
 
-        static List<OutGoingPayment> CompleteOutgoingSchedule(List<OutGoingPayment> OutGoingPayments, Guid PolicyID, Guid LicID, string agencyName = "", bool? IsCustom = null, DateTime? Effective = null)
+        public static List<OutGoingPayment> CompleteOutgoingSchedule(List<OutGoingPayment> OutGoingPayments, Guid PolicyID, Guid LicID, string agencyName = "", bool? IsCustom = null, DateTime? Effective = null)
         {
             List<OutGoingPayment> OutGoingField = OutGoingPayments;
             Guid houseAcct = PostUtill.GetPolicyHouseOwner((Guid)LicID, agencyName);
@@ -9177,22 +9177,22 @@ namespace MyAgencyVault.BusinessLibrary
             return strNickName;
         }
 
-        public static void UpdateLastFollowupRunsWithTodayDate(Guid PolicyId)
-        {
-            try
-            {
-                if (PolicyId == Guid.Empty) return;
-                if (PolicyId == null) return;
-                using (DLinq.CommissionDepartmentEntities DataModel = Entity.DataModel)
-                {
-                    DataModel.UpdatelastFollowupRuns(PolicyId);
-                }
-            }
-            catch
-            {
-            }
+        //public static void UpdateLastFollowupRunsWithTodayDate(Guid PolicyId)
+        //{
+        //    try
+        //    {
+        //        if (PolicyId == Guid.Empty) return;
+        //        if (PolicyId == null) return;
+        //        using (DLinq.CommissionDepartmentEntities DataModel = Entity.DataModel)
+        //        {
+        //            DataModel.UpdatelastFollowupRuns(PolicyId);
+        //        }
+        //    }
+        //    catch
+        //    {
+        //    }
 
-        }
+        //}
 
         public static void MarkPolicyDeleted(PolicyDetailsData _policyrecord)
         {

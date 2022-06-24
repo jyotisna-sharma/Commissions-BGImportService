@@ -63,7 +63,6 @@
     <EntitySetMapping Name="CarrierNickNames">
       <EntityTypeMapping TypeName="Model.CarrierNickName">
         <MappingFragment StoreEntitySet="CarrierNickName">
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="PayorId" ColumnName="PayorId" />
           <ScalarProperty Name="CarrierId" ColumnName="CarrierId" />
           <ScalarProperty Name="NickName" ColumnName="NickName" />
@@ -79,7 +78,6 @@
     <EntitySetMapping Name="Carriers">
       <EntityTypeMapping TypeName="Model.Carrier">
         <MappingFragment StoreEntitySet="Carriers">
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="CarrierId" ColumnName="CarrierId" />
           <ScalarProperty Name="CarrierName" ColumnName="CarrierName" />
           <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
@@ -92,7 +90,6 @@
     <EntitySetMapping Name="Clients">
       <EntityTypeMapping TypeName="Model.Client">
         <MappingFragment StoreEntitySet="Clients">
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="ClientId" ColumnName="ClientId" />
           <ScalarProperty Name="LicenseeId" ColumnName="LicenseeId" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -108,7 +105,6 @@
     <EntitySetMapping Name="Coverages">
       <EntityTypeMapping TypeName="Model.Coverage">
         <MappingFragment StoreEntitySet="Coverages">
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="CoverageId" ColumnName="CoverageId" />
           <ScalarProperty Name="ProductName" ColumnName="ProductName" />
           <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
@@ -390,7 +386,6 @@
       <EntityTypeMapping TypeName="Model.Licensee">
         <MappingFragment StoreEntitySet="Licensees">
           <ScalarProperty Name="IsClientEnable" ColumnName="IsClientEnable" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="LicenseeId" ColumnName="LicenseeId" />
           <ScalarProperty Name="LicenseStatusId" ColumnName="LicenseStatusId" />
           <ScalarProperty Name="Company" ColumnName="Company" />
@@ -748,7 +743,6 @@
     <EntitySetMapping Name="MasterReportLists">
       <EntityTypeMapping TypeName="Model.MasterReportList">
         <MappingFragment StoreEntitySet="MasterReportList">
-          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
           <ScalarProperty Name="ReportId" ColumnName="ReportId" />
           <ScalarProperty Name="ReportCode" ColumnName="ReportCode" />
           <ScalarProperty Name="ReportName" ColumnName="ReportName" />
@@ -863,7 +857,6 @@
     <EntitySetMapping Name="Payors">
       <EntityTypeMapping TypeName="Model.Payor">
         <MappingFragment StoreEntitySet="Payors">
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="PayorId" ColumnName="PayorId" />
           <ScalarProperty Name="PayorName" ColumnName="PayorName" />
           <ScalarProperty Name="PayorRegionId" ColumnName="PayorRegionId" />
@@ -947,10 +940,6 @@
     <EntitySetMapping Name="Policies">
       <EntityTypeMapping TypeName="Model.Policy">
         <MappingFragment StoreEntitySet="Policies">
-          <ScalarProperty Name="IsTieredSchedule" ColumnName="IsTieredSchedule" />
-          <ScalarProperty Name="PrimaryAgent" ColumnName="PrimaryAgent" />
-          <ScalarProperty Name="CustomScheduleDateType" ColumnName="CustomScheduleDateType" />
-          <ScalarProperty Name="IsCustomBasicSchedule" ColumnName="IsCustomBasicSchedule" />
           <ScalarProperty Name="LastNoVarIssueDate" ColumnName="LastNoVarIssueDate" />
           <ScalarProperty Name="LastNoMissIssueDate" ColumnName="LastNoMissIssueDate" />
           <ScalarProperty Name="AccoutExec" ColumnName="AccoutExec" />
@@ -1072,9 +1061,6 @@
       <EntityTypeMapping TypeName="Model.PolicyNote">
         <MappingFragment StoreEntitySet="PolicyNotes">
           <ScalarProperty Name="PolicyNoteId" ColumnName="PolicyNoteId" />
-          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
-          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
           <ScalarProperty Name="PolicyId" ColumnName="PolicyId" />
           <ScalarProperty Name="Note" ColumnName="Note" />
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
@@ -1103,10 +1089,6 @@
     <EntitySetMapping Name="PolicyOutgoingSchedules">
       <EntityTypeMapping TypeName="Model.PolicyOutgoingSchedule">
         <MappingFragment StoreEntitySet="PolicyOutgoingSchedules">
-          <ScalarProperty Name="TierNumber" ColumnName="TierNumber" />
-          <ScalarProperty Name="SplitPercent" ColumnName="SplitPercent" />
-          <ScalarProperty Name="CustomEndDate" ColumnName="CustomEndDate" />
-          <ScalarProperty Name="CustomStartDate" ColumnName="CustomStartDate" />
           <ScalarProperty Name="OutgoingScheduleId" ColumnName="OutgoingScheduleId" />
           <ScalarProperty Name="PolicyId" ColumnName="PolicyId" />
           <ScalarProperty Name="PayeeUserCredentialId" ColumnName="PayeeUserCredentialId" />
@@ -1202,14 +1184,6 @@
     <EntitySetMapping Name="UserCredentials">
       <EntityTypeMapping TypeName="Model.UserCredential">
         <MappingFragment StoreEntitySet="UserCredentials">
-          <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
-          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
-          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-          <ScalarProperty Name="PasswordResetKeyInsertDateTime" ColumnName="PasswordResetKeyInsertDateTime" />
-          <ScalarProperty Name="PasswordResetKey" ColumnName="PasswordResetKey" />
-          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
-          <ScalarProperty Name="IsUserActiveOnWeb" ColumnName="IsUserActiveOnWeb" />
-          <ScalarProperty Name="BGUserId" ColumnName="BGUserId" />
           <ScalarProperty Name="IsAccountExec" ColumnName="IsAccountExec" />
           <ScalarProperty Name="UserCredentialId" ColumnName="UserCredentialId" />
           <ScalarProperty Name="UserName" ColumnName="UserName" />
@@ -1228,14 +1202,6 @@
     <EntitySetMapping Name="UserDetails">
       <EntityTypeMapping TypeName="Model.UserDetail">
         <MappingFragment StoreEntitySet="UserDetail">
-          <ScalarProperty Name="Place_Id" ColumnName="Place_Id" />
-          <ScalarProperty Name="FormattedAddress" ColumnName="FormattedAddress" />
-          <ScalarProperty Name="Fax_CountryCode" ColumnName="Fax_CountryCode" />
-          <ScalarProperty Name="CellPhone_CountryCode" ColumnName="CellPhone_CountryCode" />
-          <ScalarProperty Name="OfficePhone_CountryCode" ColumnName="OfficePhone_CountryCode" />
-          <ScalarProperty Name="Fax_DialCode" ColumnName="Fax_DialCode" />
-          <ScalarProperty Name="CellPhone_DialCode" ColumnName="CellPhone_DialCode" />
-          <ScalarProperty Name="OfficePhone_DialCode" ColumnName="OfficePhone_DialCode" />
           <ScalarProperty Name="DisableAgentEditing" ColumnName="DisableAgentEditing" />
           <ScalarProperty Name="UserCredentialId" ColumnName="UserCredentialId" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -1420,7 +1386,6 @@
     <EntitySetMapping Name="PayeeStatementReports">
       <EntityTypeMapping TypeName="Model.PayeeStatementReport">
         <MappingFragment StoreEntitySet="PayeeStatementReports">
-          <ScalarProperty Name="IsSubTotal" ColumnName="IsSubTotal" />
           <ScalarProperty Name="IsPayorRate" ColumnName="IsPayorRate" />
           <ScalarProperty Name="IsSplit" ColumnName="IsSplit" />
           <ScalarProperty Name="Zero" ColumnName="Zero" />
@@ -1967,7 +1932,6 @@
     <EntitySetMapping Name="CoverageNickNames">
       <EntityTypeMapping TypeName="Model.CoverageNickName">
         <MappingFragment StoreEntitySet="CoverageNickName">
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
           <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
           <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />

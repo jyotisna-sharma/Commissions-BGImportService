@@ -16,11 +16,11 @@ namespace MyAgencyVault.WcfService
         [OperationContract]
         List<Carrier> GetCarriersOnly(Guid LicenseeId);
 
-        [OperationContract]
-        List<Carrier> GetCarriersWith(Guid LicenseeId, bool isCoveragesRequired);
+        //[OperationContract]
+        //List<Carrier> GetCarriersWith(Guid LicenseeId, bool isCoveragesRequired);
 
-        [OperationContract]
-        List<DisplayedCarrier> GetDispalyedCarriersWith(Guid LicenseeId, bool isCoveragesRequired);
+        //[OperationContract]
+        //List<DisplayedCarrier> GetDispalyedCarriersWith(Guid LicenseeId, bool isCoveragesRequired);
 
         [OperationContract]
         List<Carrier> GetPayorCarriersOnly(Guid PayorId);
@@ -52,15 +52,15 @@ namespace MyAgencyVault.WcfService
             return Carrier.GetCarriers(LicenseeId);
         }
 
-        public List<DisplayedCarrier> GetDispalyedCarriersWith(Guid LicenseeId, bool isCoveragesRequired)
-        {
-            return Carrier.GetDispalyedCarriers(LicenseeId, isCoveragesRequired);
-        }
+        //public List<DisplayedCarrier> GetDispalyedCarriersWith(Guid LicenseeId, bool isCoveragesRequired)
+        //{
+        //    return Carrier.GetDispalyedCarriers(LicenseeId, isCoveragesRequired);
+        //}
 
-        public List<Carrier> GetCarriersWith(Guid LicenseeId, bool isCoveragesRequired)
-        {
-            return Carrier.GetCarriers(LicenseeId, isCoveragesRequired);
-        }
+        //public List<Carrier> GetCarriersWith(Guid LicenseeId, bool isCoveragesRequired)
+        //{
+        //    return Carrier.GetCarriers(LicenseeId, isCoveragesRequired);
+        //}
 
         public List<Carrier> GetPayorCarriersOnly(Guid PayorId)
         {

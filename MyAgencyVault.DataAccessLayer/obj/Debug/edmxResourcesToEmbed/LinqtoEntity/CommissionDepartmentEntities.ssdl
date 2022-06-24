@@ -8,6 +8,7 @@
     <Property Name="LicenceID" Type="uniqueidentifier" Nullable="false" />
     <Property Name="Payor" Type="nvarchar(max)" />
     <Property Name="Payee" Type="nvarchar(max)" />
+    <Property Name="Segments" Type="nvarchar(max)" />
     <Property Name="Reports" Type="nvarchar(max)" />
     <Property Name="InvoiceFrom" Type="datetime" />
     <Property Name="InvoiceTo" Type="datetime" />
@@ -72,6 +73,37 @@
     <Property Name="PayorId" Type="uniqueidentifier" />
     <Property Name="BatchNote" Type="nvarchar(max)" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommDB_Web.dbo.Batches_Audit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Batches_Audit">
+    <Key>
+      <PropertyRef Name="BatchId" />
+      <PropertyRef Name="BatchNumber" />
+      <PropertyRef Name="LicenseeId" />
+    </Key>
+    <Property Name="BatchId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="BatchNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LicenseeId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="FileType" Type="nchar" MaxLength="5" />
+    <Property Name="EntryStatusId" Type="int" />
+    <Property Name="AssignedUserCredentialId" Type="uniqueidentifier" />
+    <Property Name="CreatedFromUpload" Type="bit" />
+    <Property Name="UploadStatusId" Type="int" />
+    <Property Name="FileName" Type="nvarchar" MaxLength="100" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="IsManuallyUploaded" Type="bit" />
+    <Property Name="SiteLoginID" Type="uniqueidentifier" />
+    <Property Name="PayorId" Type="uniqueidentifier" />
+    <Property Name="BatchNote" Type="nvarchar(max)" />
+    <Property Name="InsertDateTime" Type="datetime" />
+    <Property Name="host_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="program_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="login_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="nt_domain" Type="nvarchar" MaxLength="4000" />
+    <Property Name="nt_user_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="sqlbuffer" Type="nvarchar(max)" />
+  </EntityType>
   <EntityType Name="BrokerCode">
     <Key>
       <PropertyRef Name="Id" />
@@ -133,6 +165,39 @@
     <Property Name="Email" Type="varchar" MaxLength="100" />
     <Property Name="IsDeleted" Type="bit" />
     <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="ModifiedOn" Type="datetime" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="SSN" Type="varchar" MaxLength="50" />
+    <Property Name="Gender" Type="varchar" MaxLength="10" />
+    <Property Name="FlatNo" Type="varchar" />
+    <Property Name="MaritalStatus" Type="varchar" MaxLength="10" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" />
+    <Property Name="DialCode" Type="varchar" MaxLength="7" />
+    <Property Name="CountryCode" Type="varchar" MaxLength="7" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommDB_Web.dbo.Clients_Audit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Clients_Audit">
+    <Key>
+      <PropertyRef Name="ClientId" />
+    </Key>
+    <Property Name="ClientId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="LicenseeId" Type="uniqueidentifier" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="Address" Type="varchar" MaxLength="100" />
+    <Property Name="Zip" Type="varchar" MaxLength="15" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="InsertDateTime" Type="datetime" />
+    <Property Name="host_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="program_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="login_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="nt_domain" Type="nvarchar" MaxLength="4000" />
+    <Property Name="nt_user_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="sqlbuffer" Type="nvarchar(max)" />
+    <Property Name="IsdeletedFlagAltered" Type="bit" />
   </EntityType>
   <EntityType Name="CoverageNickName">
     <Key>
@@ -160,6 +225,28 @@
     <Property Name="CreatedBy" Type="uniqueidentifier" />
     <Property Name="LicenseeId" Type="uniqueidentifier" />
     <Property Name="CreatedOn" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommDB_Web.dbo.Coverages_Audit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Coverages_Audit">
+    <Key>
+      <PropertyRef Name="CoverageId" />
+      <PropertyRef Name="IsDeleted" />
+      <PropertyRef Name="IsGlobal" />
+    </Key>
+    <Property Name="CoverageId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProductName" Type="varchar" MaxLength="50" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="IsGlobal" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="LicenseeId" Type="uniqueidentifier" />
+    <Property Name="InsertDateTime" Type="datetime" />
+    <Property Name="host_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="program_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="login_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="nt_domain" Type="nvarchar" MaxLength="4000" />
+    <Property Name="nt_user_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="sqlbuffer" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="EntriesByDEU">
     <Key>
@@ -207,6 +294,66 @@
     <Property Name="UnlinkClientName" Type="varchar" MaxLength="150" />
     <Property Name="CoverageNickName" Type="varchar" MaxLength="150" />
     <Property Name="CarrierNickName" Type="varchar" MaxLength="150" />
+    <Property Name="IsProcessing" Type="bit" />
+    <Property Name="IsCreatedFromWeb" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommDB_Web.dbo.EntriesByDEU_Audit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="EntriesByDEU_Audit">
+    <Key>
+      <PropertyRef Name="DEUEntryID" />
+    </Key>
+    <Property Name="DEUEntryID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="OriginalEffectiveDate" Type="datetime" />
+    <Property Name="PaymentReceived" Type="money" />
+    <Property Name="CommissionPercentage" Type="float" />
+    <Property Name="OtherData" Type="xml" />
+    <Property Name="Insured" Type="varchar" MaxLength="100" />
+    <Property Name="PolicyNumber" Type="varchar" MaxLength="50" />
+    <Property Name="Enrolled" Type="varchar" MaxLength="50" />
+    <Property Name="Eligible" Type="varchar" MaxLength="50" />
+    <Property Name="Link1" Type="varchar" MaxLength="50" />
+    <Property Name="SplitPer" Type="float" />
+    <Property Name="PolicyModeID" Type="int" />
+    <Property Name="PolicyModeValue" Type="nvarchar" MaxLength="50" />
+    <Property Name="TrackFromDate" Type="datetime" />
+    <Property Name="CompTypeID" Type="int" />
+    <Property Name="ClientID" Type="uniqueidentifier" />
+    <Property Name="StatementID" Type="uniqueidentifier" />
+    <Property Name="PostStatusID" Type="int" />
+    <Property Name="PolicyID" Type="uniqueidentifier" />
+    <Property Name="InvoiceDate" Type="datetime" />
+    <Property Name="PayorId" Type="uniqueidentifier" />
+    <Property Name="NumberOfUnits" Type="int" />
+    <Property Name="DollerPerUnit" Type="money" />
+    <Property Name="Fee" Type="money" />
+    <Property Name="Bonus" Type="money" />
+    <Property Name="CommissionTotal" Type="money" />
+    <Property Name="PayorSysID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Renewal" Type="nvarchar" MaxLength="50" />
+    <Property Name="CarrierId" Type="uniqueidentifier" />
+    <Property Name="CoverageId" Type="uniqueidentifier" />
+    <Property Name="IsEntrybyCommissiondashBoard" Type="bit" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="PostCompleteStatus" Type="int" />
+    <Property Name="ModalAvgPremium" Type="varchar" MaxLength="50" />
+    <Property Name="CompScheduleType" Type="varchar" MaxLength="150" />
+    <Property Name="ClientValue" Type="varchar" MaxLength="100" />
+    <Property Name="CarrierName" Type="nvarchar" MaxLength="150" />
+    <Property Name="ProductName" Type="nvarchar" MaxLength="150" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="UnlinkClientName" Type="varchar" MaxLength="150" />
+    <Property Name="CoverageNickName" Type="varchar" MaxLength="150" />
+    <Property Name="CarrierNickName" Type="varchar" MaxLength="150" />
+    <Property Name="InsertDatetime" Type="datetime" />
+    <Property Name="host_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="program_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="login_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="nt_domain" Type="nvarchar" MaxLength="4000" />
+    <Property Name="nt_user_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="sqlbuffer" Type="nvarchar(max)" />
+    <Property Name="IsProcessing" Type="bit" />
+    <Property Name="IsCreatedFromWeb" Type="bit" />
   </EntityType>
   <EntityType Name="ExportBatchFiles">
     <Key>
@@ -229,6 +376,33 @@
     <Property Name="PayorID" Type="uniqueidentifier" />
     <Property Name="ExcelFieldName" Type="nvarchar" MaxLength="100" />
     <Property Name="ExcelFieldFormat" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommDB_Web.dbo.followup_pmcissues' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="followup_pmcissues">
+    <Key>
+      <PropertyRef Name="IssueId" />
+      <PropertyRef Name="IssueTrackNumber" />
+    </Key>
+    <Property Name="IssueId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IssueCategoryId" Type="int" />
+    <Property Name="IssueStatusId" Type="int" />
+    <Property Name="IssueResultId" Type="int" />
+    <Property Name="IssueReasonId" Type="int" />
+    <Property Name="Notes" Type="varchar(max)" />
+    <Property Name="InvoiceDate" Type="date" />
+    <Property Name="NextFollowUpDate" Type="date" />
+    <Property Name="Payment" Type="money" />
+    <Property Name="PolicyId" Type="uniqueidentifier" />
+    <Property Name="PreviousStatusId" Type="int" />
+    <Property Name="LastModifiedDate" Type="date" />
+    <Property Name="IssueTrackNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="ModifiedBy" Type="uniqueidentifier" />
+    <Property Name="FromDate" Type="date" />
+    <Property Name="ToDate" Type="date" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsPMCVariance" Type="bit" />
   </EntityType>
   <EntityType Name="FollowupIssues">
     <Key>
@@ -253,8 +427,8 @@
     <Property Name="ToDate" Type="date" />
     <Property Name="IsDeleted" Type="bit" />
     <Property Name="IsPMCVariance" Type="bit" />
-    <Property Name="IsRemovedFromCommDashboard" Type="bit" />
     <Property Name="IsResolvedFromCommDashboard" Type="bit" />
+    <Property Name="IsRemovedFromCommDashboard" Type="bit" />
   </EntityType>
   <EntityType Name="Formulas">
     <Key>
@@ -663,6 +837,7 @@ warning 6002: The table/view 'CommDB_Web.dbo.Issuelog' does not have a primary k
     <Property Name="Carrier" Type="nvarchar(max)" />
     <Property Name="Product" Type="nvarchar(max)" />
     <Property Name="Payee" Type="nvarchar(max)" />
+    <Property Name="Segments" Type="nvarchar(max)" />
     <Property Name="Reports" Type="nvarchar(max)" />
     <Property Name="OrderBy" Type="nvarchar(max)" />
     <Property Name="PolicyType" Type="int" />
@@ -719,7 +894,7 @@ warning 6002: The table/view 'CommDB_Web.dbo.Issuelog' does not have a primary k
     <Property Name="Description" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadStatus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'CommDB_Web.dbo.MasterBatchDownloadStatus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="MasterBatchDownloadStatus">
     <Key>
       <PropertyRef Name="BatchDownloadStatusId" />
@@ -1046,6 +1221,17 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Property Name="Value" Type="varchar" MaxLength="200" />
     <Property Name="Description" Type="varchar" MaxLength="50" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommDB_Web.dbo.MasterSystemConstants_Backup_Dec19_2016' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MasterSystemConstants_Backup_Dec19_2016">
+    <Key>
+      <PropertyRef Name="SystemConstantId" />
+    </Key>
+    <Property Name="SystemConstantId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Value" Type="varchar" MaxLength="200" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="MasterSystemEmails">
     <Key>
       <PropertyRef Name="SystemEmailId" />
@@ -1081,6 +1267,7 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Property Name="LicenceID" Type="uniqueidentifier" Nullable="false" />
     <Property Name="Batch" Type="nvarchar(max)" />
     <Property Name="Payee" Type="nvarchar(max)" />
+    <Property Name="Segments" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Reports" Type="nvarchar(max)" Nullable="false" />
     <Property Name="PaymentType" Type="bit" />
     <Property Name="ReportOn" Type="datetime" Nullable="false" />
@@ -1088,6 +1275,28 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Property Name="IsSplit" Type="bit" />
     <Property Name="IsPayorRate" Type="bit" />
     <Property Name="IsSubTotal" Type="bit" />
+  </EntityType>
+  <EntityType Name="PayorIncomingSchedules">
+    <Key>
+      <PropertyRef Name="IncomingScheduleId" />
+    </Key>
+    <Property Name="IncomingScheduleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PayorId" Type="uniqueidentifier" />
+    <Property Name="CarrierId" Type="uniqueidentifier" />
+    <Property Name="CoverageId" Type="uniqueidentifier" />
+    <Property Name="FirstYearPercentage" Type="float" />
+    <Property Name="RenewalPercentage" Type="float" />
+    <Property Name="ScheduleTypeId" Type="int" />
+    <Property Name="IncomingPaymentTypeId" Type="int" />
+    <Property Name="SplitPercentage" Type="float" />
+    <Property Name="Advance" Type="int" />
+    <Property Name="LicenseeID" Type="uniqueidentifier" />
+    <Property Name="ProductType" Type="varchar" MaxLength="200" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="ModifiedBy" Type="uniqueidentifier" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="ModifiedOn" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" />
   </EntityType>
   <EntityType Name="Payors">
     <Key>
@@ -1178,11 +1387,14 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Property Name="ChequeImageFile" Type="varchar" MaxLength="100" />
     <Property Name="IsDeleted" Type="bit" Nullable="false" />
     <Property Name="TemplateID" Type="uniqueidentifier" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="LastModifiedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="Policies">
     <Key>
       <PropertyRef Name="PolicyId" />
     </Key>
+    <Property Name="SegmentId" Type="uniqueidentifier" Nullable="true" />
     <Property Name="PolicyId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="PolicyNumber" Type="varchar" MaxLength="50" />
     <Property Name="PolicyStatusId" Type="int" />
@@ -1232,6 +1444,123 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Property Name="LastModifiedOn" Type="datetime" />
     <Property Name="IsCreatedFromWeb" Type="bit" />
     <Property Name="IslastModifiedFromWeb" Type="bit" />
+    <Property Name="IsManuallyChanged" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommDB_Web.dbo.Policies_03062018' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Policies_03062018">
+    <Key>
+      <PropertyRef Name="PolicyId" />
+      <PropertyRef Name="IsTrackMissingMonth" />
+      <PropertyRef Name="IsTrackIncomingPercentage" />
+      <PropertyRef Name="IsTrackPayment" />
+      <PropertyRef Name="IsDeleted" />
+      <PropertyRef Name="IsLocked" />
+      <PropertyRef Name="RowVersion" />
+    </Key>
+    <Property Name="PolicyId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PolicyNumber" Type="varchar" MaxLength="50" />
+    <Property Name="PolicyStatusId" Type="int" />
+    <Property Name="PolicyType" Type="varchar" MaxLength="50" />
+    <Property Name="PolicyClientId" Type="uniqueidentifier" />
+    <Property Name="PolicyLicenseeId" Type="uniqueidentifier" />
+    <Property Name="OriginalEffectiveDate" Type="datetime" />
+    <Property Name="TrackFromDate" Type="datetime" />
+    <Property Name="PolicyModeId" Type="int" />
+    <Property Name="MonthlyPremium" Type="money" />
+    <Property Name="CoverageId" Type="uniqueidentifier" />
+    <Property Name="SubmittedThrough" Type="varchar" MaxLength="50" />
+    <Property Name="Enrolled" Type="varchar" MaxLength="50" />
+    <Property Name="Eligible" Type="varchar" MaxLength="50" />
+    <Property Name="PolicyTerminationDate" Type="datetime" />
+    <Property Name="TerminationReasonId" Type="int" />
+    <Property Name="IsTrackMissingMonth" Type="bit" Nullable="false" />
+    <Property Name="IsTrackIncomingPercentage" Type="bit" Nullable="false" />
+    <Property Name="IsTrackPayment" Type="bit" Nullable="false" />
+    <Property Name="IncomingPaymentTypeId" Type="int" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="ReplacedBy" Type="uniqueidentifier" />
+    <Property Name="PayorId" Type="uniqueidentifier" />
+    <Property Name="DuplicateFrom" Type="uniqueidentifier" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="IsIncomingBasicSchedule" Type="bit" />
+    <Property Name="IsOutGoingBasicSchedule" Type="bit" />
+    <Property Name="CarrierId" Type="uniqueidentifier" />
+    <Property Name="SplitPercentage" Type="float" />
+    <Property Name="Insured" Type="nvarchar" MaxLength="50" />
+    <Property Name="ActivatedOn" Type="datetime" />
+    <Property Name="IsLocked" Type="bit" Nullable="false" />
+    <Property Name="LastFollowUpRuns" Type="datetime" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Advance" Type="int" />
+    <Property Name="ProductType" Type="varchar" MaxLength="100" />
+    <Property Name="UserCredentialId" Type="uniqueidentifier" />
+    <Property Name="AccoutExec" Type="varchar" MaxLength="100" />
+    <Property Name="LastNoVarIssueDate" Type="datetime" />
+    <Property Name="LastNoMissIssueDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommDB_Web.dbo.Policies_Audit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Policies_Audit">
+    <Key>
+      <PropertyRef Name="PolicyId" />
+      <PropertyRef Name="IsTrackMissingMonth" />
+      <PropertyRef Name="IsTrackIncomingPercentage" />
+      <PropertyRef Name="IsTrackPayment" />
+      <PropertyRef Name="IsDeleted" />
+      <PropertyRef Name="IsLocked" />
+      <PropertyRef Name="RowVersion" />
+    </Key>
+    <Property Name="PolicyId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PolicyNumber" Type="varchar" MaxLength="50" />
+    <Property Name="PolicyStatusId" Type="int" />
+    <Property Name="PolicyType" Type="varchar" MaxLength="50" />
+    <Property Name="PolicyClientId" Type="uniqueidentifier" />
+    <Property Name="PolicyLicenseeId" Type="uniqueidentifier" />
+    <Property Name="OriginalEffectiveDate" Type="datetime" />
+    <Property Name="TrackFromDate" Type="datetime" />
+    <Property Name="PolicyModeId" Type="int" />
+    <Property Name="MonthlyPremium" Type="money" />
+    <Property Name="CoverageId" Type="uniqueidentifier" />
+    <Property Name="SubmittedThrough" Type="varchar" MaxLength="50" />
+    <Property Name="Enrolled" Type="varchar" MaxLength="50" />
+    <Property Name="Eligible" Type="varchar" MaxLength="50" />
+    <Property Name="PolicyTerminationDate" Type="datetime" />
+    <Property Name="TerminationReasonId" Type="int" />
+    <Property Name="IsTrackMissingMonth" Type="bit" Nullable="false" />
+    <Property Name="IsTrackIncomingPercentage" Type="bit" Nullable="false" />
+    <Property Name="IsTrackPayment" Type="bit" Nullable="false" />
+    <Property Name="IncomingPaymentTypeId" Type="int" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="ReplacedBy" Type="uniqueidentifier" />
+    <Property Name="PayorId" Type="uniqueidentifier" />
+    <Property Name="DuplicateFrom" Type="uniqueidentifier" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="IsIncomingBasicSchedule" Type="bit" />
+    <Property Name="IsOutGoingBasicSchedule" Type="bit" />
+    <Property Name="CarrierId" Type="uniqueidentifier" />
+    <Property Name="SplitPercentage" Type="float" />
+    <Property Name="Insured" Type="varchar" MaxLength="100" />
+    <Property Name="ActivatedOn" Type="datetime" />
+    <Property Name="IsLocked" Type="bit" Nullable="false" />
+    <Property Name="LastFollowUpRuns" Type="datetime" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Advance" Type="int" />
+    <Property Name="ProductType" Type="varchar" MaxLength="100" />
+    <Property Name="UserCredentialId" Type="uniqueidentifier" />
+    <Property Name="AccoutExec" Type="varchar" MaxLength="100" />
+    <Property Name="LastNoMissIssueDate" Type="datetime" />
+    <Property Name="LastNoVarIssueDate" Type="datetime" />
+    <Property Name="InsertDateTime" Type="datetime" />
+    <Property Name="host_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="program_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="login_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="nt_domain" Type="nvarchar" MaxLength="4000" />
+    <Property Name="nt_user_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="sqlbuffer" Type="nvarchar(max)" />
+    <Property Name="IsdeletedFlagAltered" Type="bit" />
   </EntityType>
   <EntityType Name="PoliciesHistory">
     <Key>
@@ -1293,6 +1622,43 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Property Name="FirstYearPercentage" Type="float" />
     <Property Name="RenewalPercentage" Type="float" />
     <Property Name="ScheduleTypeId" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="IsSavedFromSettings" Type="bit" />
+    <Property Name="SettingsScheduleID" Type="uniqueidentifier" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommDB_Web.dbo.policyincomingschedules_apr202018' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="policyincomingschedules_apr202018">
+    <Key>
+      <PropertyRef Name="IncomingScheduleId" />
+    </Key>
+    <Property Name="IncomingScheduleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PolicyId" Type="uniqueidentifier" />
+    <Property Name="FirstYearPercentage" Type="float" />
+    <Property Name="RenewalPercentage" Type="float" />
+    <Property Name="ScheduleTypeId" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommDB_Web.dbo.PolicyIncomingSchedules_Audit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PolicyIncomingSchedules_Audit">
+    <Key>
+      <PropertyRef Name="IncomingScheduleId" />
+    </Key>
+    <Property Name="IncomingScheduleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PolicyId" Type="uniqueidentifier" />
+    <Property Name="FirstYearPercentage" Type="float" />
+    <Property Name="RenewalPercentage" Type="float" />
+    <Property Name="ScheduleTypeId" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="IsSavedFromSettings" Type="bit" />
+    <Property Name="SettingsScheduleID" Type="uniqueidentifier" />
+    <Property Name="InsertDateTime" Type="datetime" />
+    <Property Name="host_name" Type="varchar" MaxLength="8000" />
+    <Property Name="program_name" Type="varchar" MaxLength="8000" />
+    <Property Name="login_name" Type="varchar" MaxLength="8000" />
+    <Property Name="nt_domain" Type="varchar" MaxLength="8000" />
+    <Property Name="nt_user_name" Type="varchar" MaxLength="8000" />
+    <Property Name="sqlbuffer" Type="varchar(max)" />
   </EntityType>
   <EntityType Name="PolicyLearnedFields">
     <Key>
@@ -1331,6 +1697,55 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Property Name="UserCredentialId" Type="uniqueidentifier" />
     <Property Name="AccoutExec" Type="varchar" MaxLength="100" />
     <Property Name="ImportPolicyID" Type="varchar" MaxLength="200" />
+    <!--new added-->
+    <Property Name="BG_PolicyPlanID" Type="varchar" MaxLength="70" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommDB_Web.dbo.PolicyLearnedFields_Audit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PolicyLearnedFields_Audit">
+    <Key>
+      <PropertyRef Name="PolicyId" />
+    </Key>
+    <Property Name="PolicyId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Insured" Type="varchar" MaxLength="100" />
+    <Property Name="PolicyNumber" Type="varchar" MaxLength="50" />
+    <Property Name="Effective" Type="datetime" />
+    <Property Name="TrackFrom" Type="datetime" />
+    <Property Name="PAC" Type="varchar" MaxLength="50" />
+    <Property Name="PMC" Type="varchar" MaxLength="50" />
+    <Property Name="ModalAvgPremium" Type="money" />
+    <Property Name="PolicyModeId" Type="int" />
+    <Property Name="Enrolled" Type="varchar" MaxLength="50" />
+    <Property Name="Eligible" Type="varchar" MaxLength="50" />
+    <Property Name="AutoTerminationDate" Type="datetime" />
+    <Property Name="Link1" Type="varchar" MaxLength="50" />
+    <Property Name="LastModifiedOn" Type="datetime" />
+    <Property Name="LastModifiedUserCredentialid" Type="uniqueidentifier" />
+    <Property Name="ClientID" Type="uniqueidentifier" />
+    <Property Name="CompTypeID" Type="int" />
+    <Property Name="PayorSysID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Renewal" Type="nvarchar" MaxLength="50" />
+    <Property Name="SplitPercentage" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="CompScheduleType" Type="nvarchar" MaxLength="150" />
+    <Property Name="CarrierId" Type="uniqueidentifier" />
+    <Property Name="CoverageId" Type="uniqueidentifier" />
+    <Property Name="PayorId" Type="uniqueidentifier" />
+    <Property Name="PreviousEffectiveDate" Type="date" />
+    <Property Name="PreviousPolicyModeId" Type="int" />
+    <Property Name="CarrierNickName" Type="nvarchar" MaxLength="150" />
+    <Property Name="CoverageNickName" Type="nvarchar" MaxLength="150" />
+    <Property Name="Advance" Type="int" />
+    <Property Name="ProductType" Type="varchar" MaxLength="100" />
+    <Property Name="UserCredentialId" Type="uniqueidentifier" />
+    <Property Name="AccoutExec" Type="varchar" MaxLength="100" />
+    <Property Name="InsertDateTime" Type="datetime" />
+    <Property Name="host_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="program_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="login_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="nt_domain" Type="nvarchar" MaxLength="4000" />
+    <Property Name="nt_user_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="sqlbuffer" Type="nvarchar(max)" />
+    <Property Name="ImportPolicyID" Type="varchar" MaxLength="200" />
   </EntityType>
   <EntityType Name="PolicyLearnedFieldsHistory">
     <Key>
@@ -1368,6 +1783,45 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Property Name="ProductType" Type="varchar" MaxLength="100" />
     <Property Name="ImportPolicyID" Type="varchar" MaxLength="200" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommDB_Web.dbo.policylearnedgfields_June122017' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="policylearnedgfields_June122017">
+    <Key>
+      <PropertyRef Name="PolicyId" />
+    </Key>
+    <Property Name="PolicyId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Insured" Type="varchar" MaxLength="50" />
+    <Property Name="PolicyNumber" Type="varchar" MaxLength="50" />
+    <Property Name="Effective" Type="datetime" />
+    <Property Name="TrackFrom" Type="datetime" />
+    <Property Name="PAC" Type="varchar" MaxLength="50" />
+    <Property Name="PMC" Type="varchar" MaxLength="50" />
+    <Property Name="ModalAvgPremium" Type="money" />
+    <Property Name="PolicyModeId" Type="int" />
+    <Property Name="Enrolled" Type="varchar" MaxLength="50" />
+    <Property Name="Eligible" Type="varchar" MaxLength="50" />
+    <Property Name="AutoTerminationDate" Type="datetime" />
+    <Property Name="Link1" Type="varchar" MaxLength="50" />
+    <Property Name="LastModifiedOn" Type="datetime" />
+    <Property Name="LastModifiedUserCredentialid" Type="uniqueidentifier" />
+    <Property Name="ClientID" Type="uniqueidentifier" />
+    <Property Name="CompTypeID" Type="int" />
+    <Property Name="PayorSysID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Renewal" Type="nvarchar" MaxLength="50" />
+    <Property Name="SplitPercentage" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="CompScheduleType" Type="nvarchar" MaxLength="150" />
+    <Property Name="CarrierId" Type="uniqueidentifier" />
+    <Property Name="CoverageId" Type="uniqueidentifier" />
+    <Property Name="PayorId" Type="uniqueidentifier" />
+    <Property Name="PreviousEffectiveDate" Type="date" />
+    <Property Name="PreviousPolicyModeId" Type="int" />
+    <Property Name="CarrierNickName" Type="nvarchar" MaxLength="150" />
+    <Property Name="CoverageNickName" Type="nvarchar" MaxLength="150" />
+    <Property Name="Advance" Type="int" />
+    <Property Name="ProductType" Type="varchar" MaxLength="100" />
+    <Property Name="UserCredentialId" Type="uniqueidentifier" />
+    <Property Name="AccoutExec" Type="varchar" MaxLength="100" />
+  </EntityType>
   <EntityType Name="PolicyLevelBillingDetail">
     <Key>
       <PropertyRef Name="BillingLineId" />
@@ -1386,7 +1840,7 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Property Name="Note" Type="varchar(max)" />
     <Property Name="CreatedOn" Type="datetime" />
     <Property Name="LastModifiedOn" Type="datetime" />
-    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="Isdeleted" Type="bit" />
     <Property Name="CreatedBy" Type="uniqueidentifier" />
     <Property Name="ModifiedBy" Type="uniqueidentifier" />
   </EntityType>
@@ -1422,6 +1876,49 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Property Name="Payment" Type="float" />
     <Property Name="ReverseOutgoingPaymentID" Type="uniqueidentifier" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommDB_Web.dbo.PolicyOutgoingPayments_Audit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PolicyOutgoingPayments_Audit">
+    <Key>
+      <PropertyRef Name="OutgoingPaymentId" />
+    </Key>
+    <Property Name="OutgoingPaymentId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PaymentEntryId" Type="uniqueidentifier" />
+    <Property Name="RecipientUserCredentialId" Type="uniqueidentifier" />
+    <Property Name="PaidAmount" Type="float" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="IsPaid" Type="bit" />
+    <Property Name="Premium" Type="float" />
+    <Property Name="OutgoingPerUnit" Type="money" />
+    <Property Name="Payment" Type="float" />
+    <Property Name="ReverseOutgoingPaymentID" Type="uniqueidentifier" />
+    <Property Name="insertDateTime" Type="datetime" />
+    <Property Name="host_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="program_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="login_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="nt_domain" Type="nvarchar" MaxLength="4000" />
+    <Property Name="nt_user_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="sqlbuffer" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommDB_Web.dbo.PolicyOutgoingSchedule_backup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PolicyOutgoingSchedule_backup">
+    <Key>
+      <PropertyRef Name="OutgoingScheduleId" />
+      <PropertyRef Name="IsPrimaryAgent" />
+    </Key>
+    <Property Name="OutgoingScheduleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PolicyId" Type="uniqueidentifier" />
+    <Property Name="PayeeUserCredentialId" Type="uniqueidentifier" />
+    <Property Name="IsPrimaryAgent" Type="bit" Nullable="false" />
+    <Property Name="FirstYearPercentage" Type="float" />
+    <Property Name="RenewalPercentage" Type="float" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="ScheduleTypeId" Type="int" />
+    <Property Name="CustomStartDate" Type="datetime" />
+    <Property Name="CustomEndDate" Type="datetime" />
+    <Property Name="SplitPercent" Type="float" />
+  </EntityType>
   <EntityType Name="PolicyOutgoingSchedules">
     <Key>
       <PropertyRef Name="OutgoingScheduleId" />
@@ -1438,6 +1935,29 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Property Name="CustomEndDate" Type="datetime" />
     <Property Name="SplitPercent" Type="float" />
     <Property Name="TierNumber" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommDB_Web.dbo.PolicyOutgoingSchedules_Audit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PolicyOutgoingSchedules_Audit">
+    <Key>
+      <PropertyRef Name="OutgoingScheduleId" />
+      <PropertyRef Name="IsPrimaryAgent" />
+    </Key>
+    <Property Name="OutgoingScheduleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PolicyId" Type="uniqueidentifier" />
+    <Property Name="PayeeUserCredentialId" Type="uniqueidentifier" />
+    <Property Name="IsPrimaryAgent" Type="bit" Nullable="false" />
+    <Property Name="FirstYearPercentage" Type="float" />
+    <Property Name="RenewalPercentage" Type="float" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="ScheduleTypeId" Type="int" />
+    <Property Name="InsertDateTime" Type="datetime" />
+    <Property Name="host_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="program_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="login_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="nt_domain" Type="nvarchar" MaxLength="4000" />
+    <Property Name="nt_user_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="sqlbuffer" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="PolicyPaymentAlerts">
     <Key>
@@ -1473,6 +1993,40 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Property Name="FollowUpVarIssueId" Type="uniqueidentifier" />
     <Property Name="FollowUpIssueResolveOrClosed" Type="int" />
     <Property Name="IsLinkPayment" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommDB_Web.dbo.PolicyPaymentEntries_Audit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PolicyPaymentEntries_Audit">
+    <Key>
+      <PropertyRef Name="PaymentEntryId" />
+    </Key>
+    <Property Name="PaymentEntryId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="StatementId" Type="uniqueidentifier" />
+    <Property Name="PolicyId" Type="uniqueidentifier" />
+    <Property Name="InvoiceDate" Type="datetime" />
+    <Property Name="PaymentRecived" Type="money" />
+    <Property Name="CommissionPercentage" Type="float" />
+    <Property Name="NumberOfUnits" Type="int" />
+    <Property Name="Fee" Type="money" />
+    <Property Name="SplitPercentage" Type="float" />
+    <Property Name="TotalPayment" Type="money" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="PostStatusID" Type="int" />
+    <Property Name="Bonus" Type="money" />
+    <Property Name="DollerPerUnit" Type="money" />
+    <Property Name="DEUEntryId" Type="uniqueidentifier" />
+    <Property Name="ExpectedPayment" Type="money" />
+    <Property Name="FollowUpVarIssueId" Type="uniqueidentifier" />
+    <Property Name="FollowUpIssueResolveOrClosed" Type="int" />
+    <Property Name="IsLinkPayment" Type="bit" />
+    <Property Name="InsertDateTime" Type="datetime" />
+    <Property Name="host_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="program_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="login_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="nt_domain" Type="nvarchar" MaxLength="4000" />
+    <Property Name="nt_user_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="sqlbuffer" Type="nvarchar(max)" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1515,6 +2069,7 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     <Property Name="CheckAmount" Type="money" />
     <Property Name="StatementStatusId" Type="int" />
     <Property Name="Entries" Type="int" />
+    <Property Name="IsCreatedFromWeb" Type="bit" />
     <Property Name="CreatedOn" Type="datetime" />
     <Property Name="LastModified" Type="datetime" />
     <Property Name="CreatedBy" Type="uniqueidentifier" />
@@ -1524,6 +2079,38 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     <Property Name="TemplateID" Type="uniqueidentifier" />
     <Property Name="FromPage" Type="varchar" MaxLength="50" />
     <Property Name="ToPage" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommDB_Web.dbo.Statements_Audit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Statements_Audit">
+    <Key>
+      <PropertyRef Name="StatementId" />
+      <PropertyRef Name="StatementNumber" />
+    </Key>
+    <Property Name="StatementId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="StatementNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BatchId" Type="uniqueidentifier" />
+    <Property Name="PayorId" Type="uniqueidentifier" />
+    <Property Name="CheckAmount" Type="money" />
+    <Property Name="StatementStatusId" Type="int" />
+    <Property Name="IsCreatedFromWeb" Type="bit" />
+    <Property Name="Entries" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="LastModified" Type="datetime" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="BalAdj" Type="money" />
+    <Property Name="EnteredAmount" Type="money" />
+    <Property Name="StatementDate" Type="datetime" />
+    <Property Name="TemplateID" Type="uniqueidentifier" />
+    <Property Name="FromPage" Type="varchar" MaxLength="50" />
+    <Property Name="ToPage" Type="varchar" MaxLength="50" />
+    <Property Name="InsertDateTime" Type="datetime" />
+    <Property Name="host_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="program_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="login_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="nt_domain" Type="nvarchar" MaxLength="4000" />
+    <Property Name="nt_user_name" Type="nvarchar" MaxLength="4000" />
+    <Property Name="sqlbuffer" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Supports">
     <Key>
@@ -1544,6 +2131,63 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tbBenefits_ImportStatus">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UniquePolicyID" Type="varchar" MaxLength="100" />
+    <Property Name="IsNew" Type="bit" Nullable="false" />
+    <Property Name="RequestTime" Type="datetime" Nullable="false" />
+    <Property Name="IsSuccess" Type="bit" Nullable="false" />
+    <Property Name="BenefitsPolicyID" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbInvoiceUpdateHistory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaymentEntryID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="LastInvoiceDate" Type="datetime" />
+    <Property Name="NewInvoiceDate" Type="datetime" />
+    <Property Name="InsertDateTime" Type="datetime" />
+    <Property Name="UpdatedBy" Type="uniqueidentifier" />
+    <Property Name="PolicyID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="tbLoginDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AppVersion" Type="varchar" MaxLength="50" />
+    <Property Name="InsertDateTime" Type="datetime" />
+    <Property Name="Activity" Type="varchar" MaxLength="50" />
+    <Property Name="ClientIP" Type="varchar" MaxLength="30" />
+    <Property Name="ClientBrowser" Type="varchar" MaxLength="30" />
+    <Property Name="ClientBrowserVersion" Type="varchar" MaxLength="30" />
+    <Property Name="ClientOS" Type="varchar" MaxLength="30" />
+    <Property Name="ClientOSVersion" Type="varchar" MaxLength="30" />
+    <Property Name="ClientDeviceDetail" Type="varchar" MaxLength="200" />
+    <Property Name="UserAgentInfo" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tbLoginDetailsArchive">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LoginID" Type="int" />
+    <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AppVersion" Type="varchar" MaxLength="50" />
+    <Property Name="ActivityTime" Type="datetime" />
+    <Property Name="Activity" Type="varchar" MaxLength="50" />
+    <Property Name="InsertDateTime" Type="datetime" />
+    <Property Name="ClientIP" Type="varchar" MaxLength="30" />
+    <Property Name="ClientBrowser" Type="varchar" MaxLength="30" />
+    <Property Name="ClientBrowserVersion" Type="varchar" MaxLength="30" />
+    <Property Name="ClientOS" Type="varchar" MaxLength="30" />
+    <Property Name="ClientOSVersion" Type="varchar" MaxLength="30" />
   </EntityType>
   <EntityType Name="tbPMCVarianceSlab">
     <Key>
@@ -2241,6 +2885,18 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_PayorIncomingSchedules_MasterBasicIncomingSchedule">
+    <End Role="MasterBasicIncomingSchedule" Type="Self.MasterBasicIncomingSchedule" Multiplicity="0..1" />
+    <End Role="PayorIncomingSchedules" Type="Self.PayorIncomingSchedules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MasterBasicIncomingSchedule">
+        <PropertyRef Name="ScheduleId" />
+      </Principal>
+      <Dependent Role="PayorIncomingSchedules">
+        <PropertyRef Name="ScheduleTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Payors_Licensees">
     <End Role="Licensees" Type="Self.Licensees" Multiplicity="0..1" />
     <End Role="Payors" Type="Self.Payors" Multiplicity="*" />
@@ -2933,6 +3589,9 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="f_usp_PolicyList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName=" usp_PolicyList">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="AddTemplate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="PayorID" Type="varchar" Mode="In" />
     <Parameter Name="ColumnList" Type="varchar" Mode="In" />
@@ -2957,6 +3616,12 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
   <Function Name="fnGetAnnualRevenue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="float">
     <Parameter Name="PolicyID" Type="uniqueidentifier" Mode="In" />
   </Function>
+  <Function Name="fnGetExpectedRevenue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="float">
+    <Parameter Name="PolicyID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="PolicyModeId" Type="int" Mode="In" />
+    <Parameter Name="DateFrom" Type="datetime" Mode="In" />
+    <Parameter Name="DateTo" Type="datetime" Mode="In" />
+  </Function>
   <Function Name="fnGetMonthlyRevenue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="float">
     <Parameter Name="PolicyID" Type="uniqueidentifier" Mode="In" />
   </Function>
@@ -2978,8 +3643,24 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
   <Function Name="GetIssues" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="policyID" Type="uniqueidentifier" Mode="In" />
   </Function>
+  <Function Name="getPayorList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="licenseeId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="IsCarriersRequired" Type="bit" Mode="In" />
+    <Parameter Name="IsCoveragesRequired" Type="bit" Mode="In" />
+    <Parameter Name="IsWebsiteLoginsRequired" Type="bit" Mode="In" />
+    <Parameter Name="IsContactsRequired" Type="bit" Mode="In" />
+    <Parameter Name="PayorStatus" Type="int" Mode="In" />
+  </Function>
   <Function Name="GetPolicyLearnedFieldsPolicyWise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="policyID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="getPolicyNoteslist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PolicyId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="ClientId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="recordCount" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="GetPolicyPaymentEntryPaymenternrtyIDWise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PolicyPaymentEntryID" Type="uniqueidentifier" Mode="In" />
   </Function>
   <Function Name="GetPolicyPaymentEntryPolicyIDWise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="PolicyID" Type="uniqueidentifier" Mode="In" />
@@ -3076,10 +3757,16 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
   <Function Name="sp_CarrierMigrationReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="sp_CarrierMigrationReport_old" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="sp_CheckRegisterReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ReportGuidID" Type="nvarchar(max)" Mode="In" />
   </Function>
   <Function Name="sp_ClientCompensationAnalysis" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_ClientCompensationAnalysisTemp1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ReportGuidID" Type="nvarchar(max)" Mode="In" />
   </Function>
   <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -3088,15 +3775,36 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     <Parameter Name="version" Type="int" Mode="In" />
     <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
   </Function>
+  <Function Name="sp_deleteDeuEntry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DEUEntryID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="sp_deletePayorSchedule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ScheduleID" Type="uniqueidentifier" Mode="In" />
+  </Function>
   <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
     <Parameter Name="owner_id" Type="int" Mode="In" />
   </Function>
+  <Function Name="sp_ExpectedCommissions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="sp_FollowUp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_FollowUp1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="sp_GetAllPaymentRecord" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_getAllPayorScheduledList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LicenseeID" Type="varchar" Mode="In" />
+    <Parameter Name="RowStart" Type="int" Mode="In" />
+    <Parameter Name="RowEnd" Type="int" Mode="In" />
+    <Parameter Name="sortBy" Type="varchar" Mode="In" />
+    <Parameter Name="sortType" Type="varchar" Mode="In" />
+    <Parameter Name="filterBy" Type="varchar" Mode="In" />
+    <Parameter Name="recordCount" Type="int" Mode="InOut" />
   </Function>
   <Function Name="sp_GetAllRecord" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
@@ -3112,12 +3820,27 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     <Parameter Name="PAC" Type="int" Mode="InOut" />
   </Function>
   <Function Name="Sp_GetBatchesForDeuEntries" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_getLicenseeReportFields" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LicenseeID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="ReportID" Type="uniqueidentifier" Mode="In" />
+  </Function>
   <Function Name="sp_GetMonthlyRevenue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="PolicyID" Type="uniqueidentifier" Mode="In" />
   </Function>
   <Function Name="sp_GetMonthlyRevenue1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="PolicyID" Type="uniqueidentifier" Mode="In" />
     <Parameter Name="PMC" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sp_GetPolicyPaymentEntryPolicyIDWise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PolicyID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="sp_getSelectedPayorSchedule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="payorID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="carrierID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="coverageID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="licenseeID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="productType" Type="varchar" Mode="In" />
+    <Parameter Name="incomingPaymentTypeID" Type="int" Mode="In" />
   </Function>
   <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -3152,7 +3875,13 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
   <Function Name="sp_MissingPayments_backUp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="sp_NewPolicyList1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="sp_OpportunityReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_OpportunityReportNEW" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="sp_PayeeAnalysis" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -3181,16 +3910,55 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
   <Function Name="sp_PayeeStatement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="sp_PayeeStatement_25082016" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_PayeeStatement_27082016" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_PayeeStatement_31082016" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_PayeeStatement_bckup03092016" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_PayeeStatement_old_27072016" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_PayeeStatement_PayorRate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_PayeeStatementBrokerDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="sp_PayeeStatementByCarrier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_PayeeStatementByCarrierBackup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="sp_PayeeStatementByClient" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="sp_PayeeStatementByClient_backup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_PayeeStatementByClientTest" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_PayeeStatementByPayee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="sp_PayeeStatementByPayor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="sp_PayeeStatementByPayorBackup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="sp_PayeeStatementByProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_PayeeStatementByProductBackup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="sp_PayeeStatementGetPaymentType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -3205,13 +3973,53 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
   <Function Name="sp_PayeeStatementGetSelectedReports" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ReportGuidID" Type="nvarchar(max)" Mode="In" />
   </Function>
+  <Function Name="sp_PayeeStatementNew_28072016" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_PayeeStatementNEWTest" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="sp_PolicyList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_PolicyList_new" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_PolicyList_old" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_PolicyList_test" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_PolicyList111" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
     <Parameter Name="owner_id" Type="int" Mode="In" />
     <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_SaveLicenseeReportFields" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LicenseeID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="ReportID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="Fields" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_savePayorSchedule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ScheduleID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="LicenseeID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="PayorID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="CarrierID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="CoverageID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="ProductType" Type="varchar" Mode="In" />
+    <Parameter Name="FirstYear" Type="float" Mode="In" />
+    <Parameter Name="Renewal" Type="float" Mode="In" />
+    <Parameter Name="ScheduleTypeID" Type="int" Mode="In" />
+    <Parameter Name="IncomingPaymentTypeId" Type="int" Mode="In" />
+    <Parameter Name="SplitPercentage" Type="float" Mode="In" />
+    <Parameter Name="Advance" Type="int" Mode="In" />
+    <Parameter Name="CreatedBy" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="Overwrite" Type="int" Mode="In" />
   </Function>
   <Function Name="Sp_select_FollowupSecond" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Followup" Type="bit" Mode="In" />
@@ -3220,12 +4028,22 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     <Parameter Name="LicenseeId" Type="uniqueidentifier" Mode="In" />
     <Parameter Name="Followup" Type="bit" Mode="In" />
   </Function>
+  <Function Name="sp_TestVarianceInAllPolicy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Sp_top" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="sp_UnappliedUnlinkedPolicy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="sp_UnlockPolicy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="PolicyId" Type="uniqueidentifier" Mode="In" />
     <Parameter Name="UnlockSuccessfull" Type="bit" Mode="InOut" />
+  </Function>
+  <Function Name="sp_UpdateIncomingSchedules" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IncomingScheduleId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="Overwrite" Type="bit" Mode="In" />
   </Function>
   <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="sp_VariancePaymentsAllPolicy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -3252,8 +4070,281 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
   <Function Name="sp_VariancePercentageGetResultID_Backup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="Tempreportmissing" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="Update_PolicyLearnedFields" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="PAC" Type="varchar" Mode="In" />
+    <Parameter Name="PolicyId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="usp_AddDefaultUserPermission" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userCredentialId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="roleId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Usp_AddImportStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UniquePolicyID" Type="varchar" Mode="In" />
+    <Parameter Name="BenefitsPolicyID" Type="varchar" Mode="In" />
+    <Parameter Name="IsNew" Type="bit" Mode="In" />
+    <Parameter Name="IsSuccess" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="USP_AddLoginLogoutEntry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="AppVersion" Type="varchar" Mode="In" />
+    <Parameter Name="Activity" Type="varchar" Mode="In" />
+    <Parameter Name="ClientIP" Type="varchar" Mode="In" />
+    <Parameter Name="ClientBrowser" Type="varchar" Mode="In" />
+    <Parameter Name="ClientBrowserVersion" Type="varchar" Mode="In" />
+    <Parameter Name="ClientOS" Type="varchar" Mode="In" />
+    <Parameter Name="ClientOSVersion" Type="varchar" Mode="In" />
+    <Parameter Name="ClientDeviceDetail" Type="varchar" Mode="In" />
+    <Parameter Name="UserAgentInfo" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_AddUpdateAdminStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userCredentialId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="adminStatus" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="usp_AddupdateFollowUpIssues" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IssueId" Type="varchar" Mode="In" />
+    <Parameter Name="IssueStatusId" Type="int" Mode="In" />
+    <Parameter Name="IssueResultId" Type="int" Mode="In" />
+    <Parameter Name="LastModifiedDate" Type="varchar" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_CheckIsEntryPaid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="paymentEntryID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="usp_DeleteOutgoingSchedules" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="policyId" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_GetAlllicenseeList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="usp_getAllPayorCarrierList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="licenseeId" Type="varchar" Mode="In" />
+    <Parameter Name="IsCarriersRequired" Type="bit" Mode="In" />
+    <Parameter Name="IsCoveragesRequired" Type="bit" Mode="In" />
+    <Parameter Name="IsWebsiteLoginsRequired" Type="bit" Mode="In" />
+    <Parameter Name="IsContactsRequired" Type="bit" Mode="In" />
+    <Parameter Name="PayorStatus" Type="int" Mode="In" />
+  </Function>
+  <Function Name="usp_getAllPayorList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="licenseeId" Type="varchar" Mode="In" />
+    <Parameter Name="PayorStatus" Type="int" Mode="In" />
+    <Parameter Name="IsCarriersRequired" Type="bit" Mode="In" />
+    <Parameter Name="IsCoveragesRequired" Type="bit" Mode="In" />
+    <Parameter Name="IsWebsiteLoginsRequired" Type="bit" Mode="In" />
+    <Parameter Name="IsContactsRequired" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="Usp_GetAutoterminationDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PolicyId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="Usp_GetBatchListForReportManager" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Usp_GetBatchListForReportManagerByLicenssID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LicenseeId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="usp_getCarrierList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PayorId" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Usp_GetClientList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LicenseeId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="usp_GetClientListing" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RowStart" Type="int" Mode="In" />
+    <Parameter Name="RowEnd" Type="int" Mode="In" />
+    <Parameter Name="licenseeId" Type="varchar" Mode="In" />
+    <Parameter Name="sortBy" Type="varchar" Mode="In" />
+    <Parameter Name="sortType" Type="varchar" Mode="In" />
+    <Parameter Name="filterBy" Type="varchar" Mode="In" />
+    <Parameter Name="statusId" Type="varchar" Mode="In" />
+    <Parameter Name="activePolicyClientCount" Type="int" Mode="InOut" />
+    <Parameter Name="totalClientCount" Type="int" Mode="InOut" />
+    <Parameter Name="pendingPolicyClientCount" Type="int" Mode="InOut" />
+    <Parameter Name="terminatePolicyClientCount" Type="int" Mode="InOut" />
+    <Parameter Name="withoutPolicyClientCount" Type="int" Mode="InOut" />
+    <Parameter Name="recordLength" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="Usp_GetClientPolicydetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LicenseeId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="PolicyClientId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="policyId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="isPolicyFound" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="usp_GetFollowUPPolicyByPolicyID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PolicyId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="usp_GetFollowupPolicyDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PolicyId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="Usp_GetFollowUPProcMissing" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PolicyId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="Usp_GetFollowupProcPolicy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PolicyId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="Usp_GetFollowupServicePolicy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Usp_GetIncomingPaymentList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="policyId" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Usp_GetIncomingPaymentList1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="policyId" Type="varchar" Mode="In" />
+    <Parameter Name="sortBy" Type="varchar" Mode="In" />
+    <Parameter Name="sortType" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Usp_GetLicenseeName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LicenseeId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="usp_GetLinkedUserList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RowStart" Type="int" Mode="In" />
+    <Parameter Name="RowEnd" Type="int" Mode="In" />
+    <Parameter Name="UserCredentialId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="count" Type="int" Mode="InOut" />
+    <Parameter Name="sortBy" Type="varchar" Mode="In" />
+    <Parameter Name="sortType" Type="varchar" Mode="In" />
+    <Parameter Name="filterBy" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Usp_GetOutgoingPayment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PaymentEntryId" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_GetOutgoingPaymentDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OutgoingID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="usp_GetOutgoingSchedulelist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LicenseeId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="usp_GetPasswordHintQues" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="email" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_GetPMCVariance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="total" Type="decimal" Mode="In" />
+    <Parameter Name="PMC" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="usp_getPoliciesDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="LicenseeId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="PageNumber" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="sortBy" Type="varchar" Mode="In" />
+    <Parameter Name="sortType" Type="varchar" Mode="In" />
+    <Parameter Name="filterBy" Type="varchar" Mode="In" />
+    <Parameter Name="statusId" Type="varchar" Mode="In" />
+    <Parameter Name="TotalPoliciesCount" Type="varchar" Mode="InOut" />
+    <Parameter Name="ActivePoliciesCount" Type="varchar" Mode="InOut" />
+    <Parameter Name="PendingPoliciesCount" Type="varchar" Mode="InOut" />
+    <Parameter Name="TerminatePoliciesCount" Type="varchar" Mode="InOut" />
+    <Parameter Name="SelectedCount" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="usp_GetPolicisOutGoingBasicSchedule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PolicyId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="USP_GetPolicyAllDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PolicyID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="usp_GetPolicyClientList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="licenseeId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="Usp_GetPolicyClientWise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LicenseeId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="PolicyClientId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="usp_GetPolicyDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PolicyId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="usp_GetPolicyEffectiveDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PolicyId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="Usp_GetPolicysmartFielddetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PolicyClientId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="policyId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="isPolicyFound" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="usp_GetPolicyTrackFromDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PolicyId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="usp_GetReplacedPolicyList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="clientId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="licenseeId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="loggedInUserID" Type="varchar" Mode="In" />
+    <Parameter Name="policyId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="usp_GetSmartTrackFromDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PolicyId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="usp_getUsercredentialId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userName" Type="varchar" Mode="In" />
+    <Parameter Name="licenseeId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="usp_GetUserlist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RowStart" Type="int" Mode="In" />
+    <Parameter Name="RowEnd" Type="int" Mode="In" />
+    <Parameter Name="licenseeId" Type="varchar" Mode="In" />
+    <Parameter Name="roleIdToView" Type="varchar" Mode="In" />
+    <Parameter Name="loggedInUser" Type="varchar" Mode="In" />
+    <Parameter Name="sortBy" Type="varchar" Mode="In" />
+    <Parameter Name="sortType" Type="varchar" Mode="In" />
+    <Parameter Name="filterBy" Type="varchar" Mode="In" />
+    <Parameter Name="agentCount" Type="int" Mode="InOut" />
+    <Parameter Name="userCount" Type="int" Mode="InOut" />
+    <Parameter Name="recordCount" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="usp_GetUsername" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="email" Type="varchar" Mode="In" />
+    <Parameter Name="ques" Type="varchar" Mode="In" />
+    <Parameter Name="ans" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="USP_IsPaymentFromDEU" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OutgoingEntryID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="usp_OpportunityReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="usp_ResetPassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="password" Type="varchar" Mode="In" />
+    <Parameter Name="passwordResetKey" Type="varchar" Mode="In" />
+    <Parameter Name="keySessionExpired" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="Usp_SaveInvoiceHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DEUEntryID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="PolicyID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="LastInvoiceDate" Type="datetime" Mode="In" />
+    <Parameter Name="NewInvoiceDate" Type="datetime" Mode="In" />
+    <Parameter Name="CreatedBy" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="usp_SavePasswordAndEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="password" Type="varchar" Mode="In" />
+    <Parameter Name="email" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_SavePasswordkey" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="passwordResetKey" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Usp_SavePayeeStatementReports" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="LicenceID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="Batch" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Payee" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Reports" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="PaymentType" Type="bit" Mode="In" />
+    <Parameter Name="Zero" Type="bit" Mode="In" />
+    <Parameter Name="IsSplit" Type="bit" Mode="In" />
+    <Parameter Name="IsPayorRate" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="usp_UpdateHouseAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="licenseeId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="userCredentialId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="Usp_UpdateInvoiceDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PaymentEntryID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="newInvoice" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="Usp_UpdateLastMissIssueDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="policyID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="usp_ValidatePasswordResetKey" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PasswordResetKey" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_vinodPolicyTest" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="uspGetPolicyDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="PolicyId" Type="uniqueidentifier" Mode="In" />
   </Function>
   <EntityContainer Name="ModelStoreContainer">
@@ -3345,6 +4436,7 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     <EntitySet Name="MasterZipCodes" EntityType="Self.MasterZipCodes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PayeeStatementReports" EntityType="Self.PayeeStatementReports" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PayorIncomingSchedules" EntityType="Self.PayorIncomingSchedules" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Payors" EntityType="Self.Payors" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PayorSiteLoginInfo" EntityType="Self.PayorSiteLoginInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PayorSource" EntityType="Self.PayorSource" Schema="dbo" store:Type="Tables" />
@@ -3368,38 +4460,556 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     <EntitySet Name="Statements" EntityType="Self.Statements" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Supports" EntityType="Self.Supports" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbBenefits_ImportStatus" EntityType="Self.tbBenefits_ImportStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbInvoiceUpdateHistory" EntityType="Self.tbInvoiceUpdateHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbLoginDetails" EntityType="Self.tbLoginDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbLoginDetailsArchive" EntityType="Self.tbLoginDetailsArchive" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbPMCVarianceSlab" EntityType="Self.tbPMCVarianceSlab" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Templates" EntityType="Self.Templates" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserCredentials" EntityType="Self.UserCredentials" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserDetail" EntityType="Self.UserDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserPermissions" EntityType="Self.UserPermissions" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VariablesForBillingLine" EntityType="Self.VariablesForBillingLine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Batches_Audit" EntityType="Self.Batches_Audit" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>
+              SELECT
+              [Batches_Audit].[BatchId] AS [BatchId],
+              [Batches_Audit].[BatchNumber] AS [BatchNumber],
+              [Batches_Audit].[LicenseeId] AS [LicenseeId],
+              [Batches_Audit].[CreatedOn] AS [CreatedOn],
+              [Batches_Audit].[FileType] AS [FileType],
+              [Batches_Audit].[EntryStatusId] AS [EntryStatusId],
+              [Batches_Audit].[AssignedUserCredentialId] AS [AssignedUserCredentialId],
+              [Batches_Audit].[CreatedFromUpload] AS [CreatedFromUpload],
+              [Batches_Audit].[UploadStatusId] AS [UploadStatusId],
+              [Batches_Audit].[FileName] AS [FileName],
+              [Batches_Audit].[LastModifiedDate] AS [LastModifiedDate],
+              [Batches_Audit].[IsManuallyUploaded] AS [IsManuallyUploaded],
+              [Batches_Audit].[SiteLoginID] AS [SiteLoginID],
+              [Batches_Audit].[PayorId] AS [PayorId],
+              [Batches_Audit].[BatchNote] AS [BatchNote],
+              [Batches_Audit].[InsertDateTime] AS [InsertDateTime],
+              [Batches_Audit].[host_name] AS [host_name],
+              [Batches_Audit].[program_name] AS [program_name],
+              [Batches_Audit].[login_name] AS [login_name],
+              [Batches_Audit].[nt_domain] AS [nt_domain],
+              [Batches_Audit].[nt_user_name] AS [nt_user_name],
+              [Batches_Audit].[sqlbuffer] AS [sqlbuffer]
+              FROM [dbo].[Batches_Audit] AS [Batches_Audit]
+            </DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Clients_Audit" EntityType="Self.Clients_Audit" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>
+              SELECT
+              [Clients_Audit].[ClientId] AS [ClientId],
+              [Clients_Audit].[LicenseeId] AS [LicenseeId],
+              [Clients_Audit].[Name] AS [Name],
+              [Clients_Audit].[Address] AS [Address],
+              [Clients_Audit].[Zip] AS [Zip],
+              [Clients_Audit].[City] AS [City],
+              [Clients_Audit].[State] AS [State],
+              [Clients_Audit].[Email] AS [Email],
+              [Clients_Audit].[IsDeleted] AS [IsDeleted],
+              [Clients_Audit].[InsertDateTime] AS [InsertDateTime],
+              [Clients_Audit].[host_name] AS [host_name],
+              [Clients_Audit].[program_name] AS [program_name],
+              [Clients_Audit].[login_name] AS [login_name],
+              [Clients_Audit].[nt_domain] AS [nt_domain],
+              [Clients_Audit].[nt_user_name] AS [nt_user_name],
+              [Clients_Audit].[sqlbuffer] AS [sqlbuffer],
+              [Clients_Audit].[IsdeletedFlagAltered] AS [IsdeletedFlagAltered]
+              FROM [dbo].[Clients_Audit] AS [Clients_Audit]
+            </DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Coverages_Audit" EntityType="Self.Coverages_Audit" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>
+              SELECT
+              [Coverages_Audit].[CoverageId] AS [CoverageId],
+              [Coverages_Audit].[ProductName] AS [ProductName],
+              [Coverages_Audit].[IsDeleted] AS [IsDeleted],
+              [Coverages_Audit].[IsGlobal] AS [IsGlobal],
+              [Coverages_Audit].[CreatedBy] AS [CreatedBy],
+              [Coverages_Audit].[LicenseeId] AS [LicenseeId],
+              [Coverages_Audit].[InsertDateTime] AS [InsertDateTime],
+              [Coverages_Audit].[host_name] AS [host_name],
+              [Coverages_Audit].[program_name] AS [program_name],
+              [Coverages_Audit].[login_name] AS [login_name],
+              [Coverages_Audit].[nt_domain] AS [nt_domain],
+              [Coverages_Audit].[nt_user_name] AS [nt_user_name],
+              [Coverages_Audit].[sqlbuffer] AS [sqlbuffer]
+              FROM [dbo].[Coverages_Audit] AS [Coverages_Audit]
+            </DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="EntriesByDEU_Audit" EntityType="Self.EntriesByDEU_Audit" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>
+              SELECT
+              [EntriesByDEU_Audit].[DEUEntryID] AS [DEUEntryID],
+              [EntriesByDEU_Audit].[OriginalEffectiveDate] AS [OriginalEffectiveDate],
+              [EntriesByDEU_Audit].[PaymentReceived] AS [PaymentReceived],
+              [EntriesByDEU_Audit].[CommissionPercentage] AS [CommissionPercentage],
+              [EntriesByDEU_Audit].[OtherData] AS [OtherData],
+              [EntriesByDEU_Audit].[Insured] AS [Insured],
+              [EntriesByDEU_Audit].[PolicyNumber] AS [PolicyNumber],
+              [EntriesByDEU_Audit].[Enrolled] AS [Enrolled],
+              [EntriesByDEU_Audit].[Eligible] AS [Eligible],
+              [EntriesByDEU_Audit].[Link1] AS [Link1],
+              [EntriesByDEU_Audit].[SplitPer] AS [SplitPer],
+              [EntriesByDEU_Audit].[PolicyModeID] AS [PolicyModeID],
+              [EntriesByDEU_Audit].[PolicyModeValue] AS [PolicyModeValue],
+              [EntriesByDEU_Audit].[TrackFromDate] AS [TrackFromDate],
+              [EntriesByDEU_Audit].[CompTypeID] AS [CompTypeID],
+              [EntriesByDEU_Audit].[ClientID] AS [ClientID],
+              [EntriesByDEU_Audit].[StatementID] AS [StatementID],
+              [EntriesByDEU_Audit].[PostStatusID] AS [PostStatusID],
+              [EntriesByDEU_Audit].[PolicyID] AS [PolicyID],
+              [EntriesByDEU_Audit].[InvoiceDate] AS [InvoiceDate],
+              [EntriesByDEU_Audit].[PayorId] AS [PayorId],
+              [EntriesByDEU_Audit].[NumberOfUnits] AS [NumberOfUnits],
+              [EntriesByDEU_Audit].[DollerPerUnit] AS [DollerPerUnit],
+              [EntriesByDEU_Audit].[Fee] AS [Fee],
+              [EntriesByDEU_Audit].[Bonus] AS [Bonus],
+              [EntriesByDEU_Audit].[CommissionTotal] AS [CommissionTotal],
+              [EntriesByDEU_Audit].[PayorSysID] AS [PayorSysID],
+              [EntriesByDEU_Audit].[Renewal] AS [Renewal],
+              [EntriesByDEU_Audit].[CarrierId] AS [CarrierId],
+              [EntriesByDEU_Audit].[CoverageId] AS [CoverageId],
+              [EntriesByDEU_Audit].[IsEntrybyCommissiondashBoard] AS [IsEntrybyCommissiondashBoard],
+              [EntriesByDEU_Audit].[CreatedBy] AS [CreatedBy],
+              [EntriesByDEU_Audit].[PostCompleteStatus] AS [PostCompleteStatus],
+              [EntriesByDEU_Audit].[ModalAvgPremium] AS [ModalAvgPremium],
+              [EntriesByDEU_Audit].[CompScheduleType] AS [CompScheduleType],
+              [EntriesByDEU_Audit].[ClientValue] AS [ClientValue],
+              [EntriesByDEU_Audit].[CarrierName] AS [CarrierName],
+              [EntriesByDEU_Audit].[ProductName] AS [ProductName],
+              [EntriesByDEU_Audit].[EntryDate] AS [EntryDate],
+              [EntriesByDEU_Audit].[UnlinkClientName] AS [UnlinkClientName],
+              [EntriesByDEU_Audit].[CoverageNickName] AS [CoverageNickName],
+              [EntriesByDEU_Audit].[CarrierNickName] AS [CarrierNickName],
+              [EntriesByDEU_Audit].[InsertDatetime] AS [InsertDatetime],
+              [EntriesByDEU_Audit].[host_name] AS [host_name],
+              [EntriesByDEU_Audit].[program_name] AS [program_name],
+              [EntriesByDEU_Audit].[login_name] AS [login_name],
+              [EntriesByDEU_Audit].[nt_domain] AS [nt_domain],
+              [EntriesByDEU_Audit].[nt_user_name] AS [nt_user_name],
+              [EntriesByDEU_Audit].[sqlbuffer] AS [sqlbuffer],
+              [EntriesByDEU_Audit].[IsProcessing] AS [IsProcessing],
+              [EntriesByDEU_Audit].[IsCreatedFromWeb] AS [IsCreatedFromWeb]
+
+
+              FROM [dbo].[EntriesByDEU_Audit] AS [EntriesByDEU_Audit]
+            </DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="followup_pmcissues" EntityType="Self.followup_pmcissues" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>
+              SELECT
+              [followup_pmcissues].[IssueId] AS [IssueId],
+              [followup_pmcissues].[IssueCategoryId] AS [IssueCategoryId],
+              [followup_pmcissues].[IssueStatusId] AS [IssueStatusId],
+              [followup_pmcissues].[IssueResultId] AS [IssueResultId],
+              [followup_pmcissues].[IssueReasonId] AS [IssueReasonId],
+              [followup_pmcissues].[Notes] AS [Notes],
+              [followup_pmcissues].[InvoiceDate] AS [InvoiceDate],
+              [followup_pmcissues].[NextFollowUpDate] AS [NextFollowUpDate],
+              [followup_pmcissues].[Payment] AS [Payment],
+              [followup_pmcissues].[PolicyId] AS [PolicyId],
+              [followup_pmcissues].[PreviousStatusId] AS [PreviousStatusId],
+              [followup_pmcissues].[LastModifiedDate] AS [LastModifiedDate],
+              [followup_pmcissues].[IssueTrackNumber] AS [IssueTrackNumber],
+              [followup_pmcissues].[CreatedDate] AS [CreatedDate],
+              [followup_pmcissues].[ModifiedBy] AS [ModifiedBy],
+              [followup_pmcissues].[FromDate] AS [FromDate],
+              [followup_pmcissues].[ToDate] AS [ToDate],
+              [followup_pmcissues].[IsDeleted] AS [IsDeleted],
+              [followup_pmcissues].[IsPMCVariance] AS [IsPMCVariance]
+              FROM [dbo].[followup_pmcissues] AS [followup_pmcissues]
+            </DefiningQuery>
+    </EntitySet>
     <EntitySet Name="IssuedFiles" EntityType="Self.IssuedFiles" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-[IssuedFiles].[PayorID] AS [PayorID], 
-[IssuedFiles].[FileName] AS [FileName]
-FROM [dbo].[IssuedFiles] AS [IssuedFiles]</DefiningQuery>
+      <DefiningQuery>
+              SELECT
+              [IssuedFiles].[PayorID] AS [PayorID],
+              [IssuedFiles].[FileName] AS [FileName]
+              FROM [dbo].[IssuedFiles] AS [IssuedFiles]
+            </DefiningQuery>
     </EntitySet>
     <EntitySet Name="Issuelog" EntityType="Self.Issuelog" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-[Issuelog].[IssueId] AS [IssueId], 
-[Issuelog].[Issue] AS [Issue]
-FROM [dbo].[Issuelog] AS [Issuelog]</DefiningQuery>
+      <DefiningQuery>
+              SELECT
+              [Issuelog].[IssueId] AS [IssueId],
+              [Issuelog].[Issue] AS [Issue]
+              FROM [dbo].[Issuelog] AS [Issuelog]
+            </DefiningQuery>
     </EntitySet>
     <EntitySet Name="MasterBatchDownloadStatus" EntityType="Self.MasterBatchDownloadStatus" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-[MasterBatchDownloadStatus].[BatchDownloadStatusId] AS [BatchDownloadStatusId], 
-[MasterBatchDownloadStatus].[Name] AS [Name], 
-[MasterBatchDownloadStatus].[Description] AS [Description]
-FROM [dbo].[MasterBatchDownloadStatus] AS [MasterBatchDownloadStatus]</DefiningQuery>
+      <DefiningQuery>
+              SELECT
+              [MasterBatchDownloadStatus].[BatchDownloadStatusId] AS [BatchDownloadStatusId],
+              [MasterBatchDownloadStatus].[Name] AS [Name],
+              [MasterBatchDownloadStatus].[Description] AS [Description]
+              FROM [dbo].[MasterBatchDownloadStatus] AS [MasterBatchDownloadStatus]
+            </DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MasterSystemConstants_Backup_Dec19_2016" EntityType="Self.MasterSystemConstants_Backup_Dec19_2016" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>
+              SELECT
+              [MasterSystemConstants_Backup_Dec19_2016].[SystemConstantId] AS [SystemConstantId],
+              [MasterSystemConstants_Backup_Dec19_2016].[Name] AS [Name],
+              [MasterSystemConstants_Backup_Dec19_2016].[Value] AS [Value],
+              [MasterSystemConstants_Backup_Dec19_2016].[Description] AS [Description]
+              FROM [dbo].[MasterSystemConstants_Backup_Dec19_2016] AS [MasterSystemConstants_Backup_Dec19_2016]
+            </DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Policies_03062018" EntityType="Self.Policies_03062018" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>
+              SELECT
+              [Policies_03062018].[PolicyId] AS [PolicyId],
+              [Policies_03062018].[PolicyNumber] AS [PolicyNumber],
+              [Policies_03062018].[PolicyStatusId] AS [PolicyStatusId],
+              [Policies_03062018].[PolicyType] AS [PolicyType],
+              [Policies_03062018].[PolicyClientId] AS [PolicyClientId],
+              [Policies_03062018].[PolicyLicenseeId] AS [PolicyLicenseeId],
+              [Policies_03062018].[OriginalEffectiveDate] AS [OriginalEffectiveDate],
+              [Policies_03062018].[TrackFromDate] AS [TrackFromDate],
+              [Policies_03062018].[PolicyModeId] AS [PolicyModeId],
+              [Policies_03062018].[MonthlyPremium] AS [MonthlyPremium],
+              [Policies_03062018].[CoverageId] AS [CoverageId],
+              [Policies_03062018].[SubmittedThrough] AS [SubmittedThrough],
+              [Policies_03062018].[Enrolled] AS [Enrolled],
+              [Policies_03062018].[Eligible] AS [Eligible],
+              [Policies_03062018].[PolicyTerminationDate] AS [PolicyTerminationDate],
+              [Policies_03062018].[TerminationReasonId] AS [TerminationReasonId],
+              [Policies_03062018].[IsTrackMissingMonth] AS [IsTrackMissingMonth],
+              [Policies_03062018].[IsTrackIncomingPercentage] AS [IsTrackIncomingPercentage],
+              [Policies_03062018].[IsTrackPayment] AS [IsTrackPayment],
+              [Policies_03062018].[IncomingPaymentTypeId] AS [IncomingPaymentTypeId],
+              [Policies_03062018].[IsDeleted] AS [IsDeleted],
+              [Policies_03062018].[ReplacedBy] AS [ReplacedBy],
+              [Policies_03062018].[PayorId] AS [PayorId],
+              [Policies_03062018].[DuplicateFrom] AS [DuplicateFrom],
+              [Policies_03062018].[CreatedBy] AS [CreatedBy],
+              [Policies_03062018].[CreatedOn] AS [CreatedOn],
+              [Policies_03062018].[IsIncomingBasicSchedule] AS [IsIncomingBasicSchedule],
+              [Policies_03062018].[IsOutGoingBasicSchedule] AS [IsOutGoingBasicSchedule],
+              [Policies_03062018].[CarrierId] AS [CarrierId],
+              [Policies_03062018].[SplitPercentage] AS [SplitPercentage],
+              [Policies_03062018].[Insured] AS [Insured],
+              [Policies_03062018].[ActivatedOn] AS [ActivatedOn],
+              [Policies_03062018].[IsLocked] AS [IsLocked],
+              [Policies_03062018].[LastFollowUpRuns] AS [LastFollowUpRuns],
+              [Policies_03062018].[RowVersion] AS [RowVersion],
+              [Policies_03062018].[Advance] AS [Advance],
+              [Policies_03062018].[ProductType] AS [ProductType],
+              [Policies_03062018].[UserCredentialId] AS [UserCredentialId],
+              [Policies_03062018].[AccoutExec] AS [AccoutExec],
+              [Policies_03062018].[LastNoVarIssueDate] AS [LastNoVarIssueDate],
+              [Policies_03062018].[LastNoMissIssueDate] AS [LastNoMissIssueDate]
+              FROM [dbo].[Policies_03062018] AS [Policies_03062018]
+            </DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Policies_Audit" EntityType="Self.Policies_Audit" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>
+              SELECT
+              [Policies_Audit].[PolicyId] AS [PolicyId],
+              [Policies_Audit].[PolicyNumber] AS [PolicyNumber],
+              [Policies_Audit].[PolicyStatusId] AS [PolicyStatusId],
+              [Policies_Audit].[PolicyType] AS [PolicyType],
+              [Policies_Audit].[PolicyClientId] AS [PolicyClientId],
+              [Policies_Audit].[PolicyLicenseeId] AS [PolicyLicenseeId],
+              [Policies_Audit].[OriginalEffectiveDate] AS [OriginalEffectiveDate],
+              [Policies_Audit].[TrackFromDate] AS [TrackFromDate],
+              [Policies_Audit].[PolicyModeId] AS [PolicyModeId],
+              [Policies_Audit].[MonthlyPremium] AS [MonthlyPremium],
+              [Policies_Audit].[CoverageId] AS [CoverageId],
+              [Policies_Audit].[SubmittedThrough] AS [SubmittedThrough],
+              [Policies_Audit].[Enrolled] AS [Enrolled],
+              [Policies_Audit].[Eligible] AS [Eligible],
+              [Policies_Audit].[PolicyTerminationDate] AS [PolicyTerminationDate],
+              [Policies_Audit].[TerminationReasonId] AS [TerminationReasonId],
+              [Policies_Audit].[IsTrackMissingMonth] AS [IsTrackMissingMonth],
+              [Policies_Audit].[IsTrackIncomingPercentage] AS [IsTrackIncomingPercentage],
+              [Policies_Audit].[IsTrackPayment] AS [IsTrackPayment],
+              [Policies_Audit].[IncomingPaymentTypeId] AS [IncomingPaymentTypeId],
+              [Policies_Audit].[IsDeleted] AS [IsDeleted],
+              [Policies_Audit].[ReplacedBy] AS [ReplacedBy],
+              [Policies_Audit].[PayorId] AS [PayorId],
+              [Policies_Audit].[DuplicateFrom] AS [DuplicateFrom],
+              [Policies_Audit].[CreatedBy] AS [CreatedBy],
+              [Policies_Audit].[CreatedOn] AS [CreatedOn],
+              [Policies_Audit].[IsIncomingBasicSchedule] AS [IsIncomingBasicSchedule],
+              [Policies_Audit].[IsOutGoingBasicSchedule] AS [IsOutGoingBasicSchedule],
+              [Policies_Audit].[CarrierId] AS [CarrierId],
+              [Policies_Audit].[SplitPercentage] AS [SplitPercentage],
+              [Policies_Audit].[Insured] AS [Insured],
+              [Policies_Audit].[ActivatedOn] AS [ActivatedOn],
+              [Policies_Audit].[IsLocked] AS [IsLocked],
+              [Policies_Audit].[LastFollowUpRuns] AS [LastFollowUpRuns],
+              [Policies_Audit].[RowVersion] AS [RowVersion],
+              [Policies_Audit].[Advance] AS [Advance],
+              [Policies_Audit].[ProductType] AS [ProductType],
+              [Policies_Audit].[UserCredentialId] AS [UserCredentialId],
+              [Policies_Audit].[AccoutExec] AS [AccoutExec],
+              [Policies_Audit].[LastNoMissIssueDate] AS [LastNoMissIssueDate],
+              [Policies_Audit].[LastNoVarIssueDate] AS [LastNoVarIssueDate],
+              [Policies_Audit].[InsertDateTime] AS [InsertDateTime],
+              [Policies_Audit].[host_name] AS [host_name],
+              [Policies_Audit].[program_name] AS [program_name],
+              [Policies_Audit].[login_name] AS [login_name],
+              [Policies_Audit].[nt_domain] AS [nt_domain],
+              [Policies_Audit].[nt_user_name] AS [nt_user_name],
+              [Policies_Audit].[sqlbuffer] AS [sqlbuffer],
+              [Policies_Audit].[IsdeletedFlagAltered] AS [IsdeletedFlagAltered]
+              FROM [dbo].[Policies_Audit] AS [Policies_Audit]
+            </DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="policyincomingschedules_apr202018" EntityType="Self.policyincomingschedules_apr202018" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>
+              SELECT
+              [policyincomingschedules_apr202018].[IncomingScheduleId] AS [IncomingScheduleId],
+              [policyincomingschedules_apr202018].[PolicyId] AS [PolicyId],
+              [policyincomingschedules_apr202018].[FirstYearPercentage] AS [FirstYearPercentage],
+              [policyincomingschedules_apr202018].[RenewalPercentage] AS [RenewalPercentage],
+              [policyincomingschedules_apr202018].[ScheduleTypeId] AS [ScheduleTypeId]
+              FROM [dbo].[policyincomingschedules_apr202018] AS [policyincomingschedules_apr202018]
+            </DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PolicyIncomingSchedules_Audit" EntityType="Self.PolicyIncomingSchedules_Audit" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>
+              SELECT
+              [PolicyIncomingSchedules_Audit].[IncomingScheduleId] AS [IncomingScheduleId],
+              [PolicyIncomingSchedules_Audit].[PolicyId] AS [PolicyId],
+              [PolicyIncomingSchedules_Audit].[FirstYearPercentage] AS [FirstYearPercentage],
+              [PolicyIncomingSchedules_Audit].[RenewalPercentage] AS [RenewalPercentage],
+              [PolicyIncomingSchedules_Audit].[ScheduleTypeId] AS [ScheduleTypeId],
+              [PolicyIncomingSchedules_Audit].[CreatedOn] AS [CreatedOn],
+              [PolicyIncomingSchedules_Audit].[IsSavedFromSettings] AS [IsSavedFromSettings],
+              [PolicyIncomingSchedules_Audit].[SettingsScheduleID] AS [SettingsScheduleID],
+              [PolicyIncomingSchedules_Audit].[InsertDateTime] AS [InsertDateTime],
+              [PolicyIncomingSchedules_Audit].[host_name] AS [host_name],
+              [PolicyIncomingSchedules_Audit].[program_name] AS [program_name],
+              [PolicyIncomingSchedules_Audit].[login_name] AS [login_name],
+              [PolicyIncomingSchedules_Audit].[nt_domain] AS [nt_domain],
+              [PolicyIncomingSchedules_Audit].[nt_user_name] AS [nt_user_name],
+              [PolicyIncomingSchedules_Audit].[sqlbuffer] AS [sqlbuffer]
+              FROM [dbo].[PolicyIncomingSchedules_Audit] AS [PolicyIncomingSchedules_Audit]
+            </DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PolicyLearnedFields_Audit" EntityType="Self.PolicyLearnedFields_Audit" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>
+              SELECT
+              [PolicyLearnedFields_Audit].[PolicyId] AS [PolicyId],
+              [PolicyLearnedFields_Audit].[Insured] AS [Insured],
+              [PolicyLearnedFields_Audit].[PolicyNumber] AS [PolicyNumber],
+              [PolicyLearnedFields_Audit].[Effective] AS [Effective],
+              [PolicyLearnedFields_Audit].[TrackFrom] AS [TrackFrom],
+              [PolicyLearnedFields_Audit].[PAC] AS [PAC],
+              [PolicyLearnedFields_Audit].[PMC] AS [PMC],
+              [PolicyLearnedFields_Audit].[ModalAvgPremium] AS [ModalAvgPremium],
+              [PolicyLearnedFields_Audit].[PolicyModeId] AS [PolicyModeId],
+              [PolicyLearnedFields_Audit].[Enrolled] AS [Enrolled],
+              [PolicyLearnedFields_Audit].[Eligible] AS [Eligible],
+              [PolicyLearnedFields_Audit].[AutoTerminationDate] AS [AutoTerminationDate],
+              [PolicyLearnedFields_Audit].[Link1] AS [Link1],
+              [PolicyLearnedFields_Audit].[LastModifiedOn] AS [LastModifiedOn],
+              [PolicyLearnedFields_Audit].[LastModifiedUserCredentialid] AS [LastModifiedUserCredentialid],
+              [PolicyLearnedFields_Audit].[ClientID] AS [ClientID],
+              [PolicyLearnedFields_Audit].[CompTypeID] AS [CompTypeID],
+              [PolicyLearnedFields_Audit].[PayorSysID] AS [PayorSysID],
+              [PolicyLearnedFields_Audit].[Renewal] AS [Renewal],
+              [PolicyLearnedFields_Audit].[SplitPercentage] AS [SplitPercentage],
+              [PolicyLearnedFields_Audit].[CompScheduleType] AS [CompScheduleType],
+              [PolicyLearnedFields_Audit].[CarrierId] AS [CarrierId],
+              [PolicyLearnedFields_Audit].[CoverageId] AS [CoverageId],
+              [PolicyLearnedFields_Audit].[PayorId] AS [PayorId],
+              [PolicyLearnedFields_Audit].[PreviousEffectiveDate] AS [PreviousEffectiveDate],
+              [PolicyLearnedFields_Audit].[PreviousPolicyModeId] AS [PreviousPolicyModeId],
+              [PolicyLearnedFields_Audit].[CarrierNickName] AS [CarrierNickName],
+              [PolicyLearnedFields_Audit].[CoverageNickName] AS [CoverageNickName],
+              [PolicyLearnedFields_Audit].[Advance] AS [Advance],
+              [PolicyLearnedFields_Audit].[ProductType] AS [ProductType],
+              [PolicyLearnedFields_Audit].[UserCredentialId] AS [UserCredentialId],
+              [PolicyLearnedFields_Audit].[AccoutExec] AS [AccoutExec],
+              [PolicyLearnedFields_Audit].[InsertDateTime] AS [InsertDateTime],
+              [PolicyLearnedFields_Audit].[host_name] AS [host_name],
+              [PolicyLearnedFields_Audit].[program_name] AS [program_name],
+              [PolicyLearnedFields_Audit].[login_name] AS [login_name],
+              [PolicyLearnedFields_Audit].[nt_domain] AS [nt_domain],
+              [PolicyLearnedFields_Audit].[nt_user_name] AS [nt_user_name],
+              [PolicyLearnedFields_Audit].[sqlbuffer] AS [sqlbuffer],
+              [PolicyLearnedFields_Audit].[ImportPolicyID] AS [ImportPolicyID]
+              FROM [dbo].[PolicyLearnedFields_Audit] AS [PolicyLearnedFields_Audit]
+            </DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="policylearnedgfields_June122017" EntityType="Self.policylearnedgfields_June122017" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>
+              SELECT
+              [policylearnedgfields_June122017].[PolicyId] AS [PolicyId],
+              [policylearnedgfields_June122017].[Insured] AS [Insured],
+              [policylearnedgfields_June122017].[PolicyNumber] AS [PolicyNumber],
+              [policylearnedgfields_June122017].[Effective] AS [Effective],
+              [policylearnedgfields_June122017].[TrackFrom] AS [TrackFrom],
+              [policylearnedgfields_June122017].[PAC] AS [PAC],
+              [policylearnedgfields_June122017].[PMC] AS [PMC],
+              [policylearnedgfields_June122017].[ModalAvgPremium] AS [ModalAvgPremium],
+              [policylearnedgfields_June122017].[PolicyModeId] AS [PolicyModeId],
+              [policylearnedgfields_June122017].[Enrolled] AS [Enrolled],
+              [policylearnedgfields_June122017].[Eligible] AS [Eligible],
+              [policylearnedgfields_June122017].[AutoTerminationDate] AS [AutoTerminationDate],
+              [policylearnedgfields_June122017].[Link1] AS [Link1],
+              [policylearnedgfields_June122017].[LastModifiedOn] AS [LastModifiedOn],
+              [policylearnedgfields_June122017].[LastModifiedUserCredentialid] AS [LastModifiedUserCredentialid],
+              [policylearnedgfields_June122017].[ClientID] AS [ClientID],
+              [policylearnedgfields_June122017].[CompTypeID] AS [CompTypeID],
+              [policylearnedgfields_June122017].[PayorSysID] AS [PayorSysID],
+              [policylearnedgfields_June122017].[Renewal] AS [Renewal],
+              [policylearnedgfields_June122017].[SplitPercentage] AS [SplitPercentage],
+              [policylearnedgfields_June122017].[CompScheduleType] AS [CompScheduleType],
+              [policylearnedgfields_June122017].[CarrierId] AS [CarrierId],
+              [policylearnedgfields_June122017].[CoverageId] AS [CoverageId],
+              [policylearnedgfields_June122017].[PayorId] AS [PayorId],
+              [policylearnedgfields_June122017].[PreviousEffectiveDate] AS [PreviousEffectiveDate],
+              [policylearnedgfields_June122017].[PreviousPolicyModeId] AS [PreviousPolicyModeId],
+              [policylearnedgfields_June122017].[CarrierNickName] AS [CarrierNickName],
+              [policylearnedgfields_June122017].[CoverageNickName] AS [CoverageNickName],
+              [policylearnedgfields_June122017].[Advance] AS [Advance],
+              [policylearnedgfields_June122017].[ProductType] AS [ProductType],
+              [policylearnedgfields_June122017].[UserCredentialId] AS [UserCredentialId],
+              [policylearnedgfields_June122017].[AccoutExec] AS [AccoutExec]
+              FROM [dbo].[policylearnedgfields_June122017] AS [policylearnedgfields_June122017]
+            </DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PolicyOutgoingPayments_Audit" EntityType="Self.PolicyOutgoingPayments_Audit" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>
+              SELECT
+              [PolicyOutgoingPayments_Audit].[OutgoingPaymentId] AS [OutgoingPaymentId],
+              [PolicyOutgoingPayments_Audit].[PaymentEntryId] AS [PaymentEntryId],
+              [PolicyOutgoingPayments_Audit].[RecipientUserCredentialId] AS [RecipientUserCredentialId],
+              [PolicyOutgoingPayments_Audit].[PaidAmount] AS [PaidAmount],
+              [PolicyOutgoingPayments_Audit].[CreatedOn] AS [CreatedOn],
+              [PolicyOutgoingPayments_Audit].[IsPaid] AS [IsPaid],
+              [PolicyOutgoingPayments_Audit].[Premium] AS [Premium],
+              [PolicyOutgoingPayments_Audit].[OutgoingPerUnit] AS [OutgoingPerUnit],
+              [PolicyOutgoingPayments_Audit].[Payment] AS [Payment],
+              [PolicyOutgoingPayments_Audit].[ReverseOutgoingPaymentID] AS [ReverseOutgoingPaymentID],
+              [PolicyOutgoingPayments_Audit].[insertDateTime] AS [insertDateTime],
+              [PolicyOutgoingPayments_Audit].[host_name] AS [host_name],
+              [PolicyOutgoingPayments_Audit].[program_name] AS [program_name],
+              [PolicyOutgoingPayments_Audit].[login_name] AS [login_name],
+              [PolicyOutgoingPayments_Audit].[nt_domain] AS [nt_domain],
+              [PolicyOutgoingPayments_Audit].[nt_user_name] AS [nt_user_name],
+              [PolicyOutgoingPayments_Audit].[sqlbuffer] AS [sqlbuffer]
+              FROM [dbo].[PolicyOutgoingPayments_Audit] AS [PolicyOutgoingPayments_Audit]
+            </DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PolicyOutgoingSchedule_backup" EntityType="Self.PolicyOutgoingSchedule_backup" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>
+              SELECT
+              [PolicyOutgoingSchedule_backup].[OutgoingScheduleId] AS [OutgoingScheduleId],
+              [PolicyOutgoingSchedule_backup].[PolicyId] AS [PolicyId],
+              [PolicyOutgoingSchedule_backup].[PayeeUserCredentialId] AS [PayeeUserCredentialId],
+              [PolicyOutgoingSchedule_backup].[IsPrimaryAgent] AS [IsPrimaryAgent],
+              [PolicyOutgoingSchedule_backup].[FirstYearPercentage] AS [FirstYearPercentage],
+              [PolicyOutgoingSchedule_backup].[RenewalPercentage] AS [RenewalPercentage],
+              [PolicyOutgoingSchedule_backup].[CreatedOn] AS [CreatedOn],
+              [PolicyOutgoingSchedule_backup].[ScheduleTypeId] AS [ScheduleTypeId],
+              [PolicyOutgoingSchedule_backup].[CustomStartDate] AS [CustomStartDate],
+              [PolicyOutgoingSchedule_backup].[CustomEndDate] AS [CustomEndDate],
+              [PolicyOutgoingSchedule_backup].[SplitPercent] AS [SplitPercent]
+              FROM [dbo].[PolicyOutgoingSchedule_backup] AS [PolicyOutgoingSchedule_backup]
+            </DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PolicyOutgoingSchedules_Audit" EntityType="Self.PolicyOutgoingSchedules_Audit" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>
+              SELECT
+              [PolicyOutgoingSchedules_Audit].[OutgoingScheduleId] AS [OutgoingScheduleId],
+              [PolicyOutgoingSchedules_Audit].[PolicyId] AS [PolicyId],
+              [PolicyOutgoingSchedules_Audit].[PayeeUserCredentialId] AS [PayeeUserCredentialId],
+              [PolicyOutgoingSchedules_Audit].[IsPrimaryAgent] AS [IsPrimaryAgent],
+              [PolicyOutgoingSchedules_Audit].[FirstYearPercentage] AS [FirstYearPercentage],
+              [PolicyOutgoingSchedules_Audit].[RenewalPercentage] AS [RenewalPercentage],
+              [PolicyOutgoingSchedules_Audit].[CreatedOn] AS [CreatedOn],
+              [PolicyOutgoingSchedules_Audit].[ScheduleTypeId] AS [ScheduleTypeId],
+              [PolicyOutgoingSchedules_Audit].[InsertDateTime] AS [InsertDateTime],
+              [PolicyOutgoingSchedules_Audit].[host_name] AS [host_name],
+              [PolicyOutgoingSchedules_Audit].[program_name] AS [program_name],
+              [PolicyOutgoingSchedules_Audit].[login_name] AS [login_name],
+              [PolicyOutgoingSchedules_Audit].[nt_domain] AS [nt_domain],
+              [PolicyOutgoingSchedules_Audit].[nt_user_name] AS [nt_user_name],
+              [PolicyOutgoingSchedules_Audit].[sqlbuffer] AS [sqlbuffer]
+              FROM [dbo].[PolicyOutgoingSchedules_Audit] AS [PolicyOutgoingSchedules_Audit]
+            </DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PolicyPaymentEntries_Audit" EntityType="Self.PolicyPaymentEntries_Audit" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>
+              SELECT
+              [PolicyPaymentEntries_Audit].[PaymentEntryId] AS [PaymentEntryId],
+              [PolicyPaymentEntries_Audit].[StatementId] AS [StatementId],
+              [PolicyPaymentEntries_Audit].[PolicyId] AS [PolicyId],
+              [PolicyPaymentEntries_Audit].[InvoiceDate] AS [InvoiceDate],
+              [PolicyPaymentEntries_Audit].[PaymentRecived] AS [PaymentRecived],
+              [PolicyPaymentEntries_Audit].[CommissionPercentage] AS [CommissionPercentage],
+              [PolicyPaymentEntries_Audit].[NumberOfUnits] AS [NumberOfUnits],
+              [PolicyPaymentEntries_Audit].[Fee] AS [Fee],
+              [PolicyPaymentEntries_Audit].[SplitPercentage] AS [SplitPercentage],
+              [PolicyPaymentEntries_Audit].[TotalPayment] AS [TotalPayment],
+              [PolicyPaymentEntries_Audit].[CreatedOn] AS [CreatedOn],
+              [PolicyPaymentEntries_Audit].[CreatedBy] AS [CreatedBy],
+              [PolicyPaymentEntries_Audit].[PostStatusID] AS [PostStatusID],
+              [PolicyPaymentEntries_Audit].[Bonus] AS [Bonus],
+              [PolicyPaymentEntries_Audit].[DollerPerUnit] AS [DollerPerUnit],
+              [PolicyPaymentEntries_Audit].[DEUEntryId] AS [DEUEntryId],
+              [PolicyPaymentEntries_Audit].[ExpectedPayment] AS [ExpectedPayment],
+              [PolicyPaymentEntries_Audit].[FollowUpVarIssueId] AS [FollowUpVarIssueId],
+              [PolicyPaymentEntries_Audit].[FollowUpIssueResolveOrClosed] AS [FollowUpIssueResolveOrClosed],
+              [PolicyPaymentEntries_Audit].[IsLinkPayment] AS [IsLinkPayment],
+              [PolicyPaymentEntries_Audit].[InsertDateTime] AS [InsertDateTime],
+              [PolicyPaymentEntries_Audit].[host_name] AS [host_name],
+              [PolicyPaymentEntries_Audit].[program_name] AS [program_name],
+              [PolicyPaymentEntries_Audit].[login_name] AS [login_name],
+              [PolicyPaymentEntries_Audit].[nt_domain] AS [nt_domain],
+              [PolicyPaymentEntries_Audit].[nt_user_name] AS [nt_user_name],
+              [PolicyPaymentEntries_Audit].[sqlbuffer] AS [sqlbuffer]
+              FROM [dbo].[PolicyPaymentEntries_Audit] AS [PolicyPaymentEntries_Audit]
+            </DefiningQuery>
     </EntitySet>
     <EntitySet Name="SendAlertMail" EntityType="Self.SendAlertMail" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-[SendAlertMail].[ID] AS [ID], 
-[SendAlertMail].[LicensesID] AS [LicensesID], 
-[SendAlertMail].[MailDate] AS [MailDate], 
-[SendAlertMail].[SendStatus] AS [SendStatus]
-FROM [dbo].[SendAlertMail] AS [SendAlertMail]</DefiningQuery>
+      <DefiningQuery>
+              SELECT
+              [SendAlertMail].[ID] AS [ID],
+              [SendAlertMail].[LicensesID] AS [LicensesID],
+              [SendAlertMail].[MailDate] AS [MailDate],
+              [SendAlertMail].[SendStatus] AS [SendStatus]
+              FROM [dbo].[SendAlertMail] AS [SendAlertMail]
+            </DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Statements_Audit" EntityType="Self.Statements_Audit" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>
+              SELECT
+              [Statements_Audit].[StatementId] AS [StatementId],
+              [Statements_Audit].[StatementNumber] AS [StatementNumber],
+              [Statements_Audit].[BatchId] AS [BatchId],
+              [Statements_Audit].[PayorId] AS [PayorId],
+              [Statements_Audit].[CheckAmount] AS [CheckAmount],
+              [Statements_Audit].[StatementStatusId] AS [StatementStatusId],
+              [Statements_Audit].[Entries] AS [Entries],
+              [Statements_Audit].[CreatedOn] AS [CreatedOn],
+              [Statements_Audit].[LastModified] AS [LastModified],
+              [Statements_Audit].[CreatedBy] AS [CreatedBy],
+              [Statements_Audit].[BalAdj] AS [BalAdj],
+              [Statements_Audit].[EnteredAmount] AS [EnteredAmount],
+              [Statements_Audit].[StatementDate] AS [StatementDate],
+              [Statements_Audit].[TemplateID] AS [TemplateID],
+              [Statements_Audit].[FromPage] AS [FromPage],
+              [Statements_Audit].[ToPage] AS [ToPage],
+              [Statements_Audit].[InsertDateTime] AS [InsertDateTime],
+              [Statements_Audit].[host_name] AS [host_name],
+              [Statements_Audit].[program_name] AS [program_name],
+              [Statements_Audit].[login_name] AS [login_name],
+              [Statements_Audit].[nt_domain] AS [nt_domain],
+              [Statements_Audit].[nt_user_name] AS [nt_user_name],
+              [Statements_Audit].[sqlbuffer] AS [sqlbuffer],
+              [Statements_Audit].[IsCreatedFromWeb] AS [IsCreatedFromWeb]
+              FROM [dbo].[Statements_Audit] AS [Statements_Audit]
+            </DefiningQuery>
     </EntitySet>
     <AssociationSet Name="FK_Batches_Licensees" Association="Self.FK_Batches_Licensees">
       <End Role="Licensees" EntitySet="Licensees" />
@@ -3596,6 +5206,10 @@ FROM [dbo].[SendAlertMail] AS [SendAlertMail]</DefiningQuery>
     <AssociationSet Name="FK_PayorCarriers_Licensees" Association="Self.FK_PayorCarriers_Licensees">
       <End Role="Licensees" EntitySet="Licensees" />
       <End Role="Carriers" EntitySet="Carriers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PayorIncomingSchedules_MasterBasicIncomingSchedule" Association="Self.FK_PayorIncomingSchedules_MasterBasicIncomingSchedule">
+      <End Role="MasterBasicIncomingSchedule" EntitySet="MasterBasicIncomingSchedule" />
+      <End Role="PayorIncomingSchedules" EntitySet="PayorIncomingSchedules" />
     </AssociationSet>
     <AssociationSet Name="FK_Payors_Licensees" Association="Self.FK_Payors_Licensees">
       <End Role="Licensees" EntitySet="Licensees" />

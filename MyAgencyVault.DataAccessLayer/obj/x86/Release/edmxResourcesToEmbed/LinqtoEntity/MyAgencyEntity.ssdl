@@ -1,5 +1,504 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+<Schema Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="AuditReports" EntityType="Model.Store.AuditReports" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AutoDEUEntries" EntityType="Model.Store.AutoDEUEntries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Batches" EntityType="Model.Store.Batches" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BrokerCode" EntityType="Model.Store.BrokerCode" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CarrierCoverage" EntityType="Model.Store.CarrierCoverage" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CarrierNickName" EntityType="Model.Store.CarrierNickName" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Carriers" EntityType="Model.Store.Carriers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Clients" EntityType="Model.Store.Clients" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CoverageNickName" EntityType="Model.Store.CoverageNickName" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Coverages" EntityType="Model.Store.Coverages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EntriesByDEU" EntityType="Model.Store.EntriesByDEU" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ExportBatchFiles" EntityType="Model.Store.ExportBatchFiles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FieldMapping" EntityType="Model.Store.FieldMapping" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FollowupIssues" EntityType="Model.Store.FollowupIssues" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Formulas" EntityType="Model.Store.Formulas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GlobalCoveragesSchedules" EntityType="Model.Store.GlobalCoveragesSchedules" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GlobalPayorContacts" EntityType="Model.Store.GlobalPayorContacts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GlobalPayorDefaults" EntityType="Model.Store.GlobalPayorDefaults" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GlobalPayorStatementDate" EntityType="Model.Store.GlobalPayorStatementDate" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ImportBatchFiles" EntityType="Model.Store.ImportBatchFiles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ImportToolAvailableFields" EntityType="Model.Store.ImportToolAvailableFields" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ImportToolBrokersSetting" EntityType="Model.Store.ImportToolBrokersSetting" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ImportToolCommTranslator" EntityType="Model.Store.ImportToolCommTranslator" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ImportToolMasterStatementData" EntityType="Model.Store.ImportToolMasterStatementData" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ImportToolPaymentDataFieldsSettings" EntityType="Model.Store.ImportToolPaymentDataFieldsSettings" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ImportToolPayorPhrase" EntityType="Model.Store.ImportToolPayorPhrase" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ImportToolPayorTemplate" EntityType="Model.Store.ImportToolPayorTemplate" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ImportToolSeletedPaymentData" EntityType="Model.Store.ImportToolSeletedPaymentData" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ImportToolStatementDataSettings" EntityType="Model.Store.ImportToolStatementDataSettings" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ImportToolTemplatePhrase" EntityType="Model.Store.ImportToolTemplatePhrase" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="IncomingCompType" EntityType="Model.Store.IncomingCompType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InvoiceBillingLineDetail" EntityType="Model.Store.InvoiceBillingLineDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Invoices" EntityType="Model.Store.Invoices" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="IssuedFiles" EntityType="Model.Store.IssuedFiles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Issuelog" EntityType="Model.Store.Issuelog" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Journals" EntityType="Model.Store.Journals" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LastPolicyViewed" EntityType="Model.Store.LastPolicyViewed" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LicenseeNotes" EntityType="Model.Store.LicenseeNotes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LicenseePayors" EntityType="Model.Store.LicenseePayors" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LicenseePayorSiteInfo" EntityType="Model.Store.LicenseePayorSiteInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Licensees" EntityType="Model.Store.Licensees" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LicenseeServices" EntityType="Model.Store.LicenseeServices" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LinkedAgent" EntityType="Model.Store.LinkedAgent" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LinkedUserList" EntityType="Model.Store.LinkedUserList" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ManagementReports" EntityType="Model.Store.ManagementReports" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterAccessRights" EntityType="Model.Store.MasterAccessRights" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterAlertTypes" EntityType="Model.Store.MasterAlertTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterBasicIncomingSchedule" EntityType="Model.Store.MasterBasicIncomingSchedule" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterBasicOutgoingSchedule" EntityType="Model.Store.MasterBasicOutgoingSchedule" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterBatchDownloadStatus" EntityType="Model.Store.MasterBatchDownloadStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterBatchEntryStatus" EntityType="Model.Store.MasterBatchEntryStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterBatchUploadStatus" EntityType="Model.Store.MasterBatchUploadStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterBillPaymentTypes" EntityType="Model.Store.MasterBillPaymentTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterFileTypes" EntityType="Model.Store.MasterFileTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterIncomingPaymentTypes" EntityType="Model.Store.MasterIncomingPaymentTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterIssueCategories" EntityType="Model.Store.MasterIssueCategories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterIssueReasons" EntityType="Model.Store.MasterIssueReasons" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterIssueResults" EntityType="Model.Store.MasterIssueResults" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterIssueStatus" EntityType="Model.Store.MasterIssueStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterLicensePaymentModes" EntityType="Model.Store.MasterLicensePaymentModes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterLicenseStatus" EntityType="Model.Store.MasterLicenseStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterManagementReportsOrderByTypes" EntityType="Model.Store.MasterManagementReportsOrderByTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterModules" EntityType="Model.Store.MasterModules" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterPasswordHintQuestions" EntityType="Model.Store.MasterPasswordHintQuestions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterPaymentStatus" EntityType="Model.Store.MasterPaymentStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterPayorRegions" EntityType="Model.Store.MasterPayorRegions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterPayorSourceTypes" EntityType="Model.Store.MasterPayorSourceTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterPayorStatus" EntityType="Model.Store.MasterPayorStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterPayorToolAvailableFields" EntityType="Model.Store.MasterPayorToolAvailableFields" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterPayorToolIncomingFields" EntityType="Model.Store.MasterPayorToolIncomingFields" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterPayorToolLearnedFields" EntityType="Model.Store.MasterPayorToolLearnedFields" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterPayorToolMaskFieldTypes" EntityType="Model.Store.MasterPayorToolMaskFieldTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterPayorTypes" EntityType="Model.Store.MasterPayorTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterPermissionTypes" EntityType="Model.Store.MasterPermissionTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterPolicyModes" EntityType="Model.Store.MasterPolicyModes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterPolicyStatus" EntityType="Model.Store.MasterPolicyStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterPolicyTerminationReasons" EntityType="Model.Store.MasterPolicyTerminationReasons" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterPostStatus" EntityType="Model.Store.MasterPostStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterReportList" EntityType="Model.Store.MasterReportList" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterRoles" EntityType="Model.Store.MasterRoles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterScheduleTypes" EntityType="Model.Store.MasterScheduleTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterServiceChargeTypes" EntityType="Model.Store.MasterServiceChargeTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterServicePaymentModes" EntityType="Model.Store.MasterServicePaymentModes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterServices" EntityType="Model.Store.MasterServices" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterSourceTypes" EntityType="Model.Store.MasterSourceTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterStatementStatus" EntityType="Model.Store.MasterStatementStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterSystemConstants" EntityType="Model.Store.MasterSystemConstants" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterSystemEmails" EntityType="Model.Store.MasterSystemEmails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterZipCodes" EntityType="Model.Store.MasterZipCodes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="News" EntityType="Model.Store.News" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PayeeStatementReports" EntityType="Model.Store.PayeeStatementReports" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Payors" EntityType="Model.Store.Payors" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PayorSiteLoginInfo" EntityType="Model.Store.PayorSiteLoginInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PayorSource" EntityType="Model.Store.PayorSource" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PayorTemplate" EntityType="Model.Store.PayorTemplate" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PayorToolFields" EntityType="Model.Store.PayorToolFields" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PayorTools" EntityType="Model.Store.PayorTools" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Policies" EntityType="Model.Store.Policies" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PoliciesHistory" EntityType="Model.Store.PoliciesHistory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PolicyIncomingAdvancedSchedules" EntityType="Model.Store.PolicyIncomingAdvancedSchedules" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PolicyIncomingSchedules" EntityType="Model.Store.PolicyIncomingSchedules" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PolicyLearnedFields" EntityType="Model.Store.PolicyLearnedFields" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PolicyLearnedFieldsHistory" EntityType="Model.Store.PolicyLearnedFieldsHistory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PolicyLevelBillingDetail" EntityType="Model.Store.PolicyLevelBillingDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PolicyNotes" EntityType="Model.Store.PolicyNotes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PolicyOutgoingAdvancedSchedules" EntityType="Model.Store.PolicyOutgoingAdvancedSchedules" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PolicyOutgoingPayments" EntityType="Model.Store.PolicyOutgoingPayments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PolicyOutgoingSchedules" EntityType="Model.Store.PolicyOutgoingSchedules" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PolicyPaymentAlerts" EntityType="Model.Store.PolicyPaymentAlerts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PolicyPaymentEntries" EntityType="Model.Store.PolicyPaymentEntries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SendAlertMail" EntityType="Model.Store.SendAlertMail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ServiceLines" EntityType="Model.Store.ServiceLines" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Statements" EntityType="Model.Store.Statements" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Supports" EntityType="Model.Store.Supports" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="Model.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbPMCVarianceSlab" EntityType="Model.Store.tbPMCVarianceSlab" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Templates" EntityType="Model.Store.Templates" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserCredentials" EntityType="Model.Store.UserCredentials" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserDetail" EntityType="Model.Store.UserDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserPermissions" EntityType="Model.Store.UserPermissions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VariablesForBillingLine" EntityType="Model.Store.VariablesForBillingLine" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Batches_Licensees" Association="Model.Store.FK_Batches_Licensees">
+      <End Role="Licensees" EntitySet="Licensees" />
+      <End Role="Batches" EntitySet="Batches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Batches_MasterBatchEntryStatus" Association="Model.Store.FK_Batches_MasterBatchEntryStatus">
+      <End Role="MasterBatchEntryStatus" EntitySet="MasterBatchEntryStatus" />
+      <End Role="Batches" EntitySet="Batches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Batches_MasterBatchUploadStatus" Association="Model.Store.FK_Batches_MasterBatchUploadStatus">
+      <End Role="MasterBatchUploadStatus" EntitySet="MasterBatchUploadStatus" />
+      <End Role="Batches" EntitySet="Batches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Batches_Payors" Association="Model.Store.FK_Batches_Payors">
+      <End Role="Payors" EntitySet="Payors" />
+      <End Role="Batches" EntitySet="Batches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarrierCoverage_UserCredentials" Association="Model.Store.FK_CarrierCoverage_UserCredentials">
+      <End Role="UserCredentials" EntitySet="UserCredentials" />
+      <End Role="CoverageNickName" EntitySet="CoverageNickName" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarrierCoverage_UserCredentials1" Association="Model.Store.FK_CarrierCoverage_UserCredentials1">
+      <End Role="UserCredentials" EntitySet="UserCredentials" />
+      <End Role="CoverageNickName" EntitySet="CoverageNickName" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarrierCoverages_Licensees" Association="Model.Store.FK_CarrierCoverages_Licensees">
+      <End Role="Licensees" EntitySet="Licensees" />
+      <End Role="Coverages" EntitySet="Coverages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarrierCoverages_UserCredentials" Association="Model.Store.FK_CarrierCoverages_UserCredentials">
+      <End Role="UserCredentials" EntitySet="UserCredentials" />
+      <End Role="Coverages" EntitySet="Coverages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clients_Licensees" Association="Model.Store.FK_Clients_Licensees">
+      <End Role="Licensees" EntitySet="Licensees" />
+      <End Role="Clients" EntitySet="Clients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CoverageNickName_Payors" Association="Model.Store.FK_CoverageNickName_Payors">
+      <End Role="Payors" EntitySet="Payors" />
+      <End Role="CoverageNickName" EntitySet="CoverageNickName" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FieldMapping_Templates" Association="Model.Store.FK_FieldMapping_Templates">
+      <End Role="Templates" EntitySet="Templates" />
+      <End Role="FieldMapping" EntitySet="FieldMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FollowupIssues_MasterIssueCategories" Association="Model.Store.FK_FollowupIssues_MasterIssueCategories">
+      <End Role="MasterIssueCategories" EntitySet="MasterIssueCategories" />
+      <End Role="FollowupIssues" EntitySet="FollowupIssues" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FollowupIssues_MasterIssueReasons" Association="Model.Store.FK_FollowupIssues_MasterIssueReasons">
+      <End Role="MasterIssueReasons" EntitySet="MasterIssueReasons" />
+      <End Role="FollowupIssues" EntitySet="FollowupIssues" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FollowupIssues_MasterIssueResults" Association="Model.Store.FK_FollowupIssues_MasterIssueResults">
+      <End Role="MasterIssueResults" EntitySet="MasterIssueResults" />
+      <End Role="FollowupIssues" EntitySet="FollowupIssues" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FollowupIssues_MasterIssueStatus" Association="Model.Store.FK_FollowupIssues_MasterIssueStatus">
+      <End Role="MasterIssueStatus" EntitySet="MasterIssueStatus" />
+      <End Role="FollowupIssues" EntitySet="FollowupIssues" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FollowupIssues_MasterIssueStatus1" Association="Model.Store.FK_FollowupIssues_MasterIssueStatus1">
+      <End Role="MasterIssueStatus" EntitySet="MasterIssueStatus" />
+      <End Role="FollowupIssues" EntitySet="FollowupIssues" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GlobalCoveragesSchedules_MasterScheduleTypes" Association="Model.Store.FK_GlobalCoveragesSchedules_MasterScheduleTypes">
+      <End Role="MasterScheduleTypes" EntitySet="MasterScheduleTypes" />
+      <End Role="GlobalCoveragesSchedules" EntitySet="GlobalCoveragesSchedules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GlobalPayorContacts_Payors" Association="Model.Store.FK_GlobalPayorContacts_Payors">
+      <End Role="Payors" EntitySet="Payors" />
+      <End Role="GlobalPayorContacts" EntitySet="GlobalPayorContacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GlobalPayorDefaults_MasterFileTypes" Association="Model.Store.FK_GlobalPayorDefaults_MasterFileTypes">
+      <End Role="MasterFileTypes" EntitySet="MasterFileTypes" />
+      <End Role="GlobalPayorDefaults" EntitySet="GlobalPayorDefaults" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GlobalPayorDefaults_Payors" Association="Model.Store.FK_GlobalPayorDefaults_Payors">
+      <End Role="Payors" EntitySet="Payors" />
+      <End Role="GlobalPayorDefaults" EntitySet="GlobalPayorDefaults" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GlobalPayorStatementDate_Payors" Association="Model.Store.FK_GlobalPayorStatementDate_Payors">
+      <End Role="Payors" EntitySet="Payors" />
+      <End Role="GlobalPayorStatementDate" EntitySet="GlobalPayorStatementDate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InvoiceBillingLineDetail_Invoices" Association="Model.Store.FK_InvoiceBillingLineDetail_Invoices">
+      <End Role="Invoices" EntitySet="Invoices" />
+      <End Role="InvoiceBillingLineDetail" EntitySet="InvoiceBillingLineDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InvoiceBillingLineDetail_MasterServiceChargeTypes" Association="Model.Store.FK_InvoiceBillingLineDetail_MasterServiceChargeTypes">
+      <End Role="MasterServiceChargeTypes" EntitySet="MasterServiceChargeTypes" />
+      <End Role="InvoiceBillingLineDetail" EntitySet="InvoiceBillingLineDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InvoiceBillingLineDetail_MasterServices" Association="Model.Store.FK_InvoiceBillingLineDetail_MasterServices">
+      <End Role="MasterServices" EntitySet="MasterServices" />
+      <End Role="InvoiceBillingLineDetail" EntitySet="InvoiceBillingLineDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoices_ExportBatchFiles" Association="Model.Store.FK_Invoices_ExportBatchFiles">
+      <End Role="ExportBatchFiles" EntitySet="ExportBatchFiles" />
+      <End Role="Invoices" EntitySet="Invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoices_Licensees" Association="Model.Store.FK_Invoices_Licensees">
+      <End Role="Licensees" EntitySet="Licensees" />
+      <End Role="Invoices" EntitySet="Invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IssuedFiles_Payors" Association="Model.Store.FK_IssuedFiles_Payors">
+      <End Role="Payors" EntitySet="Payors" />
+      <End Role="IssuedFiles" EntitySet="IssuedFiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Journals_ImportBatchFiles" Association="Model.Store.FK_Journals_ImportBatchFiles">
+      <End Role="ImportBatchFiles" EntitySet="ImportBatchFiles" />
+      <End Role="Journals" EntitySet="Journals" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Journals_Invoices" Association="Model.Store.FK_Journals_Invoices">
+      <End Role="Invoices" EntitySet="Invoices" />
+      <End Role="Journals" EntitySet="Journals" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Journals_Licensees" Association="Model.Store.FK_Journals_Licensees">
+      <End Role="Licensees" EntitySet="Licensees" />
+      <End Role="Journals" EntitySet="Journals" />
+    </AssociationSet>
+    <AssociationSet Name="FK_lastpolicyviewed_UserCredentials" Association="Model.Store.FK_lastpolicyviewed_UserCredentials">
+      <End Role="UserCredentials" EntitySet="UserCredentials" />
+      <End Role="LastPolicyViewed" EntitySet="LastPolicyViewed" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LicenseeNotes_Licensees" Association="Model.Store.FK_LicenseeNotes_Licensees">
+      <End Role="Licensees" EntitySet="Licensees" />
+      <End Role="LicenseeNotes" EntitySet="LicenseeNotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LicenseePayors_Licensees" Association="Model.Store.FK_LicenseePayors_Licensees">
+      <End Role="Licensees" EntitySet="Licensees" />
+      <End Role="LicenseePayors" EntitySet="LicenseePayors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LicenseePayors_MasterSourceTypes" Association="Model.Store.FK_LicenseePayors_MasterSourceTypes">
+      <End Role="MasterSourceTypes" EntitySet="MasterSourceTypes" />
+      <End Role="LicenseePayors" EntitySet="LicenseePayors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LicenseePayors_Payors" Association="Model.Store.FK_LicenseePayors_Payors">
+      <End Role="Payors" EntitySet="Payors" />
+      <End Role="LicenseePayors" EntitySet="LicenseePayors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Licensees_MasterLicensePaymentModes" Association="Model.Store.FK_Licensees_MasterLicensePaymentModes">
+      <End Role="MasterLicensePaymentModes" EntitySet="MasterLicensePaymentModes" />
+      <End Role="Licensees" EntitySet="Licensees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Licensees_MasterLicenseStatus" Association="Model.Store.FK_Licensees_MasterLicenseStatus">
+      <End Role="MasterLicenseStatus" EntitySet="MasterLicenseStatus" />
+      <End Role="Licensees" EntitySet="Licensees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LicenseeServices_Licensees" Association="Model.Store.FK_LicenseeServices_Licensees">
+      <End Role="Licensees" EntitySet="Licensees" />
+      <End Role="LicenseeServices" EntitySet="LicenseeServices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LicenseeServices_MasterServices" Association="Model.Store.FK_LicenseeServices_MasterServices">
+      <End Role="MasterServices" EntitySet="MasterServices" />
+      <End Role="LicenseeServices" EntitySet="LicenseeServices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LinkedAgent_LinkedUserCredentials" Association="Model.Store.FK_LinkedAgent_LinkedUserCredentials">
+      <End Role="UserCredentials" EntitySet="UserCredentials" />
+      <End Role="LinkedAgent" EntitySet="LinkedAgent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LinkedAgent_UserCredentials" Association="Model.Store.FK_LinkedAgent_UserCredentials">
+      <End Role="UserCredentials" EntitySet="UserCredentials" />
+      <End Role="LinkedAgent" EntitySet="LinkedAgent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MasterPayorRegions_MasterPayorRegions" Association="Model.Store.FK_MasterPayorRegions_MasterPayorRegions">
+      <End Role="MasterPayorRegions" EntitySet="MasterPayorRegions" />
+      <End Role="MasterPayorRegions1" EntitySet="MasterPayorRegions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PayorCarrier_Payors" Association="Model.Store.FK_PayorCarrier_Payors">
+      <End Role="Payors" EntitySet="Payors" />
+      <End Role="CarrierNickName" EntitySet="CarrierNickName" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PayorCarriers_Licensees" Association="Model.Store.FK_PayorCarriers_Licensees">
+      <End Role="Licensees" EntitySet="Licensees" />
+      <End Role="Carriers" EntitySet="Carriers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payors_Licensees" Association="Model.Store.FK_Payors_Licensees">
+      <End Role="Licensees" EntitySet="Licensees" />
+      <End Role="Payors" EntitySet="Payors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payors_MasterPayorRegions" Association="Model.Store.FK_Payors_MasterPayorRegions">
+      <End Role="MasterPayorRegions" EntitySet="MasterPayorRegions" />
+      <End Role="Payors" EntitySet="Payors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payors_MasterSourceTypes" Association="Model.Store.FK_Payors_MasterSourceTypes">
+      <End Role="MasterSourceTypes" EntitySet="MasterSourceTypes" />
+      <End Role="Payors" EntitySet="Payors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PayorSiteLoginInfo_Licensees" Association="Model.Store.FK_PayorSiteLoginInfo_Licensees">
+      <End Role="Licensees" EntitySet="Licensees" />
+      <End Role="PayorSiteLoginInfo" EntitySet="PayorSiteLoginInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PayorSiteLoginInfo_Payors" Association="Model.Store.FK_PayorSiteLoginInfo_Payors">
+      <End Role="Payors" EntitySet="Payors" />
+      <End Role="PayorSiteLoginInfo" EntitySet="PayorSiteLoginInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PayorSource_Licensees" Association="Model.Store.FK_PayorSource_Licensees">
+      <End Role="Licensees" EntitySet="Licensees" />
+      <End Role="PayorSource" EntitySet="PayorSource" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PayorSource_Payors" Association="Model.Store.FK_PayorSource_Payors">
+      <End Role="Payors" EntitySet="Payors" />
+      <End Role="PayorSource" EntitySet="PayorSource" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PayorToolFields_Formulas" Association="Model.Store.FK_PayorToolFields_Formulas">
+      <End Role="Formulas" EntitySet="Formulas" />
+      <End Role="PayorToolFields" EntitySet="PayorToolFields" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PayorToolFields_MasterPayorToolAvailableFields" Association="Model.Store.FK_PayorToolFields_MasterPayorToolAvailableFields">
+      <End Role="MasterPayorToolAvailableFields" EntitySet="MasterPayorToolAvailableFields" />
+      <End Role="PayorToolFields" EntitySet="PayorToolFields" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PayorToolFields_MasterPayorToolMaskFieldTypes" Association="Model.Store.FK_PayorToolFields_MasterPayorToolMaskFieldTypes">
+      <End Role="MasterPayorToolMaskFieldTypes" EntitySet="MasterPayorToolMaskFieldTypes" />
+      <End Role="PayorToolFields" EntitySet="PayorToolFields" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PayorToolFields_PayorTools" Association="Model.Store.FK_PayorToolFields_PayorTools">
+      <End Role="PayorTools" EntitySet="PayorTools" />
+      <End Role="PayorToolFields" EntitySet="PayorToolFields" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PayorTools_Payors" Association="Model.Store.FK_PayorTools_Payors">
+      <End Role="Payors" EntitySet="Payors" />
+      <End Role="PayorTools" EntitySet="PayorTools" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PoliciesHistory_Licensees1" Association="Model.Store.FK_PoliciesHistory_Licensees1">
+      <End Role="Licensees" EntitySet="Licensees" />
+      <End Role="PoliciesHistory" EntitySet="PoliciesHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PoliciesHistory_MasterIncomingPaymentTypes" Association="Model.Store.FK_PoliciesHistory_MasterIncomingPaymentTypes">
+      <End Role="MasterIncomingPaymentTypes" EntitySet="MasterIncomingPaymentTypes" />
+      <End Role="PoliciesHistory" EntitySet="PoliciesHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PoliciesHistory_MasterPolicyModes" Association="Model.Store.FK_PoliciesHistory_MasterPolicyModes">
+      <End Role="MasterPolicyModes" EntitySet="MasterPolicyModes" />
+      <End Role="PoliciesHistory" EntitySet="PoliciesHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PoliciesHistory_MasterPolicyStatus" Association="Model.Store.FK_PoliciesHistory_MasterPolicyStatus">
+      <End Role="MasterPolicyStatus" EntitySet="MasterPolicyStatus" />
+      <End Role="PoliciesHistory" EntitySet="PoliciesHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PoliciesHistory_MasterPolicyTerminationReasons" Association="Model.Store.FK_PoliciesHistory_MasterPolicyTerminationReasons">
+      <End Role="MasterPolicyTerminationReasons" EntitySet="MasterPolicyTerminationReasons" />
+      <End Role="PoliciesHistory" EntitySet="PoliciesHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PoliciesHistory_Payors" Association="Model.Store.FK_PoliciesHistory_Payors">
+      <End Role="Payors" EntitySet="Payors" />
+      <End Role="PoliciesHistory" EntitySet="PoliciesHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PoliciesHistory_UserCredentials" Association="Model.Store.FK_PoliciesHistory_UserCredentials">
+      <End Role="UserCredentials" EntitySet="UserCredentials" />
+      <End Role="PoliciesHistory" EntitySet="PoliciesHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PolicyIncomingAdvancedSchedules_MasterScheduleTypes" Association="Model.Store.FK_PolicyIncomingAdvancedSchedules_MasterScheduleTypes">
+      <End Role="MasterScheduleTypes" EntitySet="MasterScheduleTypes" />
+      <End Role="PolicyIncomingAdvancedSchedules" EntitySet="PolicyIncomingAdvancedSchedules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PolicyIncomingSchedules_MasterBasicIncomingSchedule" Association="Model.Store.FK_PolicyIncomingSchedules_MasterBasicIncomingSchedule">
+      <End Role="MasterBasicIncomingSchedule" EntitySet="MasterBasicIncomingSchedule" />
+      <End Role="PolicyIncomingSchedules" EntitySet="PolicyIncomingSchedules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PolicyLearnedFields_MasterIncomingPaymentTypes" Association="Model.Store.FK_PolicyLearnedFields_MasterIncomingPaymentTypes">
+      <End Role="MasterIncomingPaymentTypes" EntitySet="MasterIncomingPaymentTypes" />
+      <End Role="PolicyLearnedFields" EntitySet="PolicyLearnedFields" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PolicyLearnedFields_MasterPolicyModes" Association="Model.Store.FK_PolicyLearnedFields_MasterPolicyModes">
+      <End Role="MasterPolicyModes" EntitySet="MasterPolicyModes" />
+      <End Role="PolicyLearnedFields" EntitySet="PolicyLearnedFields" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PolicyLearnedFields_Payors" Association="Model.Store.FK_PolicyLearnedFields_Payors">
+      <End Role="Payors" EntitySet="Payors" />
+      <End Role="PolicyLearnedFields" EntitySet="PolicyLearnedFields" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PolicyLearnedFieldsHistory_MasterIncomingPaymentTypes" Association="Model.Store.FK_PolicyLearnedFieldsHistory_MasterIncomingPaymentTypes">
+      <End Role="MasterIncomingPaymentTypes" EntitySet="MasterIncomingPaymentTypes" />
+      <End Role="PolicyLearnedFieldsHistory" EntitySet="PolicyLearnedFieldsHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PolicyLearnedFieldsHistory_MasterPolicyModes" Association="Model.Store.FK_PolicyLearnedFieldsHistory_MasterPolicyModes">
+      <End Role="MasterPolicyModes" EntitySet="MasterPolicyModes" />
+      <End Role="PolicyLearnedFieldsHistory" EntitySet="PolicyLearnedFieldsHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PolicyLearnedFieldsHistory_Payors" Association="Model.Store.FK_PolicyLearnedFieldsHistory_Payors">
+      <End Role="Payors" EntitySet="Payors" />
+      <End Role="PolicyLearnedFieldsHistory" EntitySet="PolicyLearnedFieldsHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PolicyLevelBillingDetail_InvoiceBillingLineDetail" Association="Model.Store.FK_PolicyLevelBillingDetail_InvoiceBillingLineDetail">
+      <End Role="InvoiceBillingLineDetail" EntitySet="InvoiceBillingLineDetail" />
+      <End Role="PolicyLevelBillingDetail" EntitySet="PolicyLevelBillingDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PolicyOutgoingAdvancedSchedules_MasterScheduleTypes" Association="Model.Store.FK_PolicyOutgoingAdvancedSchedules_MasterScheduleTypes">
+      <End Role="MasterScheduleTypes" EntitySet="MasterScheduleTypes" />
+      <End Role="PolicyOutgoingAdvancedSchedules" EntitySet="PolicyOutgoingAdvancedSchedules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PolicyOutgoingAdvancedSchedules_PayeeUser" Association="Model.Store.FK_PolicyOutgoingAdvancedSchedules_PayeeUser">
+      <End Role="UserCredentials" EntitySet="UserCredentials" />
+      <End Role="PolicyOutgoingAdvancedSchedules" EntitySet="PolicyOutgoingAdvancedSchedules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PolicyOutgoingPayments_PolicyPaymentEntries" Association="Model.Store.FK_PolicyOutgoingPayments_PolicyPaymentEntries">
+      <End Role="PolicyPaymentEntries" EntitySet="PolicyPaymentEntries" />
+      <End Role="PolicyOutgoingPayments" EntitySet="PolicyOutgoingPayments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PolicyOutgoingPayments_UserCredentials" Association="Model.Store.FK_PolicyOutgoingPayments_UserCredentials">
+      <End Role="UserCredentials" EntitySet="UserCredentials" />
+      <End Role="PolicyOutgoingPayments" EntitySet="PolicyOutgoingPayments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PolicyOutgoingSchedules_MasterBasicOutgoingSchedule" Association="Model.Store.FK_PolicyOutgoingSchedules_MasterBasicOutgoingSchedule">
+      <End Role="MasterBasicOutgoingSchedule" EntitySet="MasterBasicOutgoingSchedule" />
+      <End Role="PolicyOutgoingSchedules" EntitySet="PolicyOutgoingSchedules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PolicyOutgoingSchedules_UserCredentials" Association="Model.Store.FK_PolicyOutgoingSchedules_UserCredentials">
+      <End Role="UserCredentials" EntitySet="UserCredentials" />
+      <End Role="PolicyOutgoingSchedules" EntitySet="PolicyOutgoingSchedules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PolicyPaymentEntries_MasterPostStatus" Association="Model.Store.FK_PolicyPaymentEntries_MasterPostStatus">
+      <End Role="MasterPostStatus" EntitySet="MasterPostStatus" />
+      <End Role="PolicyPaymentEntries" EntitySet="PolicyPaymentEntries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PolicyPaymentEntries_Statements" Association="Model.Store.FK_PolicyPaymentEntries_Statements">
+      <End Role="Statements" EntitySet="Statements" />
+      <End Role="PolicyPaymentEntries" EntitySet="PolicyPaymentEntries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServiceLines_Licensees" Association="Model.Store.FK_ServiceLines_Licensees">
+      <End Role="Licensees" EntitySet="Licensees" />
+      <End Role="ServiceLines" EntitySet="ServiceLines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServiceLines_MasterServiceChargeTypes" Association="Model.Store.FK_ServiceLines_MasterServiceChargeTypes">
+      <End Role="MasterServiceChargeTypes" EntitySet="MasterServiceChargeTypes" />
+      <End Role="ServiceLines" EntitySet="ServiceLines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServiceLines_MasterServiceChargeTypes1" Association="Model.Store.FK_ServiceLines_MasterServiceChargeTypes1">
+      <End Role="MasterServiceChargeTypes" EntitySet="MasterServiceChargeTypes" />
+      <End Role="ServiceLines" EntitySet="ServiceLines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServiceLines_MasterServices" Association="Model.Store.FK_ServiceLines_MasterServices">
+      <End Role="MasterServices" EntitySet="MasterServices" />
+      <End Role="ServiceLines" EntitySet="ServiceLines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Statements_MasterStatementStatus" Association="Model.Store.FK_Statements_MasterStatementStatus">
+      <End Role="MasterStatementStatus" EntitySet="MasterStatementStatus" />
+      <End Role="Statements" EntitySet="Statements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Statements_Payors" Association="Model.Store.FK_Statements_Payors">
+      <End Role="Payors" EntitySet="Payors" />
+      <End Role="Statements" EntitySet="Statements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Templates_Payors" Association="Model.Store.FK_Templates_Payors">
+      <End Role="Payors" EntitySet="Payors" />
+      <End Role="Templates" EntitySet="Templates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserCredentials_Licensees" Association="Model.Store.FK_UserCredentials_Licensees">
+      <End Role="Licensees" EntitySet="Licensees" />
+      <End Role="UserCredentials" EntitySet="UserCredentials" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserCredentials_MasterRoles" Association="Model.Store.FK_UserCredentials_MasterRoles">
+      <End Role="MasterRoles" EntitySet="MasterRoles" />
+      <End Role="UserCredentials" EntitySet="UserCredentials" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDetail_UserCredentials" Association="Model.Store.FK_UserDetail_UserCredentials">
+      <End Role="UserCredentials" EntitySet="UserCredentials" />
+      <End Role="UserDetail" EntitySet="UserDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPermissions_MasterAccessRights1" Association="Model.Store.FK_UserPermissions_MasterAccessRights1">
+      <End Role="MasterAccessRights" EntitySet="MasterAccessRights" />
+      <End Role="UserPermissions" EntitySet="UserPermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPermissions_MasterModules1" Association="Model.Store.FK_UserPermissions_MasterModules1">
+      <End Role="MasterModules" EntitySet="MasterModules" />
+      <End Role="UserPermissions" EntitySet="UserPermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPermissions_UserCredentials1" Association="Model.Store.FK_UserPermissions_UserCredentials1">
+      <End Role="UserCredentials" EntitySet="UserCredentials" />
+      <End Role="UserPermissions" EntitySet="UserPermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VariablesForBillingLine_InvoiceBillingLineDetail" Association="Model.Store.FK_VariablesForBillingLine_InvoiceBillingLineDetail">
+      <End Role="InvoiceBillingLineDetail" EntitySet="InvoiceBillingLineDetail" />
+      <End Role="VariablesForBillingLine" EntitySet="VariablesForBillingLine" />
+    </AssociationSet>
+  </EntityContainer>
   <EntityType Name="AuditReports">
     <Key>
       <PropertyRef Name="ReportId" />
@@ -24,7 +523,7 @@
     <Property Name="OriginalEffectiveDate" Type="datetime" />
     <Property Name="PaymentReceived" Type="money" />
     <Property Name="CommissionPercentage" Type="float" />
-    <Property Name="Insured" Type="varchar" MaxLength="100" />
+    <Property Name="Insured" Type="varchar" MaxLength="50" />
     <Property Name="PolicyNumber" Type="varchar" MaxLength="50" />
     <Property Name="Enrolled" Type="varchar" MaxLength="50" />
     <Property Name="Eligible" Type="varchar" MaxLength="50" />
@@ -50,14 +549,14 @@
     <Property Name="PostCompleteStatus" Type="int" />
     <Property Name="ModalAvgPremium" Type="varchar" MaxLength="50" />
     <Property Name="CompScheduleType" Type="varchar" MaxLength="150" />
-    <Property Name="ClientValue" Type="varchar" MaxLength="100" />
+    <Property Name="ClientValue" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Batches">
     <Key>
       <PropertyRef Name="BatchId" />
     </Key>
     <Property Name="BatchId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="BatchNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BatchNumber" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="LicenseeId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="CreatedOn" Type="datetime" />
     <Property Name="FileType" Type="nchar" MaxLength="5" />
@@ -76,7 +575,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="LicenseeId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="PayorId" Type="uniqueidentifier" />
     <Property Name="Code" Type="nvarchar" MaxLength="50" />
@@ -105,7 +604,6 @@
     <Property Name="IsDeleted" Type="bit" />
     <Property Name="IsTrackMissingMonth" Type="bit" Nullable="false" />
     <Property Name="IsTrackIncomingPercentage" Type="bit" Nullable="false" />
-    <Property Name="CreatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="Carriers">
     <Key>
@@ -117,7 +615,6 @@
     <Property Name="IsGlobal" Type="bit" Nullable="false" />
     <Property Name="CreatedBy" Type="uniqueidentifier" />
     <Property Name="LicenseeId" Type="uniqueidentifier" />
-    <Property Name="CreatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="Clients">
     <Key>
@@ -125,20 +622,19 @@
     </Key>
     <Property Name="ClientId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="LicenseeId" Type="uniqueidentifier" />
-    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
     <Property Name="Address" Type="varchar" MaxLength="100" />
     <Property Name="Zip" Type="varchar" MaxLength="15" />
     <Property Name="City" Type="varchar" MaxLength="50" />
     <Property Name="State" Type="varchar" MaxLength="50" />
     <Property Name="Email" Type="varchar" MaxLength="100" />
     <Property Name="IsDeleted" Type="bit" />
-    <Property Name="CreatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="CoverageNickName">
     <Key>
       <PropertyRef Name="CoverageNickID" />
     </Key>
-    <Property Name="CoverageNickID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CoverageNickID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="PayorId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="CarrierId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="CoverageId" Type="uniqueidentifier" Nullable="false" />
@@ -147,7 +643,6 @@
     <Property Name="ModifiedBy" Type="uniqueidentifier" Nullable="false" />
     <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
     <Property Name="IsDeleted" Type="bit" />
-    <Property Name="CreatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="Coverages">
     <Key>
@@ -159,8 +654,10 @@
     <Property Name="IsGlobal" Type="bit" Nullable="false" />
     <Property Name="CreatedBy" Type="uniqueidentifier" />
     <Property Name="LicenseeId" Type="uniqueidentifier" />
-    <Property Name="CreatedOn" Type="datetime" />
   </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.EntriesByDEU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
   <EntityType Name="EntriesByDEU">
     <Key>
       <PropertyRef Name="DEUEntryID" />
@@ -170,7 +667,7 @@
     <Property Name="PaymentReceived" Type="money" />
     <Property Name="CommissionPercentage" Type="float" />
     <Property Name="OtherData" Type="xml" />
-    <Property Name="Insured" Type="varchar" MaxLength="100" />
+    <Property Name="Insured" Type="varchar" MaxLength="50" />
     <Property Name="PolicyNumber" Type="varchar" MaxLength="50" />
     <Property Name="Enrolled" Type="varchar" MaxLength="50" />
     <Property Name="Eligible" Type="varchar" MaxLength="50" />
@@ -200,7 +697,7 @@
     <Property Name="PostCompleteStatus" Type="int" />
     <Property Name="ModalAvgPremium" Type="varchar" MaxLength="50" />
     <Property Name="CompScheduleType" Type="varchar" MaxLength="150" />
-    <Property Name="ClientValue" Type="varchar" MaxLength="100" />
+    <Property Name="ClientValue" Type="nvarchar" MaxLength="50" />
     <Property Name="CarrierName" Type="nvarchar" MaxLength="150" />
     <Property Name="ProductName" Type="nvarchar" MaxLength="150" />
     <Property Name="EntryDate" Type="datetime" />
@@ -213,7 +710,7 @@
       <PropertyRef Name="ExportBatchId" />
     </Key>
     <Property Name="ExportBatchId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="FileName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="FileName" Type="varchar" Nullable="false" MaxLength="100" />
     <Property Name="CreatedOn" Type="datetime" Nullable="false" />
     <Property Name="IsFileImported" Type="bit" />
     <Property Name="InvoiceDate" Type="datetime" />
@@ -222,7 +719,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="ExcelFieldNo" Type="int" />
     <Property Name="DBFieldName" Type="nvarchar" MaxLength="100" />
     <Property Name="IsDeleted" Type="bit" Nullable="false" />
@@ -246,13 +743,12 @@
     <Property Name="PolicyId" Type="uniqueidentifier" />
     <Property Name="PreviousStatusId" Type="int" />
     <Property Name="LastModifiedDate" Type="date" />
-    <Property Name="IssueTrackNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IssueTrackNumber" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="CreatedDate" Type="date" />
     <Property Name="ModifiedBy" Type="uniqueidentifier" />
     <Property Name="FromDate" Type="date" />
     <Property Name="ToDate" Type="date" />
     <Property Name="IsDeleted" Type="bit" />
-    <Property Name="IsPMCVariance" Type="bit" />
   </EntityType>
   <EntityType Name="Formulas">
     <Key>
@@ -302,11 +798,11 @@
     </Key>
     <Property Name="PayorDefaultSettingsId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="GlobalPayorId" Type="uniqueidentifier" />
-    <Property Name="FirstPaymentOnRow" Type="numeric" Precision="2" Scale="0" />
-    <Property Name="FieldNamesRow" Type="numeric" Precision="2" Scale="0" />
+    <Property Name="FirstPaymentOnRow" Type="numeric" Precision="2" />
+    <Property Name="FieldNamesRow" Type="numeric" Precision="2" />
     <Property Name="IsTotalExists" Type="bit" Nullable="false" />
-    <Property Name="LocationColumn" Type="numeric" Precision="2" Scale="0" />
-    <Property Name="LocationRow" Type="numeric" Precision="2" Scale="0" />
+    <Property Name="LocationColumn" Type="numeric" Precision="2" />
+    <Property Name="LocationRow" Type="numeric" Precision="2" />
     <Property Name="FileTypeId" Type="int" />
     <Property Name="WebSiteUrl" Type="varchar" MaxLength="500" />
     <Property Name="NavigationInstructions" Type="varchar" MaxLength="500" />
@@ -327,14 +823,14 @@
       <PropertyRef Name="ImportBatchId" />
     </Key>
     <Property Name="ImportBatchId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="FileName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="FileName" Type="varchar" Nullable="false" MaxLength="100" />
     <Property Name="CreatedOn" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="ImportToolAvailableFields">
     <Key>
       <PropertyRef Name="PTAvailableFieldId" />
     </Key>
-    <Property Name="PTAvailableFieldId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PTAvailableFieldId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="varchar" MaxLength="20" />
     <Property Name="Description" Type="varchar" MaxLength="50" />
     <Property Name="LabelOnImage" Type="varchar" MaxLength="50" />
@@ -359,7 +855,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="FixedRows" Type="varchar" MaxLength="50" />
     <Property Name="FixedColumns" Type="varchar" MaxLength="50" />
     <Property Name="RelativeSearchtext" Type="varchar" MaxLength="200" />
@@ -370,7 +866,7 @@
     <Key>
       <PropertyRef Name="TransID" />
     </Key>
-    <Property Name="TransID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TransID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="varchar" MaxLength="250" />
     <Property Name="Description" Type="varchar" MaxLength="250" />
     <Property Name="Type" Type="tinyint" />
@@ -379,7 +875,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Statementdata" Type="varchar" MaxLength="100" />
     <Property Name="StatementDataType" Type="varchar" MaxLength="50" />
   </EntityType>
@@ -387,7 +883,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="PayorID" Type="uniqueidentifier" />
     <Property Name="TemplateID" Type="uniqueidentifier" />
     <Property Name="PayorToolAvailableFeildsID" Type="int" />
@@ -414,7 +910,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="PayorID" Type="uniqueidentifier" />
     <Property Name="PayorName" Type="varchar" MaxLength="100" />
     <Property Name="TemplateID" Type="uniqueidentifier" />
@@ -432,7 +928,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="TemplateID" Type="uniqueidentifier" />
     <Property Name="PayorID" Type="uniqueidentifier" />
     <Property Name="TemplateName" Type="varchar" MaxLength="250" />
@@ -443,7 +939,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="PayorID" Type="uniqueidentifier" />
     <Property Name="TemplateID" Type="uniqueidentifier" />
     <Property Name="PayorToolAvailableFieldId" Type="int" />
@@ -454,7 +950,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="PayorID" Type="uniqueidentifier" />
     <Property Name="TemplateID" Type="uniqueidentifier" />
     <Property Name="MasterStatementDataID" Type="int" />
@@ -478,7 +974,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="IncomingPaymentTypeID" Type="int" />
     <Property Name="PaymentTypeName" Type="varchar" MaxLength="100" />
     <Property Name="Names" Type="varchar" MaxLength="100" />
@@ -506,7 +1002,7 @@
     <Key>
       <PropertyRef Name="InvoiceId" />
     </Key>
-    <Property Name="InvoiceId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InvoiceId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="LicenseeId" Type="uniqueidentifier" />
     <Property Name="BillingStartDate" Type="datetime" />
     <Property Name="BillingDate" Type="datetime" />
@@ -517,7 +1013,8 @@
     <Property Name="BillingEndDate" Type="datetime" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'CommDB_Web.dbo.IssuedFiles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+      warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.IssuedFiles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
   <EntityType Name="IssuedFiles">
     <Key>
       <PropertyRef Name="PayorID" />
@@ -526,19 +1023,20 @@ warning 6002: The table/view 'CommDB_Web.dbo.IssuedFiles' does not have a primar
     <Property Name="FileName" Type="nvarchar" MaxLength="500" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'CommDB_Web.dbo.Issuelog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+      warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.Issuelog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
   <EntityType Name="Issuelog">
     <Key>
       <PropertyRef Name="IssueId" />
     </Key>
-    <Property Name="IssueId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IssueId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Issue" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Journals">
     <Key>
       <PropertyRef Name="JournalId" />
     </Key>
-    <Property Name="JournalId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JournalId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="InvoiceId" Type="bigint" />
     <Property Name="ImportBatchId" Type="uniqueidentifier" />
     <Property Name="TransactionId" Type="varchar" MaxLength="50" />
@@ -624,7 +1122,6 @@ warning 6002: The table/view 'CommDB_Web.dbo.Issuelog' does not have a primary k
     <Property Name="UserName" Type="varchar" MaxLength="50" />
     <Property Name="Password" Type="varchar" MaxLength="50" />
     <Property Name="IsClientEnable" Type="bit" />
-    <Property Name="CreatedDate" Type="datetime" />
   </EntityType>
   <EntityType Name="LicenseeServices">
     <Key>
@@ -688,7 +1185,7 @@ warning 6002: The table/view 'CommDB_Web.dbo.Issuelog' does not have a primary k
     <Key>
       <PropertyRef Name="AccessRightId" />
     </Key>
-    <Property Name="AccessRightId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccessRightId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="varchar" MaxLength="20" />
     <Property Name="Description" Type="varchar" MaxLength="50" />
   </EntityType>
@@ -696,7 +1193,7 @@ warning 6002: The table/view 'CommDB_Web.dbo.Issuelog' does not have a primary k
     <Key>
       <PropertyRef Name="AlertTypeId" />
     </Key>
-    <Property Name="AlertTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AlertTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="varchar" MaxLength="20" />
     <Property Name="Description" Type="varchar" MaxLength="50" />
   </EntityType>
@@ -717,7 +1214,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.Issuelog' does not have a primary k
     <Property Name="Description" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadStatus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+      warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadStatus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
   <EntityType Name="MasterBatchDownloadStatus">
     <Key>
       <PropertyRef Name="BatchDownloadStatusId" />
@@ -745,7 +1243,7 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Key>
       <PropertyRef Name="BillPaymentTypeId" />
     </Key>
-    <Property Name="BillPaymentTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BillPaymentTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="varchar" MaxLength="20" />
     <Property Name="Description" Type="varchar" MaxLength="50" />
   </EntityType>
@@ -753,7 +1251,7 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Key>
       <PropertyRef Name="FileTypeId" />
     </Key>
-    <Property Name="FileTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="varchar" MaxLength="20" />
     <Property Name="Description" Type="varchar" MaxLength="50" />
   </EntityType>
@@ -817,7 +1315,7 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Key>
       <PropertyRef Name="MROrderByTypeId" />
     </Key>
-    <Property Name="MROrderByTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MROrderByTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="varchar" MaxLength="20" />
     <Property Name="Description" Type="varchar" MaxLength="50" />
   </EntityType>
@@ -825,7 +1323,7 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Key>
       <PropertyRef Name="ModuleId" />
     </Key>
-    <Property Name="ModuleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModuleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="varchar" MaxLength="50" />
     <Property Name="Description" Type="varchar" MaxLength="50" />
   </EntityType>
@@ -833,14 +1331,14 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Key>
       <PropertyRef Name="PHQuestionId" />
     </Key>
-    <Property Name="PHQuestionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PHQuestionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Qestion" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="MasterPaymentStatus">
     <Key>
       <PropertyRef Name="PaymentStatusId" />
     </Key>
-    <Property Name="PaymentStatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaymentStatusId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="varchar" MaxLength="20" />
     <Property Name="Description" Type="varchar" MaxLength="50" />
   </EntityType>
@@ -857,7 +1355,7 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Key>
       <PropertyRef Name="SourceTypeId" />
     </Key>
-    <Property Name="SourceTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SourceTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="varchar" MaxLength="50" />
     <Property Name="Description" Type="varchar" MaxLength="100" />
   </EntityType>
@@ -873,7 +1371,7 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Key>
       <PropertyRef Name="PTAvailableFieldId" />
     </Key>
-    <Property Name="PTAvailableFieldId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PTAvailableFieldId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="varchar" MaxLength="20" />
     <Property Name="Description" Type="varchar" MaxLength="50" />
     <Property Name="LabelOnImage" Type="varchar" MaxLength="50" />
@@ -916,7 +1414,7 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Key>
       <PropertyRef Name="PTMaskFieldTypeId" />
     </Key>
-    <Property Name="PTMaskFieldTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PTMaskFieldTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="varchar" MaxLength="20" />
     <Property Name="Description" Type="varchar" MaxLength="50" />
     <Property Name="Type" Type="tinyint" />
@@ -933,7 +1431,7 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Key>
       <PropertyRef Name="PermissionTypeId" />
     </Key>
-    <Property Name="PermissionTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PermissionTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="varchar" MaxLength="20" />
     <Property Name="Description" Type="varchar" MaxLength="50" />
   </EntityType>
@@ -977,13 +1475,12 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Property Name="ReportName" Type="nvarchar(max)" />
     <Property Name="ReportGroupName" Type="nvarchar(max)" />
     <Property Name="ReportDescription" Type="nvarchar(max)" />
-    <Property Name="IsVisible" Type="bit" />
   </EntityType>
   <EntityType Name="MasterRoles">
     <Key>
       <PropertyRef Name="RoleId" />
     </Key>
-    <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="varchar" MaxLength="20" />
     <Property Name="Description" Type="varchar" MaxLength="200" />
   </EntityType>
@@ -1039,7 +1536,7 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Key>
       <PropertyRef Name="SystemConstantId" />
     </Key>
-    <Property Name="SystemConstantId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SystemConstantId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="varchar" MaxLength="50" />
     <Property Name="Value" Type="varchar" MaxLength="200" />
     <Property Name="Description" Type="varchar" MaxLength="50" />
@@ -1048,7 +1545,7 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Key>
       <PropertyRef Name="SystemEmailId" />
     </Key>
-    <Property Name="SystemEmailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SystemEmailId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Email" Type="varchar" MaxLength="50" />
     <Property Name="Purpose" Type="varchar" MaxLength="50" />
   </EntityType>
@@ -1057,8 +1554,8 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
       <PropertyRef Name="ZipCode" />
     </Key>
     <Property Name="ZipCode" Type="bigint" Nullable="false" />
-    <Property Name="City" Type="nvarchar" MaxLength="255" Nullable="false" />
-    <Property Name="State" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="City" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="State" Type="nvarchar" Nullable="false" MaxLength="255" />
   </EntityType>
   <EntityType Name="News">
     <Key>
@@ -1085,7 +1582,6 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Property Name="Zero" Type="bit" />
     <Property Name="IsSplit" Type="bit" />
     <Property Name="IsPayorRate" Type="bit" />
-    <Property Name="IsSubTotal" Type="bit" />
   </EntityType>
   <EntityType Name="Payors">
     <Key>
@@ -1102,7 +1598,6 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Property Name="CreatedBy" Type="uniqueidentifier" />
     <Property Name="NickName" Type="nvarchar" MaxLength="50" />
     <Property Name="LicenseeId" Type="uniqueidentifier" />
-    <Property Name="CreatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="PayorSiteLoginInfo">
     <Key>
@@ -1110,8 +1605,8 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     </Key>
     <Property Name="SiteLoginID" Type="uniqueidentifier" Nullable="false" />
     <Property Name="PayorID" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="LicenseeId" Type="uniqueidentifier" Nullable="false" />
   </EntityType>
   <EntityType Name="PayorSource">
@@ -1129,7 +1624,7 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="TemplateID" Type="uniqueidentifier" />
     <Property Name="PayorId" Type="uniqueidentifier" />
     <Property Name="TemplateName" Type="varchar" MaxLength="50" />
@@ -1151,7 +1646,7 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Property Name="IsOverrideOfCalcAllowed" Type="bit" Nullable="false" />
     <Property Name="DefaultNumeric" Type="varchar" MaxLength="1000" />
     <Property Name="IsOorBlankAllowed" Type="bit" Nullable="false" />
-    <Property Name="AllignedDirection" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="AllignedDirection" Type="varchar" Nullable="false" MaxLength="5" />
     <Property Name="EquivalentIncomingField" Type="varchar" MaxLength="50" />
     <Property Name="EquivalentLearnedField" Type="varchar" MaxLength="50" />
     <Property Name="EquivalentDeuField" Type="varchar" MaxLength="50" />
@@ -1177,6 +1672,9 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Property Name="IsDeleted" Type="bit" Nullable="false" />
     <Property Name="TemplateID" Type="uniqueidentifier" />
   </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.Policies' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
   <EntityType Name="Policies">
     <Key>
       <PropertyRef Name="PolicyId" />
@@ -1211,21 +1709,17 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Property Name="IsOutGoingBasicSchedule" Type="bit" />
     <Property Name="CarrierId" Type="uniqueidentifier" />
     <Property Name="SplitPercentage" Type="float" />
-    <Property Name="Insured" Type="varchar" MaxLength="100" />
+    <Property Name="Insured" Type="nvarchar" MaxLength="50" />
     <Property Name="ActivatedOn" Type="datetime" />
     <Property Name="IsLocked" Type="bit" Nullable="false" />
     <Property Name="LastFollowUpRuns" Type="datetime" />
-    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="RowVersion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
     <Property Name="Advance" Type="int" />
     <Property Name="ProductType" Type="varchar" MaxLength="100" />
     <Property Name="UserCredentialId" Type="uniqueidentifier" />
     <Property Name="AccoutExec" Type="varchar" MaxLength="100" />
-    <Property Name="LastNoVarIssueDate" Type="datetime" />
     <Property Name="LastNoMissIssueDate" Type="datetime" />
-    <Property Name="IsCustomBasicSchedule" Type="bit" />
-    <Property Name="CustomScheduleDateType" Type="varchar" MaxLength="50" />
-    <Property Name="PrimaryAgent" Type="uniqueidentifier" />
-    <Property Name="IsTieredSchedule" Type="bit" />
+    <Property Name="LastNoVarIssueDate" Type="datetime" />
   </EntityType>
   <EntityType Name="PoliciesHistory">
     <Key>
@@ -1261,7 +1755,7 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Property Name="IsOutGoingBasicSchedule" Type="bit" />
     <Property Name="CarrierId" Type="uniqueidentifier" />
     <Property Name="SplitPercentage" Type="float" />
-    <Property Name="Insured" Type="varchar" MaxLength="100" />
+    <Property Name="Insured" Type="nvarchar" MaxLength="50" />
     <Property Name="Advance" Type="int" />
     <Property Name="ProductType" Type="varchar" MaxLength="100" />
   </EntityType>
@@ -1293,7 +1787,7 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
       <PropertyRef Name="PolicyId" />
     </Key>
     <Property Name="PolicyId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="Insured" Type="varchar" MaxLength="100" />
+    <Property Name="Insured" Type="varchar" MaxLength="50" />
     <Property Name="PolicyNumber" Type="varchar" MaxLength="50" />
     <Property Name="Effective" Type="datetime" />
     <Property Name="TrackFrom" Type="datetime" />
@@ -1311,7 +1805,7 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Property Name="CompTypeID" Type="int" />
     <Property Name="PayorSysID" Type="nvarchar" MaxLength="50" />
     <Property Name="Renewal" Type="nvarchar" MaxLength="50" />
-    <Property Name="SplitPercentage" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="SplitPercentage" Type="numeric" Scale="2" />
     <Property Name="CompScheduleType" Type="nvarchar" MaxLength="150" />
     <Property Name="CarrierId" Type="uniqueidentifier" />
     <Property Name="CoverageId" Type="uniqueidentifier" />
@@ -1331,7 +1825,7 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
       <PropertyRef Name="PolicyId" />
     </Key>
     <Property Name="PolicyId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="Insured" Type="varchar" MaxLength="100" />
+    <Property Name="Insured" Type="varchar" MaxLength="50" />
     <Property Name="PolicyNumber" Type="varchar" MaxLength="50" />
     <Property Name="Effective" Type="datetime" />
     <Property Name="TrackFrom" Type="datetime" />
@@ -1349,7 +1843,7 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Property Name="CompTypeID" Type="int" />
     <Property Name="PayorSysID" Type="nvarchar" MaxLength="50" />
     <Property Name="Renewal" Type="nvarchar" MaxLength="50" />
-    <Property Name="SplitPercentage" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="SplitPercentage" Type="numeric" Scale="2" />
     <Property Name="CompScheduleType" Type="nvarchar" MaxLength="150" />
     <Property Name="CarrierId" Type="uniqueidentifier" />
     <Property Name="CoverageId" Type="uniqueidentifier" />
@@ -1380,9 +1874,6 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Property Name="Note" Type="varchar(max)" />
     <Property Name="CreatedOn" Type="datetime" />
     <Property Name="LastModifiedOn" Type="datetime" />
-    <Property Name="IsDeleted" Type="bit" />
-    <Property Name="CreatedBy" Type="uniqueidentifier" />
-    <Property Name="ModifiedBy" Type="uniqueidentifier" />
   </EntityType>
   <EntityType Name="PolicyOutgoingAdvancedSchedules">
     <Key>
@@ -1428,10 +1919,6 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Property Name="RenewalPercentage" Type="float" />
     <Property Name="CreatedOn" Type="datetime" />
     <Property Name="ScheduleTypeId" Type="int" />
-    <Property Name="CustomStartDate" Type="datetime" />
-    <Property Name="CustomEndDate" Type="datetime" />
-    <Property Name="SplitPercent" Type="float" />
-    <Property Name="TierNumber" Type="int" />
   </EntityType>
   <EntityType Name="PolicyPaymentAlerts">
     <Key>
@@ -1469,12 +1956,13 @@ warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.MasterBatchDownloadS
     <Property Name="IsLinkPayment" Type="bit" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+      warning 6002: The table/view 'CommisionDepartmentEricDB.dbo.SendAlertMail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
   <EntityType Name="SendAlertMail">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="LicensesID" Type="uniqueidentifier" />
     <Property Name="MailDate" Type="datetime" />
     <Property Name="SendStatus" Type="bit" />
@@ -1503,7 +1991,7 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
       <PropertyRef Name="StatementId" />
     </Key>
     <Property Name="StatementId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="StatementNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatementNumber" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="BatchId" Type="uniqueidentifier" />
     <Property Name="PayorId" Type="uniqueidentifier" />
     <Property Name="CheckAmount" Type="money" />
@@ -1533,9 +2021,9 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     <Key>
       <PropertyRef Name="diagram_id" />
     </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
     <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
@@ -1543,7 +2031,7 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="PMCFrom" Type="decimal" Precision="15" Scale="2" />
     <Property Name="PMCTo" Type="decimal" Precision="15" Scale="2" />
     <Property Name="VarPercentLimit" Type="decimal" Precision="15" Scale="2" />
@@ -1576,14 +2064,6 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     <Property Name="LicenseeId" Type="uniqueidentifier" />
     <Property Name="CreatedOn" Type="datetime" />
     <Property Name="IsAccountExec" Type="bit" />
-    <Property Name="IsUserActiveOnWeb" Type="bit" />
-    <Property Name="ModifiedBy" Type="uniqueidentifier" />
-    <Property Name="PasswordResetKey" Type="varchar" MaxLength="100" />
-    <Property Name="PasswordResetKeyInsertDateTime" Type="datetime" />
-    <Property Name="CreatedBy" Type="uniqueidentifier" />
-    <Property Name="ModifiedOn" Type="datetime" />
-    <Property Name="IsAdmin" Type="bit" />
-    <Property Name="BGUserId" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="UserDetail">
     <Key>
@@ -1608,14 +2088,6 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     <Property Name="ReportForOwnBusiness" Type="bit" Nullable="false" />
     <Property Name="AddPayeeOn" Type="datetime" />
     <Property Name="DisableAgentEditing" Type="bit" />
-    <Property Name="OfficePhone_DialCode" Type="varchar" MaxLength="7" />
-    <Property Name="CellPhone_DialCode" Type="varchar" MaxLength="7" />
-    <Property Name="Fax_DialCode" Type="varchar" MaxLength="7" />
-    <Property Name="OfficePhone_CountryCode" Type="varchar" MaxLength="7" />
-    <Property Name="CellPhone_CountryCode" Type="varchar" MaxLength="7" />
-    <Property Name="Fax_CountryCode" Type="varchar" MaxLength="7" />
-    <Property Name="FormattedAddress" Type="varchar" MaxLength="150" />
-    <Property Name="Place_Id" Type="varchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="UserPermissions">
     <Key>
@@ -1642,8 +2114,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     <Property Name="BillingLineId" Type="uniqueidentifier" Nullable="false" />
   </EntityType>
   <Association Name="FK_Batches_Licensees">
-    <End Role="Licensees" Type="Self.Licensees" Multiplicity="1" />
-    <End Role="Batches" Type="Self.Batches" Multiplicity="*" />
+    <End Role="Licensees" Type="Model.Store.Licensees" Multiplicity="1" />
+    <End Role="Batches" Type="Model.Store.Batches" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Licensees">
         <PropertyRef Name="LicenseeId" />
@@ -1654,8 +2126,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Batches_MasterBatchEntryStatus">
-    <End Role="MasterBatchEntryStatus" Type="Self.MasterBatchEntryStatus" Multiplicity="0..1" />
-    <End Role="Batches" Type="Self.Batches" Multiplicity="*" />
+    <End Role="MasterBatchEntryStatus" Type="Model.Store.MasterBatchEntryStatus" Multiplicity="0..1" />
+    <End Role="Batches" Type="Model.Store.Batches" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterBatchEntryStatus">
         <PropertyRef Name="BatchEntryStatusId" />
@@ -1666,8 +2138,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Batches_MasterBatchUploadStatus">
-    <End Role="MasterBatchUploadStatus" Type="Self.MasterBatchUploadStatus" Multiplicity="0..1" />
-    <End Role="Batches" Type="Self.Batches" Multiplicity="*" />
+    <End Role="MasterBatchUploadStatus" Type="Model.Store.MasterBatchUploadStatus" Multiplicity="0..1" />
+    <End Role="Batches" Type="Model.Store.Batches" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterBatchUploadStatus">
         <PropertyRef Name="BatchUploadStatusId" />
@@ -1678,8 +2150,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Batches_Payors">
-    <End Role="Payors" Type="Self.Payors" Multiplicity="0..1" />
-    <End Role="Batches" Type="Self.Batches" Multiplicity="*" />
+    <End Role="Payors" Type="Model.Store.Payors" Multiplicity="0..1" />
+    <End Role="Batches" Type="Model.Store.Batches" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Payors">
         <PropertyRef Name="PayorId" />
@@ -1690,8 +2162,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_CarrierCoverage_UserCredentials">
-    <End Role="UserCredentials" Type="Self.UserCredentials" Multiplicity="1" />
-    <End Role="CoverageNickName" Type="Self.CoverageNickName" Multiplicity="*" />
+    <End Role="UserCredentials" Type="Model.Store.UserCredentials" Multiplicity="1" />
+    <End Role="CoverageNickName" Type="Model.Store.CoverageNickName" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="UserCredentials">
         <PropertyRef Name="UserCredentialId" />
@@ -1702,8 +2174,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_CarrierCoverage_UserCredentials1">
-    <End Role="UserCredentials" Type="Self.UserCredentials" Multiplicity="1" />
-    <End Role="CoverageNickName" Type="Self.CoverageNickName" Multiplicity="*" />
+    <End Role="UserCredentials" Type="Model.Store.UserCredentials" Multiplicity="1" />
+    <End Role="CoverageNickName" Type="Model.Store.CoverageNickName" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="UserCredentials">
         <PropertyRef Name="UserCredentialId" />
@@ -1714,8 +2186,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_CarrierCoverages_Licensees">
-    <End Role="Licensees" Type="Self.Licensees" Multiplicity="0..1" />
-    <End Role="Coverages" Type="Self.Coverages" Multiplicity="*" />
+    <End Role="Licensees" Type="Model.Store.Licensees" Multiplicity="0..1" />
+    <End Role="Coverages" Type="Model.Store.Coverages" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Licensees">
         <PropertyRef Name="LicenseeId" />
@@ -1726,8 +2198,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_CarrierCoverages_UserCredentials">
-    <End Role="UserCredentials" Type="Self.UserCredentials" Multiplicity="0..1" />
-    <End Role="Coverages" Type="Self.Coverages" Multiplicity="*" />
+    <End Role="UserCredentials" Type="Model.Store.UserCredentials" Multiplicity="0..1" />
+    <End Role="Coverages" Type="Model.Store.Coverages" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="UserCredentials">
         <PropertyRef Name="UserCredentialId" />
@@ -1738,8 +2210,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Clients_Licensees">
-    <End Role="Licensees" Type="Self.Licensees" Multiplicity="0..1" />
-    <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
+    <End Role="Licensees" Type="Model.Store.Licensees" Multiplicity="0..1" />
+    <End Role="Clients" Type="Model.Store.Clients" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Licensees">
         <PropertyRef Name="LicenseeId" />
@@ -1750,8 +2222,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_CoverageNickName_Payors">
-    <End Role="Payors" Type="Self.Payors" Multiplicity="1" />
-    <End Role="CoverageNickName" Type="Self.CoverageNickName" Multiplicity="*" />
+    <End Role="Payors" Type="Model.Store.Payors" Multiplicity="1" />
+    <End Role="CoverageNickName" Type="Model.Store.CoverageNickName" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Payors">
         <PropertyRef Name="PayorId" />
@@ -1761,71 +2233,9 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_EntriesByDEU_MasterIncomingPaymentTypes">
-    <End Role="MasterIncomingPaymentTypes" Type="Self.MasterIncomingPaymentTypes" Multiplicity="0..1" />
-    <End Role="EntriesByDEU" Type="Self.EntriesByDEU" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MasterIncomingPaymentTypes">
-        <PropertyRef Name="IncomingPaymentTypeId" />
-      </Principal>
-      <Dependent Role="EntriesByDEU">
-        <PropertyRef Name="CompTypeID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_EntriesByDEU_MasterPolicyModes">
-    <End Role="MasterPolicyModes" Type="Self.MasterPolicyModes" Multiplicity="0..1" />
-    <End Role="EntriesByDEU" Type="Self.EntriesByDEU" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MasterPolicyModes">
-        <PropertyRef Name="PolicyModeId" />
-      </Principal>
-      <Dependent Role="EntriesByDEU">
-        <PropertyRef Name="PolicyModeID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_EntriesByDEU_MasterPostStatus">
-    <End Role="MasterPostStatus" Type="Self.MasterPostStatus" Multiplicity="0..1" />
-    <End Role="EntriesByDEU" Type="Self.EntriesByDEU" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MasterPostStatus">
-        <PropertyRef Name="PostStatusID" />
-      </Principal>
-      <Dependent Role="EntriesByDEU">
-        <PropertyRef Name="PostStatusID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_EntriesByDEU_Payors">
-    <End Role="Payors" Type="Self.Payors" Multiplicity="0..1" />
-    <End Role="EntriesByDEU" Type="Self.EntriesByDEU" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Payors">
-        <PropertyRef Name="PayorId" />
-      </Principal>
-      <Dependent Role="EntriesByDEU">
-        <PropertyRef Name="PayorId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_EntriesByDEU_Statements">
-    <End Role="Statements" Type="Self.Statements" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="EntriesByDEU" Type="Self.EntriesByDEU" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Statements">
-        <PropertyRef Name="StatementId" />
-      </Principal>
-      <Dependent Role="EntriesByDEU">
-        <PropertyRef Name="StatementID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_FieldMapping_Templates">
-    <End Role="Templates" Type="Self.Templates" Multiplicity="0..1" />
-    <End Role="FieldMapping" Type="Self.FieldMapping" Multiplicity="*" />
+    <End Role="Templates" Type="Model.Store.Templates" Multiplicity="0..1" />
+    <End Role="FieldMapping" Type="Model.Store.FieldMapping" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Templates">
         <PropertyRef Name="PayorID" />
@@ -1836,8 +2246,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_FollowupIssues_MasterIssueCategories">
-    <End Role="MasterIssueCategories" Type="Self.MasterIssueCategories" Multiplicity="0..1" />
-    <End Role="FollowupIssues" Type="Self.FollowupIssues" Multiplicity="*" />
+    <End Role="MasterIssueCategories" Type="Model.Store.MasterIssueCategories" Multiplicity="0..1" />
+    <End Role="FollowupIssues" Type="Model.Store.FollowupIssues" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterIssueCategories">
         <PropertyRef Name="IssueCategoryId" />
@@ -1848,8 +2258,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_FollowupIssues_MasterIssueReasons">
-    <End Role="MasterIssueReasons" Type="Self.MasterIssueReasons" Multiplicity="0..1" />
-    <End Role="FollowupIssues" Type="Self.FollowupIssues" Multiplicity="*" />
+    <End Role="MasterIssueReasons" Type="Model.Store.MasterIssueReasons" Multiplicity="0..1" />
+    <End Role="FollowupIssues" Type="Model.Store.FollowupIssues" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterIssueReasons">
         <PropertyRef Name="IssueReasonId" />
@@ -1860,8 +2270,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_FollowupIssues_MasterIssueResults">
-    <End Role="MasterIssueResults" Type="Self.MasterIssueResults" Multiplicity="0..1" />
-    <End Role="FollowupIssues" Type="Self.FollowupIssues" Multiplicity="*" />
+    <End Role="MasterIssueResults" Type="Model.Store.MasterIssueResults" Multiplicity="0..1" />
+    <End Role="FollowupIssues" Type="Model.Store.FollowupIssues" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterIssueResults">
         <PropertyRef Name="IssueResultId" />
@@ -1872,8 +2282,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_FollowupIssues_MasterIssueStatus">
-    <End Role="MasterIssueStatus" Type="Self.MasterIssueStatus" Multiplicity="0..1" />
-    <End Role="FollowupIssues" Type="Self.FollowupIssues" Multiplicity="*" />
+    <End Role="MasterIssueStatus" Type="Model.Store.MasterIssueStatus" Multiplicity="0..1" />
+    <End Role="FollowupIssues" Type="Model.Store.FollowupIssues" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterIssueStatus">
         <PropertyRef Name="IssueStatusId" />
@@ -1884,8 +2294,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_FollowupIssues_MasterIssueStatus1">
-    <End Role="MasterIssueStatus" Type="Self.MasterIssueStatus" Multiplicity="0..1" />
-    <End Role="FollowupIssues" Type="Self.FollowupIssues" Multiplicity="*" />
+    <End Role="MasterIssueStatus" Type="Model.Store.MasterIssueStatus" Multiplicity="0..1" />
+    <End Role="FollowupIssues" Type="Model.Store.FollowupIssues" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterIssueStatus">
         <PropertyRef Name="IssueStatusId" />
@@ -1896,8 +2306,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_GlobalCoveragesSchedules_MasterScheduleTypes">
-    <End Role="MasterScheduleTypes" Type="Self.MasterScheduleTypes" Multiplicity="1" />
-    <End Role="GlobalCoveragesSchedules" Type="Self.GlobalCoveragesSchedules" Multiplicity="*" />
+    <End Role="MasterScheduleTypes" Type="Model.Store.MasterScheduleTypes" Multiplicity="1" />
+    <End Role="GlobalCoveragesSchedules" Type="Model.Store.GlobalCoveragesSchedules" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterScheduleTypes">
         <PropertyRef Name="ScheduleTypeId" />
@@ -1908,8 +2318,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_GlobalPayorContacts_Payors">
-    <End Role="Payors" Type="Self.Payors" Multiplicity="0..1" />
-    <End Role="GlobalPayorContacts" Type="Self.GlobalPayorContacts" Multiplicity="*" />
+    <End Role="Payors" Type="Model.Store.Payors" Multiplicity="0..1" />
+    <End Role="GlobalPayorContacts" Type="Model.Store.GlobalPayorContacts" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Payors">
         <PropertyRef Name="PayorId" />
@@ -1920,8 +2330,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_GlobalPayorDefaults_MasterFileTypes">
-    <End Role="MasterFileTypes" Type="Self.MasterFileTypes" Multiplicity="0..1" />
-    <End Role="GlobalPayorDefaults" Type="Self.GlobalPayorDefaults" Multiplicity="*" />
+    <End Role="MasterFileTypes" Type="Model.Store.MasterFileTypes" Multiplicity="0..1" />
+    <End Role="GlobalPayorDefaults" Type="Model.Store.GlobalPayorDefaults" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterFileTypes">
         <PropertyRef Name="FileTypeId" />
@@ -1932,8 +2342,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_GlobalPayorDefaults_Payors">
-    <End Role="Payors" Type="Self.Payors" Multiplicity="0..1" />
-    <End Role="GlobalPayorDefaults" Type="Self.GlobalPayorDefaults" Multiplicity="*" />
+    <End Role="Payors" Type="Model.Store.Payors" Multiplicity="0..1" />
+    <End Role="GlobalPayorDefaults" Type="Model.Store.GlobalPayorDefaults" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Payors">
         <PropertyRef Name="PayorId" />
@@ -1944,8 +2354,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_GlobalPayorStatementDate_Payors">
-    <End Role="Payors" Type="Self.Payors" Multiplicity="1" />
-    <End Role="GlobalPayorStatementDate" Type="Self.GlobalPayorStatementDate" Multiplicity="*" />
+    <End Role="Payors" Type="Model.Store.Payors" Multiplicity="1" />
+    <End Role="GlobalPayorStatementDate" Type="Model.Store.GlobalPayorStatementDate" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Payors">
         <PropertyRef Name="PayorId" />
@@ -1956,10 +2366,10 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_InvoiceBillingLineDetail_Invoices">
-    <End Role="Invoices" Type="Self.Invoices" Multiplicity="1">
+    <End Role="Invoices" Type="Model.Store.Invoices" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="InvoiceBillingLineDetail" Type="Self.InvoiceBillingLineDetail" Multiplicity="*" />
+    <End Role="InvoiceBillingLineDetail" Type="Model.Store.InvoiceBillingLineDetail" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Invoices">
         <PropertyRef Name="InvoiceId" />
@@ -1970,8 +2380,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_InvoiceBillingLineDetail_MasterServiceChargeTypes">
-    <End Role="MasterServiceChargeTypes" Type="Self.MasterServiceChargeTypes" Multiplicity="1" />
-    <End Role="InvoiceBillingLineDetail" Type="Self.InvoiceBillingLineDetail" Multiplicity="*" />
+    <End Role="MasterServiceChargeTypes" Type="Model.Store.MasterServiceChargeTypes" Multiplicity="1" />
+    <End Role="InvoiceBillingLineDetail" Type="Model.Store.InvoiceBillingLineDetail" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterServiceChargeTypes">
         <PropertyRef Name="SCTypeId" />
@@ -1982,8 +2392,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_InvoiceBillingLineDetail_MasterServices">
-    <End Role="MasterServices" Type="Self.MasterServices" Multiplicity="1" />
-    <End Role="InvoiceBillingLineDetail" Type="Self.InvoiceBillingLineDetail" Multiplicity="*" />
+    <End Role="MasterServices" Type="Model.Store.MasterServices" Multiplicity="1" />
+    <End Role="InvoiceBillingLineDetail" Type="Model.Store.InvoiceBillingLineDetail" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterServices">
         <PropertyRef Name="ServiceId" />
@@ -1994,10 +2404,10 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Invoices_ExportBatchFiles">
-    <End Role="ExportBatchFiles" Type="Self.ExportBatchFiles" Multiplicity="0..1">
+    <End Role="ExportBatchFiles" Type="Model.Store.ExportBatchFiles" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="Invoices" Type="Self.Invoices" Multiplicity="*" />
+    <End Role="Invoices" Type="Model.Store.Invoices" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ExportBatchFiles">
         <PropertyRef Name="ExportBatchId" />
@@ -2008,8 +2418,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Invoices_Licensees">
-    <End Role="Licensees" Type="Self.Licensees" Multiplicity="0..1" />
-    <End Role="Invoices" Type="Self.Invoices" Multiplicity="*" />
+    <End Role="Licensees" Type="Model.Store.Licensees" Multiplicity="0..1" />
+    <End Role="Invoices" Type="Model.Store.Invoices" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Licensees">
         <PropertyRef Name="LicenseeId" />
@@ -2020,8 +2430,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_IssuedFiles_Payors">
-    <End Role="Payors" Type="Self.Payors" Multiplicity="1" />
-    <End Role="IssuedFiles" Type="Self.IssuedFiles" Multiplicity="0..1" />
+    <End Role="Payors" Type="Model.Store.Payors" Multiplicity="1" />
+    <End Role="IssuedFiles" Type="Model.Store.IssuedFiles" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="Payors">
         <PropertyRef Name="PayorId" />
@@ -2032,8 +2442,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Journals_ImportBatchFiles">
-    <End Role="ImportBatchFiles" Type="Self.ImportBatchFiles" Multiplicity="0..1" />
-    <End Role="Journals" Type="Self.Journals" Multiplicity="*" />
+    <End Role="ImportBatchFiles" Type="Model.Store.ImportBatchFiles" Multiplicity="0..1" />
+    <End Role="Journals" Type="Model.Store.Journals" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ImportBatchFiles">
         <PropertyRef Name="ImportBatchId" />
@@ -2044,8 +2454,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Journals_Invoices">
-    <End Role="Invoices" Type="Self.Invoices" Multiplicity="0..1" />
-    <End Role="Journals" Type="Self.Journals" Multiplicity="*" />
+    <End Role="Invoices" Type="Model.Store.Invoices" Multiplicity="0..1" />
+    <End Role="Journals" Type="Model.Store.Journals" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Invoices">
         <PropertyRef Name="InvoiceId" />
@@ -2056,8 +2466,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Journals_Licensees">
-    <End Role="Licensees" Type="Self.Licensees" Multiplicity="1" />
-    <End Role="Journals" Type="Self.Journals" Multiplicity="*" />
+    <End Role="Licensees" Type="Model.Store.Licensees" Multiplicity="1" />
+    <End Role="Journals" Type="Model.Store.Journals" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Licensees">
         <PropertyRef Name="LicenseeId" />
@@ -2068,8 +2478,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_lastpolicyviewed_UserCredentials">
-    <End Role="UserCredentials" Type="Self.UserCredentials" Multiplicity="0..1" />
-    <End Role="LastPolicyViewed" Type="Self.LastPolicyViewed" Multiplicity="*" />
+    <End Role="UserCredentials" Type="Model.Store.UserCredentials" Multiplicity="0..1" />
+    <End Role="LastPolicyViewed" Type="Model.Store.LastPolicyViewed" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="UserCredentials">
         <PropertyRef Name="UserCredentialId" />
@@ -2080,8 +2490,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_LicenseeNotes_Licensees">
-    <End Role="Licensees" Type="Self.Licensees" Multiplicity="0..1" />
-    <End Role="LicenseeNotes" Type="Self.LicenseeNotes" Multiplicity="*" />
+    <End Role="Licensees" Type="Model.Store.Licensees" Multiplicity="0..1" />
+    <End Role="LicenseeNotes" Type="Model.Store.LicenseeNotes" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Licensees">
         <PropertyRef Name="LicenseeId" />
@@ -2092,8 +2502,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_LicenseePayors_Licensees">
-    <End Role="Licensees" Type="Self.Licensees" Multiplicity="0..1" />
-    <End Role="LicenseePayors" Type="Self.LicenseePayors" Multiplicity="*" />
+    <End Role="Licensees" Type="Model.Store.Licensees" Multiplicity="0..1" />
+    <End Role="LicenseePayors" Type="Model.Store.LicenseePayors" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Licensees">
         <PropertyRef Name="LicenseeId" />
@@ -2104,8 +2514,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_LicenseePayors_MasterSourceTypes">
-    <End Role="MasterSourceTypes" Type="Self.MasterSourceTypes" Multiplicity="0..1" />
-    <End Role="LicenseePayors" Type="Self.LicenseePayors" Multiplicity="*" />
+    <End Role="MasterSourceTypes" Type="Model.Store.MasterSourceTypes" Multiplicity="0..1" />
+    <End Role="LicenseePayors" Type="Model.Store.LicenseePayors" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterSourceTypes">
         <PropertyRef Name="SourceTypeId" />
@@ -2116,8 +2526,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_LicenseePayors_Payors">
-    <End Role="Payors" Type="Self.Payors" Multiplicity="0..1" />
-    <End Role="LicenseePayors" Type="Self.LicenseePayors" Multiplicity="*" />
+    <End Role="Payors" Type="Model.Store.Payors" Multiplicity="0..1" />
+    <End Role="LicenseePayors" Type="Model.Store.LicenseePayors" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Payors">
         <PropertyRef Name="PayorId" />
@@ -2128,8 +2538,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Licensees_MasterLicensePaymentModes">
-    <End Role="MasterLicensePaymentModes" Type="Self.MasterLicensePaymentModes" Multiplicity="0..1" />
-    <End Role="Licensees" Type="Self.Licensees" Multiplicity="*" />
+    <End Role="MasterLicensePaymentModes" Type="Model.Store.MasterLicensePaymentModes" Multiplicity="0..1" />
+    <End Role="Licensees" Type="Model.Store.Licensees" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterLicensePaymentModes">
         <PropertyRef Name="LicensePaymentModeId" />
@@ -2140,8 +2550,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Licensees_MasterLicenseStatus">
-    <End Role="MasterLicenseStatus" Type="Self.MasterLicenseStatus" Multiplicity="0..1" />
-    <End Role="Licensees" Type="Self.Licensees" Multiplicity="*" />
+    <End Role="MasterLicenseStatus" Type="Model.Store.MasterLicenseStatus" Multiplicity="0..1" />
+    <End Role="Licensees" Type="Model.Store.Licensees" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterLicenseStatus">
         <PropertyRef Name="LicenseStatusId" />
@@ -2152,8 +2562,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_LicenseeServices_Licensees">
-    <End Role="Licensees" Type="Self.Licensees" Multiplicity="1" />
-    <End Role="LicenseeServices" Type="Self.LicenseeServices" Multiplicity="*" />
+    <End Role="Licensees" Type="Model.Store.Licensees" Multiplicity="1" />
+    <End Role="LicenseeServices" Type="Model.Store.LicenseeServices" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Licensees">
         <PropertyRef Name="LicenseeId" />
@@ -2164,8 +2574,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_LicenseeServices_MasterServices">
-    <End Role="MasterServices" Type="Self.MasterServices" Multiplicity="1" />
-    <End Role="LicenseeServices" Type="Self.LicenseeServices" Multiplicity="*" />
+    <End Role="MasterServices" Type="Model.Store.MasterServices" Multiplicity="1" />
+    <End Role="LicenseeServices" Type="Model.Store.LicenseeServices" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterServices">
         <PropertyRef Name="ServiceId" />
@@ -2176,8 +2586,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_LinkedAgent_LinkedUserCredentials">
-    <End Role="UserCredentials" Type="Self.UserCredentials" Multiplicity="1" />
-    <End Role="LinkedAgent" Type="Self.LinkedAgent" Multiplicity="*" />
+    <End Role="UserCredentials" Type="Model.Store.UserCredentials" Multiplicity="1" />
+    <End Role="LinkedAgent" Type="Model.Store.LinkedAgent" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="UserCredentials">
         <PropertyRef Name="UserCredentialId" />
@@ -2188,8 +2598,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_LinkedAgent_UserCredentials">
-    <End Role="UserCredentials" Type="Self.UserCredentials" Multiplicity="1" />
-    <End Role="LinkedAgent" Type="Self.LinkedAgent" Multiplicity="*" />
+    <End Role="UserCredentials" Type="Model.Store.UserCredentials" Multiplicity="1" />
+    <End Role="LinkedAgent" Type="Model.Store.LinkedAgent" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="UserCredentials">
         <PropertyRef Name="UserCredentialId" />
@@ -2200,8 +2610,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_MasterPayorRegions_MasterPayorRegions">
-    <End Role="MasterPayorRegions" Type="Self.MasterPayorRegions" Multiplicity="1" />
-    <End Role="MasterPayorRegions1" Type="Self.MasterPayorRegions" Multiplicity="0..1" />
+    <End Role="MasterPayorRegions" Type="Model.Store.MasterPayorRegions" Multiplicity="1" />
+    <End Role="MasterPayorRegions1" Type="Model.Store.MasterPayorRegions" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="MasterPayorRegions">
         <PropertyRef Name="PayorRegionId" />
@@ -2212,8 +2622,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PayorCarrier_Payors">
-    <End Role="Payors" Type="Self.Payors" Multiplicity="1" />
-    <End Role="CarrierNickName" Type="Self.CarrierNickName" Multiplicity="*" />
+    <End Role="Payors" Type="Model.Store.Payors" Multiplicity="1" />
+    <End Role="CarrierNickName" Type="Model.Store.CarrierNickName" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Payors">
         <PropertyRef Name="PayorId" />
@@ -2224,8 +2634,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PayorCarriers_Licensees">
-    <End Role="Licensees" Type="Self.Licensees" Multiplicity="0..1" />
-    <End Role="Carriers" Type="Self.Carriers" Multiplicity="*" />
+    <End Role="Licensees" Type="Model.Store.Licensees" Multiplicity="0..1" />
+    <End Role="Carriers" Type="Model.Store.Carriers" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Licensees">
         <PropertyRef Name="LicenseeId" />
@@ -2236,8 +2646,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Payors_Licensees">
-    <End Role="Licensees" Type="Self.Licensees" Multiplicity="0..1" />
-    <End Role="Payors" Type="Self.Payors" Multiplicity="*" />
+    <End Role="Licensees" Type="Model.Store.Licensees" Multiplicity="0..1" />
+    <End Role="Payors" Type="Model.Store.Payors" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Licensees">
         <PropertyRef Name="LicenseeId" />
@@ -2248,8 +2658,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Payors_MasterPayorRegions">
-    <End Role="MasterPayorRegions" Type="Self.MasterPayorRegions" Multiplicity="0..1" />
-    <End Role="Payors" Type="Self.Payors" Multiplicity="*" />
+    <End Role="MasterPayorRegions" Type="Model.Store.MasterPayorRegions" Multiplicity="0..1" />
+    <End Role="Payors" Type="Model.Store.Payors" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterPayorRegions">
         <PropertyRef Name="PayorRegionId" />
@@ -2260,8 +2670,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Payors_MasterSourceTypes">
-    <End Role="MasterSourceTypes" Type="Self.MasterSourceTypes" Multiplicity="0..1" />
-    <End Role="Payors" Type="Self.Payors" Multiplicity="*" />
+    <End Role="MasterSourceTypes" Type="Model.Store.MasterSourceTypes" Multiplicity="0..1" />
+    <End Role="Payors" Type="Model.Store.Payors" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterSourceTypes">
         <PropertyRef Name="SourceTypeId" />
@@ -2272,8 +2682,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PayorSiteLoginInfo_Licensees">
-    <End Role="Licensees" Type="Self.Licensees" Multiplicity="1" />
-    <End Role="PayorSiteLoginInfo" Type="Self.PayorSiteLoginInfo" Multiplicity="*" />
+    <End Role="Licensees" Type="Model.Store.Licensees" Multiplicity="1" />
+    <End Role="PayorSiteLoginInfo" Type="Model.Store.PayorSiteLoginInfo" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Licensees">
         <PropertyRef Name="LicenseeId" />
@@ -2284,8 +2694,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PayorSiteLoginInfo_Payors">
-    <End Role="Payors" Type="Self.Payors" Multiplicity="1" />
-    <End Role="PayorSiteLoginInfo" Type="Self.PayorSiteLoginInfo" Multiplicity="*" />
+    <End Role="Payors" Type="Model.Store.Payors" Multiplicity="1" />
+    <End Role="PayorSiteLoginInfo" Type="Model.Store.PayorSiteLoginInfo" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Payors">
         <PropertyRef Name="PayorId" />
@@ -2296,8 +2706,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PayorSource_Licensees">
-    <End Role="Licensees" Type="Self.Licensees" Multiplicity="1" />
-    <End Role="PayorSource" Type="Self.PayorSource" Multiplicity="*" />
+    <End Role="Licensees" Type="Model.Store.Licensees" Multiplicity="1" />
+    <End Role="PayorSource" Type="Model.Store.PayorSource" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Licensees">
         <PropertyRef Name="LicenseeId" />
@@ -2308,8 +2718,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PayorSource_Payors">
-    <End Role="Payors" Type="Self.Payors" Multiplicity="1" />
-    <End Role="PayorSource" Type="Self.PayorSource" Multiplicity="*" />
+    <End Role="Payors" Type="Model.Store.Payors" Multiplicity="1" />
+    <End Role="PayorSource" Type="Model.Store.PayorSource" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Payors">
         <PropertyRef Name="PayorId" />
@@ -2320,8 +2730,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PayorToolFields_Formulas">
-    <End Role="Formulas" Type="Self.Formulas" Multiplicity="0..1" />
-    <End Role="PayorToolFields" Type="Self.PayorToolFields" Multiplicity="*" />
+    <End Role="Formulas" Type="Model.Store.Formulas" Multiplicity="0..1" />
+    <End Role="PayorToolFields" Type="Model.Store.PayorToolFields" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Formulas">
         <PropertyRef Name="FormulaId" />
@@ -2332,8 +2742,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PayorToolFields_MasterPayorToolAvailableFields">
-    <End Role="MasterPayorToolAvailableFields" Type="Self.MasterPayorToolAvailableFields" Multiplicity="0..1" />
-    <End Role="PayorToolFields" Type="Self.PayorToolFields" Multiplicity="*" />
+    <End Role="MasterPayorToolAvailableFields" Type="Model.Store.MasterPayorToolAvailableFields" Multiplicity="0..1" />
+    <End Role="PayorToolFields" Type="Model.Store.PayorToolFields" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterPayorToolAvailableFields">
         <PropertyRef Name="PTAvailableFieldId" />
@@ -2344,8 +2754,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PayorToolFields_MasterPayorToolMaskFieldTypes">
-    <End Role="MasterPayorToolMaskFieldTypes" Type="Self.MasterPayorToolMaskFieldTypes" Multiplicity="0..1" />
-    <End Role="PayorToolFields" Type="Self.PayorToolFields" Multiplicity="*" />
+    <End Role="MasterPayorToolMaskFieldTypes" Type="Model.Store.MasterPayorToolMaskFieldTypes" Multiplicity="0..1" />
+    <End Role="PayorToolFields" Type="Model.Store.PayorToolFields" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterPayorToolMaskFieldTypes">
         <PropertyRef Name="PTMaskFieldTypeId" />
@@ -2356,8 +2766,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PayorToolFields_PayorTools">
-    <End Role="PayorTools" Type="Self.PayorTools" Multiplicity="0..1" />
-    <End Role="PayorToolFields" Type="Self.PayorToolFields" Multiplicity="*" />
+    <End Role="PayorTools" Type="Model.Store.PayorTools" Multiplicity="0..1" />
+    <End Role="PayorToolFields" Type="Model.Store.PayorToolFields" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="PayorTools">
         <PropertyRef Name="PayorToolId" />
@@ -2368,8 +2778,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PayorTools_Payors">
-    <End Role="Payors" Type="Self.Payors" Multiplicity="0..1" />
-    <End Role="PayorTools" Type="Self.PayorTools" Multiplicity="*" />
+    <End Role="Payors" Type="Model.Store.Payors" Multiplicity="0..1" />
+    <End Role="PayorTools" Type="Model.Store.PayorTools" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Payors">
         <PropertyRef Name="PayorId" />
@@ -2379,93 +2789,9 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Policies_Licensees1">
-    <End Role="Licensees" Type="Self.Licensees" Multiplicity="0..1" />
-    <End Role="Policies" Type="Self.Policies" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Licensees">
-        <PropertyRef Name="LicenseeId" />
-      </Principal>
-      <Dependent Role="Policies">
-        <PropertyRef Name="PolicyLicenseeId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Policies_MasterIncomingPaymentTypes">
-    <End Role="MasterIncomingPaymentTypes" Type="Self.MasterIncomingPaymentTypes" Multiplicity="0..1" />
-    <End Role="Policies" Type="Self.Policies" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MasterIncomingPaymentTypes">
-        <PropertyRef Name="IncomingPaymentTypeId" />
-      </Principal>
-      <Dependent Role="Policies">
-        <PropertyRef Name="IncomingPaymentTypeId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Policies_MasterPolicyModes">
-    <End Role="MasterPolicyModes" Type="Self.MasterPolicyModes" Multiplicity="0..1" />
-    <End Role="Policies" Type="Self.Policies" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MasterPolicyModes">
-        <PropertyRef Name="PolicyModeId" />
-      </Principal>
-      <Dependent Role="Policies">
-        <PropertyRef Name="PolicyModeId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Policies_MasterPolicyStatus">
-    <End Role="MasterPolicyStatus" Type="Self.MasterPolicyStatus" Multiplicity="0..1" />
-    <End Role="Policies" Type="Self.Policies" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MasterPolicyStatus">
-        <PropertyRef Name="PolicyStatusId" />
-      </Principal>
-      <Dependent Role="Policies">
-        <PropertyRef Name="PolicyStatusId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Policies_MasterPolicyTerminationReasons">
-    <End Role="MasterPolicyTerminationReasons" Type="Self.MasterPolicyTerminationReasons" Multiplicity="0..1" />
-    <End Role="Policies" Type="Self.Policies" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MasterPolicyTerminationReasons">
-        <PropertyRef Name="PTReasonId" />
-      </Principal>
-      <Dependent Role="Policies">
-        <PropertyRef Name="TerminationReasonId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Policies_Payors">
-    <End Role="Payors" Type="Self.Payors" Multiplicity="0..1" />
-    <End Role="Policies" Type="Self.Policies" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Payors">
-        <PropertyRef Name="PayorId" />
-      </Principal>
-      <Dependent Role="Policies">
-        <PropertyRef Name="PayorId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Policies_UserCredentials">
-    <End Role="UserCredentials" Type="Self.UserCredentials" Multiplicity="0..1" />
-    <End Role="Policies" Type="Self.Policies" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="UserCredentials">
-        <PropertyRef Name="UserCredentialId" />
-      </Principal>
-      <Dependent Role="Policies">
-        <PropertyRef Name="CreatedBy" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_PoliciesHistory_Licensees1">
-    <End Role="Licensees" Type="Self.Licensees" Multiplicity="0..1" />
-    <End Role="PoliciesHistory" Type="Self.PoliciesHistory" Multiplicity="*" />
+    <End Role="Licensees" Type="Model.Store.Licensees" Multiplicity="0..1" />
+    <End Role="PoliciesHistory" Type="Model.Store.PoliciesHistory" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Licensees">
         <PropertyRef Name="LicenseeId" />
@@ -2476,8 +2802,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PoliciesHistory_MasterIncomingPaymentTypes">
-    <End Role="MasterIncomingPaymentTypes" Type="Self.MasterIncomingPaymentTypes" Multiplicity="0..1" />
-    <End Role="PoliciesHistory" Type="Self.PoliciesHistory" Multiplicity="*" />
+    <End Role="MasterIncomingPaymentTypes" Type="Model.Store.MasterIncomingPaymentTypes" Multiplicity="0..1" />
+    <End Role="PoliciesHistory" Type="Model.Store.PoliciesHistory" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterIncomingPaymentTypes">
         <PropertyRef Name="IncomingPaymentTypeId" />
@@ -2488,8 +2814,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PoliciesHistory_MasterPolicyModes">
-    <End Role="MasterPolicyModes" Type="Self.MasterPolicyModes" Multiplicity="0..1" />
-    <End Role="PoliciesHistory" Type="Self.PoliciesHistory" Multiplicity="*" />
+    <End Role="MasterPolicyModes" Type="Model.Store.MasterPolicyModes" Multiplicity="0..1" />
+    <End Role="PoliciesHistory" Type="Model.Store.PoliciesHistory" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterPolicyModes">
         <PropertyRef Name="PolicyModeId" />
@@ -2500,8 +2826,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PoliciesHistory_MasterPolicyStatus">
-    <End Role="MasterPolicyStatus" Type="Self.MasterPolicyStatus" Multiplicity="0..1" />
-    <End Role="PoliciesHistory" Type="Self.PoliciesHistory" Multiplicity="*" />
+    <End Role="MasterPolicyStatus" Type="Model.Store.MasterPolicyStatus" Multiplicity="0..1" />
+    <End Role="PoliciesHistory" Type="Model.Store.PoliciesHistory" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterPolicyStatus">
         <PropertyRef Name="PolicyStatusId" />
@@ -2512,8 +2838,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PoliciesHistory_MasterPolicyTerminationReasons">
-    <End Role="MasterPolicyTerminationReasons" Type="Self.MasterPolicyTerminationReasons" Multiplicity="0..1" />
-    <End Role="PoliciesHistory" Type="Self.PoliciesHistory" Multiplicity="*" />
+    <End Role="MasterPolicyTerminationReasons" Type="Model.Store.MasterPolicyTerminationReasons" Multiplicity="0..1" />
+    <End Role="PoliciesHistory" Type="Model.Store.PoliciesHistory" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterPolicyTerminationReasons">
         <PropertyRef Name="PTReasonId" />
@@ -2524,8 +2850,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PoliciesHistory_Payors">
-    <End Role="Payors" Type="Self.Payors" Multiplicity="0..1" />
-    <End Role="PoliciesHistory" Type="Self.PoliciesHistory" Multiplicity="*" />
+    <End Role="Payors" Type="Model.Store.Payors" Multiplicity="0..1" />
+    <End Role="PoliciesHistory" Type="Model.Store.PoliciesHistory" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Payors">
         <PropertyRef Name="PayorId" />
@@ -2536,8 +2862,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PoliciesHistory_UserCredentials">
-    <End Role="UserCredentials" Type="Self.UserCredentials" Multiplicity="0..1" />
-    <End Role="PoliciesHistory" Type="Self.PoliciesHistory" Multiplicity="*" />
+    <End Role="UserCredentials" Type="Model.Store.UserCredentials" Multiplicity="0..1" />
+    <End Role="PoliciesHistory" Type="Model.Store.PoliciesHistory" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="UserCredentials">
         <PropertyRef Name="UserCredentialId" />
@@ -2548,8 +2874,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PolicyIncomingAdvancedSchedules_MasterScheduleTypes">
-    <End Role="MasterScheduleTypes" Type="Self.MasterScheduleTypes" Multiplicity="0..1" />
-    <End Role="PolicyIncomingAdvancedSchedules" Type="Self.PolicyIncomingAdvancedSchedules" Multiplicity="*" />
+    <End Role="MasterScheduleTypes" Type="Model.Store.MasterScheduleTypes" Multiplicity="0..1" />
+    <End Role="PolicyIncomingAdvancedSchedules" Type="Model.Store.PolicyIncomingAdvancedSchedules" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterScheduleTypes">
         <PropertyRef Name="ScheduleTypeId" />
@@ -2560,8 +2886,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PolicyIncomingSchedules_MasterBasicIncomingSchedule">
-    <End Role="MasterBasicIncomingSchedule" Type="Self.MasterBasicIncomingSchedule" Multiplicity="0..1" />
-    <End Role="PolicyIncomingSchedules" Type="Self.PolicyIncomingSchedules" Multiplicity="*" />
+    <End Role="MasterBasicIncomingSchedule" Type="Model.Store.MasterBasicIncomingSchedule" Multiplicity="0..1" />
+    <End Role="PolicyIncomingSchedules" Type="Model.Store.PolicyIncomingSchedules" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterBasicIncomingSchedule">
         <PropertyRef Name="ScheduleId" />
@@ -2572,8 +2898,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PolicyLearnedFields_MasterIncomingPaymentTypes">
-    <End Role="MasterIncomingPaymentTypes" Type="Self.MasterIncomingPaymentTypes" Multiplicity="0..1" />
-    <End Role="PolicyLearnedFields" Type="Self.PolicyLearnedFields" Multiplicity="*" />
+    <End Role="MasterIncomingPaymentTypes" Type="Model.Store.MasterIncomingPaymentTypes" Multiplicity="0..1" />
+    <End Role="PolicyLearnedFields" Type="Model.Store.PolicyLearnedFields" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterIncomingPaymentTypes">
         <PropertyRef Name="IncomingPaymentTypeId" />
@@ -2584,8 +2910,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PolicyLearnedFields_MasterPolicyModes">
-    <End Role="MasterPolicyModes" Type="Self.MasterPolicyModes" Multiplicity="0..1" />
-    <End Role="PolicyLearnedFields" Type="Self.PolicyLearnedFields" Multiplicity="*" />
+    <End Role="MasterPolicyModes" Type="Model.Store.MasterPolicyModes" Multiplicity="0..1" />
+    <End Role="PolicyLearnedFields" Type="Model.Store.PolicyLearnedFields" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterPolicyModes">
         <PropertyRef Name="PolicyModeId" />
@@ -2596,8 +2922,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PolicyLearnedFields_Payors">
-    <End Role="Payors" Type="Self.Payors" Multiplicity="0..1" />
-    <End Role="PolicyLearnedFields" Type="Self.PolicyLearnedFields" Multiplicity="*" />
+    <End Role="Payors" Type="Model.Store.Payors" Multiplicity="0..1" />
+    <End Role="PolicyLearnedFields" Type="Model.Store.PolicyLearnedFields" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Payors">
         <PropertyRef Name="PayorId" />
@@ -2608,8 +2934,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PolicyLearnedFieldsHistory_MasterIncomingPaymentTypes">
-    <End Role="MasterIncomingPaymentTypes" Type="Self.MasterIncomingPaymentTypes" Multiplicity="0..1" />
-    <End Role="PolicyLearnedFieldsHistory" Type="Self.PolicyLearnedFieldsHistory" Multiplicity="*" />
+    <End Role="MasterIncomingPaymentTypes" Type="Model.Store.MasterIncomingPaymentTypes" Multiplicity="0..1" />
+    <End Role="PolicyLearnedFieldsHistory" Type="Model.Store.PolicyLearnedFieldsHistory" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterIncomingPaymentTypes">
         <PropertyRef Name="IncomingPaymentTypeId" />
@@ -2620,8 +2946,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PolicyLearnedFieldsHistory_MasterPolicyModes">
-    <End Role="MasterPolicyModes" Type="Self.MasterPolicyModes" Multiplicity="0..1" />
-    <End Role="PolicyLearnedFieldsHistory" Type="Self.PolicyLearnedFieldsHistory" Multiplicity="*" />
+    <End Role="MasterPolicyModes" Type="Model.Store.MasterPolicyModes" Multiplicity="0..1" />
+    <End Role="PolicyLearnedFieldsHistory" Type="Model.Store.PolicyLearnedFieldsHistory" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterPolicyModes">
         <PropertyRef Name="PolicyModeId" />
@@ -2632,8 +2958,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PolicyLearnedFieldsHistory_Payors">
-    <End Role="Payors" Type="Self.Payors" Multiplicity="0..1" />
-    <End Role="PolicyLearnedFieldsHistory" Type="Self.PolicyLearnedFieldsHistory" Multiplicity="*" />
+    <End Role="Payors" Type="Model.Store.Payors" Multiplicity="0..1" />
+    <End Role="PolicyLearnedFieldsHistory" Type="Model.Store.PolicyLearnedFieldsHistory" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Payors">
         <PropertyRef Name="PayorId" />
@@ -2644,8 +2970,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PolicyLevelBillingDetail_InvoiceBillingLineDetail">
-    <End Role="InvoiceBillingLineDetail" Type="Self.InvoiceBillingLineDetail" Multiplicity="1" />
-    <End Role="PolicyLevelBillingDetail" Type="Self.PolicyLevelBillingDetail" Multiplicity="*" />
+    <End Role="InvoiceBillingLineDetail" Type="Model.Store.InvoiceBillingLineDetail" Multiplicity="1" />
+    <End Role="PolicyLevelBillingDetail" Type="Model.Store.PolicyLevelBillingDetail" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="InvoiceBillingLineDetail">
         <PropertyRef Name="BillingLineId" />
@@ -2656,8 +2982,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PolicyOutgoingAdvancedSchedules_MasterScheduleTypes">
-    <End Role="MasterScheduleTypes" Type="Self.MasterScheduleTypes" Multiplicity="0..1" />
-    <End Role="PolicyOutgoingAdvancedSchedules" Type="Self.PolicyOutgoingAdvancedSchedules" Multiplicity="*" />
+    <End Role="MasterScheduleTypes" Type="Model.Store.MasterScheduleTypes" Multiplicity="0..1" />
+    <End Role="PolicyOutgoingAdvancedSchedules" Type="Model.Store.PolicyOutgoingAdvancedSchedules" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterScheduleTypes">
         <PropertyRef Name="ScheduleTypeId" />
@@ -2668,8 +2994,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PolicyOutgoingAdvancedSchedules_PayeeUser">
-    <End Role="UserCredentials" Type="Self.UserCredentials" Multiplicity="0..1" />
-    <End Role="PolicyOutgoingAdvancedSchedules" Type="Self.PolicyOutgoingAdvancedSchedules" Multiplicity="*" />
+    <End Role="UserCredentials" Type="Model.Store.UserCredentials" Multiplicity="0..1" />
+    <End Role="PolicyOutgoingAdvancedSchedules" Type="Model.Store.PolicyOutgoingAdvancedSchedules" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="UserCredentials">
         <PropertyRef Name="UserCredentialId" />
@@ -2680,10 +3006,10 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PolicyOutgoingPayments_PolicyPaymentEntries">
-    <End Role="PolicyPaymentEntries" Type="Self.PolicyPaymentEntries" Multiplicity="0..1">
+    <End Role="PolicyPaymentEntries" Type="Model.Store.PolicyPaymentEntries" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="PolicyOutgoingPayments" Type="Self.PolicyOutgoingPayments" Multiplicity="*" />
+    <End Role="PolicyOutgoingPayments" Type="Model.Store.PolicyOutgoingPayments" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="PolicyPaymentEntries">
         <PropertyRef Name="PaymentEntryId" />
@@ -2694,8 +3020,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PolicyOutgoingPayments_UserCredentials">
-    <End Role="UserCredentials" Type="Self.UserCredentials" Multiplicity="0..1" />
-    <End Role="PolicyOutgoingPayments" Type="Self.PolicyOutgoingPayments" Multiplicity="*" />
+    <End Role="UserCredentials" Type="Model.Store.UserCredentials" Multiplicity="0..1" />
+    <End Role="PolicyOutgoingPayments" Type="Model.Store.PolicyOutgoingPayments" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="UserCredentials">
         <PropertyRef Name="UserCredentialId" />
@@ -2706,8 +3032,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PolicyOutgoingSchedules_MasterBasicOutgoingSchedule">
-    <End Role="MasterBasicOutgoingSchedule" Type="Self.MasterBasicOutgoingSchedule" Multiplicity="0..1" />
-    <End Role="PolicyOutgoingSchedules" Type="Self.PolicyOutgoingSchedules" Multiplicity="*" />
+    <End Role="MasterBasicOutgoingSchedule" Type="Model.Store.MasterBasicOutgoingSchedule" Multiplicity="0..1" />
+    <End Role="PolicyOutgoingSchedules" Type="Model.Store.PolicyOutgoingSchedules" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterBasicOutgoingSchedule">
         <PropertyRef Name="ScheduleId" />
@@ -2718,8 +3044,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PolicyOutgoingSchedules_UserCredentials">
-    <End Role="UserCredentials" Type="Self.UserCredentials" Multiplicity="0..1" />
-    <End Role="PolicyOutgoingSchedules" Type="Self.PolicyOutgoingSchedules" Multiplicity="*" />
+    <End Role="UserCredentials" Type="Model.Store.UserCredentials" Multiplicity="0..1" />
+    <End Role="PolicyOutgoingSchedules" Type="Model.Store.PolicyOutgoingSchedules" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="UserCredentials">
         <PropertyRef Name="UserCredentialId" />
@@ -2730,8 +3056,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PolicyPaymentEntries_MasterPostStatus">
-    <End Role="MasterPostStatus" Type="Self.MasterPostStatus" Multiplicity="0..1" />
-    <End Role="PolicyPaymentEntries" Type="Self.PolicyPaymentEntries" Multiplicity="*" />
+    <End Role="MasterPostStatus" Type="Model.Store.MasterPostStatus" Multiplicity="0..1" />
+    <End Role="PolicyPaymentEntries" Type="Model.Store.PolicyPaymentEntries" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterPostStatus">
         <PropertyRef Name="PostStatusID" />
@@ -2742,10 +3068,10 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PolicyPaymentEntries_Statements">
-    <End Role="Statements" Type="Self.Statements" Multiplicity="0..1">
+    <End Role="Statements" Type="Model.Store.Statements" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="PolicyPaymentEntries" Type="Self.PolicyPaymentEntries" Multiplicity="*" />
+    <End Role="PolicyPaymentEntries" Type="Model.Store.PolicyPaymentEntries" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Statements">
         <PropertyRef Name="StatementId" />
@@ -2756,8 +3082,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ServiceLines_Licensees">
-    <End Role="Licensees" Type="Self.Licensees" Multiplicity="1" />
-    <End Role="ServiceLines" Type="Self.ServiceLines" Multiplicity="*" />
+    <End Role="Licensees" Type="Model.Store.Licensees" Multiplicity="1" />
+    <End Role="ServiceLines" Type="Model.Store.ServiceLines" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Licensees">
         <PropertyRef Name="LicenseeId" />
@@ -2768,8 +3094,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ServiceLines_MasterServiceChargeTypes">
-    <End Role="MasterServiceChargeTypes" Type="Self.MasterServiceChargeTypes" Multiplicity="1" />
-    <End Role="ServiceLines" Type="Self.ServiceLines" Multiplicity="*" />
+    <End Role="MasterServiceChargeTypes" Type="Model.Store.MasterServiceChargeTypes" Multiplicity="1" />
+    <End Role="ServiceLines" Type="Model.Store.ServiceLines" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterServiceChargeTypes">
         <PropertyRef Name="SCTypeId" />
@@ -2780,8 +3106,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ServiceLines_MasterServiceChargeTypes1">
-    <End Role="MasterServiceChargeTypes" Type="Self.MasterServiceChargeTypes" Multiplicity="1" />
-    <End Role="ServiceLines" Type="Self.ServiceLines" Multiplicity="*" />
+    <End Role="MasterServiceChargeTypes" Type="Model.Store.MasterServiceChargeTypes" Multiplicity="1" />
+    <End Role="ServiceLines" Type="Model.Store.ServiceLines" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterServiceChargeTypes">
         <PropertyRef Name="SCTypeId" />
@@ -2792,8 +3118,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ServiceLines_MasterServices">
-    <End Role="MasterServices" Type="Self.MasterServices" Multiplicity="1" />
-    <End Role="ServiceLines" Type="Self.ServiceLines" Multiplicity="*" />
+    <End Role="MasterServices" Type="Model.Store.MasterServices" Multiplicity="1" />
+    <End Role="ServiceLines" Type="Model.Store.ServiceLines" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterServices">
         <PropertyRef Name="ServiceId" />
@@ -2804,8 +3130,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Statements_MasterStatementStatus">
-    <End Role="MasterStatementStatus" Type="Self.MasterStatementStatus" Multiplicity="0..1" />
-    <End Role="Statements" Type="Self.Statements" Multiplicity="*" />
+    <End Role="MasterStatementStatus" Type="Model.Store.MasterStatementStatus" Multiplicity="0..1" />
+    <End Role="Statements" Type="Model.Store.Statements" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterStatementStatus">
         <PropertyRef Name="StatementStatusId" />
@@ -2816,8 +3142,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Statements_Payors">
-    <End Role="Payors" Type="Self.Payors" Multiplicity="0..1" />
-    <End Role="Statements" Type="Self.Statements" Multiplicity="*" />
+    <End Role="Payors" Type="Model.Store.Payors" Multiplicity="0..1" />
+    <End Role="Statements" Type="Model.Store.Statements" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Payors">
         <PropertyRef Name="PayorId" />
@@ -2828,8 +3154,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Templates_Payors">
-    <End Role="Payors" Type="Self.Payors" Multiplicity="1" />
-    <End Role="Templates" Type="Self.Templates" Multiplicity="0..1" />
+    <End Role="Payors" Type="Model.Store.Payors" Multiplicity="1" />
+    <End Role="Templates" Type="Model.Store.Templates" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="Payors">
         <PropertyRef Name="PayorId" />
@@ -2840,10 +3166,10 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_UserCredentials_Licensees">
-    <End Role="Licensees" Type="Self.Licensees" Multiplicity="0..1">
+    <End Role="Licensees" Type="Model.Store.Licensees" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="UserCredentials" Type="Self.UserCredentials" Multiplicity="*" />
+    <End Role="UserCredentials" Type="Model.Store.UserCredentials" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Licensees">
         <PropertyRef Name="LicenseeId" />
@@ -2854,8 +3180,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_UserCredentials_MasterRoles">
-    <End Role="MasterRoles" Type="Self.MasterRoles" Multiplicity="1" />
-    <End Role="UserCredentials" Type="Self.UserCredentials" Multiplicity="*" />
+    <End Role="MasterRoles" Type="Model.Store.MasterRoles" Multiplicity="1" />
+    <End Role="UserCredentials" Type="Model.Store.UserCredentials" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterRoles">
         <PropertyRef Name="RoleId" />
@@ -2866,10 +3192,10 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_UserDetail_UserCredentials">
-    <End Role="UserCredentials" Type="Self.UserCredentials" Multiplicity="1">
+    <End Role="UserCredentials" Type="Model.Store.UserCredentials" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="UserDetail" Type="Self.UserDetail" Multiplicity="0..1" />
+    <End Role="UserDetail" Type="Model.Store.UserDetail" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="UserCredentials">
         <PropertyRef Name="UserCredentialId" />
@@ -2880,8 +3206,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_UserPermissions_MasterAccessRights1">
-    <End Role="MasterAccessRights" Type="Self.MasterAccessRights" Multiplicity="1" />
-    <End Role="UserPermissions" Type="Self.UserPermissions" Multiplicity="*" />
+    <End Role="MasterAccessRights" Type="Model.Store.MasterAccessRights" Multiplicity="1" />
+    <End Role="UserPermissions" Type="Model.Store.UserPermissions" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterAccessRights">
         <PropertyRef Name="AccessRightId" />
@@ -2892,8 +3218,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_UserPermissions_MasterModules1">
-    <End Role="MasterModules" Type="Self.MasterModules" Multiplicity="1" />
-    <End Role="UserPermissions" Type="Self.UserPermissions" Multiplicity="*" />
+    <End Role="MasterModules" Type="Model.Store.MasterModules" Multiplicity="1" />
+    <End Role="UserPermissions" Type="Model.Store.UserPermissions" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MasterModules">
         <PropertyRef Name="ModuleId" />
@@ -2904,8 +3230,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_UserPermissions_UserCredentials1">
-    <End Role="UserCredentials" Type="Self.UserCredentials" Multiplicity="1" />
-    <End Role="UserPermissions" Type="Self.UserPermissions" Multiplicity="*" />
+    <End Role="UserCredentials" Type="Model.Store.UserCredentials" Multiplicity="1" />
+    <End Role="UserPermissions" Type="Model.Store.UserPermissions" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="UserCredentials">
         <PropertyRef Name="UserCredentialId" />
@@ -2916,8 +3242,8 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_VariablesForBillingLine_InvoiceBillingLineDetail">
-    <End Role="InvoiceBillingLineDetail" Type="Self.InvoiceBillingLineDetail" Multiplicity="1" />
-    <End Role="VariablesForBillingLine" Type="Self.VariablesForBillingLine" Multiplicity="0..1" />
+    <End Role="InvoiceBillingLineDetail" Type="Model.Store.InvoiceBillingLineDetail" Multiplicity="1" />
+    <End Role="VariablesForBillingLine" Type="Model.Store.VariablesForBillingLine" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="InvoiceBillingLineDetail">
         <PropertyRef Name="BillingLineId" />
@@ -2941,20 +3267,20 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     <Parameter Name="Followup" Type="bit" Mode="In" />
     <Parameter Name="NoOfDays" Type="int" Mode="In" />
   </Function>
-  <Function Name="DateToString" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+  <Function Name="DateToString" ReturnType="varchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="myDate" Type="datetime" Mode="In" />
   </Function>
   <Function Name="FillinAllData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Str1" Type="varchar(max)" Mode="In" />
   </Function>
-  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-  <Function Name="fnGetAnnualRevenue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="float">
+  <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="fnGetAnnualRevenue" ReturnType="float" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="PolicyID" Type="uniqueidentifier" Mode="In" />
   </Function>
-  <Function Name="fnGetMonthlyRevenue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="float">
+  <Function Name="fnGetMonthlyRevenue" ReturnType="float" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="PolicyID" Type="uniqueidentifier" Mode="In" />
   </Function>
-  <Function Name="fnGetPaymentVariance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+  <Function Name="fnGetPaymentVariance" ReturnType="varchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="PolicyID" Type="uniqueidentifier" Mode="In" />
     <Parameter Name="InvoiceDate" Type="datetime" Mode="In" />
   </Function>
@@ -2978,7 +3304,7 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
   <Function Name="GetPolicyPaymentEntryPolicyIDWise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="PolicyID" Type="uniqueidentifier" Mode="In" />
   </Function>
-  <Function Name="GetPrimaryBrokername" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+  <Function Name="GetPrimaryBrokername" ReturnType="varchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="CLientid" Type="nvarchar" Mode="In" />
     <Parameter Name="LicenseeId" Type="nvarchar" Mode="In" />
     <Parameter Name="ReportGuidID" Type="nvarchar" Mode="In" />
@@ -3011,13 +3337,13 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
   <Function Name="getuser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="createon" Type="datetime" Mode="In" />
   </Function>
-  <Function Name="IsInteger" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+  <Function Name="IsInteger" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="STR" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="newUpdateLastFollowupRunsWithTodayDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="PolicyId" Type="uniqueidentifier" Mode="In" />
   </Function>
-  <Function Name="PaymentVariance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="float">
+  <Function Name="PaymentVariance" ReturnType="float" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="expPayment" Type="money" Mode="In" />
     <Parameter Name="actPayment" Type="money" Mode="In" />
     <Parameter Name="varianceInPayment" Type="bit" Mode="In" />
@@ -3250,574 +3576,4 @@ warning 6002: The table/view 'CommDB_Web.dbo.SendAlertMail' does not have a prim
     <Parameter Name="PAC" Type="varchar" Mode="In" />
     <Parameter Name="PolicyId" Type="uniqueidentifier" Mode="In" />
   </Function>
-  <EntityContainer Name="ModelStoreContainer">
-    <EntitySet Name="AuditReports" EntityType="Self.AuditReports" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="AutoDEUEntries" EntityType="Self.AutoDEUEntries" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Batches" EntityType="Self.Batches" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="BrokerCode" EntityType="Self.BrokerCode" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="CarrierCoverage" EntityType="Self.CarrierCoverage" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="CarrierNickName" EntityType="Self.CarrierNickName" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Carriers" EntityType="Self.Carriers" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="CoverageNickName" EntityType="Self.CoverageNickName" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Coverages" EntityType="Self.Coverages" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="EntriesByDEU" EntityType="Self.EntriesByDEU" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ExportBatchFiles" EntityType="Self.ExportBatchFiles" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="FieldMapping" EntityType="Self.FieldMapping" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="FollowupIssues" EntityType="Self.FollowupIssues" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Formulas" EntityType="Self.Formulas" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="GlobalCoveragesSchedules" EntityType="Self.GlobalCoveragesSchedules" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="GlobalPayorContacts" EntityType="Self.GlobalPayorContacts" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="GlobalPayorDefaults" EntityType="Self.GlobalPayorDefaults" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="GlobalPayorStatementDate" EntityType="Self.GlobalPayorStatementDate" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ImportBatchFiles" EntityType="Self.ImportBatchFiles" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ImportToolAvailableFields" EntityType="Self.ImportToolAvailableFields" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ImportToolBrokersSetting" EntityType="Self.ImportToolBrokersSetting" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ImportToolCommTranslator" EntityType="Self.ImportToolCommTranslator" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ImportToolMasterStatementData" EntityType="Self.ImportToolMasterStatementData" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ImportToolPaymentDataFieldsSettings" EntityType="Self.ImportToolPaymentDataFieldsSettings" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ImportToolPayorPhrase" EntityType="Self.ImportToolPayorPhrase" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ImportToolPayorTemplate" EntityType="Self.ImportToolPayorTemplate" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ImportToolSeletedPaymentData" EntityType="Self.ImportToolSeletedPaymentData" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ImportToolStatementDataSettings" EntityType="Self.ImportToolStatementDataSettings" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ImportToolTemplatePhrase" EntityType="Self.ImportToolTemplatePhrase" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="IncomingCompType" EntityType="Self.IncomingCompType" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="InvoiceBillingLineDetail" EntityType="Self.InvoiceBillingLineDetail" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Invoices" EntityType="Self.Invoices" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Journals" EntityType="Self.Journals" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="LastPolicyViewed" EntityType="Self.LastPolicyViewed" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="LicenseeNotes" EntityType="Self.LicenseeNotes" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="LicenseePayors" EntityType="Self.LicenseePayors" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="LicenseePayorSiteInfo" EntityType="Self.LicenseePayorSiteInfo" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Licensees" EntityType="Self.Licensees" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="LicenseeServices" EntityType="Self.LicenseeServices" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="LinkedAgent" EntityType="Self.LinkedAgent" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="LinkedUserList" EntityType="Self.LinkedUserList" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ManagementReports" EntityType="Self.ManagementReports" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterAccessRights" EntityType="Self.MasterAccessRights" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterAlertTypes" EntityType="Self.MasterAlertTypes" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterBasicIncomingSchedule" EntityType="Self.MasterBasicIncomingSchedule" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterBasicOutgoingSchedule" EntityType="Self.MasterBasicOutgoingSchedule" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterBatchEntryStatus" EntityType="Self.MasterBatchEntryStatus" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterBatchUploadStatus" EntityType="Self.MasterBatchUploadStatus" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterBillPaymentTypes" EntityType="Self.MasterBillPaymentTypes" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterFileTypes" EntityType="Self.MasterFileTypes" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterIncomingPaymentTypes" EntityType="Self.MasterIncomingPaymentTypes" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterIssueCategories" EntityType="Self.MasterIssueCategories" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterIssueReasons" EntityType="Self.MasterIssueReasons" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterIssueResults" EntityType="Self.MasterIssueResults" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterIssueStatus" EntityType="Self.MasterIssueStatus" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterLicensePaymentModes" EntityType="Self.MasterLicensePaymentModes" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterLicenseStatus" EntityType="Self.MasterLicenseStatus" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterManagementReportsOrderByTypes" EntityType="Self.MasterManagementReportsOrderByTypes" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterModules" EntityType="Self.MasterModules" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterPasswordHintQuestions" EntityType="Self.MasterPasswordHintQuestions" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterPaymentStatus" EntityType="Self.MasterPaymentStatus" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterPayorRegions" EntityType="Self.MasterPayorRegions" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterPayorSourceTypes" EntityType="Self.MasterPayorSourceTypes" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterPayorStatus" EntityType="Self.MasterPayorStatus" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterPayorToolAvailableFields" EntityType="Self.MasterPayorToolAvailableFields" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterPayorToolIncomingFields" EntityType="Self.MasterPayorToolIncomingFields" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterPayorToolLearnedFields" EntityType="Self.MasterPayorToolLearnedFields" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterPayorToolMaskFieldTypes" EntityType="Self.MasterPayorToolMaskFieldTypes" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterPayorTypes" EntityType="Self.MasterPayorTypes" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterPermissionTypes" EntityType="Self.MasterPermissionTypes" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterPolicyModes" EntityType="Self.MasterPolicyModes" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterPolicyStatus" EntityType="Self.MasterPolicyStatus" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterPolicyTerminationReasons" EntityType="Self.MasterPolicyTerminationReasons" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterPostStatus" EntityType="Self.MasterPostStatus" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterReportList" EntityType="Self.MasterReportList" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterRoles" EntityType="Self.MasterRoles" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterScheduleTypes" EntityType="Self.MasterScheduleTypes" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterServiceChargeTypes" EntityType="Self.MasterServiceChargeTypes" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterServicePaymentModes" EntityType="Self.MasterServicePaymentModes" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterServices" EntityType="Self.MasterServices" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterSourceTypes" EntityType="Self.MasterSourceTypes" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterStatementStatus" EntityType="Self.MasterStatementStatus" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterSystemConstants" EntityType="Self.MasterSystemConstants" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterSystemEmails" EntityType="Self.MasterSystemEmails" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MasterZipCodes" EntityType="Self.MasterZipCodes" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PayeeStatementReports" EntityType="Self.PayeeStatementReports" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Payors" EntityType="Self.Payors" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PayorSiteLoginInfo" EntityType="Self.PayorSiteLoginInfo" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PayorSource" EntityType="Self.PayorSource" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PayorTemplate" EntityType="Self.PayorTemplate" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PayorToolFields" EntityType="Self.PayorToolFields" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PayorTools" EntityType="Self.PayorTools" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Policies" EntityType="Self.Policies" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PoliciesHistory" EntityType="Self.PoliciesHistory" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PolicyIncomingAdvancedSchedules" EntityType="Self.PolicyIncomingAdvancedSchedules" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PolicyIncomingSchedules" EntityType="Self.PolicyIncomingSchedules" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PolicyLearnedFields" EntityType="Self.PolicyLearnedFields" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PolicyLearnedFieldsHistory" EntityType="Self.PolicyLearnedFieldsHistory" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PolicyLevelBillingDetail" EntityType="Self.PolicyLevelBillingDetail" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PolicyNotes" EntityType="Self.PolicyNotes" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PolicyOutgoingAdvancedSchedules" EntityType="Self.PolicyOutgoingAdvancedSchedules" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PolicyOutgoingPayments" EntityType="Self.PolicyOutgoingPayments" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PolicyOutgoingSchedules" EntityType="Self.PolicyOutgoingSchedules" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PolicyPaymentAlerts" EntityType="Self.PolicyPaymentAlerts" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PolicyPaymentEntries" EntityType="Self.PolicyPaymentEntries" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ServiceLines" EntityType="Self.ServiceLines" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Statements" EntityType="Self.Statements" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Supports" EntityType="Self.Supports" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tbPMCVarianceSlab" EntityType="Self.tbPMCVarianceSlab" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Templates" EntityType="Self.Templates" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="UserCredentials" EntityType="Self.UserCredentials" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="UserDetail" EntityType="Self.UserDetail" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="UserPermissions" EntityType="Self.UserPermissions" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="VariablesForBillingLine" EntityType="Self.VariablesForBillingLine" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="IssuedFiles" EntityType="Self.IssuedFiles" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-[IssuedFiles].[PayorID] AS [PayorID], 
-[IssuedFiles].[FileName] AS [FileName]
-FROM [dbo].[IssuedFiles] AS [IssuedFiles]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="Issuelog" EntityType="Self.Issuelog" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-[Issuelog].[IssueId] AS [IssueId], 
-[Issuelog].[Issue] AS [Issue]
-FROM [dbo].[Issuelog] AS [Issuelog]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="MasterBatchDownloadStatus" EntityType="Self.MasterBatchDownloadStatus" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-[MasterBatchDownloadStatus].[BatchDownloadStatusId] AS [BatchDownloadStatusId], 
-[MasterBatchDownloadStatus].[Name] AS [Name], 
-[MasterBatchDownloadStatus].[Description] AS [Description]
-FROM [dbo].[MasterBatchDownloadStatus] AS [MasterBatchDownloadStatus]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="SendAlertMail" EntityType="Self.SendAlertMail" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-[SendAlertMail].[ID] AS [ID], 
-[SendAlertMail].[LicensesID] AS [LicensesID], 
-[SendAlertMail].[MailDate] AS [MailDate], 
-[SendAlertMail].[SendStatus] AS [SendStatus]
-FROM [dbo].[SendAlertMail] AS [SendAlertMail]</DefiningQuery>
-    </EntitySet>
-    <AssociationSet Name="FK_Batches_Licensees" Association="Self.FK_Batches_Licensees">
-      <End Role="Licensees" EntitySet="Licensees" />
-      <End Role="Batches" EntitySet="Batches" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Batches_MasterBatchEntryStatus" Association="Self.FK_Batches_MasterBatchEntryStatus">
-      <End Role="MasterBatchEntryStatus" EntitySet="MasterBatchEntryStatus" />
-      <End Role="Batches" EntitySet="Batches" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Batches_MasterBatchUploadStatus" Association="Self.FK_Batches_MasterBatchUploadStatus">
-      <End Role="MasterBatchUploadStatus" EntitySet="MasterBatchUploadStatus" />
-      <End Role="Batches" EntitySet="Batches" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Batches_Payors" Association="Self.FK_Batches_Payors">
-      <End Role="Payors" EntitySet="Payors" />
-      <End Role="Batches" EntitySet="Batches" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CarrierCoverage_UserCredentials" Association="Self.FK_CarrierCoverage_UserCredentials">
-      <End Role="UserCredentials" EntitySet="UserCredentials" />
-      <End Role="CoverageNickName" EntitySet="CoverageNickName" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CarrierCoverage_UserCredentials1" Association="Self.FK_CarrierCoverage_UserCredentials1">
-      <End Role="UserCredentials" EntitySet="UserCredentials" />
-      <End Role="CoverageNickName" EntitySet="CoverageNickName" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CarrierCoverages_Licensees" Association="Self.FK_CarrierCoverages_Licensees">
-      <End Role="Licensees" EntitySet="Licensees" />
-      <End Role="Coverages" EntitySet="Coverages" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CarrierCoverages_UserCredentials" Association="Self.FK_CarrierCoverages_UserCredentials">
-      <End Role="UserCredentials" EntitySet="UserCredentials" />
-      <End Role="Coverages" EntitySet="Coverages" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Clients_Licensees" Association="Self.FK_Clients_Licensees">
-      <End Role="Licensees" EntitySet="Licensees" />
-      <End Role="Clients" EntitySet="Clients" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CoverageNickName_Payors" Association="Self.FK_CoverageNickName_Payors">
-      <End Role="Payors" EntitySet="Payors" />
-      <End Role="CoverageNickName" EntitySet="CoverageNickName" />
-    </AssociationSet>
-    <AssociationSet Name="FK_EntriesByDEU_MasterIncomingPaymentTypes" Association="Self.FK_EntriesByDEU_MasterIncomingPaymentTypes">
-      <End Role="MasterIncomingPaymentTypes" EntitySet="MasterIncomingPaymentTypes" />
-      <End Role="EntriesByDEU" EntitySet="EntriesByDEU" />
-    </AssociationSet>
-    <AssociationSet Name="FK_EntriesByDEU_MasterPolicyModes" Association="Self.FK_EntriesByDEU_MasterPolicyModes">
-      <End Role="MasterPolicyModes" EntitySet="MasterPolicyModes" />
-      <End Role="EntriesByDEU" EntitySet="EntriesByDEU" />
-    </AssociationSet>
-    <AssociationSet Name="FK_EntriesByDEU_MasterPostStatus" Association="Self.FK_EntriesByDEU_MasterPostStatus">
-      <End Role="MasterPostStatus" EntitySet="MasterPostStatus" />
-      <End Role="EntriesByDEU" EntitySet="EntriesByDEU" />
-    </AssociationSet>
-    <AssociationSet Name="FK_EntriesByDEU_Payors" Association="Self.FK_EntriesByDEU_Payors">
-      <End Role="Payors" EntitySet="Payors" />
-      <End Role="EntriesByDEU" EntitySet="EntriesByDEU" />
-    </AssociationSet>
-    <AssociationSet Name="FK_EntriesByDEU_Statements" Association="Self.FK_EntriesByDEU_Statements">
-      <End Role="Statements" EntitySet="Statements" />
-      <End Role="EntriesByDEU" EntitySet="EntriesByDEU" />
-    </AssociationSet>
-    <AssociationSet Name="FK_FieldMapping_Templates" Association="Self.FK_FieldMapping_Templates">
-      <End Role="Templates" EntitySet="Templates" />
-      <End Role="FieldMapping" EntitySet="FieldMapping" />
-    </AssociationSet>
-    <AssociationSet Name="FK_FollowupIssues_MasterIssueCategories" Association="Self.FK_FollowupIssues_MasterIssueCategories">
-      <End Role="MasterIssueCategories" EntitySet="MasterIssueCategories" />
-      <End Role="FollowupIssues" EntitySet="FollowupIssues" />
-    </AssociationSet>
-    <AssociationSet Name="FK_FollowupIssues_MasterIssueReasons" Association="Self.FK_FollowupIssues_MasterIssueReasons">
-      <End Role="MasterIssueReasons" EntitySet="MasterIssueReasons" />
-      <End Role="FollowupIssues" EntitySet="FollowupIssues" />
-    </AssociationSet>
-    <AssociationSet Name="FK_FollowupIssues_MasterIssueResults" Association="Self.FK_FollowupIssues_MasterIssueResults">
-      <End Role="MasterIssueResults" EntitySet="MasterIssueResults" />
-      <End Role="FollowupIssues" EntitySet="FollowupIssues" />
-    </AssociationSet>
-    <AssociationSet Name="FK_FollowupIssues_MasterIssueStatus" Association="Self.FK_FollowupIssues_MasterIssueStatus">
-      <End Role="MasterIssueStatus" EntitySet="MasterIssueStatus" />
-      <End Role="FollowupIssues" EntitySet="FollowupIssues" />
-    </AssociationSet>
-    <AssociationSet Name="FK_FollowupIssues_MasterIssueStatus1" Association="Self.FK_FollowupIssues_MasterIssueStatus1">
-      <End Role="MasterIssueStatus" EntitySet="MasterIssueStatus" />
-      <End Role="FollowupIssues" EntitySet="FollowupIssues" />
-    </AssociationSet>
-    <AssociationSet Name="FK_GlobalCoveragesSchedules_MasterScheduleTypes" Association="Self.FK_GlobalCoveragesSchedules_MasterScheduleTypes">
-      <End Role="MasterScheduleTypes" EntitySet="MasterScheduleTypes" />
-      <End Role="GlobalCoveragesSchedules" EntitySet="GlobalCoveragesSchedules" />
-    </AssociationSet>
-    <AssociationSet Name="FK_GlobalPayorContacts_Payors" Association="Self.FK_GlobalPayorContacts_Payors">
-      <End Role="Payors" EntitySet="Payors" />
-      <End Role="GlobalPayorContacts" EntitySet="GlobalPayorContacts" />
-    </AssociationSet>
-    <AssociationSet Name="FK_GlobalPayorDefaults_MasterFileTypes" Association="Self.FK_GlobalPayorDefaults_MasterFileTypes">
-      <End Role="MasterFileTypes" EntitySet="MasterFileTypes" />
-      <End Role="GlobalPayorDefaults" EntitySet="GlobalPayorDefaults" />
-    </AssociationSet>
-    <AssociationSet Name="FK_GlobalPayorDefaults_Payors" Association="Self.FK_GlobalPayorDefaults_Payors">
-      <End Role="Payors" EntitySet="Payors" />
-      <End Role="GlobalPayorDefaults" EntitySet="GlobalPayorDefaults" />
-    </AssociationSet>
-    <AssociationSet Name="FK_GlobalPayorStatementDate_Payors" Association="Self.FK_GlobalPayorStatementDate_Payors">
-      <End Role="Payors" EntitySet="Payors" />
-      <End Role="GlobalPayorStatementDate" EntitySet="GlobalPayorStatementDate" />
-    </AssociationSet>
-    <AssociationSet Name="FK_InvoiceBillingLineDetail_Invoices" Association="Self.FK_InvoiceBillingLineDetail_Invoices">
-      <End Role="Invoices" EntitySet="Invoices" />
-      <End Role="InvoiceBillingLineDetail" EntitySet="InvoiceBillingLineDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_InvoiceBillingLineDetail_MasterServiceChargeTypes" Association="Self.FK_InvoiceBillingLineDetail_MasterServiceChargeTypes">
-      <End Role="MasterServiceChargeTypes" EntitySet="MasterServiceChargeTypes" />
-      <End Role="InvoiceBillingLineDetail" EntitySet="InvoiceBillingLineDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_InvoiceBillingLineDetail_MasterServices" Association="Self.FK_InvoiceBillingLineDetail_MasterServices">
-      <End Role="MasterServices" EntitySet="MasterServices" />
-      <End Role="InvoiceBillingLineDetail" EntitySet="InvoiceBillingLineDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Invoices_ExportBatchFiles" Association="Self.FK_Invoices_ExportBatchFiles">
-      <End Role="ExportBatchFiles" EntitySet="ExportBatchFiles" />
-      <End Role="Invoices" EntitySet="Invoices" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Invoices_Licensees" Association="Self.FK_Invoices_Licensees">
-      <End Role="Licensees" EntitySet="Licensees" />
-      <End Role="Invoices" EntitySet="Invoices" />
-    </AssociationSet>
-    <AssociationSet Name="FK_IssuedFiles_Payors" Association="Self.FK_IssuedFiles_Payors">
-      <End Role="Payors" EntitySet="Payors" />
-      <End Role="IssuedFiles" EntitySet="IssuedFiles" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Journals_ImportBatchFiles" Association="Self.FK_Journals_ImportBatchFiles">
-      <End Role="ImportBatchFiles" EntitySet="ImportBatchFiles" />
-      <End Role="Journals" EntitySet="Journals" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Journals_Invoices" Association="Self.FK_Journals_Invoices">
-      <End Role="Invoices" EntitySet="Invoices" />
-      <End Role="Journals" EntitySet="Journals" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Journals_Licensees" Association="Self.FK_Journals_Licensees">
-      <End Role="Licensees" EntitySet="Licensees" />
-      <End Role="Journals" EntitySet="Journals" />
-    </AssociationSet>
-    <AssociationSet Name="FK_lastpolicyviewed_UserCredentials" Association="Self.FK_lastpolicyviewed_UserCredentials">
-      <End Role="UserCredentials" EntitySet="UserCredentials" />
-      <End Role="LastPolicyViewed" EntitySet="LastPolicyViewed" />
-    </AssociationSet>
-    <AssociationSet Name="FK_LicenseeNotes_Licensees" Association="Self.FK_LicenseeNotes_Licensees">
-      <End Role="Licensees" EntitySet="Licensees" />
-      <End Role="LicenseeNotes" EntitySet="LicenseeNotes" />
-    </AssociationSet>
-    <AssociationSet Name="FK_LicenseePayors_Licensees" Association="Self.FK_LicenseePayors_Licensees">
-      <End Role="Licensees" EntitySet="Licensees" />
-      <End Role="LicenseePayors" EntitySet="LicenseePayors" />
-    </AssociationSet>
-    <AssociationSet Name="FK_LicenseePayors_MasterSourceTypes" Association="Self.FK_LicenseePayors_MasterSourceTypes">
-      <End Role="MasterSourceTypes" EntitySet="MasterSourceTypes" />
-      <End Role="LicenseePayors" EntitySet="LicenseePayors" />
-    </AssociationSet>
-    <AssociationSet Name="FK_LicenseePayors_Payors" Association="Self.FK_LicenseePayors_Payors">
-      <End Role="Payors" EntitySet="Payors" />
-      <End Role="LicenseePayors" EntitySet="LicenseePayors" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Licensees_MasterLicensePaymentModes" Association="Self.FK_Licensees_MasterLicensePaymentModes">
-      <End Role="MasterLicensePaymentModes" EntitySet="MasterLicensePaymentModes" />
-      <End Role="Licensees" EntitySet="Licensees" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Licensees_MasterLicenseStatus" Association="Self.FK_Licensees_MasterLicenseStatus">
-      <End Role="MasterLicenseStatus" EntitySet="MasterLicenseStatus" />
-      <End Role="Licensees" EntitySet="Licensees" />
-    </AssociationSet>
-    <AssociationSet Name="FK_LicenseeServices_Licensees" Association="Self.FK_LicenseeServices_Licensees">
-      <End Role="Licensees" EntitySet="Licensees" />
-      <End Role="LicenseeServices" EntitySet="LicenseeServices" />
-    </AssociationSet>
-    <AssociationSet Name="FK_LicenseeServices_MasterServices" Association="Self.FK_LicenseeServices_MasterServices">
-      <End Role="MasterServices" EntitySet="MasterServices" />
-      <End Role="LicenseeServices" EntitySet="LicenseeServices" />
-    </AssociationSet>
-    <AssociationSet Name="FK_LinkedAgent_LinkedUserCredentials" Association="Self.FK_LinkedAgent_LinkedUserCredentials">
-      <End Role="UserCredentials" EntitySet="UserCredentials" />
-      <End Role="LinkedAgent" EntitySet="LinkedAgent" />
-    </AssociationSet>
-    <AssociationSet Name="FK_LinkedAgent_UserCredentials" Association="Self.FK_LinkedAgent_UserCredentials">
-      <End Role="UserCredentials" EntitySet="UserCredentials" />
-      <End Role="LinkedAgent" EntitySet="LinkedAgent" />
-    </AssociationSet>
-    <AssociationSet Name="FK_MasterPayorRegions_MasterPayorRegions" Association="Self.FK_MasterPayorRegions_MasterPayorRegions">
-      <End Role="MasterPayorRegions" EntitySet="MasterPayorRegions" />
-      <End Role="MasterPayorRegions1" EntitySet="MasterPayorRegions" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PayorCarrier_Payors" Association="Self.FK_PayorCarrier_Payors">
-      <End Role="Payors" EntitySet="Payors" />
-      <End Role="CarrierNickName" EntitySet="CarrierNickName" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PayorCarriers_Licensees" Association="Self.FK_PayorCarriers_Licensees">
-      <End Role="Licensees" EntitySet="Licensees" />
-      <End Role="Carriers" EntitySet="Carriers" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Payors_Licensees" Association="Self.FK_Payors_Licensees">
-      <End Role="Licensees" EntitySet="Licensees" />
-      <End Role="Payors" EntitySet="Payors" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Payors_MasterPayorRegions" Association="Self.FK_Payors_MasterPayorRegions">
-      <End Role="MasterPayorRegions" EntitySet="MasterPayorRegions" />
-      <End Role="Payors" EntitySet="Payors" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Payors_MasterSourceTypes" Association="Self.FK_Payors_MasterSourceTypes">
-      <End Role="MasterSourceTypes" EntitySet="MasterSourceTypes" />
-      <End Role="Payors" EntitySet="Payors" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PayorSiteLoginInfo_Licensees" Association="Self.FK_PayorSiteLoginInfo_Licensees">
-      <End Role="Licensees" EntitySet="Licensees" />
-      <End Role="PayorSiteLoginInfo" EntitySet="PayorSiteLoginInfo" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PayorSiteLoginInfo_Payors" Association="Self.FK_PayorSiteLoginInfo_Payors">
-      <End Role="Payors" EntitySet="Payors" />
-      <End Role="PayorSiteLoginInfo" EntitySet="PayorSiteLoginInfo" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PayorSource_Licensees" Association="Self.FK_PayorSource_Licensees">
-      <End Role="Licensees" EntitySet="Licensees" />
-      <End Role="PayorSource" EntitySet="PayorSource" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PayorSource_Payors" Association="Self.FK_PayorSource_Payors">
-      <End Role="Payors" EntitySet="Payors" />
-      <End Role="PayorSource" EntitySet="PayorSource" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PayorToolFields_Formulas" Association="Self.FK_PayorToolFields_Formulas">
-      <End Role="Formulas" EntitySet="Formulas" />
-      <End Role="PayorToolFields" EntitySet="PayorToolFields" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PayorToolFields_MasterPayorToolAvailableFields" Association="Self.FK_PayorToolFields_MasterPayorToolAvailableFields">
-      <End Role="MasterPayorToolAvailableFields" EntitySet="MasterPayorToolAvailableFields" />
-      <End Role="PayorToolFields" EntitySet="PayorToolFields" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PayorToolFields_MasterPayorToolMaskFieldTypes" Association="Self.FK_PayorToolFields_MasterPayorToolMaskFieldTypes">
-      <End Role="MasterPayorToolMaskFieldTypes" EntitySet="MasterPayorToolMaskFieldTypes" />
-      <End Role="PayorToolFields" EntitySet="PayorToolFields" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PayorToolFields_PayorTools" Association="Self.FK_PayorToolFields_PayorTools">
-      <End Role="PayorTools" EntitySet="PayorTools" />
-      <End Role="PayorToolFields" EntitySet="PayorToolFields" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PayorTools_Payors" Association="Self.FK_PayorTools_Payors">
-      <End Role="Payors" EntitySet="Payors" />
-      <End Role="PayorTools" EntitySet="PayorTools" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Policies_Licensees1" Association="Self.FK_Policies_Licensees1">
-      <End Role="Licensees" EntitySet="Licensees" />
-      <End Role="Policies" EntitySet="Policies" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Policies_MasterIncomingPaymentTypes" Association="Self.FK_Policies_MasterIncomingPaymentTypes">
-      <End Role="MasterIncomingPaymentTypes" EntitySet="MasterIncomingPaymentTypes" />
-      <End Role="Policies" EntitySet="Policies" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Policies_MasterPolicyModes" Association="Self.FK_Policies_MasterPolicyModes">
-      <End Role="MasterPolicyModes" EntitySet="MasterPolicyModes" />
-      <End Role="Policies" EntitySet="Policies" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Policies_MasterPolicyStatus" Association="Self.FK_Policies_MasterPolicyStatus">
-      <End Role="MasterPolicyStatus" EntitySet="MasterPolicyStatus" />
-      <End Role="Policies" EntitySet="Policies" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Policies_MasterPolicyTerminationReasons" Association="Self.FK_Policies_MasterPolicyTerminationReasons">
-      <End Role="MasterPolicyTerminationReasons" EntitySet="MasterPolicyTerminationReasons" />
-      <End Role="Policies" EntitySet="Policies" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Policies_Payors" Association="Self.FK_Policies_Payors">
-      <End Role="Payors" EntitySet="Payors" />
-      <End Role="Policies" EntitySet="Policies" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Policies_UserCredentials" Association="Self.FK_Policies_UserCredentials">
-      <End Role="UserCredentials" EntitySet="UserCredentials" />
-      <End Role="Policies" EntitySet="Policies" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PoliciesHistory_Licensees1" Association="Self.FK_PoliciesHistory_Licensees1">
-      <End Role="Licensees" EntitySet="Licensees" />
-      <End Role="PoliciesHistory" EntitySet="PoliciesHistory" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PoliciesHistory_MasterIncomingPaymentTypes" Association="Self.FK_PoliciesHistory_MasterIncomingPaymentTypes">
-      <End Role="MasterIncomingPaymentTypes" EntitySet="MasterIncomingPaymentTypes" />
-      <End Role="PoliciesHistory" EntitySet="PoliciesHistory" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PoliciesHistory_MasterPolicyModes" Association="Self.FK_PoliciesHistory_MasterPolicyModes">
-      <End Role="MasterPolicyModes" EntitySet="MasterPolicyModes" />
-      <End Role="PoliciesHistory" EntitySet="PoliciesHistory" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PoliciesHistory_MasterPolicyStatus" Association="Self.FK_PoliciesHistory_MasterPolicyStatus">
-      <End Role="MasterPolicyStatus" EntitySet="MasterPolicyStatus" />
-      <End Role="PoliciesHistory" EntitySet="PoliciesHistory" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PoliciesHistory_MasterPolicyTerminationReasons" Association="Self.FK_PoliciesHistory_MasterPolicyTerminationReasons">
-      <End Role="MasterPolicyTerminationReasons" EntitySet="MasterPolicyTerminationReasons" />
-      <End Role="PoliciesHistory" EntitySet="PoliciesHistory" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PoliciesHistory_Payors" Association="Self.FK_PoliciesHistory_Payors">
-      <End Role="Payors" EntitySet="Payors" />
-      <End Role="PoliciesHistory" EntitySet="PoliciesHistory" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PoliciesHistory_UserCredentials" Association="Self.FK_PoliciesHistory_UserCredentials">
-      <End Role="UserCredentials" EntitySet="UserCredentials" />
-      <End Role="PoliciesHistory" EntitySet="PoliciesHistory" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PolicyIncomingAdvancedSchedules_MasterScheduleTypes" Association="Self.FK_PolicyIncomingAdvancedSchedules_MasterScheduleTypes">
-      <End Role="MasterScheduleTypes" EntitySet="MasterScheduleTypes" />
-      <End Role="PolicyIncomingAdvancedSchedules" EntitySet="PolicyIncomingAdvancedSchedules" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PolicyIncomingSchedules_MasterBasicIncomingSchedule" Association="Self.FK_PolicyIncomingSchedules_MasterBasicIncomingSchedule">
-      <End Role="MasterBasicIncomingSchedule" EntitySet="MasterBasicIncomingSchedule" />
-      <End Role="PolicyIncomingSchedules" EntitySet="PolicyIncomingSchedules" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PolicyLearnedFields_MasterIncomingPaymentTypes" Association="Self.FK_PolicyLearnedFields_MasterIncomingPaymentTypes">
-      <End Role="MasterIncomingPaymentTypes" EntitySet="MasterIncomingPaymentTypes" />
-      <End Role="PolicyLearnedFields" EntitySet="PolicyLearnedFields" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PolicyLearnedFields_MasterPolicyModes" Association="Self.FK_PolicyLearnedFields_MasterPolicyModes">
-      <End Role="MasterPolicyModes" EntitySet="MasterPolicyModes" />
-      <End Role="PolicyLearnedFields" EntitySet="PolicyLearnedFields" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PolicyLearnedFields_Payors" Association="Self.FK_PolicyLearnedFields_Payors">
-      <End Role="Payors" EntitySet="Payors" />
-      <End Role="PolicyLearnedFields" EntitySet="PolicyLearnedFields" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PolicyLearnedFieldsHistory_MasterIncomingPaymentTypes" Association="Self.FK_PolicyLearnedFieldsHistory_MasterIncomingPaymentTypes">
-      <End Role="MasterIncomingPaymentTypes" EntitySet="MasterIncomingPaymentTypes" />
-      <End Role="PolicyLearnedFieldsHistory" EntitySet="PolicyLearnedFieldsHistory" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PolicyLearnedFieldsHistory_MasterPolicyModes" Association="Self.FK_PolicyLearnedFieldsHistory_MasterPolicyModes">
-      <End Role="MasterPolicyModes" EntitySet="MasterPolicyModes" />
-      <End Role="PolicyLearnedFieldsHistory" EntitySet="PolicyLearnedFieldsHistory" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PolicyLearnedFieldsHistory_Payors" Association="Self.FK_PolicyLearnedFieldsHistory_Payors">
-      <End Role="Payors" EntitySet="Payors" />
-      <End Role="PolicyLearnedFieldsHistory" EntitySet="PolicyLearnedFieldsHistory" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PolicyLevelBillingDetail_InvoiceBillingLineDetail" Association="Self.FK_PolicyLevelBillingDetail_InvoiceBillingLineDetail">
-      <End Role="InvoiceBillingLineDetail" EntitySet="InvoiceBillingLineDetail" />
-      <End Role="PolicyLevelBillingDetail" EntitySet="PolicyLevelBillingDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PolicyOutgoingAdvancedSchedules_MasterScheduleTypes" Association="Self.FK_PolicyOutgoingAdvancedSchedules_MasterScheduleTypes">
-      <End Role="MasterScheduleTypes" EntitySet="MasterScheduleTypes" />
-      <End Role="PolicyOutgoingAdvancedSchedules" EntitySet="PolicyOutgoingAdvancedSchedules" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PolicyOutgoingAdvancedSchedules_PayeeUser" Association="Self.FK_PolicyOutgoingAdvancedSchedules_PayeeUser">
-      <End Role="UserCredentials" EntitySet="UserCredentials" />
-      <End Role="PolicyOutgoingAdvancedSchedules" EntitySet="PolicyOutgoingAdvancedSchedules" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PolicyOutgoingPayments_PolicyPaymentEntries" Association="Self.FK_PolicyOutgoingPayments_PolicyPaymentEntries">
-      <End Role="PolicyPaymentEntries" EntitySet="PolicyPaymentEntries" />
-      <End Role="PolicyOutgoingPayments" EntitySet="PolicyOutgoingPayments" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PolicyOutgoingPayments_UserCredentials" Association="Self.FK_PolicyOutgoingPayments_UserCredentials">
-      <End Role="UserCredentials" EntitySet="UserCredentials" />
-      <End Role="PolicyOutgoingPayments" EntitySet="PolicyOutgoingPayments" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PolicyOutgoingSchedules_MasterBasicOutgoingSchedule" Association="Self.FK_PolicyOutgoingSchedules_MasterBasicOutgoingSchedule">
-      <End Role="MasterBasicOutgoingSchedule" EntitySet="MasterBasicOutgoingSchedule" />
-      <End Role="PolicyOutgoingSchedules" EntitySet="PolicyOutgoingSchedules" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PolicyOutgoingSchedules_UserCredentials" Association="Self.FK_PolicyOutgoingSchedules_UserCredentials">
-      <End Role="UserCredentials" EntitySet="UserCredentials" />
-      <End Role="PolicyOutgoingSchedules" EntitySet="PolicyOutgoingSchedules" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PolicyPaymentEntries_MasterPostStatus" Association="Self.FK_PolicyPaymentEntries_MasterPostStatus">
-      <End Role="MasterPostStatus" EntitySet="MasterPostStatus" />
-      <End Role="PolicyPaymentEntries" EntitySet="PolicyPaymentEntries" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PolicyPaymentEntries_Statements" Association="Self.FK_PolicyPaymentEntries_Statements">
-      <End Role="Statements" EntitySet="Statements" />
-      <End Role="PolicyPaymentEntries" EntitySet="PolicyPaymentEntries" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ServiceLines_Licensees" Association="Self.FK_ServiceLines_Licensees">
-      <End Role="Licensees" EntitySet="Licensees" />
-      <End Role="ServiceLines" EntitySet="ServiceLines" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ServiceLines_MasterServiceChargeTypes" Association="Self.FK_ServiceLines_MasterServiceChargeTypes">
-      <End Role="MasterServiceChargeTypes" EntitySet="MasterServiceChargeTypes" />
-      <End Role="ServiceLines" EntitySet="ServiceLines" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ServiceLines_MasterServiceChargeTypes1" Association="Self.FK_ServiceLines_MasterServiceChargeTypes1">
-      <End Role="MasterServiceChargeTypes" EntitySet="MasterServiceChargeTypes" />
-      <End Role="ServiceLines" EntitySet="ServiceLines" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ServiceLines_MasterServices" Association="Self.FK_ServiceLines_MasterServices">
-      <End Role="MasterServices" EntitySet="MasterServices" />
-      <End Role="ServiceLines" EntitySet="ServiceLines" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Statements_MasterStatementStatus" Association="Self.FK_Statements_MasterStatementStatus">
-      <End Role="MasterStatementStatus" EntitySet="MasterStatementStatus" />
-      <End Role="Statements" EntitySet="Statements" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Statements_Payors" Association="Self.FK_Statements_Payors">
-      <End Role="Payors" EntitySet="Payors" />
-      <End Role="Statements" EntitySet="Statements" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Templates_Payors" Association="Self.FK_Templates_Payors">
-      <End Role="Payors" EntitySet="Payors" />
-      <End Role="Templates" EntitySet="Templates" />
-    </AssociationSet>
-    <AssociationSet Name="FK_UserCredentials_Licensees" Association="Self.FK_UserCredentials_Licensees">
-      <End Role="Licensees" EntitySet="Licensees" />
-      <End Role="UserCredentials" EntitySet="UserCredentials" />
-    </AssociationSet>
-    <AssociationSet Name="FK_UserCredentials_MasterRoles" Association="Self.FK_UserCredentials_MasterRoles">
-      <End Role="MasterRoles" EntitySet="MasterRoles" />
-      <End Role="UserCredentials" EntitySet="UserCredentials" />
-    </AssociationSet>
-    <AssociationSet Name="FK_UserDetail_UserCredentials" Association="Self.FK_UserDetail_UserCredentials">
-      <End Role="UserCredentials" EntitySet="UserCredentials" />
-      <End Role="UserDetail" EntitySet="UserDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_UserPermissions_MasterAccessRights1" Association="Self.FK_UserPermissions_MasterAccessRights1">
-      <End Role="MasterAccessRights" EntitySet="MasterAccessRights" />
-      <End Role="UserPermissions" EntitySet="UserPermissions" />
-    </AssociationSet>
-    <AssociationSet Name="FK_UserPermissions_MasterModules1" Association="Self.FK_UserPermissions_MasterModules1">
-      <End Role="MasterModules" EntitySet="MasterModules" />
-      <End Role="UserPermissions" EntitySet="UserPermissions" />
-    </AssociationSet>
-    <AssociationSet Name="FK_UserPermissions_UserCredentials1" Association="Self.FK_UserPermissions_UserCredentials1">
-      <End Role="UserCredentials" EntitySet="UserCredentials" />
-      <End Role="UserPermissions" EntitySet="UserPermissions" />
-    </AssociationSet>
-    <AssociationSet Name="FK_VariablesForBillingLine_InvoiceBillingLineDetail" Association="Self.FK_VariablesForBillingLine_InvoiceBillingLineDetail">
-      <End Role="InvoiceBillingLineDetail" EntitySet="InvoiceBillingLineDetail" />
-      <End Role="VariablesForBillingLine" EntitySet="VariablesForBillingLine" />
-    </AssociationSet>
-  </EntityContainer>
 </Schema>

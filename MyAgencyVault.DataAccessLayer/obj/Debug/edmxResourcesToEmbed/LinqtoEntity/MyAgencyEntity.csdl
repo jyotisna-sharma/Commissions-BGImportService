@@ -775,11 +775,11 @@
     </Key>
     <Property Name="Id" Type="Guid" Nullable="false" />
     <Property Name="BatchId" Type="Guid" Nullable="false" />
-    <Property Name="OriginalEffectiveDate" Type="DateTime" Precision="3" />
+    <Property Name="OriginalEffectiveDate" Type="DateTime" />
     <Property Name="PaymentReceived" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="CommissionPercentage" Type="Double" />
-    <Property Name="Insured" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-    <Property Name="PolicyNumber" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Insured" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PolicyNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="Enrolled" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="Eligible" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="SplitPer" Type="Double" />
@@ -788,7 +788,7 @@
     <Property Name="StatementID" Type="Guid" />
     <Property Name="PostStatusID" Type="Int32" />
     <Property Name="PolicyID" Type="Guid" />
-    <Property Name="InvoiceDate" Type="DateTime" Precision="3" />
+    <Property Name="InvoiceDate" Type="DateTime" />
     <Property Name="PayorId" Type="Guid" />
     <Property Name="NumberOfUnits" Type="Int32" />
     <Property Name="DollerPerUnit" Type="Decimal" Precision="19" Scale="4" />
@@ -804,7 +804,7 @@
     <Property Name="PostCompleteStatus" Type="Int32" />
     <Property Name="ModalAvgPremium" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="CompScheduleType" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
-    <Property Name="ClientValue" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ClientValue" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="Batch">
     <Key>
@@ -813,14 +813,14 @@
     <Property Name="BatchId" Type="Guid" Nullable="false" />
     <Property Name="BatchNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="LicenseeId" Type="Guid" Nullable="false" />
-    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedOn" Type="DateTime" />
     <Property Name="FileType" Type="String" MaxLength="5" Unicode="true" FixedLength="true" />
     <Property Name="EntryStatusId" Type="Int32" />
     <Property Name="AssignedUserCredentialId" Type="Guid" />
     <Property Name="CreatedFromUpload" Type="Boolean" />
     <Property Name="UploadStatusId" Type="Int32" />
     <Property Name="FileName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-    <Property Name="LastModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastModifiedDate" Type="DateTime" />
     <Property Name="IsManuallyUploaded" Type="Boolean" />
     <Property Name="SiteLoginID" Type="Guid" />
     <Property Name="PayorId" Type="Guid" />
@@ -839,9 +839,9 @@
     <Property Name="PayorId" Type="Guid" Nullable="false" />
     <Property Name="CarrierId" Type="Guid" Nullable="false" />
     <Property Name="NickName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="CreatedBy" Type="Guid" />
-    <Property Name="ModifiedBy" Type="Guid" />
-    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+    <Property Name="ModifiedBy" Type="Guid" Nullable="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" />
     <Property Name="IsDeleted" Type="Boolean" />
     <Property Name="IsTrackMissingMonth" Type="Boolean" Nullable="false" />
     <Property Name="IsTrackIncomingPercentage" Type="Boolean" Nullable="false" />
@@ -849,7 +849,6 @@
     <NavigationProperty Name="Payor" Relationship="Model.FK_PayorCarrier_Payors" FromRole="CarrierNickName" ToRole="Payors" />
     <NavigationProperty Name="UserCredential" Relationship="Model.FK_PayorCarrier_UserCredentials" FromRole="CarrierNickName" ToRole="UserCredentials" />
     <NavigationProperty Name="UserCredential1" Relationship="Model.FK_PayorCarrier_UserCredentials1" FromRole="CarrierNickName" ToRole="UserCredentials" />
-    <Property Type="DateTime" Name="CreatedOn" Precision="3" />
   </EntityType>
   <EntityType Name="Carrier">
     <Key>
@@ -872,7 +871,6 @@
     <NavigationProperty Name="PolicyLearnedFields" Relationship="Model.FK_PolicyLearnedFields_PayorCarriers" FromRole="Carrier" ToRole="PolicyLearnedField" />
     <NavigationProperty Name="PolicyLearnedFieldsHistories" Relationship="Model.FK_PolicyLearnedFieldsHistory_PayorCarriers" FromRole="Carrier" ToRole="PolicyLearnedFieldsHistory" />
     <NavigationProperty Name="CoverageNickNames" Relationship="Model.FK_CoverageNickName_Carriers" FromRole="Carrier" ToRole="CoverageNickName" />
-    <Property Type="DateTime" Name="CreatedOn" Precision="3" />
   </EntityType>
   <EntityType Name="Client">
     <Key>
@@ -880,7 +878,7 @@
     </Key>
     <Property Name="ClientId" Type="Guid" Nullable="false" />
     <Property Name="LicenseeId" Type="Guid" />
-    <Property Name="Name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="Address" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
     <Property Name="Zip" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
     <Property Name="City" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
@@ -894,7 +892,6 @@
     <NavigationProperty Name="PoliciesHistories" Relationship="Model.FK_PoliciesHistory_Clients" FromRole="Clients" ToRole="PoliciesHistory" />
     <NavigationProperty Name="PolicyLearnedFields" Relationship="Model.FK_PolicyLearnedFields_Clients" FromRole="Client" ToRole="PolicyLearnedField" />
     <NavigationProperty Name="PolicyLearnedFieldsHistories" Relationship="Model.FK_PolicyLearnedFieldsHistory_Clients" FromRole="Client" ToRole="PolicyLearnedFieldsHistory" />
-    <Property Type="DateTime" Name="CreatedOn" Precision="3" />
   </EntityType>
   <EntityType Name="Coverage">
     <Key>
@@ -916,32 +913,31 @@
     <NavigationProperty Name="PolicyLearnedFields" Relationship="Model.FK_PolicyLearnedFields_CarrierCoverages" FromRole="Coverage" ToRole="PolicyLearnedField" />
     <NavigationProperty Name="PolicyLearnedFieldsHistories" Relationship="Model.FK_PolicyLearnedFieldsHistory_CarrierCoverages" FromRole="Coverage" ToRole="PolicyLearnedFieldsHistory" />
     <NavigationProperty Name="CoverageNickNames" Relationship="Model.FK_CoverageNickName_Coverages" FromRole="Coverage" ToRole="CoverageNickName" />
-    <Property Type="DateTime" Name="CreatedOn" Precision="3" />
   </EntityType>
   <EntityType Name="EntriesByDEU">
     <Key>
       <PropertyRef Name="DEUEntryID" />
     </Key>
     <Property Name="DEUEntryID" Type="Guid" Nullable="false" />
-    <Property Name="OriginalEffectiveDate" Type="DateTime" Precision="3" />
+    <Property Name="OriginalEffectiveDate" Type="DateTime" />
     <Property Name="PaymentReceived" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="CommissionPercentage" Type="Double" />
     <Property Name="OtherData" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-    <Property Name="Insured" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-    <Property Name="PolicyNumber" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Insured" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PolicyNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="Enrolled" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="Eligible" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="Link1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="SplitPer" Type="Double" />
     <Property Name="PolicyModeID" Type="Int32" />
     <Property Name="PolicyModeValue" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="TrackFromDate" Type="DateTime" Precision="3" />
+    <Property Name="TrackFromDate" Type="DateTime" />
     <Property Name="CompTypeID" Type="Int32" />
     <Property Name="ClientID" Type="Guid" />
     <Property Name="StatementID" Type="Guid" />
     <Property Name="PostStatusID" Type="Int32" />
     <Property Name="PolicyID" Type="Guid" />
-    <Property Name="InvoiceDate" Type="DateTime" Precision="3" />
+    <Property Name="InvoiceDate" Type="DateTime" />
     <Property Name="PayorId" Type="Guid" />
     <Property Name="NumberOfUnits" Type="Int32" />
     <Property Name="DollerPerUnit" Type="Decimal" Precision="19" Scale="4" />
@@ -957,7 +953,7 @@
     <Property Name="PostCompleteStatus" Type="Int32" />
     <Property Name="ModalAvgPremium" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="CompScheduleType" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
-    <Property Name="ClientValue" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ClientValue" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="Carrier" Relationship="Model.FK_EntriesByDEU_Carriers" FromRole="EntriesByDEU" ToRole="Carriers" />
     <NavigationProperty Name="Client" Relationship="Model.FK_EntriesByDEU_Clients" FromRole="EntriesByDEU" ToRole="Clients" />
     <NavigationProperty Name="Coverage" Relationship="Model.FK_EntriesByDEU_Coverages" FromRole="EntriesByDEU" ToRole="Coverages" />
@@ -969,8 +965,8 @@
     <NavigationProperty Name="PolicyPaymentEntries" Relationship="Model.FK_PolicyPaymentEntries_EntriesByDEU" FromRole="EntriesByDEU" ToRole="PolicyPaymentEntries" />
     <Property Type="String" Name="CarrierName" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="ProductName" MaxLength="150" FixedLength="false" Unicode="true" />
-    <Property Type="DateTime" Name="EntryDate" Precision="3" />
-    <Property Type="String" Name="UnlinkClientName" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="EntryDate" />
+    <Property Type="String" Name="UnlinkClientName" MaxLength="250" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Statement" Relationship="Model.FK_EntriesByDEU_Statements" FromRole="EntriesByDEU" ToRole="Statement" />
     <Property Type="String" Name="CoverageNickName" MaxLength="150" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="CarrierNickName" MaxLength="150" FixedLength="false" Unicode="false" />
@@ -981,9 +977,9 @@
     </Key>
     <Property Name="ExportBatchId" Type="Guid" Nullable="false" />
     <Property Name="FileName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
-    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" />
     <Property Name="IsFileImported" Type="Boolean" />
-    <Property Name="InvoiceDate" Type="DateTime" Precision="3" />
+    <Property Name="InvoiceDate" Type="DateTime" />
     <NavigationProperty Name="Invoices" Relationship="Model.FK_Invoices_ExportBatchFiles" FromRole="ExportBatchFiles" ToRole="Invoices" />
   </EntityType>
   <EntityType Name="FieldMapping">
@@ -1019,8 +1015,8 @@
     <Property Name="ScheduleTypeId" Type="Int32" Nullable="false" />
     <Property Name="FromRange" Type="Double" />
     <Property Name="ToRange" Type="Double" />
-    <Property Name="EffectiveFromDate" Type="DateTime" Precision="3" />
-    <Property Name="EffectiveToDate" Type="DateTime" Precision="3" />
+    <Property Name="EffectiveFromDate" Type="DateTime" />
+    <Property Name="EffectiveToDate" Type="DateTime" />
     <Property Name="Rate" Type="Double" />
     <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="Carrier" Relationship="Model.FK_GlobalCoveragesSchedules_Carriers" FromRole="GlobalCoveragesSchedules" ToRole="Carriers" />
@@ -1071,7 +1067,7 @@
     </Key>
     <Property Name="PayorStatementDateID" Type="Guid" Nullable="false" />
     <Property Name="PayorID" Type="Guid" Nullable="false" />
-    <Property Name="StatementDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="StatementDate" Type="DateTime" Nullable="false" />
     <Property Name="IsBatchCreated" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="Payor" Relationship="Model.FK_GlobalPayorStatementDate_Payors" FromRole="GlobalPayorStatementDate" ToRole="Payors" />
   </EntityType>
@@ -1081,7 +1077,7 @@
     </Key>
     <Property Name="ImportBatchId" Type="Guid" Nullable="false" />
     <Property Name="FileName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
-    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" />
     <NavigationProperty Name="Journals" Relationship="Model.FK_Journals_ImportBatchFiles" FromRole="ImportBatchFiles" ToRole="Journals" />
   </EntityType>
   <EntityType Name="InvoiceBillingLineDetail">
@@ -1098,8 +1094,8 @@
     <Property Name="Range2" Type="Int32" />
     <Property Name="Rate" Type="Double" />
     <Property Name="Discount" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="StartDate" Type="DateTime" Precision="3" />
-    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="StartDate" Type="DateTime" />
+    <Property Name="EndDate" Type="DateTime" />
     <Property Name="Tax" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
     <Property Name="ServiceChargeTypeId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Invoice" Relationship="Model.FK_InvoiceBillingLineDetail_Invoices" FromRole="InvoiceBillingLineDetail" ToRole="Invoices" />
@@ -1114,13 +1110,13 @@
     </Key>
     <Property Name="InvoiceId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="LicenseeId" Type="Guid" />
-    <Property Name="BillingStartDate" Type="DateTime" Precision="3" />
-    <Property Name="BillingDate" Type="DateTime" Precision="3" />
+    <Property Name="BillingStartDate" Type="DateTime" />
+    <Property Name="BillingDate" Type="DateTime" />
     <Property Name="InvoiceAmount" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="DueBalance" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="InvoiceGeneratedOn" Type="DateTime" Precision="3" />
+    <Property Name="InvoiceGeneratedOn" Type="DateTime" />
     <Property Name="ExportBatchId" Type="Guid" />
-    <Property Name="BillingEndDate" Type="DateTime" Precision="3" />
+    <Property Name="BillingEndDate" Type="DateTime" />
     <NavigationProperty Name="ExportBatchFile" Relationship="Model.FK_Invoices_ExportBatchFiles" FromRole="Invoices" ToRole="ExportBatchFiles" />
     <NavigationProperty Name="InvoiceBillingLineDetails" Relationship="Model.FK_InvoiceBillingLineDetail_Invoices" FromRole="Invoices" ToRole="InvoiceBillingLineDetail" />
     <NavigationProperty Name="Licensee" Relationship="Model.FK_Invoices_Licensees" FromRole="Invoices" ToRole="Licensees" />
@@ -1149,13 +1145,13 @@
     <Property Name="InvoiceId" Type="Int64" />
     <Property Name="ImportBatchId" Type="Guid" />
     <Property Name="TransactionId" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-    <Property Name="ReceivedDate" Type="DateTime" Precision="3" />
-    <Property Name="BillingEndDate" Type="DateTime" Precision="3" />
+    <Property Name="ReceivedDate" Type="DateTime" />
+    <Property Name="BillingEndDate" Type="DateTime" />
     <Property Name="TypeOfEntry" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="JournalAmount" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="TransactionDateTime" Type="DateTime" Precision="3" />
-    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
-    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="TransactionDateTime" Type="DateTime" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="ModifiedOn" Type="DateTime" />
     <Property Name="IsManuallEntry" Type="Boolean" Nullable="false" />
     <Property Name="LicenseeId" Type="Guid" Nullable="false" />
     <Property Name="PaymentStatus" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
@@ -1183,8 +1179,8 @@
     <Property Name="LicenseeNoteId" Type="Guid" Nullable="false" />
     <Property Name="LicenseeId" Type="Guid" />
     <Property Name="Note" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
-    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
-    <Property Name="LastModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedDate" Type="DateTime" />
+    <Property Name="LastModifiedDate" Type="DateTime" />
     <NavigationProperty Name="Licensee" Relationship="Model.FK_LicenseeNotes_Licensees" FromRole="LicenseeNotes" ToRole="Licensees" />
   </EntityType>
   <EntityType Name="LicenseePayor">
@@ -1230,12 +1226,12 @@
     <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="LicenseeSource" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="Commissionable" Type="Boolean" />
-    <Property Name="TrackDateDefault" Type="DateTime" Precision="3" />
+    <Property Name="TrackDateDefault" Type="DateTime" />
     <Property Name="TaxRate" Type="Double" />
     <Property Name="CutOffDay1" Type="Int32" />
     <Property Name="CutOffDay2" Type="Int32" />
-    <Property Name="LastLogin" Type="DateTime" Precision="3" />
-    <Property Name="LastUpload" Type="DateTime" Precision="3" />
+    <Property Name="LastLogin" Type="DateTime" />
+    <Property Name="LastUpload" Type="DateTime" />
     <Property Name="IsDeleted" Type="Boolean" />
     <Property Name="DueBalance" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="UserName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
@@ -1259,7 +1255,6 @@
     <NavigationProperty Name="ServiceLines" Relationship="Model.FK_ServiceLines_Licensees" FromRole="Licensees" ToRole="ServiceLines" />
     <NavigationProperty Name="UserCredentials" Relationship="Model.FK_UserCredentials_Licensees" FromRole="Licensees" ToRole="UserCredentials" />
     <Property Type="Boolean" Name="IsClientEnable" />
-    <Property Name="CreatedDate" Type="DateTime" Nullable="true" />
   </EntityType>
   <EntityType Name="LicenseeService">
     <Key>
@@ -1594,10 +1589,9 @@
     </Key>
     <Property Name="ReportId" Type="Guid" Nullable="false" />
     <Property Name="ReportCode" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
-    <Property Name="ReportName" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-    <Property Name="ReportGroupName" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-    <Property Name="ReportDescription" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-    <Property Name="IsVisible" Type="Boolean" Nullable="true" />
+    <Property Name="ReportName" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="ReportGroupName" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="ReportDescription" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="MasterRole">
     <Key>
@@ -1700,8 +1694,8 @@
     <Property Name="NewsId" Type="Guid" Nullable="false" />
     <Property Name="NewsTtitle" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
     <Property Name="NewsContent" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
-    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
-    <Property Name="LastModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="LastModifiedOn" Type="DateTime" />
     <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="Payor">
@@ -1741,7 +1735,6 @@
     <NavigationProperty Name="PolicyLearnedFields" Relationship="Model.FK_PolicyLearnedFields_Payors" FromRole="Payor" ToRole="PolicyLearnedField" />
     <NavigationProperty Name="PolicyLearnedFieldsHistories" Relationship="Model.FK_PolicyLearnedFieldsHistory_Payors" FromRole="Payor" ToRole="PolicyLearnedFieldsHistory" />
     <NavigationProperty Name="CoverageNickNames" Relationship="Model.FK_CoverageNickName_Payors" FromRole="Payor" ToRole="CoverageNickName" />
-    <Property Type="DateTime" Name="CreatedOn" Precision="3" />
   </EntityType>
   <EntityType Name="PayorSiteLoginInfo">
     <Key>
@@ -1782,7 +1775,7 @@
     <Property Name="IsTabbedToNextFieldIfLinked" Type="Boolean" Nullable="false" />
     <Property Name="IsCalculatedField" Type="Boolean" Nullable="false" />
     <Property Name="IsOverrideOfCalcAllowed" Type="Boolean" Nullable="false" />
-    <Property Name="DefaultNumeric" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="DefaultNumeric" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
     <Property Name="IsOorBlankAllowed" Type="Boolean" Nullable="false" />
     <Property Name="AllignedDirection" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
     <Property Name="EquivalentIncomingField" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
@@ -1821,20 +1814,20 @@
       <PropertyRef Name="PolicyId" />
     </Key>
     <Property Name="PolicyId" Type="Guid" Nullable="false" />
-    <Property Name="PolicyNumber" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="PolicyNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="PolicyStatusId" Type="Int32" />
     <Property Name="PolicyType" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="PolicyClientId" Type="Guid" />
     <Property Name="PolicyLicenseeId" Type="Guid" />
-    <Property Name="OriginalEffectiveDate" Type="DateTime" Precision="3" />
-    <Property Name="TrackFromDate" Type="DateTime" Precision="3" />
+    <Property Name="OriginalEffectiveDate" Type="DateTime" />
+    <Property Name="TrackFromDate" Type="DateTime" />
     <Property Name="PolicyModeId" Type="Int32" />
     <Property Name="MonthlyPremium" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="CoverageId" Type="Guid" />
     <Property Name="SubmittedThrough" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="Enrolled" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="Eligible" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-    <Property Name="PolicyTerminationDate" Type="DateTime" Precision="3" />
+    <Property Name="PolicyTerminationDate" Type="DateTime" />
     <Property Name="TerminationReasonId" Type="Int32" />
     <Property Name="IsTrackMissingMonth" Type="Boolean" Nullable="false" />
     <Property Name="IsTrackIncomingPercentage" Type="Boolean" Nullable="false" />
@@ -1845,16 +1838,15 @@
     <Property Name="PayorId" Type="Guid" />
     <Property Name="DuplicateFrom" Type="Guid" />
     <Property Name="CreatedBy" Type="Guid" />
-    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedOn" Type="DateTime" />
     <Property Name="IsIncomingBasicSchedule" Type="Boolean" />
     <Property Name="IsOutGoingBasicSchedule" Type="Boolean" />
     <Property Name="CarrierId" Type="Guid" />
     <Property Name="SplitPercentage" Type="Double" />
-    <Property Name="Insured" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-    <Property Name="ActivatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Insured" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ActivatedOn" Type="DateTime" />
     <Property Name="IsLocked" Type="Boolean" Nullable="false" />
-    <Property Name="LastFollowUpRuns" Type="DateTime" Precision="3" />
-    <Property Name="IsManuallyChanged" Type="Boolean" />
+    <Property Name="LastFollowUpRuns" Type="DateTime" />
     <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
     <NavigationProperty Name="Carrier" Relationship="Model.FK_Policies_Carriers" FromRole="Policies" ToRole="Carriers" />
     <NavigationProperty Name="Client" Relationship="Model.FK_Policies_Clients" FromRole="Policies" ToRole="Clients" />
@@ -1882,36 +1874,28 @@
     <Property Type="String" Name="ProductType" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Type="Guid" Name="UserCredentialId" />
     <Property Type="String" Name="AccoutExec" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Type="DateTime" Name="LastNoMissIssueDate" Precision="3" />
-    <Property Type="DateTime" Name="LastNoVarIssueDate" Precision="3" />
-    <Property Type="Boolean" Name="IsCustomBasicSchedule" />
-    <Property Type="String" Name="CustomScheduleDateType" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="Guid" Name="PrimaryAgent" />
-    <Property Name="IsTieredSchedule" Type="Boolean" />
-    <Property Name="LastModifiedBy" Type="Guid" Nullable="true" />
-    <Property Name="LastModifiedOn" Type="DateTime" Nullable="true" />
-    <Property Name="IsCreatedFromWeb" Type="Boolean" Nullable="true" />
-    <Property Name="IslastModifiedFromWeb" Type="Boolean" Nullable="true" />
+    <Property Type="DateTime" Name="LastNoMissIssueDate" />
+    <Property Type="DateTime" Name="LastNoVarIssueDate" />
   </EntityType>
   <EntityType Name="PoliciesHistory">
     <Key>
       <PropertyRef Name="PolicyId" />
     </Key>
     <Property Name="PolicyId" Type="Guid" Nullable="false" />
-    <Property Name="PolicyNumber" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="PolicyNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="PolicyStatusId" Type="Int32" />
     <Property Name="PolicyType" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="PolicyClientId" Type="Guid" />
     <Property Name="PolicyLicenseeId" Type="Guid" />
-    <Property Name="OriginalEffectiveDate" Type="DateTime" Precision="3" />
-    <Property Name="TrackFromDate" Type="DateTime" Precision="3" />
+    <Property Name="OriginalEffectiveDate" Type="DateTime" />
+    <Property Name="TrackFromDate" Type="DateTime" />
     <Property Name="PolicyModeId" Type="Int32" />
     <Property Name="MonthlyPremium" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="CoverageId" Type="Guid" />
     <Property Name="SubmittedThrough" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="Enrolled" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="Eligible" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-    <Property Name="PolicyTerminationDate" Type="DateTime" Precision="3" />
+    <Property Name="PolicyTerminationDate" Type="DateTime" />
     <Property Name="TerminationReasonId" Type="Int32" />
     <Property Name="IsTrackMissingMonth" Type="Boolean" Nullable="false" />
     <Property Name="IsTrackIncomingPercentage" Type="Boolean" Nullable="false" />
@@ -1922,12 +1906,12 @@
     <Property Name="PayorId" Type="Guid" />
     <Property Name="DuplicateFrom" Type="Guid" />
     <Property Name="CreatedBy" Type="Guid" />
-    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedOn" Type="DateTime" />
     <Property Name="IsIncomingBasicSchedule" Type="Boolean" />
     <Property Name="IsOutGoingBasicSchedule" Type="Boolean" />
     <Property Name="CarrierId" Type="Guid" />
     <Property Name="SplitPercentage" Type="Double" />
-    <Property Name="Insured" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Insured" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="Carrier" Relationship="Model.FK_PoliciesHistory_Carriers" FromRole="PoliciesHistory" ToRole="Carriers" />
     <NavigationProperty Name="Client" Relationship="Model.FK_PoliciesHistory_Clients" FromRole="PoliciesHistory" ToRole="Clients" />
     <NavigationProperty Name="Coverage" Relationship="Model.FK_PoliciesHistory_Coverages" FromRole="PoliciesHistory" ToRole="Coverages" />
@@ -1950,8 +1934,8 @@
     <Property Name="ScheduleTypeId" Type="Int32" />
     <Property Name="FromRange" Type="Double" />
     <Property Name="ToRange" Type="Double" />
-    <Property Name="EffectiveFromDate" Type="DateTime" Precision="3" />
-    <Property Name="EffectiveToDate" Type="DateTime" Precision="3" />
+    <Property Name="EffectiveFromDate" Type="DateTime" />
+    <Property Name="EffectiveToDate" Type="DateTime" />
     <Property Name="Rate" Type="Double" />
     <NavigationProperty Name="MasterScheduleType" Relationship="Model.FK_PolicyIncomingAdvancedSchedules_MasterScheduleTypes" FromRole="PolicyIncomingAdvancedSchedules" ToRole="MasterScheduleTypes" />
     <NavigationProperty Name="Policy" Relationship="Model.FK_PolicyIncomingAdvancedSchedules_Policies" FromRole="PolicyIncomingAdvancedSchedules" ToRole="Policies" />
@@ -1986,12 +1970,9 @@
     <Property Name="PolicyNoteId" Type="Guid" Nullable="false" />
     <Property Name="PolicyId" Type="Guid" />
     <Property Name="Note" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
-    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
-    <Property Name="LastModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="LastModifiedOn" Type="DateTime" />
     <NavigationProperty Name="Policy" Relationship="Model.FK_PolicyNotes_Policies" FromRole="PolicyNotes" ToRole="Policies" />
-    <Property Name="CreatedBy" Type="Guid" Nullable="true" />
-    <Property Name="ModifiedBy" Type="Guid" Nullable="true" />
-    <Property Name="IsDeleted" Type="Boolean" Nullable="true" />
   </EntityType>
   <EntityType Name="PolicyOutgoingAdvancedSchedule">
     <Key>
@@ -2002,12 +1983,12 @@
     <Property Name="ScheduleTypeId" Type="Int32" />
     <Property Name="FromRange" Type="Double" />
     <Property Name="ToRange" Type="Double" />
-    <Property Name="EffectiveFromDate" Type="DateTime" Precision="3" />
-    <Property Name="EffectiveToDate" Type="DateTime" Precision="3" />
+    <Property Name="EffectiveFromDate" Type="DateTime" />
+    <Property Name="EffectiveToDate" Type="DateTime" />
     <Property Name="Rate" Type="Double" />
     <Property Name="PayeeUserCredentialId" Type="Guid" />
     <Property Name="IsPrimaryAgent" Type="Boolean" Nullable="false" />
-    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" />
     <Property Name="PayeeName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="MasterScheduleType" Relationship="Model.FK_PolicyOutgoingAdvancedSchedules_MasterScheduleTypes" FromRole="PolicyOutgoingAdvancedSchedules" ToRole="MasterScheduleTypes" />
     <NavigationProperty Name="Policy" Relationship="Model.FK_PolicyOutgoingAdvancedSchedules_Policy" FromRole="PolicyOutgoingAdvancedSchedules" ToRole="Policies" />
@@ -2023,15 +2004,11 @@
     <Property Name="IsPrimaryAgent" Type="Boolean" Nullable="false" />
     <Property Name="FirstYearPercentage" Type="Double" />
     <Property Name="RenewalPercentage" Type="Double" />
-    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedOn" Type="DateTime" />
     <Property Name="ScheduleTypeId" Type="Int32" />
     <NavigationProperty Name="MasterBasicOutgoingSchedule" Relationship="Model.FK_PolicyOutgoingSchedules_MasterBasicOutgoingSchedule" FromRole="PolicyOutgoingSchedules" ToRole="MasterBasicOutgoingSchedule" />
     <NavigationProperty Name="Policy" Relationship="Model.FK_PolicyOutgoingSchedules_Policies" FromRole="PolicyOutgoingSchedules" ToRole="Policies" />
     <NavigationProperty Name="UserCredential" Relationship="Model.FK_PolicyOutgoingSchedules_UserCredentials" FromRole="PolicyOutgoingSchedule" ToRole="UserCredential" />
-    <Property Type="DateTime" Name="CustomStartDate" Precision="3" />
-    <Property Type="DateTime" Name="CustomEndDate" Precision="3" />
-    <Property Type="Double" Name="SplitPercent" />
-    <Property Name="TierNumber" Type="Int32" />
   </EntityType>
   <EntityType Name="PolicyPaymentAlert">
     <Key>
@@ -2041,7 +2018,7 @@
     <Property Name="PaymentEntryId" Type="Guid" />
     <Property Name="AlertTypeId" Type="Guid" />
     <Property Name="UserCredentialId" Type="Guid" />
-    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedOn" Type="DateTime" />
   </EntityType>
   <EntityType Name="PolicyPaymentEntry">
     <Key>
@@ -2050,14 +2027,14 @@
     <Property Name="PaymentEntryId" Type="Guid" Nullable="false" />
     <Property Name="StatementId" Type="Guid" />
     <Property Name="PolicyId" Type="Guid" />
-    <Property Name="InvoiceDate" Type="DateTime" Precision="3" />
+    <Property Name="InvoiceDate" Type="DateTime" />
     <Property Name="PaymentRecived" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="CommissionPercentage" Type="Double" />
     <Property Name="NumberOfUnits" Type="Int32" />
     <Property Name="Fee" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="SplitPercentage" Type="Double" />
     <Property Name="TotalPayment" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedOn" Type="DateTime" />
     <Property Name="CreatedBy" Type="Guid" />
     <Property Name="PostStatusID" Type="Int32" />
     <Property Name="Bonus" Type="Decimal" Precision="19" Scale="4" />
@@ -2087,10 +2064,10 @@
     <Property Name="Range2" Type="Int32" />
     <Property Name="Rate" Type="Double" />
     <Property Name="Discount" Type="Double" />
-    <Property Name="StartDate" Type="DateTime" Precision="3" />
-    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="StartDate" Type="DateTime" />
+    <Property Name="EndDate" Type="DateTime" />
     <Property Name="IsTaxable" Type="Boolean" Nullable="false" />
-    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" />
     <Property Name="ConsumedUnit" Type="Int32" />
     <NavigationProperty Name="Licensee" Relationship="Model.FK_ServiceLines_Licensees" FromRole="ServiceLines" ToRole="Licensees" />
     <NavigationProperty Name="MasterServiceChargeType" Relationship="Model.FK_ServiceLines_MasterServiceChargeTypes" FromRole="ServiceLines" ToRole="MasterServiceChargeTypes" />
@@ -2104,8 +2081,8 @@
     <Property Name="SupportFileId" Type="Guid" Nullable="false" />
     <Property Name="SupportFileName" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
     <Property Name="ContentDescription" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
-    <Property Name="LastModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="LastModifiedOn" Type="DateTime" />
   </EntityType>
   <EntityType Name="Template">
     <Key>
@@ -2116,7 +2093,7 @@
     <Property Name="DataStartIndex" Type="Int32" />
     <Property Name="PayorID" Type="Guid" Nullable="false" />
     <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
-    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" />
     <Property Name="LastRowsToSkip" Type="Int32" />
     <NavigationProperty Name="FieldMappings" Relationship="Model.FK_FieldMapping_Templates" FromRole="Templates" ToRole="FieldMapping" />
     <NavigationProperty Name="Payor" Relationship="Model.FK_Templates_Payors" FromRole="Templates" ToRole="Payors" />
@@ -2135,7 +2112,7 @@
     <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
     <Property Name="IsNewsToFlash" Type="Boolean" Nullable="false" />
     <Property Name="LicenseeId" Type="Guid" />
-    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedOn" Type="DateTime" />
     <NavigationProperty Name="CarrierNickNames" Relationship="Model.FK_PayorCarrier_UserCredentials" FromRole="UserCredentials" ToRole="CarrierNickName" />
     <NavigationProperty Name="CarrierNickNames1" Relationship="Model.FK_PayorCarrier_UserCredentials1" FromRole="UserCredentials" ToRole="CarrierNickName" />
     <NavigationProperty Name="Carriers" Relationship="Model.FK_PayorCarriers_UserCredentials" FromRole="UserCredentials" ToRole="Carriers" />
@@ -2156,14 +2133,6 @@
     <NavigationProperty Name="PolicyOutgoingSchedules" Relationship="Model.FK_PolicyOutgoingSchedules_UserCredentials" FromRole="UserCredential" ToRole="PolicyOutgoingSchedule" />
     <Property Type="Boolean" Name="IsAccountExec" />
     <NavigationProperty Name="PolicyOutgoingPayments" Relationship="Model.FK_PolicyOutgoingPayments_UserCredentials" FromRole="UserCredential" ToRole="PolicyOutgoingPayment" />
-    <Property Name="BGUserId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="IsAdmin" Type="Boolean" Nullable="true" />
-    <Property Name="IsUserActiveOnWeb" Type="Boolean" Nullable="true" />
-    <Property Name="ModifiedOn" Type="DateTime" Nullable="true" />
-    <Property Name="ModifiedBy" Type="Guid" Nullable="true" />
-    <Property Name="PasswordResetKey" Type="String" Nullable="true" />
-    <Property Name="PasswordResetKeyInsertDateTime" Type="DateTime" Nullable="true" />
-    <Property Name="CreatedBy" Type="Guid" Nullable="true" />
   </EntityType>
   <EntityType Name="UserDetail">
     <Key>
@@ -2186,17 +2155,9 @@
     <Property Name="RenewalDefault" Type="Double" Nullable="false" />
     <Property Name="ReportForEntireAgency" Type="Boolean" Nullable="false" />
     <Property Name="ReportForOwnBusiness" Type="Boolean" Nullable="false" />
-    <Property Name="AddPayeeOn" Type="DateTime" Precision="3" />
+    <Property Name="AddPayeeOn" Type="DateTime" />
     <NavigationProperty Name="UserCredential" Relationship="Model.FK_UserDetail_UserCredentials" FromRole="UserDetail" ToRole="UserCredentials" />
     <Property Type="Boolean" Name="DisableAgentEditing" />
-    <Property Name="OfficePhone_DialCode" Type="String" Nullable="true" MaxLength="7" />
-    <Property Name="CellPhone_DialCode" Type="String" Nullable="true" MaxLength="7" />
-    <Property Name="Fax_DialCode" Type="String" Nullable="true" MaxLength="7" />
-    <Property Name="OfficePhone_CountryCode" Type="String" Nullable="true" MaxLength="7" />
-    <Property Name="CellPhone_CountryCode" Type="String" Nullable="true" MaxLength="7" />
-    <Property Name="FormattedAddress" Type="String" Nullable="true" MaxLength="150" />
-    <Property Name="Place_Id" Type="String" Nullable="true" MaxLength="500" />
-    <Property Name="Fax_CountryCode" Type="String" Nullable="true" MaxLength="7" />
   </EntityType>
   <EntityType Name="UserPermission">
     <Key>
@@ -2299,7 +2260,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PayorCarrier_UserCredentials">
-    <End Role="UserCredentials" Type="Model.UserCredential" Multiplicity="0..1" />
+    <End Role="UserCredentials" Type="Model.UserCredential" Multiplicity="1" />
     <End Role="CarrierNickName" Type="Model.CarrierNickName" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="UserCredentials">
@@ -2311,7 +2272,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PayorCarrier_UserCredentials1">
-    <End Role="UserCredentials" Type="Model.UserCredential" Multiplicity="0..1" />
+    <End Role="UserCredentials" Type="Model.UserCredential" Multiplicity="1" />
     <End Role="CarrierNickName" Type="Model.CarrierNickName" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="UserCredentials">
@@ -3576,14 +3537,14 @@
   </EntityType>
   <ComplexType Name="sp_AutoFollowUp_Result">
     <Property Type="String" Name="Company" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="ClientName" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="Insured" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ClientName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Insured" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="ClientInsured" Nullable="true" MaxLength="101" />
     <Property Type="String" Name="PayorName" Nullable="true" MaxLength="100" />
     <Property Type="String" Name="CarrierName" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="PayorCarrier" Nullable="true" MaxLength="151" />
     <Property Type="String" Name="ProductName" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="PolicyNumber" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="PolicyNumber" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="OriginalEffectiveDate" Nullable="true" MaxLength="20" />
     <Property Type="String" Name="TypeOfRevenue" Nullable="true" MaxLength="50" />
     <Property Type="Decimal" Name="AnnualPremium" Nullable="true" Precision="19" />
@@ -3612,8 +3573,8 @@
     <Property Type="Guid" Name="PolicyId" Nullable="true" />
     <Property Type="String" Name="Payor" Nullable="true" MaxLength="100" />
     <Property Type="String" Name="Agency" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="Insured" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="PolicyNumber" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Insured" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PolicyNumber" Nullable="true" MaxLength="50" />
     <Property Type="Int32" Name="PreviousStatusId" Nullable="true" />
     <Property Type="DateTime" Name="LastModifiedDate" Nullable="true" />
     <Property Type="Int32" Name="IssueTrackNumber" Nullable="false" />
@@ -3636,8 +3597,8 @@
     <Property Type="Guid" Name="PolicyId" Nullable="true" />
     <Property Type="String" Name="Payor" Nullable="true" MaxLength="100" />
     <Property Type="String" Name="Agency" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="Insured" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="PolicyNumber" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Insured" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PolicyNumber" Nullable="true" MaxLength="50" />
     <Property Type="Int32" Name="PreviousStatusId" Nullable="true" />
     <Property Type="DateTime" Name="LastModifiedDate" Nullable="true" />
     <Property Type="Int32" Name="IssueTrackNumber" Nullable="false" />
@@ -3662,8 +3623,8 @@
     <Property Type="Guid" Name="PolicyId" Nullable="true" />
     <Property Type="String" Name="Payor" Nullable="true" MaxLength="100" />
     <Property Type="String" Name="Agency" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="Insured" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="PolicyNumber" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Insured" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PolicyNumber" Nullable="true" MaxLength="50" />
     <Property Type="Int32" Name="PreviousStatusId" Nullable="true" />
     <Property Type="DateTime" Name="LastModifiedDate" Nullable="true" />
     <Property Type="Int32" Name="IssueTrackNumber" Nullable="false" />
@@ -3686,8 +3647,8 @@
     <Property Type="Guid" Name="PolicyId" Nullable="true" />
     <Property Type="String" Name="Payor" Nullable="true" MaxLength="100" />
     <Property Type="String" Name="Agency" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="Insured" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="PolicyNumber" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Insured" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PolicyNumber" Nullable="true" MaxLength="50" />
     <Property Type="Int32" Name="PreviousStatusId" Nullable="true" />
     <Property Type="DateTime" Name="LastModifiedDate" Nullable="true" />
     <Property Type="Int32" Name="IssueTrackNumber" Nullable="false" />
@@ -3755,7 +3716,7 @@
     </Key>
     <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Type="Guid" Name="LicensesID" />
-    <Property Type="DateTime" Name="MailDate" Precision="3" />
+    <Property Type="DateTime" Name="MailDate" />
     <Property Type="Boolean" Name="SendStatus" />
   </EntityType>
   <EntityType Name="AuditReport">
@@ -3767,10 +3728,10 @@
     <Property Type="String" Name="Payor" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="Payee" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="Reports" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="DateTime" Name="InvoiceFrom" Precision="3" />
-    <Property Type="DateTime" Name="InvoiceTo" Precision="3" />
+    <Property Type="DateTime" Name="InvoiceFrom" />
+    <Property Type="DateTime" Name="InvoiceTo" />
     <Property Type="String" Name="OrderBy" MaxLength="1000" FixedLength="false" Unicode="true" />
-    <Property Type="DateTime" Name="ReportOn" Precision="3" />
+    <Property Type="DateTime" Name="ReportOn" />
     <Property Type="Int32" Name="FilterBy" />
   </EntityType>
   <EntityType Name="ManagementReport">
@@ -3788,12 +3749,12 @@
     <Property Type="Int32" Name="PolicyType" />
     <Property Type="Int32" Name="PolicyMode" />
     <Property Type="Boolean" Name="TrackPayment" />
-    <Property Type="DateTime" Name="EffectiveFrom" Precision="3" />
-    <Property Type="DateTime" Name="EffectiveTo" Precision="3" />
-    <Property Type="DateTime" Name="TrackFrom" Precision="3" />
-    <Property Type="DateTime" Name="TrackTo" Precision="3" />
-    <Property Type="DateTime" Name="TermFrom" Precision="3" />
-    <Property Type="DateTime" Name="TermTo" Precision="3" />
+    <Property Type="DateTime" Name="EffectiveFrom" />
+    <Property Type="DateTime" Name="EffectiveTo" />
+    <Property Type="DateTime" Name="TrackFrom" />
+    <Property Type="DateTime" Name="TrackTo" />
+    <Property Type="DateTime" Name="TermFrom" />
+    <Property Type="DateTime" Name="TermTo" />
     <Property Type="Int32" Name="TermReason" />
     <Property Type="Decimal" Name="PremiumFrom" Precision="19" Scale="4" />
     <Property Type="Decimal" Name="PremiumTo" Precision="19" Scale="4" />
@@ -3801,9 +3762,9 @@
     <Property Type="Int32" Name="EnrolledTo" />
     <Property Type="Int32" Name="EligibleFrom" />
     <Property Type="Int32" Name="EligibleTo" />
-    <Property Type="DateTime" Name="ReportOn" Nullable="false" Precision="3" />
-    <Property Type="DateTime" Name="InvoiceFrom" Precision="3" />
-    <Property Type="DateTime" Name="InvoiceTo" Precision="3" />
+    <Property Type="DateTime" Name="ReportOn" Nullable="false" />
+    <Property Type="DateTime" Name="InvoiceFrom" />
+    <Property Type="DateTime" Name="InvoiceTo" />
     <Property Type="Int32" Name="EffectiveMonth" />
   </EntityType>
   <EntityType Name="PayeeStatementReport">
@@ -3816,11 +3777,10 @@
     <Property Type="String" Name="Payee" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="Reports" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Type="Boolean" Name="PaymentType" />
-    <Property Type="DateTime" Name="ReportOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="ReportOn" Nullable="false" />
     <Property Type="Boolean" Name="Zero" />
     <Property Type="Boolean" Name="IsSplit" />
     <Property Type="Boolean" Name="IsPayorRate" />
-    <Property Name="IsSubTotal" Type="Boolean" />
   </EntityType>
   <ComplexType Name="FollowupFilter_Result">
     <Property Type="Guid" Name="IssueId" Nullable="true" />
@@ -3867,17 +3827,17 @@
     <Property Type="Int32" Name="IssueResultId" />
     <Property Type="Int32" Name="IssueReasonId" />
     <Property Type="String" Name="Notes" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Type="DateTime" Name="InvoiceDate" Precision="0" />
-    <Property Type="DateTime" Name="NextFollowUpDate" Precision="0" />
+    <Property Type="DateTime" Name="InvoiceDate" />
+    <Property Type="DateTime" Name="NextFollowUpDate" />
     <Property Type="Decimal" Name="Payment" Precision="19" Scale="4" />
     <Property Type="Guid" Name="PolicyId" />
     <Property Type="Int32" Name="PreviousStatusId" />
-    <Property Type="DateTime" Name="LastModifiedDate" Precision="0" />
+    <Property Type="DateTime" Name="LastModifiedDate" />
     <Property Type="Int32" Name="IssueTrackNumber" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="DateTime" Name="CreatedDate" Precision="0" />
+    <Property Type="DateTime" Name="CreatedDate" />
     <Property Type="Guid" Name="ModifiedBy" />
-    <Property Type="DateTime" Name="FromDate" Precision="0" />
-    <Property Type="DateTime" Name="ToDate" Precision="0" />
+    <Property Type="DateTime" Name="FromDate" />
+    <Property Type="DateTime" Name="ToDate" />
     <NavigationProperty Name="MasterIssueCategory" Relationship="Model.FK_FollowupIssues_MasterIssueCategories" FromRole="FollowupIssue" ToRole="MasterIssueCategory" />
     <NavigationProperty Name="MasterIssueReason" Relationship="Model.FK_FollowupIssues_MasterIssueReasons" FromRole="FollowupIssue" ToRole="MasterIssueReason" />
     <NavigationProperty Name="MasterIssueResult" Relationship="Model.FK_FollowupIssues_MasterIssueResults" FromRole="FollowupIssue" ToRole="MasterIssueResult" />
@@ -3885,10 +3845,8 @@
     <NavigationProperty Name="MasterIssueStatu1" Relationship="Model.FK_FollowupIssues_MasterIssueStatus1" FromRole="FollowupIssue" ToRole="MasterIssueStatu" />
     <NavigationProperty Name="Policy" Relationship="Model.FK_FollowupIssues_Policies" FromRole="FollowupIssue" ToRole="Policy" />
     <NavigationProperty Name="PolicyPaymentEntries" Relationship="Model.FK_PolicyPaymentEntries_FollowupIssues" FromRole="FollowupIssue" ToRole="PolicyPaymentEntry" />
-    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
-    <Property Type="Boolean" Name="IsPMCVariance" Nullable="true" />
-    <Property Name="IsRemovedFromCommDashboard" Type="Boolean" Nullable="true" />
-    <Property Name="IsResolvedFromCommDashboard" Type="Boolean" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" />
+    <Property Type="Boolean" Name="IsPMCVariance" />
   </EntityType>
   <Association Name="FK_FollowupIssues_MasterIssueCategories">
     <End Type="Model.MasterIssueCategory" Role="MasterIssueCategory" Multiplicity="0..1" />
@@ -3985,12 +3943,12 @@
     <Property Type="Decimal" Name="CheckAmount" Precision="19" Scale="4" />
     <Property Type="Int32" Name="StatementStatusId" />
     <Property Type="Int32" Name="Entries" />
-    <Property Type="DateTime" Name="CreatedOn" Precision="3" />
-    <Property Type="DateTime" Name="LastModified" Precision="3" />
+    <Property Type="DateTime" Name="CreatedOn" />
+    <Property Type="DateTime" Name="LastModified" />
     <Property Type="Guid" Name="CreatedBy" />
     <Property Type="Decimal" Name="BalAdj" Precision="19" Scale="4" />
     <Property Type="Decimal" Name="EnteredAmount" Precision="19" Scale="4" />
-    <Property Type="DateTime" Name="StatementDate" Precision="3" />
+    <Property Type="DateTime" Name="StatementDate" />
     <Property Type="Guid" Name="TemplateID" />
     <Property Type="String" Name="FromPage" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="ToPage" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -4160,8 +4118,8 @@
   </ComplexType>
   <ComplexType Name="GetPolicyLearnedFieldsPolicyWise_Result">
     <Property Type="Guid" Name="PolicyId" Nullable="false" />
-    <Property Type="String" Name="Insured" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="PolicyNumber" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Insured" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PolicyNumber" Nullable="true" MaxLength="50" />
     <Property Type="DateTime" Name="Effective" Nullable="true" Precision="23" />
     <Property Type="DateTime" Name="TrackFrom" Nullable="true" Precision="23" />
     <Property Type="String" Name="PAC" Nullable="true" MaxLength="50" />
@@ -4187,14 +4145,14 @@
     <Property Type="String" Name="PayorName" Nullable="true" MaxLength="100" />
     <Property Type="DateTime" Name="PreviousEffectiveDate" Nullable="true" />
     <Property Type="Int32" Name="PreviousPolicyModeId" Nullable="true" />
-    <Property Type="String" Name="ClientName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ClientName" Nullable="true" MaxLength="50" />
   </ComplexType>
   <ComplexType Name="GetDeuEntriesforStatement_Result">
     <Property Type="Guid" Name="DEUEntryID" Nullable="false" />
-    <Property Type="String" Name="ClientValue" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="Insured" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ClientValue" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Insured" Nullable="true" MaxLength="50" />
     <Property Type="Decimal" Name="PaymentReceived" Nullable="true" Precision="19" />
-    <Property Type="String" Name="PolicyNumber" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="PolicyNumber" Nullable="true" MaxLength="50" />
     <Property Type="Int32" Name="NumberOfUnits" Nullable="true" />
     <Property Type="DateTime" Name="InvoiceDate" Nullable="true" Precision="23" />
     <Property Type="Decimal" Name="CommissionTotal" Nullable="true" Precision="19" />
@@ -4249,8 +4207,8 @@
     <Property Type="Guid" Name="LicenseeId" Nullable="false" />
     <Property Type="Guid" Name="PayorId" />
     <Property Type="String" Name="Code" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Type="DateTime" Name="Createddate" Precision="3" />
-    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="DateTime" Name="Createddate" />
+    <Property Type="DateTime" Name="LastModifiedDate" />
   </EntityType>
   <EntityType Name="LinkedUserList">
     <Key>
@@ -4259,7 +4217,7 @@
     <Property Type="Int32" Name="ID" Nullable="false" />
     <Property Type="Guid" Name="UserID" />
     <Property Type="Guid" Name="LinkedUserID" />
-    <Property Type="DateTime" Name="CreatedOn" Precision="3" />
+    <Property Type="DateTime" Name="CreatedOn" />
   </EntityType>
   <EntityType Name="ImportToolBrokersSetting">
     <Key>
@@ -4321,7 +4279,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Byte" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Type="Guid" Name="PayorID" />
     <Property Type="Guid" Name="TemplateID" />
     <Property Type="Int32" Name="MasterStatementDataID" />
@@ -4390,19 +4348,19 @@
       <PropertyRef Name="PolicyId" />
     </Key>
     <Property Type="Guid" Name="PolicyId" Nullable="false" />
-    <Property Type="String" Name="Insured" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="PolicyNumber" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Type="DateTime" Name="Effective" Precision="3" />
-    <Property Type="DateTime" Name="TrackFrom" Precision="3" />
+    <Property Type="String" Name="Insured" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PolicyNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Effective" />
+    <Property Type="DateTime" Name="TrackFrom" />
     <Property Type="String" Name="PAC" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="PMC" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Type="Decimal" Name="ModalAvgPremium" Precision="19" Scale="4" />
     <Property Type="Int32" Name="PolicyModeId" />
     <Property Type="String" Name="Enrolled" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="Eligible" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="DateTime" Name="AutoTerminationDate" Precision="3" />
+    <Property Type="DateTime" Name="AutoTerminationDate" />
     <Property Type="String" Name="Link1" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="DateTime" Name="LastModifiedOn" Precision="3" />
+    <Property Type="DateTime" Name="LastModifiedOn" />
     <Property Type="Guid" Name="LastModifiedUserCredentialid" />
     <Property Type="Guid" Name="ClientID" />
     <Property Type="Int32" Name="CompTypeID" />
@@ -4413,7 +4371,7 @@
     <Property Type="Guid" Name="CarrierId" />
     <Property Type="Guid" Name="CoverageId" />
     <Property Type="Guid" Name="PayorId" />
-    <Property Type="DateTime" Name="PreviousEffectiveDate" Precision="0" />
+    <Property Type="DateTime" Name="PreviousEffectiveDate" />
     <Property Type="Int32" Name="PreviousPolicyModeId" />
     <Property Type="String" Name="CarrierNickName" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="CoverageNickName" MaxLength="150" FixedLength="false" Unicode="true" />
@@ -4429,29 +4387,25 @@
     <Property Type="Guid" Name="UserCredentialId" />
     <Property Type="String" Name="AccoutExec" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="ImportPolicyID" MaxLength="200" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="ImportProduct" MaxLength="200" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="ImportCarrier" MaxLength="200" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="ImportPayor" MaxLength="200" FixedLength="false" Unicode="false" />
-    <Property Name="BG_PolicyPlanID" Type="String" Nullable="true" />
   </EntityType>
   <EntityType Name="PolicyLearnedFieldsHistory">
     <Key>
       <PropertyRef Name="PolicyId" />
     </Key>
     <Property Type="Guid" Name="PolicyId" Nullable="false" />
-    <Property Type="String" Name="Insured" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="PolicyNumber" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Type="DateTime" Name="Effective" Precision="3" />
-    <Property Type="DateTime" Name="TrackFrom" Precision="3" />
+    <Property Type="String" Name="Insured" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PolicyNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Effective" />
+    <Property Type="DateTime" Name="TrackFrom" />
     <Property Type="String" Name="PAC" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="PMC" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Type="Decimal" Name="ModalAvgPremium" Precision="19" Scale="4" />
     <Property Type="Int32" Name="PolicyModeId" />
     <Property Type="String" Name="Enrolled" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="Eligible" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="DateTime" Name="AutoTerminationDate" Precision="3" />
+    <Property Type="DateTime" Name="AutoTerminationDate" />
     <Property Type="String" Name="Link1" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="DateTime" Name="LastModifiedOn" Precision="3" />
+    <Property Type="DateTime" Name="LastModifiedOn" />
     <Property Type="Guid" Name="LastModifiedUserCredentialid" />
     <Property Type="Guid" Name="ClientID" />
     <Property Type="Int32" Name="CompTypeID" />
@@ -4462,7 +4416,7 @@
     <Property Type="Guid" Name="CarrierId" />
     <Property Type="Guid" Name="CoverageId" />
     <Property Type="Guid" Name="PayorId" />
-    <Property Type="DateTime" Name="PreviousEffectiveDate" Precision="0" />
+    <Property Type="DateTime" Name="PreviousEffectiveDate" />
     <Property Type="Int32" Name="PreviousPolicyModeId" />
     <Property Type="String" Name="CarrierNickName" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="CoverageNickName" MaxLength="150" FixedLength="false" Unicode="true" />
@@ -4665,14 +4619,13 @@
     <Property Type="String" Name="NickName" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Type="Guid" Name="CreatedBy" Nullable="false" />
     <Property Type="Guid" Name="ModifiedBy" Nullable="false" />
-    <Property Type="DateTime" Name="ModifiedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="ModifiedOn" Nullable="false" />
     <Property Type="Boolean" Name="IsDeleted" />
     <NavigationProperty Name="Carrier" Relationship="Model.FK_CoverageNickName_Carriers" FromRole="CoverageNickName" ToRole="Carrier" />
     <NavigationProperty Name="UserCredential" Relationship="Model.FK_CarrierCoverage_UserCredentials" FromRole="CoverageNickName" ToRole="UserCredential" />
     <NavigationProperty Name="UserCredential1" Relationship="Model.FK_CarrierCoverage_UserCredentials1" FromRole="CoverageNickName" ToRole="UserCredential" />
     <NavigationProperty Name="Coverage" Relationship="Model.FK_CoverageNickName_Coverages" FromRole="CoverageNickName" ToRole="Coverage" />
     <NavigationProperty Name="Payor" Relationship="Model.FK_CoverageNickName_Payors" FromRole="CoverageNickName" ToRole="Payor" />
-    <Property Type="DateTime" Name="CreatedOn" Precision="3" />
   </EntityType>
   <Association Name="FK_CoverageNickName_Carriers">
     <End Type="Model.Carrier" Role="Carrier" Multiplicity="1" />
@@ -4784,7 +4737,7 @@
     <Property Type="Guid" Name="PaymentEntryId" />
     <Property Type="Guid" Name="RecipientUserCredentialId" />
     <Property Type="Double" Name="PaidAmount" />
-    <Property Type="DateTime" Name="CreatedOn" Precision="3" />
+    <Property Type="DateTime" Name="CreatedOn" />
     <Property Type="Boolean" Name="IsPaid" />
     <Property Type="Double" Name="Premium" />
     <Property Type="Decimal" Name="OutgoingPerUnit" Precision="19" Scale="4" />
@@ -4838,8 +4791,8 @@
     <Property Type="Guid" Name="PolicyId" Nullable="true" />
     <Property Type="String" Name="PayorName" Nullable="true" MaxLength="100" />
     <Property Type="String" Name="Agency" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="Insured" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="PolicyNumber" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Insured" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PolicyNumber" Nullable="true" MaxLength="50" />
     <Property Type="Int32" Name="PreviousStatusId" Nullable="true" />
     <Property Type="DateTime" Name="LastModifiedDate" Nullable="true" />
     <Property Type="Int32" Name="IssueTrackNumber" Nullable="false" />
@@ -4855,7 +4808,5 @@
     <Property Type="Boolean" Name="IsTrackPayment" Nullable="false" />
     <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
     <Property Type="Boolean" Name="IsPMCVariance" Nullable="true" />
-    <Property Type="Boolean" Name="IsResolvedFromCommDashboard" Nullable="true" />
-    <Property Type="Boolean" Name="IsRemovedFromCommDashboard" Nullable="true" />
   </ComplexType>
 </Schema>

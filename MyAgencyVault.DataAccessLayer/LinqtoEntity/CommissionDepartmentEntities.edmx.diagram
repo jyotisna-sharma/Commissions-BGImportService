@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ae6c6273949f415198ac84c7f7cd376c" Name="Diagram1" ZoomLevel="85">
+        <EntityTypeShape EntityType="Model.AuditReport" Width="1.5" PointX="3.75" PointY="10.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.AutoDEUEntry" Width="1.5" PointX="9.75" PointY="11.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.Batch" Width="1.5" PointX="8.25" PointY="57" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.BrokerCode" Width="1.5" PointX="2.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CarrierNickName" Width="1.5" PointX="8.25" PointY="53" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Carrier" Width="1.5" PointX="3" PointY="45.125" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.Client" Width="1.5" PointX="3" PointY="37.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CoverageNickName" Width="1.5" PointX="11.25" PointY="55.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.Coverage" Width="1.5" PointX="17.25" PointY="44.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EntriesByDEU" Width="1.5" PointX="14.25" PointY="52.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ExportBatchFile" Width="1.5" PointX="1.5" PointY="10.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.FieldMapping" Width="1.5" PointX="10.5" PointY="136.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FollowupIssue" Width="1.5" PointX="12" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Formula" Width="1.5" PointX="8.25" PointY="85.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.GlobalCoveragesSchedule" Width="1.5" PointX="14.25" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.GlobalPayorContact" Width="1.5" PointX="8.25" PointY="72" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.GlobalPayorDefault" Width="1.5" PointX="11.25" PointY="50.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.GlobalPayorStatementDate" Width="1.5" PointX="8.25" PointY="80.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ImportBatchFile" Width="1.5" PointX="0.75" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ImportToolAvailableField" Width="1.5" PointX="12.75" PointY="0.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.ImportToolBrokersSetting" Width="1.5" PointX="11.75" PointY="11.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.ImportToolCommTranslator" Width="1.5" PointX="13.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ImportToolMasterStatementData" Width="1.5" PointX="14.75" PointY="0.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.ImportToolPaymentDataFieldsSetting" Width="1.5" PointX="2.75" PointY="14.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.ImportToolPayorPhrase" Width="1.5" PointX="14.75" PointY="3.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.ImportToolPayorTemplate" Width="1.5" PointX="4.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ImportToolSeletedPaymentData" Width="1.5" PointX="6.75" PointY="14.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.ImportToolStatementDataSetting" Width="1.5" PointX="15.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ImportToolTemplatePhrase" Width="1.5" PointX="15.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.IncomingCompType" Width="1.5" PointX="16.75" PointY="0.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.InvoiceBillingLineDetail" Width="1.5" PointX="3" PointY="4.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.Invoice" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.Journal" Width="1.5" PointX="3" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.LastPolicyViewed" Width="1.5" PointX="11.25" PointY="34.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.LicenseeNote" Width="1.5" PointX="3" PointY="62.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.LicenseePayor" Width="1.5" PointX="3" PointY="56" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.LicenseePayorSiteInfo" Width="1.5" PointX="16.75" PointY="3.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.Licensee" Width="1.5" PointX="0.75" PointY="44.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.LicenseeService" Width="1.5" PointX="3" PointY="33.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.LinkedUserList" Width="1.5" PointX="16.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ManagementReport" Width="1.5" PointX="5.75" PointY="17.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.MasterAccessRight" Width="1.5" PointX="15" PointY="32.125" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.MasterAlertType" Width="1.5" PointX="17.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterBasicIncomingSchedule" Width="1.5" PointX="9.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterBasicOutgoingSchedule" Width="1.5" PointX="15" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterBatchEntryStatu" Width="1.5" PointX="6" PointY="62.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterBatchUploadStatu" Width="1.5" PointX="6" PointY="64.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterBillPaymentType" Width="1.5" PointX="17.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterFileType" Width="1.5" PointX="9" PointY="46.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.MasterIncomingPaymentType" Width="1.5" PointX="12" PointY="44.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.MasterIssueCategory" Width="1.5" PointX="7.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterIssueReason" Width="1.5" PointX="7.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterIssueResult" Width="1.5" PointX="7.75" PointY="11.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.MasterIssueStatu" Width="1.5" PointX="7.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterLicensePaymentMode" Width="1.5" PointX="1.5" PointY="41.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterLicenseStatu" Width="1.5" PointX="1.5" PointY="60.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterManagementReportsOrderByType" Width="1.5" PointX="17.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterModule" Width="1.5" PointX="15" PointY="28.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterPasswordHintQuestion" Width="1.5" PointX="6.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterPaymentStatu" Width="1.5" PointX="18.75" PointY="0.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.MasterPayorRegion" Width="1.5" PointX="3.75" PointY="52.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterPayorSourceType" Width="1.5" PointX="18.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterPayorStatu" Width="1.5" PointX="18.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterPayorToolAvailableField" Width="1.5" PointX="8.25" PointY="93.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterPayorToolIncomingField" Width="1.5" PointX="16.75" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterPayorToolLearnedField" Width="1.5" PointX="18.75" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterPayorToolMaskFieldType" Width="1.5" PointX="8.25" PointY="99.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterPayorType" Width="1.5" PointX="19.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterPermissionType" Width="1.5" PointX="7.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterPolicyMode" Width="1.5" PointX="12" PointY="40.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterPolicyStatu" Width="1.5" PointX="15" PointY="40" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterPolicyTerminationReason" Width="1.5" PointX="15" PointY="70.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterPostStatu" Width="1.5" PointX="12" PointY="38.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterReportList" Width="1.5" PointX="19.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterRole" Width="1.5" PointX="6.75" PointY="40.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.MasterScheduleType" Width="1.5" PointX="12" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterServiceChargeType" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterServicePaymentMode" Width="1.5" PointX="9.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterService" Width="1.5" PointX="0.75" PointY="14" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.MasterSourceType" Width="1.5" PointX="0.75" PointY="56.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterStatementStatu" Width="1.5" PointX="12" PointY="73.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterSystemConstant" Width="1.5" PointX="19.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterSystemEmail" Width="1.5" PointX="20.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterZipCode" Width="1.5" PointX="20.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.News" Width="1.5" PointX="20.75" PointY="15.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.PayeeStatementReport" Width="1.5" PointX="20.75" PointY="18.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.Payor" Width="1.5" PointX="6" PointY="53.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PayorSiteLoginInfo" Width="1.5" PointX="11.25" PointY="60.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PayorSource" Width="1.5" PointX="8.25" PointY="49.125" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.PayorTemplate" Width="1.5" PointX="21.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PayorToolField" Width="1.5" PointX="10.5" PointY="87.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PayorTool" Width="1.5" PointX="8.25" PointY="89.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PoliciesHistory" Width="1.5" PointX="11.25" PointY="64" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.PolicyIncomingAdvancedSchedule" Width="1.5" PointX="14.25" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PolicyIncomingSchedule" Width="1.5" PointX="12" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PolicyLearnedField" Width="1.5" PointX="14.25" PointY="43.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PolicyLearnedFieldsHistory" Width="1.5" PointX="8.25" PointY="62.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.PolicyLevelBillingDetail" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PolicyNote" Width="1.5" PointX="21.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PolicyOutgoingAdvancedSchedule" Width="1.5" PointX="14.25" PointY="35.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.PolicyOutgoingPayment" Width="1.5" PointX="18.75" PointY="64.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.PolicyOutgoingSchedule" Width="1.5" PointX="17.25" PointY="39.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PolicyPaymentAlert" Width="1.5" PointX="21.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PolicyPaymentEntry" Width="1.5" PointX="17" PointY="63.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.ServiceLine" Width="1.5" PointX="3" PointY="28" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.Statement" Width="1.5" PointX="14.25" PointY="63.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.Support" Width="1.5" PointX="16.75" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.sysdiagram" Width="1.5" PointX="22.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbBenefits_ImportStatus" Width="1.5" PointX="22.75" PointY="3.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.tbInvoiceUpdateHistory" Width="1.5" PointX="7.75" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbLoginDetail" Width="1.5" PointX="22.75" PointY="15.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.tbLoginDetailsArchive" Width="1.5" PointX="18.75" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbPMCVarianceSlab" Width="1.5" PointX="22.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Template" Width="1.5" PointX="8.25" PointY="136.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.UserDetail" Width="1.5" PointX="11.25" PointY="28.125" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.UserPermission" Width="1.5" PointX="17.25" PointY="36.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.VariablesForBillingLine" Width="1.5" PointX="5.25" PointY="6.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.Batches_Audit" Width="1.5" PointX="20.75" PointY="22.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.Clients_Audit" Width="1.5" PointX="22.75" PointY="22.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.Coverages_Audit" Width="1.5" PointX="23.75" PointY="6.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.EntriesByDEU_Audit" Width="2.125" PointX="24.125" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.followup_pmcissues" Width="1.5" PointX="24.75" PointY="0.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.IssuedFile" Width="1.5" PointX="8.25" PointY="140.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Issuelog" Width="1.5" PointX="24.75" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MasterBatchDownloadStatu" Width="1.5" PointX="25.75" PointY="6.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.MasterSystemConstants_Backup_Dec19_2016" Width="1.5" PointX="26.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Policies_Audit" Width="1.5" PointX="26.75" PointY="9.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.policyincomingschedules_apr202018" Width="1.5" PointX="26.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PolicyIncomingSchedules_Audit" Width="1.5" PointX="7.75" PointY="26.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.PolicyLearnedFields_Audit" Width="1.5" PointX="26.75" PointY="21.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.policylearnedgfields_June122017" Width="1.5" PointX="17.75" PointY="27.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PolicyOutgoingPayments_Audit" Width="1.5" PointX="28.75" PointY="0.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.PolicyOutgoingSchedule_backup" Width="1.5" PointX="28.75" PointY="6.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.PolicyOutgoingSchedules_Audit" Width="1.5" PointX="28.75" PointY="10.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.PolicyPaymentEntries_Audit" Width="1.5" PointX="28.75" PointY="15.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.SendAlertMail" Width="1.5" PointX="19.75" PointY="28.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Statements_Audit" Width="1.5" PointX="21.75" PointY="28.875" IsExpanded="false" />
+        <AssociationConnector Association="Model.FK_Batches_Licensees" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Batches_MasterBatchEntryStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Batches_MasterBatchUploadStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Batches_Payors" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PayorCarrier_Payors" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PayorCarriers_Licensees" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Clients_Licensees" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_CoverageNickName_Payors" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_CarrierCoverages_Licensees" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EntriesByDEU_MasterIncomingPaymentTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EntriesByDEU_MasterPolicyModes" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EntriesByDEU_MasterPostStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EntriesByDEU_Payors" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EntriesByDEU_Statements" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Invoices_ExportBatchFiles" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_FieldMapping_Templates" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_FollowupIssues_MasterIssueCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_FollowupIssues_MasterIssueReasons" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_FollowupIssues_MasterIssueResults" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_FollowupIssues_MasterIssueStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_FollowupIssues_MasterIssueStatus1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PayorToolFields_Formulas" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_GlobalCoveragesSchedules_MasterScheduleTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_GlobalPayorContacts_Payors" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_GlobalPayorDefaults_MasterFileTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_GlobalPayorDefaults_Payors" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_GlobalPayorStatementDate_Payors" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Journals_ImportBatchFiles" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_InvoiceBillingLineDetail_Invoices" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_InvoiceBillingLineDetail_MasterServiceChargeTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_InvoiceBillingLineDetail_MasterServices" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PolicyLevelBillingDetail_InvoiceBillingLineDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_VariablesForBillingLine_InvoiceBillingLineDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Invoices_Licensees" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Journals_Invoices" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Journals_Licensees" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_LicenseeNotes_Licensees" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_LicenseePayors_Licensees" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_LicenseePayors_MasterSourceTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_LicenseePayors_Payors" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Licensees_MasterLicensePaymentModes" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Licensees_MasterLicenseStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_LicenseeServices_Licensees" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Payors_Licensees" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PayorSiteLoginInfo_Licensees" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PayorSource_Licensees" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PoliciesHistory_Licensees1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ServiceLines_Licensees" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_LicenseeServices_MasterServices" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_UserPermissions_MasterAccessRights1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PolicyIncomingSchedules_MasterBasicIncomingSchedule" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PolicyOutgoingSchedules_MasterBasicOutgoingSchedule" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PoliciesHistory_MasterIncomingPaymentTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PolicyLearnedFields_MasterIncomingPaymentTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PolicyLearnedFieldsHistory_MasterIncomingPaymentTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_UserPermissions_MasterModules1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_MasterPayorRegions_MasterPayorRegions" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Payors_MasterPayorRegions" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PayorToolFields_MasterPayorToolAvailableFields" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PayorToolFields_MasterPayorToolMaskFieldTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PoliciesHistory_MasterPolicyModes" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PolicyLearnedFields_MasterPolicyModes" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PolicyLearnedFieldsHistory_MasterPolicyModes" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PoliciesHistory_MasterPolicyStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PoliciesHistory_MasterPolicyTerminationReasons" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PolicyPaymentEntries_MasterPostStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PolicyIncomingAdvancedSchedules_MasterScheduleTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PolicyOutgoingAdvancedSchedules_MasterScheduleTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ServiceLines_MasterServiceChargeTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ServiceLines_MasterServiceChargeTypes1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ServiceLines_MasterServices" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Payors_MasterSourceTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Statements_MasterStatementStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_IssuedFiles_Payors" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PayorSiteLoginInfo_Payors" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PayorSource_Payors" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PayorTools_Payors" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PoliciesHistory_Payors" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PolicyLearnedFields_Payors" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PolicyLearnedFieldsHistory_Payors" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Statements_Payors" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Templates_Payors" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PayorToolFields_PayorTools" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PolicyOutgoingPayments_PolicyPaymentEntries" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PolicyPaymentEntries_Statements" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Model.Policy" Width="1.5" PointX="17.25" PointY="49.75" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_Policies_Licensees1" />
+        <AssociationConnector Association="Model.FK_Policies_MasterIncomingPaymentTypes" />
+        <AssociationConnector Association="Model.FK_Policies_MasterPolicyModes" />
+        <AssociationConnector Association="Model.FK_Policies_MasterPolicyStatus" />
+        <AssociationConnector Association="Model.FK_Policies_MasterPolicyTerminationReasons" />
+        <AssociationConnector Association="Model.FK_Policies_Payors" />
+        <AssociationConnector Association="Model.PolicyLearnedFieldPolicy" />
+        <AssociationConnector Association="Model.FK_CoverageNickName_Coverages" />
+        <AssociationConnector Association="Model.FK_EntriesByDEU_Carriers" />
+        <AssociationConnector Association="Model.FK_EntriesByDEU_Clients" />
+        <AssociationConnector Association="Model.FK_EntriesByDEU_Coverages" />
+        <AssociationConnector Association="Model.FK_EntriesByDEU_Policies" />
+        <AssociationConnector Association="Model.FK_FollowupIssues_Policies" />
+        <AssociationConnector Association="Model.FK_GlobalCoveragesSchedules_Carriers" />
+        <AssociationConnector Association="Model.FK_GlobalCoveragesSchedules_Coverages" />
+        <AssociationConnector Association="Model.FK_LastPolicyViewed_Clients" />
+        <AssociationConnector Association="Model.FK_LastPolicyViewed_Policies" />
+        <AssociationConnector Association="Model.FK_PayorCarrier_Carriers" />
+        <AssociationConnector Association="Model.FK_Policies_Carriers" />
+        <AssociationConnector Association="Model.FK_Policies_Clients" />
+        <AssociationConnector Association="Model.FK_Policies_Coverages" />
+        <AssociationConnector Association="Model.FK_PoliciesHistory_Carriers" />
+        <AssociationConnector Association="Model.FK_PoliciesHistory_Clients" />
+        <AssociationConnector Association="Model.FK_PoliciesHistory_Coverages" />
+        <AssociationConnector Association="Model.FK_PolicyIncomingSchedules_Policies" />
+        <AssociationConnector Association="Model.FK_PolicyLearnedFields_CarrierCoverages" />
+        <AssociationConnector Association="Model.FK_PolicyLearnedFields_Clients" />
+        <AssociationConnector Association="Model.FK_PolicyLearnedFields_PayorCarriers" />
+        <AssociationConnector Association="Model.FK_PolicyLearnedFields_Policies" />
+        <AssociationConnector Association="Model.FK_PolicyLearnedFieldsHistory_CarrierCoverages" />
+        <AssociationConnector Association="Model.FK_PolicyLearnedFieldsHistory_Clients" />
+        <AssociationConnector Association="Model.FK_PolicyLearnedFieldsHistory_PayorCarriers" />
+        <AssociationConnector Association="Model.FK_PolicyLearnedFieldsHistory_Policies" />
+        <AssociationConnector Association="Model.FK_PolicyLevelBillingDetail_Policies" />
+        <AssociationConnector Association="Model.FK_PolicyNotes_Policies" />
+        <AssociationConnector Association="Model.FK_PolicyPaymentEntries_EntriesByDEU" />
+        <AssociationConnector Association="Model.FK_PolicyPaymentEntries_FollowupIssues" />
+        <AssociationConnector Association="Model.FK_PolicyPaymentEntries_Policies" />
+        <AssociationConnector Association="Model.FK_Statements_Batches" />
+        <AssociationConnector Association="Model.FK_PolicyOutgoingAdvancedSchedules_Policy" />
+        <AssociationConnector Association="Model.FK_CoverageNickName_Carriers" />
+        <AssociationConnector Association="Model.FK_PolicyOutgoingSchedules_Policies" />
+        <EntityTypeShape EntityType="Model.CarrierCoverage" Width="1.5" PointX="10.375" PointY="2.75" />
+        <EntityTypeShape EntityType="Model.UserCredential" Width="1.5" PointX="9" PointY="38.125" />
+        <AssociationConnector Association="Model.FK_CarrierCoverage_UserCredentials" />
+        <AssociationConnector Association="Model.FK_CarrierCoverage_UserCredentials1" />
+        <AssociationConnector Association="Model.FK_CarrierCoverages_UserCredentials" />
+        <AssociationConnector Association="Model.FK_lastpolicyviewed_UserCredentials" />
+        <AssociationConnector Association="Model.FK_UserCredentials_Licensees" />
+        <AssociationConnector Association="Model.FK_UserCredentials_MasterRoles" />
+        <AssociationConnector Association="Model.FK_Policies_UserCredentials" />
+        <AssociationConnector Association="Model.FK_PoliciesHistory_UserCredentials" />
+        <AssociationConnector Association="Model.FK_PolicyOutgoingAdvancedSchedules_PayeeUser" />
+        <AssociationConnector Association="Model.FK_PolicyOutgoingPayments_UserCredentials" />
+        <AssociationConnector Association="Model.FK_PolicyOutgoingSchedules_UserCredentials" />
+        <AssociationConnector Association="Model.FK_UserDetail_UserCredentials" />
+        <AssociationConnector Association="Model.FK_UserPermissions_UserCredentials1" />
+        <AssociationConnector Association="Model.LinkedAgent" />
+        <AssociationConnector Association="Model.UserCredentialPayor" />
+        <EntityTypeShape EntityType="Model.PayorIncomingSchedule" Width="1.5" PointX="12" PointY="15" />
+        <EntityTypeShape EntityType="Model.Policies_03062018" Width="1.5" PointX="24.375" PointY="26.75" />
+        <AssociationConnector Association="Model.FK_PayorIncomingSchedules_MasterBasicIncomingSchedule" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

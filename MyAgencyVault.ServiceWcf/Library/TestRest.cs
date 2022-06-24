@@ -29,7 +29,7 @@ namespace MyAgencyVault.WcfService
         //New added
         [OperationContract]
         [WebInvoke(ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.WrappedRequest)]
-        JSONResponse ImportForUIS(string PolicyTable, Guid LicenseeID);
+        JSONResponse ImportService_UIS(string PolicyTable, Guid LicenseeID);
 
         [OperationContract]
         [WebInvoke(ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.WrappedRequest)]
@@ -208,7 +208,7 @@ namespace MyAgencyVault.WcfService
         }
 
         //new import process
-        public JSONResponse ImportForUIS(string strExcel, Guid LicenseeID)
+        public JSONResponse ImportService_UIS(string strExcel, Guid LicenseeID)
         {
             JSONResponse jres = null;
             string agencyName = GetLicenseeByID(LicenseeID).Company;

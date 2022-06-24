@@ -14,14 +14,14 @@ namespace MyAgencyVault.WcfService
         [OperationContract]
         ReturnStatus DeletePayor(Guid PayorId);
 
-        [OperationContract]
-        List<Payor> GetPayors(Guid? LicenseeId, PayorFillInfo PayerfillInfo);
+        //[OperationContract]
+        //List<Payor> GetPayors(Guid? LicenseeId, PayorFillInfo PayerfillInfo);
 
         [OperationContract]
         int GetPayorCount(Guid? LicenseeId, PayorFillInfo PayerfillInfo);
 
-        [OperationContract]
-        List<Payor> GetPayorsInChunk(Guid? LicenseeId, PayorFillInfo PayerfillInfo, int skip, int take);
+        //[OperationContract]
+        //List<Payor> GetPayorsInChunk(Guid? LicenseeId, PayorFillInfo PayerfillInfo, int skip, int take);
 
         [OperationContract]
         Payor GetPayorByID(Guid PayorId);
@@ -91,20 +91,20 @@ namespace MyAgencyVault.WcfService
             return Payor.DeletePayor(PayorId);
         }
 
-        public List<Payor> GetPayors(Guid? LicenseeId, PayorFillInfo PayerfillInfo)
-        {
-            return Payor.GetPayors(LicenseeId, PayerfillInfo);
-        }
+        //public List<Payor> GetPayors(Guid? LicenseeId, PayorFillInfo PayerfillInfo)
+        //{
+        //    return Payor.GetPayors(LicenseeId, PayerfillInfo);
+        //}
 
         public int GetPayorCount(Guid? LicenseeId, PayorFillInfo PayerfillInfo)
         {
             return Payor.GetPayorCount(LicenseeId, PayerfillInfo);
         }
 
-        public List<Payor> GetPayorsInChunk(Guid? LicenseeId, PayorFillInfo PayerfillInfo, int skip, int take)
-        {
-            return Payor.GetPayors(LicenseeId, PayerfillInfo, skip, take);
-        }
+        //public List<Payor> GetPayorsInChunk(Guid? LicenseeId, PayorFillInfo PayerfillInfo, int skip, int take)
+        //{
+        //    return Payor.GetPayors(LicenseeId, PayerfillInfo, skip, take);
+        //}
 
         public Payor GetPayorByID(Guid PayorId)
         {

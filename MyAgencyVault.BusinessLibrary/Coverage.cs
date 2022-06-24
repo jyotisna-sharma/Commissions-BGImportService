@@ -43,180 +43,180 @@ namespace MyAgencyVault.BusinessLibrary
         /// </summary>
         /// <returns></returns>
         /// 
-        public ReturnStatus AddUpdateDelete(Coverage selectedCoverage, OperationSet operationType)
-        {
-            using (DLinq.CommissionDepartmentEntities DataModel = Entity.DataModel)
-            {
-                ReturnStatus status = null;
-                status = ValidateProduct(DataModel, operationType);
-                bool isAddemailSent = false;
-                if (!status.IsError)
-                {
-                    if (operationType.MainOperation == Operation.Add)
-                    {
-                        DLinq.Coverage product = new DLinq.Coverage
-                        {
-                            CoverageId = this.CoverageID,
-                            ProductName = this.Name,
-                            IsDeleted = this.IsDeleted,
-                            IsGlobal = this.IsGlobal,
-                            LicenseeId = (this.LicenseeId == Guid.Empty ? null : this.LicenseeId),
-                            CreatedBy = this.UserID,
-                            CreatedOn = DateTime.Now
-                        };
+        //public ReturnStatus AddUpdateDelete(Coverage selectedCoverage, OperationSet operationType)
+        //{
+        //    using (DLinq.CommissionDepartmentEntities DataModel = Entity.DataModel)
+        //    {
+        //        ReturnStatus status = null;
+        //        status = ValidateProduct(DataModel, operationType);
+        //        bool isAddemailSent = false;
+        //        if (!status.IsError)
+        //        {
+        //            if (operationType.MainOperation == Operation.Add)
+        //            {
+        //                DLinq.Coverage product = new DLinq.Coverage
+        //                {
+        //                    CoverageId = this.CoverageID,
+        //                    ProductName = this.Name,
+        //                    IsDeleted = this.IsDeleted,
+        //                    IsGlobal = this.IsGlobal,
+        //                    LicenseeId = (this.LicenseeId == Guid.Empty ? null : this.LicenseeId),
+        //                    CreatedBy = this.UserID,
+        //                    CreatedOn = DateTime.Now
+        //                };
 
-                        // Check to coverage ID and then Add to  Coverages table
-                        DLinq.Coverage coverage = DataModel.Coverages.FirstOrDefault(c => c.CoverageId == operationType.PreviousCoverageId);
-                        if (coverage == null)
-                        {
-                            DataModel.AddToCoverages(product);
+        //                // Check to coverage ID and then Add to  Coverages table
+        //                DLinq.Coverage coverage = DataModel.Coverages.FirstOrDefault(c => c.CoverageId == operationType.PreviousCoverageId);
+        //                if (coverage == null)
+        //                {
+        //                    DataModel.AddToCoverages(product);
 
-                            //MAil to benefits for eery new product 
-                            string mailBody = "<html>Hi,<br><br>New product has been added to Commissions Department with following details:<br><br><Table><tr> <td>Product ID: </td><td> " + this.CoverageID + "</td>" +
-                             "</tr><tr> <td>Product Name: </td><td> " + this.Name + "</table><br><br>Regards,<br>Commissions Department </html>";
-                            MailServerDetail.SendMailToBenefits("Product", mailBody);
-                            isAddemailSent = true;
-                        }
-                        else
-                        {
-                            DLinq.Carrier carrier = DataModel.Carriers.FirstOrDefault(s => s.CarrierId == this.CarrierID);
-                            var count = DataModel.Coverages.Where(s => s.CoverageId == operationType.PreviousCoverageId).ToList().Count;
-                            DLinq.Coverage coverageAddRemoveUpdate = DataModel.Coverages.FirstOrDefault(s => s.CoverageId == operationType.PreviousCoverageId);
-                            if (count == 1)
-                            {
-                                if (this.Name.ToUpper().Trim() == coverageAddRemoveUpdate.ProductName.ToUpper().Trim())
-                                {
-                                    carrier.Coverages.Remove(coverageAddRemoveUpdate);
-                                    DataModel.Coverages.DeleteObject(coverageAddRemoveUpdate);
-                                    DataModel.AddToCoverages(product);
-                                }
-                                else
-                                {
-                                    carrier.Coverages.Remove(coverageAddRemoveUpdate);
-                                    DataModel.AddToCoverages(product);
+        //                    //MAil to benefits for eery new product 
+        //                    string mailBody = "<html>Hi,<br><br>New product has been added to Commissions Department with following details:<br><br><Table><tr> <td>Product ID: </td><td> " + this.CoverageID + "</td>" +
+        //                     "</tr><tr> <td>Product Name: </td><td> " + this.Name + "</table><br><br>Regards,<br>Commissions Department </html>";
+        //                    MailServerDetail.SendMailToBenefits("Product", mailBody);
+        //                    isAddemailSent = true;
+        //                }
+        //                else
+        //                {
+        //                    DLinq.Carrier carrier = DataModel.Carriers.FirstOrDefault(s => s.CarrierId == this.CarrierID);
+        //                    var count = DataModel.Coverages.Where(s => s.CoverageId == operationType.PreviousCoverageId).ToList().Count;
+        //                    DLinq.Coverage coverageAddRemoveUpdate = DataModel.Coverages.FirstOrDefault(s => s.CoverageId == operationType.PreviousCoverageId);
+        //                    if (count == 1)
+        //                    {
+        //                        if (this.Name.ToUpper().Trim() == coverageAddRemoveUpdate.ProductName.ToUpper().Trim())
+        //                        {
+        //                            carrier.Coverages.Remove(coverageAddRemoveUpdate);
+        //                            DataModel.Coverages.DeleteObject(coverageAddRemoveUpdate);
+        //                            DataModel.AddToCoverages(product);
+        //                        }
+        //                        else
+        //                        {
+        //                            carrier.Coverages.Remove(coverageAddRemoveUpdate);
+        //                            DataModel.AddToCoverages(product);
 
-                                }
-                            }
-                            else if (count > 1)
-                            {
-                                if (this.Name.ToUpper().Trim() == coverageAddRemoveUpdate.ProductName.ToUpper().Trim())
-                                {
-                                    coverageAddRemoveUpdate.CoverageId = this.CoverageID;
-                                }
-                                else
-                                {
-                                    DataModel.AddToCoverages(product);
-                                }
-                            }
-                        }
+        //                        }
+        //                    }
+        //                    else if (count > 1)
+        //                    {
+        //                        if (this.Name.ToUpper().Trim() == coverageAddRemoveUpdate.ProductName.ToUpper().Trim())
+        //                        {
+        //                            coverageAddRemoveUpdate.CoverageId = this.CoverageID;
+        //                        }
+        //                        else
+        //                        {
+        //                            DataModel.AddToCoverages(product);
+        //                        }
+        //                    }
+        //                }
 
-                        //Add to table CarrierCoverage
-                        DLinq.Carrier carrier1 = DataModel.Carriers.FirstOrDefault(s => s.CarrierId == this.CarrierID);
-                        carrier1.Coverages.Add(product);
-                        DataModel.SaveChanges();
+        //                //Add to table CarrierCoverage
+        //                DLinq.Carrier carrier1 = DataModel.Carriers.FirstOrDefault(s => s.CarrierId == this.CarrierID);
+        //                carrier1.Coverages.Add(product);
+        //                DataModel.SaveChanges();
                         
-                    }
+        //            }
 
-                    if (operationType.NickNameOperation == Operation.Add)
-                    {
-                        DLinq.CoverageNickName carrierCoverageNickName = DataModel.CoverageNickNames.FirstOrDefault(s => s.PayorId == this.PayorID && s.CarrierId == this.CarrierID && s.CoverageId == this.CoverageID && s.NickName.ToLower() == this.NickName.ToLower() && s.IsDeleted == true);
-                        //DLinq.CoverageNickName carrierCoverage = DataModel.CoverageNickNames.FirstOrDefault(s => s.PayorId == this.PayorID && s.CarrierId == this.CarrierID && s.CoverageId == this.CoverageID && s.IsDeleted == true);
+        //            if (operationType.NickNameOperation == Operation.Add)
+        //            {
+        //                DLinq.CoverageNickName carrierCoverageNickName = DataModel.CoverageNickNames.FirstOrDefault(s => s.PayorId == this.PayorID && s.CarrierId == this.CarrierID && s.CoverageId == this.CoverageID && s.NickName.ToLower() == this.NickName.ToLower() && s.IsDeleted == true);
+        //                //DLinq.CoverageNickName carrierCoverage = DataModel.CoverageNickNames.FirstOrDefault(s => s.PayorId == this.PayorID && s.CarrierId == this.CarrierID && s.CoverageId == this.CoverageID && s.IsDeleted == true);
 
-                        if (carrierCoverageNickName != null)
-                        {
-                            carrierCoverageNickName.IsDeleted = false;
-                            carrierCoverageNickName.NickName = this.NickName;
-                            carrierCoverageNickName.CreatedBy = this.UserID;
-                            carrierCoverageNickName.ModifiedBy = this.UserID;
-                            carrierCoverageNickName.ModifiedOn = DateTime.Now;
-                            //Insert into carrier coverage table
-                            DLinq.Carrier carrier = DataModel.Carriers.FirstOrDefault(s => s.CarrierId == this.CarrierID);
-                            DLinq.Coverage coverage = carrier.Coverages.Where(r => r.CoverageId == this.CoverageID).FirstOrDefault();
-                            //Get coverage ID to remove
-                            if (coverage == null)
-                            {
-                                DLinq.Coverage coverageToInsert = DataModel.Coverages.FirstOrDefault(s => s.CoverageId == this.CoverageID);
-                                carrier.Coverages.Add(coverageToInsert);
-                            }
+        //                if (carrierCoverageNickName != null)
+        //                {
+        //                    carrierCoverageNickName.IsDeleted = false;
+        //                    carrierCoverageNickName.NickName = this.NickName;
+        //                    carrierCoverageNickName.CreatedBy = this.UserID;
+        //                    carrierCoverageNickName.ModifiedBy = this.UserID;
+        //                    carrierCoverageNickName.ModifiedOn = DateTime.Now;
+        //                    //Insert into carrier coverage table
+        //                    DLinq.Carrier carrier = DataModel.Carriers.FirstOrDefault(s => s.CarrierId == this.CarrierID);
+        //                    DLinq.Coverage coverage = carrier.Coverages.Where(r => r.CoverageId == this.CoverageID).FirstOrDefault();
+        //                    //Get coverage ID to remove
+        //                    if (coverage == null)
+        //                    {
+        //                        DLinq.Coverage coverageToInsert = DataModel.Coverages.FirstOrDefault(s => s.CoverageId == this.CoverageID);
+        //                        carrier.Coverages.Add(coverageToInsert);
+        //                    }
 
-                        }
-                        else
-                        {
-                            carrierCoverageNickName = new DLinq.CoverageNickName
-                            {
-                                PayorId = this.PayorID,
-                                CarrierId = this.CarrierID,
-                                CoverageId = this.CoverageID,
-                                NickName = this.NickName,
-                                CreatedBy = this.UserID,
-                                ModifiedBy = this.UserID,
-                                ModifiedOn = DateTime.Now,
-                                IsDeleted = this.IsDeleted,
-                                CreatedOn = DateTime.Now
-                            };
+        //                }
+        //                else
+        //                {
+        //                    carrierCoverageNickName = new DLinq.CoverageNickName
+        //                    {
+        //                        PayorId = this.PayorID,
+        //                        CarrierId = this.CarrierID,
+        //                        CoverageId = this.CoverageID,
+        //                        NickName = this.NickName,
+        //                        CreatedBy = this.UserID,
+        //                        ModifiedBy = this.UserID,
+        //                        ModifiedOn = DateTime.Now,
+        //                        IsDeleted = this.IsDeleted,
+        //                        CreatedOn = DateTime.Now
+        //                    };
 
-                            DataModel.AddToCoverageNickNames(carrierCoverageNickName);
+        //                    DataModel.AddToCoverageNickNames(carrierCoverageNickName);
 
-                            DLinq.Carrier carrier = DataModel.Carriers.FirstOrDefault(s => s.CarrierId == this.CarrierID);
-                            DLinq.Coverage coverage = carrier.Coverages.Where(r => r.CoverageId == this.CoverageID).FirstOrDefault();
-                            //Get coverage ID to remove
-                            if (coverage == null)
-                            {
-                                DLinq.Coverage coverageToInsert = DataModel.Coverages.FirstOrDefault(s => s.CoverageId == this.CoverageID);
-                                carrier.Coverages.Add(coverageToInsert);
-                            }
-                        }
-                    }
-                    else if (operationType.NickNameOperation == Operation.Upadte)
-                    {
-                        //DLinq.CoverageNickName coverageNickName = DataModel.CoverageNickNames.FirstOrDefault(s => s.PayorId == this.PayorID && s.CarrierId == this.CarrierID && s.CoverageId == operationType.PreviousCoverageId);
-                        DLinq.CoverageNickName coverageNickName = DataModel.CoverageNickNames.FirstOrDefault(s => s.PayorId == this.PayorID && s.CarrierId == this.CarrierID && s.CoverageId == operationType.PreviousCoverageId && s.NickName == selectedCoverage.NickName);
-                        if (coverageNickName != null)
-                        {
-                            DataModel.CoverageNickNames.DeleteObject(coverageNickName);
+        //                    DLinq.Carrier carrier = DataModel.Carriers.FirstOrDefault(s => s.CarrierId == this.CarrierID);
+        //                    DLinq.Coverage coverage = carrier.Coverages.Where(r => r.CoverageId == this.CoverageID).FirstOrDefault();
+        //                    //Get coverage ID to remove
+        //                    if (coverage == null)
+        //                    {
+        //                        DLinq.Coverage coverageToInsert = DataModel.Coverages.FirstOrDefault(s => s.CoverageId == this.CoverageID);
+        //                        carrier.Coverages.Add(coverageToInsert);
+        //                    }
+        //                }
+        //            }
+        //            else if (operationType.NickNameOperation == Operation.Upadte)
+        //            {
+        //                //DLinq.CoverageNickName coverageNickName = DataModel.CoverageNickNames.FirstOrDefault(s => s.PayorId == this.PayorID && s.CarrierId == this.CarrierID && s.CoverageId == operationType.PreviousCoverageId);
+        //                DLinq.CoverageNickName coverageNickName = DataModel.CoverageNickNames.FirstOrDefault(s => s.PayorId == this.PayorID && s.CarrierId == this.CarrierID && s.CoverageId == operationType.PreviousCoverageId && s.NickName == selectedCoverage.NickName);
+        //                if (coverageNickName != null)
+        //                {
+        //                    DataModel.CoverageNickNames.DeleteObject(coverageNickName);
 
-                            coverageNickName = new DLinq.CoverageNickName { PayorId = this.PayorID, CarrierId = this.CarrierID, CoverageId = this.CoverageID, NickName = this.NickName, CreatedBy = this.UserID, ModifiedBy = this.UserID, ModifiedOn = DateTime.Now, IsDeleted = this.IsDeleted };
-                            coverageNickName.Carrier = DataModel.Carriers.FirstOrDefault(s => s.CarrierId == this.CarrierID);
-                            coverageNickName.Payor = DataModel.Payors.FirstOrDefault(s => s.PayorId == this.PayorID);
-                            coverageNickName.Coverage = DataModel.Coverages.FirstOrDefault(s => s.CoverageId == this.CoverageID);
+        //                    coverageNickName = new DLinq.CoverageNickName { PayorId = this.PayorID, CarrierId = this.CarrierID, CoverageId = this.CoverageID, NickName = this.NickName, CreatedBy = this.UserID, ModifiedBy = this.UserID, ModifiedOn = DateTime.Now, IsDeleted = this.IsDeleted };
+        //                    coverageNickName.Carrier = DataModel.Carriers.FirstOrDefault(s => s.CarrierId == this.CarrierID);
+        //                    coverageNickName.Payor = DataModel.Payors.FirstOrDefault(s => s.PayorId == this.PayorID);
+        //                    coverageNickName.Coverage = DataModel.Coverages.FirstOrDefault(s => s.CoverageId == this.CoverageID);
 
-                            DataModel.AddToCoverageNickNames(coverageNickName);
+        //                    DataModel.AddToCoverageNickNames(coverageNickName);
 
-                        }
-                        else
-                        {
-                            coverageNickName = new DLinq.CoverageNickName { PayorId = this.PayorID, CarrierId = this.CarrierID, CoverageId = this.CoverageID, NickName = this.NickName, CreatedBy = this.UserID, ModifiedBy = this.UserID, ModifiedOn = DateTime.Now, IsDeleted = this.IsDeleted };
-                            coverageNickName.Carrier = DataModel.Carriers.FirstOrDefault(s => s.CarrierId == this.CarrierID);
-                            coverageNickName.Payor = DataModel.Payors.FirstOrDefault(s => s.PayorId == this.PayorID);
-                            coverageNickName.Coverage = DataModel.Coverages.FirstOrDefault(s => s.CoverageId == this.CoverageID);
+        //                }
+        //                else
+        //                {
+        //                    coverageNickName = new DLinq.CoverageNickName { PayorId = this.PayorID, CarrierId = this.CarrierID, CoverageId = this.CoverageID, NickName = this.NickName, CreatedBy = this.UserID, ModifiedBy = this.UserID, ModifiedOn = DateTime.Now, IsDeleted = this.IsDeleted };
+        //                    coverageNickName.Carrier = DataModel.Carriers.FirstOrDefault(s => s.CarrierId == this.CarrierID);
+        //                    coverageNickName.Payor = DataModel.Payors.FirstOrDefault(s => s.PayorId == this.PayorID);
+        //                    coverageNickName.Coverage = DataModel.Coverages.FirstOrDefault(s => s.CoverageId == this.CoverageID);
 
-                            DataModel.AddToCoverageNickNames(coverageNickName);
-                        }
-                    }
-                    else if (operationType.NickNameOperation == Operation.Delete)
-                    {
-                        DLinq.CoverageNickName CoverageNickName = (from c in DataModel.CoverageNickNames
-                                                                  where (c.CarrierId == this.CarrierID && c.PayorId == this.PayorID && c.CoverageId == this.CoverageID && c.IsDeleted == false)
-                                                                  select c).FirstOrDefault();
+        //                    DataModel.AddToCoverageNickNames(coverageNickName);
+        //                }
+        //            }
+        //            else if (operationType.NickNameOperation == Operation.Delete)
+        //            {
+        //                DLinq.CoverageNickName CoverageNickName = (from c in DataModel.CoverageNickNames
+        //                                                          where (c.CarrierId == this.CarrierID && c.PayorId == this.PayorID && c.CoverageId == this.CoverageID && c.IsDeleted == false)
+        //                                                          select c).FirstOrDefault();
 
-                        if (CoverageNickName != null && CoverageNickName.CoverageId != null)
-                        {
-                            //Set isDelete flag is True
-                            DLinq.Coverage coverage = DataModel.Coverages.FirstOrDefault(s => s.CoverageId == this.CoverageID);
-                            //Set coverage deleted true
-                            coverage.IsDeleted = true;
-                            //Set coverage nick name is true
-                            CoverageNickName.IsDeleted = true;
+        //                if (CoverageNickName != null && CoverageNickName.CoverageId != null)
+        //                {
+        //                    //Set isDelete flag is True
+        //                    DLinq.Coverage coverage = DataModel.Coverages.FirstOrDefault(s => s.CoverageId == this.CoverageID);
+        //                    //Set coverage deleted true
+        //                    coverage.IsDeleted = true;
+        //                    //Set coverage nick name is true
+        //                    CoverageNickName.IsDeleted = true;
 
-                            DLinq.Carrier carrier = DataModel.Carriers.FirstOrDefault(s => s.CarrierId == this.CarrierID);
-                            carrier.Coverages.Remove(DataModel.Coverages.FirstOrDefault(s => s.CoverageId == this.CoverageID));
-                        }
-                    }
-                    DataModel.SaveChanges();
-                }
-                return status;
-            }
-        }
+        //                    DLinq.Carrier carrier = DataModel.Carriers.FirstOrDefault(s => s.CarrierId == this.CarrierID);
+        //                    carrier.Coverages.Remove(DataModel.Coverages.FirstOrDefault(s => s.CoverageId == this.CoverageID));
+        //                }
+        //            }
+        //            DataModel.SaveChanges();
+        //        }
+        //        return status;
+        //    }
+        //}
 
         #region"PreviousCode"
 
@@ -571,48 +571,48 @@ namespace MyAgencyVault.BusinessLibrary
             }
         }
 
-        public static List<CoverageNickName> GetAllNickNames(Guid PayorId, Guid CarrierId, Guid CoverageId)
-        {
-            if (PayorId == Guid.Empty || CarrierId == Guid.Empty)
-                return null;
-            using (DLinq.CommissionDepartmentEntities DataModel = Entity.DataModel)
-            {
-                List<string> lstNickNames = new List<string>();
-                DLinq.Carrier carrier = DataModel.Carriers.FirstOrDefault(s => s.CarrierId == CarrierId && s.IsDeleted == false);
-                if (carrier == null) return null;
+        //public static List<CoverageNickName> GetAllNickNames(Guid PayorId, Guid CarrierId, Guid CoverageId)
+        //{
+        //    if (PayorId == Guid.Empty || CarrierId == Guid.Empty)
+        //        return null;
+        //    using (DLinq.CommissionDepartmentEntities DataModel = Entity.DataModel)
+        //    {
+        //        List<string> lstNickNames = new List<string>();
+        //        DLinq.Carrier carrier = DataModel.Carriers.FirstOrDefault(s => s.CarrierId == CarrierId && s.IsDeleted == false);
+        //        if (carrier == null) return null;
 
-                List<CoverageNickName> _allCoveragesNickName = carrier.Coverages.Where(s => s.IsDeleted == false).OrderBy(c => c.ProductName)
-                    .Select(s => new CoverageNickName
-                    {
-                        CoverageID = s.CoverageId,
-                        CarrierID = CarrierId,
-                        PayorID = PayorId,
-                        LicenseeId = s.LicenseeId,
-                        UserID = s.CreatedBy.Value
-                    }).ToList();
+        //        List<CoverageNickName> _allCoveragesNickName = carrier.Coverages.Where(s => s.IsDeleted == false).OrderBy(c => c.ProductName)
+        //            .Select(s => new CoverageNickName
+        //            {
+        //                CoverageID = s.CoverageId,
+        //                CarrierID = CarrierId,
+        //                PayorID = PayorId,
+        //                LicenseeId = s.LicenseeId,
+        //                UserID = s.CreatedBy.Value
+        //            }).ToList();
 
-                List<CoverageNickName> _nickNamedcoverages = (from cc in DataModel.CoverageNickNames
-                                                              where(cc.IsDeleted == false) && (cc.PayorId == PayorId) && (cc.CarrierId == CarrierId && cc.CoverageId == CoverageId)
-                                                              select new CoverageNickName
-                                                              {
-                                                                  ID = cc.CoverageNickID,
-                                                                  PayorID = cc.PayorId,
-                                                                  CarrierID = cc.CarrierId,
-                                                                  CoverageID = cc.CoverageId,
-                                                                  NickName = cc.NickName,
-                                                                  IsDeleted = cc.IsDeleted
-                                                              }).ToList();
+        //        List<CoverageNickName> _nickNamedcoverages = (from cc in DataModel.CoverageNickNames
+        //                                                      where(cc.IsDeleted == false) && (cc.PayorId == PayorId) && (cc.CarrierId == CarrierId && cc.CoverageId == CoverageId)
+        //                                                      select new CoverageNickName
+        //                                                      {
+        //                                                          ID = cc.CoverageNickID,
+        //                                                          PayorID = cc.PayorId,
+        //                                                          CarrierID = cc.CarrierId,
+        //                                                          CoverageID = cc.CoverageId,
+        //                                                          NickName = cc.NickName,
+        //                                                          IsDeleted = cc.IsDeleted
+        //                                                      }).ToList();
 
-                //Acme added March 07, 2017 as per kevin's email
-                if (_nickNamedcoverages != null && _nickNamedcoverages.Count > 0)
-                {
-                    _nickNamedcoverages = _nickNamedcoverages.OrderBy(x => x.NickName).ToList();
-                }
+        //        //Acme added March 07, 2017 as per kevin's email
+        //        if (_nickNamedcoverages != null && _nickNamedcoverages.Count > 0)
+        //        {
+        //            _nickNamedcoverages = _nickNamedcoverages.OrderBy(x => x.NickName).ToList();
+        //        }
 
 
-                return _nickNamedcoverages;
-            }
-        }
+        //        return _nickNamedcoverages;
+        //    }
+        //}
         /// <summary>
         /// 
         /// </summary>
@@ -663,33 +663,33 @@ namespace MyAgencyVault.BusinessLibrary
         /// <param name="PayorId"></param>
         /// <param name="CarrierId"></param>
         /// <returns></returns>
-        public static List<Coverage> GetCarrierCoverages(Guid CarrierId)
-        {
-            if (CarrierId == Guid.Empty)
-                return null;
+        //public static List<Coverage> GetCarrierCoverages(Guid CarrierId)
+        //{
+        //    if (CarrierId == Guid.Empty)
+        //        return null;
 
-            using (DLinq.CommissionDepartmentEntities DataModel = Entity.DataModel)
-            {
-                List<Coverage> _cover = new List<Coverage>();
+        //    using (DLinq.CommissionDepartmentEntities DataModel = Entity.DataModel)
+        //    {
+        //        List<Coverage> _cover = new List<Coverage>();
 
-                DLinq.Carrier tmpCarrier = DataModel.Carriers.FirstOrDefault(s => s.CarrierId == CarrierId && s.IsDeleted == false);
+        //        DLinq.Carrier tmpCarrier = DataModel.Carriers.FirstOrDefault(s => s.CarrierId == CarrierId && s.IsDeleted == false);
 
-                _cover = (from cc in tmpCarrier.Coverages
-                          where (cc.IsDeleted == false)
-                          orderby cc.ProductName
-                          select new Coverage
-                          {
-                              CoverageID = cc.CoverageId,
-                              CarrierID = CarrierId,
-                              Name = cc.ProductName,
-                              NickName = cc.ProductName,
-                              LicenseeId = cc.LicenseeId,
-                              IsGlobal = cc.IsGlobal,
-                              UserID = cc.CreatedBy.Value
-                          }).OrderBy(p => p.Name).Distinct().ToList();
-                return _cover;
-            }
-        }
+        //        _cover = (from cc in tmpCarrier.Coverages
+        //                  where (cc.IsDeleted == false)
+        //                  orderby cc.ProductName
+        //                  select new Coverage
+        //                  {
+        //                      CoverageID = cc.CoverageId,
+        //                      CarrierID = CarrierId,
+        //                      Name = cc.ProductName,
+        //                      NickName = cc.ProductName,
+        //                      LicenseeId = cc.LicenseeId,
+        //                      IsGlobal = cc.IsGlobal,
+        //                      UserID = cc.CreatedBy.Value
+        //                  }).OrderBy(p => p.Name).Distinct().ToList();
+        //        return _cover;
+        //    }
+        //}
 
         /// <summary>
         /// 
@@ -739,68 +739,68 @@ namespace MyAgencyVault.BusinessLibrary
         /// <param name="PayorId"></param>
         /// <param name="CarrierId"></param>
         /// <returns></returns>
-        public static List<Coverage> GetCarrierCoverages(Guid PayorId, Guid CarrierId)
-        {
-            if (PayorId == Guid.Empty || CarrierId == Guid.Empty)
-                return null;
-            using (DLinq.CommissionDepartmentEntities DataModel = Entity.DataModel)
-            {
-                DLinq.Carrier carrier = DataModel.Carriers.FirstOrDefault(s => s.CarrierId == CarrierId && s.IsDeleted == false);
-                if (carrier == null) return null;
+        //public static List<Coverage> GetCarrierCoverages(Guid PayorId, Guid CarrierId)
+        //{
+        //    if (PayorId == Guid.Empty || CarrierId == Guid.Empty)
+        //        return null;
+        //    using (DLinq.CommissionDepartmentEntities DataModel = Entity.DataModel)
+        //    {
+        //        DLinq.Carrier carrier = DataModel.Carriers.FirstOrDefault(s => s.CarrierId == CarrierId && s.IsDeleted == false);
+        //        if (carrier == null) return null;
 
-                List<Coverage> _allCoverages = carrier.Coverages.Where(s => s.IsDeleted == false).OrderBy(c=>c.ProductName).Select(s => new Coverage
-                {
-                    CoverageID = s.CoverageId,
-                    Name = s.ProductName,                    
-                    CarrierID = CarrierId,
-                    PayorID = PayorId,
-                    LicenseeId = s.LicenseeId,
-                    UserID = s.CreatedBy.Value
-                }).ToList();
+        //        List<Coverage> _allCoverages = carrier.Coverages.Where(s => s.IsDeleted == false).OrderBy(c=>c.ProductName).Select(s => new Coverage
+        //        {
+        //            CoverageID = s.CoverageId,
+        //            Name = s.ProductName,                    
+        //            CarrierID = CarrierId,
+        //            PayorID = PayorId,
+        //            LicenseeId = s.LicenseeId,
+        //            UserID = s.CreatedBy.Value
+        //        }).ToList();
 
 
-                List<Coverage> _nickNamedcoverages = (from cc in DataModel.CoverageNickNames
-                                                      where (cc.IsDeleted == false) && (cc.PayorId == PayorId) && (cc.CarrierId == CarrierId)
-                                                      select new Coverage
-                                                      {
-                                                          CoverageID = cc.CoverageId,
-                                                          NickName = cc.NickName,
-                                                      }).ToList();
+        //        List<Coverage> _nickNamedcoverages = (from cc in DataModel.CoverageNickNames
+        //                                              where (cc.IsDeleted == false) && (cc.PayorId == PayorId) && (cc.CarrierId == CarrierId)
+        //                                              select new Coverage
+        //                                              {
+        //                                                  CoverageID = cc.CoverageId,
+        //                                                  NickName = cc.NickName,
+        //                                              }).ToList();
 
-                foreach (Coverage nickNamedCoverages in _nickNamedcoverages)
-                {
-                    Coverage coverage = _allCoverages.FirstOrDefault(s => s.CoverageID == nickNamedCoverages.CoverageID);
-                    List<Coverage> TempMultileCoveragesNickName = _nickNamedcoverages.Where(s => s.CoverageID == nickNamedCoverages.CoverageID).ToList();
-                    string strNickName = string.Empty;
+        //        foreach (Coverage nickNamedCoverages in _nickNamedcoverages)
+        //        {
+        //            Coverage coverage = _allCoverages.FirstOrDefault(s => s.CoverageID == nickNamedCoverages.CoverageID);
+        //            List<Coverage> TempMultileCoveragesNickName = _nickNamedcoverages.Where(s => s.CoverageID == nickNamedCoverages.CoverageID).ToList();
+        //            string strNickName = string.Empty;
 
-                    if (TempMultileCoveragesNickName != null)
-                    {
-                        foreach (var Value in TempMultileCoveragesNickName)
-                        {
-                            strNickName += Value.NickName + "; ";
-                        }
-                        strNickName = strNickName.Remove(strNickName.Length - 2, 1);
-                        //check coverage null then show its nick name
-                        if (coverage != null)
-                        {
-                            coverage.NickName = strNickName;
-                        }
-                    }
+        //            if (TempMultileCoveragesNickName != null)
+        //            {
+        //                foreach (var Value in TempMultileCoveragesNickName)
+        //                {
+        //                    strNickName += Value.NickName + "; ";
+        //                }
+        //                strNickName = strNickName.Remove(strNickName.Length - 2, 1);
+        //                //check coverage null then show its nick name
+        //                if (coverage != null)
+        //                {
+        //                    coverage.NickName = strNickName;
+        //                }
+        //            }
 
-                }
-                //Check payor avalable with nick name.
-                if (_nickNamedcoverages.Count > 0)
-                {
-                    return _allCoverages;
-                }
-                else
-                {
-                    _allCoverages.Clear();
-                }
+        //        }
+        //        //Check payor avalable with nick name.
+        //        if (_nickNamedcoverages.Count > 0)
+        //        {
+        //            return _allCoverages;
+        //        }
+        //        else
+        //        {
+        //            _allCoverages.Clear();
+        //        }
 
-                return _allCoverages;
-            }
-        }
+        //        return _allCoverages;
+        //    }
+        //}
 
         public static bool IsValidCoverage(string carrierNickName, string coverageNickName, Guid payorId)
         {

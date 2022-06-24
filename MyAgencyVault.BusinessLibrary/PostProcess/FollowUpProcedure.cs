@@ -48,7 +48,7 @@ namespace MyAgencyVault.BusinessLibrary
                         policy.LearnedFields = PolicyLearnedField.GetPolicyLearnedFieldsPolicyWise(policy.PolicyId);
 
                         //Update Policy Last Followup runs date                  
-                        Policy.UpdateLastFollowupRunsWithTodayDate(PolicyId);
+                        //Policy.UpdateLastFollowupRunsWithTodayDate(PolicyId);
                         //Calculate mode
                         MasterPolicyMode? _MasterPolicyMode;
                         if (_DEU == null)
@@ -711,7 +711,7 @@ namespace MyAgencyVault.BusinessLibrary
                     {
 
                         //****Update Policy Last Followup runs date****
-                        Policy.UpdateLastFollowupRunsWithTodayDate(PolicyId);
+                        //Policy.UpdateLastFollowupRunsWithTodayDate(PolicyId);
                         PolicyDetailsData policy = new PolicyDetailsData();
                         List<DisplayFollowupIssue> _FollowupIssuelst = new List<DisplayFollowupIssue>();
 
@@ -818,7 +818,7 @@ namespace MyAgencyVault.BusinessLibrary
                         {
                             //ActionLogger.Logger.WriteImportPolicyLog("FolloWpUp Started", true);
                             //ActionLogger.Logger.WriteImportPolicyLog(System.DateTime.Now.ToString(), true);
-                            Policy.UpdateLastFollowupRunsWithTodayDate(PolicyId);
+                            //Policy.UpdateLastFollowupRunsWithTodayDate(PolicyId);
                             bool isPaymenyExist = false;
                             bool ReturnFlag = false;
                             List<DisplayFollowupIssue> FollowupIssueLst = FollowupIssue.GetIssues(PolicyId);
@@ -1552,7 +1552,7 @@ namespace MyAgencyVault.BusinessLibrary
                     else if (_FollowUpRunModules == FollowUpRunModules.ResolveIssue)
                     {
 
-                        Policy.UpdateLastFollowupRunsWithTodayDate(PolicyId);
+                        //Policy.UpdateLastFollowupRunsWithTodayDate(PolicyId);
 
                         PolicyDetailsData policy = PostUtill.GetPolicy(PolicyId);
                         MasterPolicyMode? _MasterPolicyMode;
@@ -1611,7 +1611,7 @@ namespace MyAgencyVault.BusinessLibrary
             {
                 IsCallForDelete = false;
                 //****Update Policy Last Followup runs date****
-                Policy.UpdateLastFollowupRunsWithTodayDate(PolicyId);
+                //Policy.UpdateLastFollowupRunsWithTodayDate(PolicyId);
 
                 //ActionLogger.Logger.WriteImportPolicyLog(" issue while running follow up. FolloWpUp Failed", true);
                 ActionLogger.Logger.WriteImportPolicyLog(ex.StackTrace.ToString(), true);

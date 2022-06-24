@@ -10,8 +10,8 @@ namespace MyAgencyVault.WcfService
     [ServiceContract]
     interface ICoverage
     {
-        [OperationContract]
-        ReturnStatus AddUpdateDeleteCoverage(Coverage Covrage, OperationSet operationType);
+        //[OperationContract]
+        //ReturnStatus AddUpdateDeleteCoverage(Coverage Covrage, OperationSet operationType);
 
         [OperationContract]
         Coverage GetCarrierCoverage(Guid PayorId, Guid CarrierId, Guid CoverageId);
@@ -19,17 +19,17 @@ namespace MyAgencyVault.WcfService
         [OperationContract]
         List<Coverage> GetCoverages(Guid LicenseeID);
 
-        [OperationContract]
-        List<Coverage> GetCarrierCoverages(Guid CarrierId);
+        //[OperationContract]
+        //List<Coverage> GetCarrierCoverages(Guid CarrierId);
 
         [OperationContract]
         List<DisplayedCoverage> GetDisplayedCarrierCoverages(Guid LicenseeId);
 
-        [OperationContract]
-        List<Coverage> GetPayorCarrierCoverages(Guid PayorId, Guid CarrierId);
+        //[OperationContract]
+        //List<Coverage> GetPayorCarrierCoverages(Guid PayorId, Guid CarrierId);
 
-        [OperationContract]
-        List<CoverageNickName> GetAllNickNames(Guid PayorId, Guid CarrierId, Guid CoverageId);
+        //[OperationContract]
+        //List<CoverageNickName> GetAllNickNames(Guid PayorId, Guid CarrierId, Guid CoverageId);
 
         [OperationContract]
         bool IsValidCoverage(string carrierNickName, string coverageNickName, Guid payorId);
@@ -53,10 +53,10 @@ namespace MyAgencyVault.WcfService
     public partial class MavService : ICoverage
     {
 
-        public ReturnStatus AddUpdateDeleteCoverage(Coverage Covrage,OperationSet operationType)
-        {
-            return Covrage.AddUpdateDelete(Covrage,operationType);
-        }
+        //public ReturnStatus AddUpdateDeleteCoverage(Coverage Covrage,OperationSet operationType)
+        //{
+        //    return Covrage.AddUpdateDelete(Covrage,operationType);
+        //}
 
         public Coverage GetCarrierCoverage(Guid PayorId, Guid CarrierId, Guid CoverageId)
         {
@@ -68,10 +68,10 @@ namespace MyAgencyVault.WcfService
             return Coverage.GetCoverages(LicenseeID);
         }
 
-        public List<Coverage> GetCarrierCoverages(Guid CarrierId)
-        {
-            return Coverage.GetCarrierCoverages(CarrierId);
-        }
+        //public List<Coverage> GetCarrierCoverages(Guid CarrierId)
+        //{
+        //    return Coverage.GetCarrierCoverages(CarrierId);
+        //}
 
         public List<DisplayedCoverage> GetPayorCoverages(Guid PayorId)
         {
@@ -83,15 +83,15 @@ namespace MyAgencyVault.WcfService
             return Coverage.GetDisplayedCarrierCoverages(LicenseeId);
         }
 
-        public List<Coverage> GetPayorCarrierCoverages(Guid PayorId, Guid CarrierId)
-        {
-            return Coverage.GetCarrierCoverages(PayorId, CarrierId);
-        }
+        //public List<Coverage> GetPayorCarrierCoverages(Guid PayorId, Guid CarrierId)
+        //{
+        //    return Coverage.GetCarrierCoverages(PayorId, CarrierId);
+        //}
 
-        public List<CoverageNickName> GetAllNickNames(Guid PayorId, Guid CarrierId, Guid CoverageId)
-        {
-            return Coverage.GetAllNickNames(PayorId, CarrierId, CoverageId);
-        }
+        //public List<CoverageNickName> GetAllNickNames(Guid PayorId, Guid CarrierId, Guid CoverageId)
+        //{
+        //    return Coverage.GetAllNickNames(PayorId, CarrierId, CoverageId);
+        //}
 
         public bool IsValidCoverage(string carrierNickName, string coverageNickName, Guid payorId)
         {
