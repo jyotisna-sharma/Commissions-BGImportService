@@ -276,6 +276,51 @@ namespace MyAgencyVault.BusinessLibrary
                 return false;
             }
         }
+        public static Guid CheckPolicyExistsForCaravus (string ImportID, string CDPolicyID)
+        {
+            Guid policyId = Guid.Empty;
+            string LicenseeID = "A3E3FCEE-05B5-4D3A-9D62-E113AED72946";
+            try
+            {
+                Guid LicID; Guid.TryParse(LicenseeID, out LicID);
+
+                Guid _policy = IsPolicyExistingWithImportID(ImportID, LicID);
+
+                if (_policy != Guid.Empty)
+                {
+                    if (!String.IsNullOrEmpty(CDPolicyID))
+                    {
+                        Guid _cdPolicyID;
+                        Guid.TryParse(CDPolicyID , out _cdPolicyID);
+
+                        using (DLinq.CommissionDepartmentEntities DataModel = Entity.DataModel)
+                        {
+                            var _policyIncd = (from p in DataModel.PolicyLearnedFields
+                                           join o in DataModel.Policies on p.PolicyId equals o.PolicyId
+                                           where (p.ImportPolicyID == ImportID && o.PolicyLicenseeId == LicID && o.PolicyId == _cdPolicyID)
+                                           select p).FirstOrDefault();
+
+                            if (_policyIncd != null)
+                            {
+                                policyId = _cdPolicyID;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    if (!String.IsNullOrEmpty(CDPolicyID))
+                    {
+                        Guid.TryParse(CDPolicyID, out policyId);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ActionLogger.Logger.WriteImportPolicyLog("Error while execution CheckPolicyExistsForCaravus: ", true);
+            }
+            return policyId;
+        }
         public static Guid IsPolicyExistingWithImportID(string ImportID, Guid LicID, string agencyName = "")
         {
             //Guid policyID = Guid.Empty;
@@ -5118,14 +5163,14 @@ namespace MyAgencyVault.BusinessLibrary
                   }
               }*/
 
-            if (Convert.ToString(LicID).ToUpper() == "A3E3FCEE-05B5-4D3A-9D62-E113AED72946")//Vanguard Benefit BG
-            {
-                policyIDKey = "CDPolicyID"; // System.Configuration.ConfigurationSettings.AppSettings["PolicyIDKeyName_Benefits"]; // "OriginalPlanID";
-            }
-            else
-            {
-                policyIDKey = "OriginalPlanID";
-            }
+            //if (Convert.ToString(LicID).ToUpper() == "A3E3FCEE-05B5-4D3A-9D62-E113AED72946")//Vanguard Benefit BG
+            //{
+                //policyIDKey = "CDPolicyID"; // System.Configuration.ConfigurationSettings.AppSettings["PolicyIDKeyName_Benefits"]; // "OriginalPlanID";
+            //}
+            //else
+            //{
+            //    policyIDKey = "OriginalPlanID";
+            //}
 
             ActionLogger.Logger.WriteImportPolicyLog("Import Policy: policyIDKey: " + policyIDKey, true, agencyName);
             char[] spCharac = System.Configuration.ConfigurationSettings.AppSettings["AgentCharactersToTrim"].ToCharArray();  //{ '(', '[', '-' };
@@ -5210,7 +5255,7 @@ namespace MyAgencyVault.BusinessLibrary
                    
                         
                     string importedID = dt.Columns.Contains("OriginalPlanID") ? Convert.ToString(dt.Rows[i]["OriginalPlanID"]).Trim() : "";
-                    string importedPolicyID = dt.Columns.Contains(policyIDKey) ? Convert.ToString(dt.Rows[i][policyIDKey]).Trim() : Convert.ToString(Guid.NewGuid()).ToUpper();// Assuming new policy, new ID is generated 
+                    string importedPolicyID = dt.Columns.Contains("OriginalPlanID") ? Convert.ToString(dt.Rows[i]["OriginalPlanID"]).Trim() : Convert.ToString(Guid.NewGuid()).ToUpper();// Assuming new policy, new ID is generated 
                     
                     ActionLogger.Logger.WriteImportPolicyLog("Import Policy: importedPolicyID: " + importedPolicyID, true, agencyName);
                     Dictionary<string, string> errMsgPolicy = new Dictionary<string, string>();
@@ -5280,7 +5325,18 @@ namespace MyAgencyVault.BusinessLibrary
 
                     if (Convert.ToString(LicID).ToUpper() == "A3E3FCEE-05B5-4D3A-9D62-E113AED72946")//Vanguard Benefit BG
                     {
-                        isExisting = IsPolicyExistingWithPolicyID_New(importedPolicyID, agencyName);
+                        //isExisting = IsPolicyExistingWithPolicyID_New(importedPolicyID, agencyName);
+                        string CDPolicyID = dt.Columns.Contains("CDPolicyID") ? Convert.ToString(dt.Rows[i]["CDPolicyID"]) : "";
+                        policyID = CheckPolicyExistsForCaravus(importedID, CDPolicyID);
+                        if (policyID == Guid.Empty)
+                        {
+                            isExisting = false;
+                            policyID = Guid.NewGuid();
+                        }
+                        else
+                        {
+                            isExisting = true;
+                        }
                     }
                     else
                     {
@@ -5298,25 +5354,25 @@ namespace MyAgencyVault.BusinessLibrary
 
                     //Guid policyID;
 
-                    if (Convert.ToString(LicID).ToUpper() == "A3E3FCEE-05B5-4D3A-9D62-E113AED72946")//Vanguard Benefit BG
-                    {
-                        try
-                        {
-                            policyID = new Guid(importedPolicyID);
-                        }
-                        catch (Exception ex)
-                        {
-                            errMsgPolicy.Add("CDPolicyID", "Invalid CD PolicyID");
-                            string output = Newtonsoft.Json.JsonConvert.SerializeObject(errMsgPolicy);
-                            ActionLogger.Logger.WriteImportPolicyLog("Import Policy: Invalid CD PolicyID, skipping record" + ex.Message, true, agencyName);
-                            AddImportStatusToDB(importedPolicyID, false, false, benefits_policyID, agencyName);
-                            errorCount++;
-                            Benefits_ErrorMsg m = new Benefits_ErrorMsg(importedID, benefits_policyID, output);
-                            errorList.Add(m);
-                            //detachObject(DataModel, objPolicy);
-                            continue;
-                        }
-                    }
+                    //if (Convert.ToString(LicID).ToUpper() == "A3E3FCEE-05B5-4D3A-9D62-E113AED72946")//Vanguard Benefit BG
+                    //{
+                    //    try
+                    //    {
+                    //        policyID = new Guid(importedPolicyID);
+                    //    }
+                    //    catch (Exception ex)
+                    //    {
+                    //        errMsgPolicy.Add("CDPolicyID", "Invalid CD PolicyID");
+                    //        string output = Newtonsoft.Json.JsonConvert.SerializeObject(errMsgPolicy);
+                    //        ActionLogger.Logger.WriteImportPolicyLog("Import Policy: Invalid CD PolicyID, skipping record" + ex.Message, true, agencyName);
+                    //        AddImportStatusToDB(importedPolicyID, false, false, benefits_policyID, agencyName);
+                    //        errorCount++;
+                    //        Benefits_ErrorMsg m = new Benefits_ErrorMsg(importedID, benefits_policyID, output);
+                    //        errorList.Add(m);
+                    //        //detachObject(DataModel, objPolicy);
+                    //        continue;
+                    //    }
+                    //}
 
                     ActionLogger.Logger.WriteImportPolicyLog("Import Policy: policyID: " + importedPolicyID + ", benefits ID: " + benefits_policyID, true, agencyName);
                     if (isExisting) // (policyID != Guid.Empty)
@@ -11336,6 +11392,7 @@ namespace MyAgencyVault.BusinessLibrary
         }
 
         #endregion
+
     }
 
 
