@@ -276,42 +276,40 @@ namespace MyAgencyVault.BusinessLibrary
                 return false;
             }
         }
-        public static Guid CheckPolicyExistsForCaravus (string ImportID, string CDPolicyID)
+        public static Guid CheckPolicyExistsForCaravus (string ImportID, string incomingCDPolicyID)
         {
             Guid policyId = Guid.Empty;
-            string LicenseeID = "A3E3FCEE-05B5-4D3A-9D62-E113AED72946";
+            Guid LicID = new Guid("A3E3FCEE-05B5-4D3A-9D62-E113AED72946");
             try
             {
-                Guid LicID; Guid.TryParse(LicenseeID, out LicID);
-
                 Guid _policy = IsPolicyExistingWithImportID(ImportID, LicID);
 
-                if (_policy != Guid.Empty)
+                using (DLinq.CommissionDepartmentEntities DataModel = Entity.DataModel)
                 {
-                    if (!String.IsNullOrEmpty(CDPolicyID))
+                    Guid _incomingCDPolicyID; Guid.TryParse(incomingCDPolicyID, out _incomingCDPolicyID);
+
+                    if (_policy != Guid.Empty)
                     {
-                        Guid _cdPolicyID;
-                        Guid.TryParse(CDPolicyID , out _cdPolicyID);
-
-                        using (DLinq.CommissionDepartmentEntities DataModel = Entity.DataModel)
+                        if (!String.IsNullOrEmpty(incomingCDPolicyID))
                         {
-                            var _policyIncd = (from p in DataModel.PolicyLearnedFields
-                                           join o in DataModel.Policies on p.PolicyId equals o.PolicyId
-                                           where (p.ImportPolicyID == ImportID && o.PolicyLicenseeId == LicID && o.PolicyId == _cdPolicyID)
-                                           select p).FirstOrDefault();
 
-                            if (_policyIncd != null)
+                            var _incomingPolicyId = (from p in DataModel.PolicyLearnedFields
+                                                     join o in DataModel.Policies on p.PolicyId equals o.PolicyId
+                                                     where (p.ImportPolicyID == ImportID && o.PolicyLicenseeId == LicID && o.PolicyId == _incomingCDPolicyID && o.IsDeleted == false)
+                                                     select p).FirstOrDefault();
+
+                            if (_incomingPolicyId != null)
                             {
-                                policyId = _cdPolicyID;
+                                policyId = _incomingCDPolicyID;
                             }
                         }
                     }
-                }
-                else
-                {
-                    if (!String.IsNullOrEmpty(CDPolicyID))
+                    else
                     {
-                        Guid.TryParse(CDPolicyID, out policyId);
+                        if (!String.IsNullOrEmpty(incomingCDPolicyID))
+                        {
+                            Guid.TryParse(incomingCDPolicyID, out policyId);
+                        }
                     }
                 }
             }
@@ -4632,48 +4630,6 @@ namespace MyAgencyVault.BusinessLibrary
 
         static void UpdateBenefitsOptionalFields(DataTable dt, int rowIndex, string importedPolicyID, string benefits_policyID, bool isNewPolicy, ref DLinq.Policy objPolicy, ref Dictionary<string, string> errMsgPolicy, Guid LicID, string agencyName = "")
         {
-            #region remove policytype calculation becuaue it calculated based upon the values used in the policies
-            ////if (isNewPolicy || string.IsNullOrEmpty(objPolicy.PolicyType))
-            ////{
-            //string PolicyType = "";
-            //try
-            //{
-            //    //seeA
-            //    //if (dt.Columns.Contains("NewBusiness")) //|| dt.Columns.Contains("New Business?"))
-            //    //{
-            //    //    string strTypeOfPolicy = Convert.ToString(dt.Rows[rowIndex]["NewBusiness"]); //dt.Columns.Contains("New?") ? Convert.ToString(dt.Rows[i]["New?"]) : (dt.Columns.Contains("New Business?") ? Convert.ToString(dt.Rows[i]["New Business?"]) : "");
-            //    //    objPolicy.PolicyType = (!string.IsNullOrEmpty(strTypeOfPolicy) && (strTypeOfPolicy.ToLower() == "rewrite" || strTypeOfPolicy.ToLower() == "replace")) ? "Replace" : "New";
-            //    //}
-            //    //else if (isNewPolicy)
-            //    //{
-            //    //    objPolicy.PolicyType = "New";
-            //    //}
-
-
-            //    //if(isNewPolicy)
-            //    //{
-            //    //    objPolicy.IsManuallyChanged = false;
-            //    //}
-
-
-            //    objPolicy.IsManuallyChanged = isNewPolicy ? false : objPolicy.IsManuallyChanged;
-
-            //    if (objPolicy.IsManuallyChanged == false)
-            //    {
-            //        PolicyType = calculatePolicyType(objPolicy.OriginalEffectiveDate, objPolicy.PolicyClientId, LicID, objPolicy.PolicyId, objPolicy.CoverageId);
-            //        objPolicy.PolicyType = PolicyType;
-            //    }
-            //    //seeA
-            //}
-            //catch (Exception ex)
-            //{
-            //    errMsgPolicy.Add("NewBusiness", ex.Message);
-            //    ActionLogger.Logger.WriteImportPolicyLog("Import Policy Exception: New Business field  exception : " + ex.Message, true, agencyName);
-            //    AddImportStatusToDB(importedPolicyID, isNewPolicy, false, benefits_policyID, agencyName);
-            //}
-            ////} 
-            #endregion
-
             if (isNewPolicy || string.IsNullOrEmpty(objPolicy.PolicyNumber))
             {
                 try
@@ -4827,44 +4783,12 @@ namespace MyAgencyVault.BusinessLibrary
                 try
                 {
                     string strStatus = dt.Rows[rowIndex]["PlanStatusDescription"].ToString();
-                    //objPolicy.PolicyStatusId = (strStatus.ToLower() == "active") ? 0 : (strStatus.ToLower() == "pending") ? 2 : 1;
-
                     if (strStatus.ToLower() == "active")
                     {
                         objPolicy.PolicyStatusId = 0;
                     }
                     else if (strStatus.ToLower() == "pending")
                     {
-                        //if (dt.Columns.Contains("OriginalPlanStartDate"))
-                        //{
-                        //    string effDate = Convert.ToString(dt.Rows[rowIndex]["OriginalPlanStartDate"]);
-                        //    ActionLogger.Logger.WriteImportPolicyLog("Import Policy string effDate in setting status of policy " + effDate, true, agencyName);
-                        //    //check if value in double, then fetch OA Date
-                        //    double dblEff = 0;
-                        //    Double.TryParse(effDate, out dblEff);
-                        //    if (dblEff > 0)
-                        //    {
-                        //        objPolicy.OriginalEffectiveDate = DateTime.FromOADate(dblEff);
-                        //    }
-                        //    else if (!string.IsNullOrEmpty(effDate))
-                        //    {
-                        //        objPolicy.OriginalEffectiveDate = DateTime.Parse(effDate, System.Globalization.CultureInfo.CurrentCulture); //Convert.ToDateTime(effDate);
-                        //    }
-
-                        //    if (objPolicy.OriginalEffectiveDate != null && (objPolicy.OriginalEffectiveDate > DateTime.Today))
-                        //    {
-                        //        objPolicy.PolicyStatusId = 0;
-                        //    }
-                        //    else
-                        //    {
-                        //        objPolicy.PolicyStatusId = 2;
-                        //    }
-                        //}
-                        //else
-                        //{
-                        //    objPolicy.PolicyStatusId = 2;
-                        //}
-
                         objPolicy.PolicyStatusId = 2;
                         if (objPolicy.OriginalEffectiveDate != null && objPolicy.OriginalEffectiveDate > DateTime.Today)
                         {
@@ -4883,37 +4807,6 @@ namespace MyAgencyVault.BusinessLibrary
                     AddImportStatusToDB(importedPolicyID, isNewPolicy, false, benefits_policyID, agencyName);
                 }
             }
-
-            //Original effective date
-            /*if (dt.Columns.Contains("OriginalPlanStartDate"))
-            {
-                if (dt.Rows[rowIndex]["OriginalPlanStartDate"] != null && !String.IsNullOrEmpty(Convert.ToString(dt.Rows[rowIndex]["OriginalPlanStartDate"])))
-                {
-                    try
-                    {
-                        string effDate = Convert.ToString(dt.Rows[rowIndex]["OriginalPlanStartDate"]);
-                        ActionLogger.Logger.WriteImportPolicyLog("Import Policy string effDate: " + effDate, true, agencyName);
-                        //check if value in double, then fetch OA Date
-                        double dblEff = 0;
-                        Double.TryParse(effDate, out dblEff);
-                        if (dblEff > 0)
-                        {
-                            objPolicy.OriginalEffectiveDate = DateTime.FromOADate(dblEff);
-                        }
-                        else
-                        {
-                            objPolicy.OriginalEffectiveDate = DateTime.Parse(effDate, System.Globalization.CultureInfo.CurrentCulture); //Convert.ToDateTime(effDate);
-                        }
-                        ActionLogger.Logger.WriteImportPolicyLog("Import Policy datetime effDate: " + objPolicy.OriginalEffectiveDate, true, agencyName);
-                    }
-                    catch (Exception ex)
-                    {
-                        errMsgPolicy.Add("OriginalPlanStartDate", ex.Message);
-                        ActionLogger.Logger.WriteImportPolicyLog("Import Policy exception: OriginalPlanStartDate  fields  : " + ex.Message, true, agencyName);
-                        AddImportStatusToDB(importedPolicyID, isNewPolicy, false, benefits_policyID, agencyName);
-                    }
-                }
-            }*/
 
             ActionLogger.Logger.WriteImportPolicyLog("Import Policy: status is terminated, so updating plan end date and reason ", true, agencyName);
             if (dt.Columns.Contains("PlanEndDate"))
@@ -4936,16 +4829,11 @@ namespace MyAgencyVault.BusinessLibrary
                             objPolicy.PolicyTerminationDate = Convert.ToDateTime(termDate);
                         }
                     }
-                    //  objPolicy.PolicyTerminationDate = Convert.ToDateTime(termDate);
                     catch (Exception ex)
                     {
                         errMsgPolicy.Add("PlanEndDate", ex.Message);
-                        //errorCount++;
-                        //Benefits_ErrorMsg m = new Benefits_ErrorMsg(importedPolicyID, benefits_policyID, "PlanEndDate: " + ex.Message);
-                        //errorList.Add(m);
                         ActionLogger.Logger.WriteImportPolicyLog("Import Policy exception: PlanEndDate  fields  : " + ex.Message, true, agencyName);
                         AddImportStatusToDB(importedPolicyID, isNewPolicy, false, benefits_policyID, agencyName);
-                        //continue;
                     }
                 }
 
@@ -4962,12 +4850,8 @@ namespace MyAgencyVault.BusinessLibrary
                         catch (Exception ex)
                         {
                             errMsgPolicy.Add("TerminationReason", ex.Message);
-                            //errorCount++;
-                            //Benefits_ErrorMsg m = new Benefits_ErrorMsg(importedPolicyID, benefits_policyID, "TerminationReason: " + ex.Message);
-                            //errorList.Add(m);
                             ActionLogger.Logger.WriteImportPolicyLog("Import Policy exception: TerminationReason  fields  : " + ex.Message, true, agencyName);
                             AddImportStatusToDB(importedPolicyID, isNewPolicy, false, benefits_policyID, agencyName);
-                            //continue;
                         }
                     }
                 }
@@ -4982,7 +4866,7 @@ namespace MyAgencyVault.BusinessLibrary
         {
             if (dt.Columns.Contains("AccountOwnerName") || dt.Columns.Contains("AccountOwnerId"))
             {
-                if (dt.Columns.Contains("AccountOwnerId"))  //if (!string.IsNullOrWhiteSpace(Convert.ToString(dt.Rows[rowIndex]["AccountOwnerId"])))
+                if (dt.Columns.Contains("AccountOwnerId")) 
                 {
                     ActionLogger.Logger.WriteImportPolicyLog("Import Policy AccountOwnerID received: " + Convert.ToString(dt.Rows[rowIndex]["AccountOwnerId"]), true, agencyName);
                     ActionLogger.Logger.WriteImportPolicyLog("Import Policy AccountOwnerName " + Convert.ToString(dt.Rows[rowIndex]["AccountOwnerName"]), true, agencyName);
@@ -5004,7 +4888,7 @@ namespace MyAgencyVault.BusinessLibrary
                                         string acctExec = Convert.ToString(dt.Rows[rowIndex]["AccountOwnerName"]).Trim();
                                         var objUser = AgentList.FirstOrDefault(d => (d.FirstName + " " + d.LastName).ToLower() == acctExec.ToLower() || (!string.IsNullOrEmpty(d.NickName) && d.NickName.ToLower() == acctExec.ToLower()));//.FirstOrDefault(); //User.GetUserIdWise(tempGuid);// (from p in DataModel.UserCredentials where (p.UserCredentialId == tempGuid && p.RoleId == 3 && p.IsDeleted == false) select p).FirstOrDefault();
                                                                                                                                                                                                                                            // User objUser = GlobalAgentList.Where(d => d.UserCredentialId == tempGuid).FirstOrDefault();
-                                        if (objUser != null /*&& objUser.Role == UserRole.Agent*/)
+                                        if (objUser != null)
                                         {
                                             ActionLogger.Logger.WriteImportPolicyLog("Account owner found in system by name", true, agencyName);
                                             //Need to get nick name
@@ -5012,13 +4896,13 @@ namespace MyAgencyVault.BusinessLibrary
                                             {
 
                                                 objPolicy.AccoutExec = objUser.NickName;
-                                                objPolicy.UserCredentialId = objUser.UserCredentialId; //tempGuid;
+                                                objPolicy.UserCredentialId = objUser.UserCredentialId;
                                                 UpdateBGUserID(objUser.UserCredentialId, currentUserBGUserId, agencyName);
                                             }
                                             else
                                             {
                                                 objPolicy.AccoutExec = objUser.UserName;
-                                                objPolicy.UserCredentialId = objUser.UserCredentialId; //tempGuid;
+                                                objPolicy.UserCredentialId = objUser.UserCredentialId;
                                             }
                                             bool isexec = (new User().CheckAccoutExec(objUser.UserCredentialId, agencyName)); //Sets the flag of accExec true for this userID 
                                         }
@@ -5080,7 +4964,7 @@ namespace MyAgencyVault.BusinessLibrary
                                 string acctExec = Convert.ToString(dt.Rows[rowIndex]["AccountOwnerName"]).Trim();
                                 var objUser = AgentList.FirstOrDefault(d => (d.FirstName + " " + d.LastName).ToLower() == acctExec.ToLower() || (!string.IsNullOrEmpty(d.NickName) && d.NickName.ToLower() == acctExec.ToLower()));//.FirstOrDefault(); //User.GetUserIdWise(tempGuid);// (from p in DataModel.UserCredentials where (p.UserCredentialId == tempGuid && p.RoleId == 3 && p.IsDeleted == false) select p).FirstOrDefault();
 
-                                if (objUser != null /*&& objUser.Role == UserRole.Agent*/)
+                                if (objUser != null)
                                 {
                                     ActionLogger.Logger.WriteImportPolicyLog("Account owner found in system", true, agencyName);
                                     //Need to get nick name
@@ -5148,34 +5032,9 @@ namespace MyAgencyVault.BusinessLibrary
 
             string policyIDKey = string.Empty;
 
-
-
-            /* Following to be used in case   1-many mapping exists as anticipated before, not in use for now 
-            * 
-            * List<string> lstKeys = System.Configuration.ConfigurationSettings.AppSettings["BenefitsPolicyKeys"].Split(',').ToList<String>();
-              string policyIDKey = "";
-              foreach (string s in lstKeys)
-              {
-                  if (dt.Columns.Contains(s))
-                  {
-                      policyIDKey = s;
-                      break;
-                  }
-              }*/
-
-            //if (Convert.ToString(LicID).ToUpper() == "A3E3FCEE-05B5-4D3A-9D62-E113AED72946")//Vanguard Benefit BG
-            //{
-                //policyIDKey = "CDPolicyID"; // System.Configuration.ConfigurationSettings.AppSettings["PolicyIDKeyName_Benefits"]; // "OriginalPlanID";
-            //}
-            //else
-            //{
-            //    policyIDKey = "OriginalPlanID";
-            //}
-
             ActionLogger.Logger.WriteImportPolicyLog("Import Policy: policyIDKey: " + policyIDKey, true, agencyName);
             char[] spCharac = System.Configuration.ConfigurationSettings.AppSettings["AgentCharactersToTrim"].ToCharArray();  //{ '(', '[', '-' };
 
-            //Response object structure
             int addCount = 0;
             int updateCount = 0;
             int errorCount = 0;
@@ -5216,17 +5075,6 @@ namespace MyAgencyVault.BusinessLibrary
                 DateTime? dtTrack = DateTime.MinValue;
                 try
                 {
-                    ////Jyotisna - Dec 17, 2018 - Hard coded check as advised by Kevin for "Benefit Pro" required in BG integration
-                    //if (LicID == new Guid("20FCF5E6-70DA-44C1-9FC0-AF73500BFB6F"))
-                    //{
-                    //    DateTime dtBPro = DateTime.MinValue;
-                    //    DateTime.TryParse(System.Configuration.ConfigurationManager.AppSettings["Benefits_Pro_TrackDate"], out dtBPro);
-                    //    ActionLogger.Logger.WriteImportPolicyLog("Import Policy default trackDatefrom benefits pro: " + dtBPro, true,agencyName);
-                    //    dtTrack = dtBPro;
-                    //}
-                    //else
-                    //{
-
                     var strTrack = (from l in DataModel.Licensees where l.LicenseeId == LicID select new { l.TrackDateDefault }).FirstOrDefault();
                     if (strTrack != null)
                     {
@@ -5234,8 +5082,6 @@ namespace MyAgencyVault.BusinessLibrary
                             dtTrack = strTrack.TrackDateDefault;
                     }
                     ActionLogger.Logger.WriteImportPolicyLog("Import Policy trackDatefrom agency: " + dtTrack, true, agencyName);
-                    //}
-
                 }
                 catch (Exception ex)
                 {
@@ -5246,18 +5092,15 @@ namespace MyAgencyVault.BusinessLibrary
                 //Boolean iterationError = false;
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                  
-                    //iterationError = false;
-                    //Object objPolicy = new object();
                     DLinq.Policy objPolicy = new DLinq.Policy();
-                    //objPolicy = obj;
-                        ActionLogger.Logger.WriteImportPolicyLog("Import Policy: Iteration: " + i, true, agencyName);
+
+                    ActionLogger.Logger.WriteImportPolicyLog("Import Policy: Iteration: " + i, true, agencyName);
                    
                         
                     string importedID = dt.Columns.Contains("OriginalPlanID") ? Convert.ToString(dt.Rows[i]["OriginalPlanID"]).Trim() : "";
-                    string importedPolicyID = dt.Columns.Contains("OriginalPlanID") ? Convert.ToString(dt.Rows[i]["OriginalPlanID"]).Trim() : Convert.ToString(Guid.NewGuid()).ToUpper();// Assuming new policy, new ID is generated 
+                    //string importedPolicyID = dt.Columns.Contains("OriginalPlanID") ? Convert.ToString(dt.Rows[i]["OriginalPlanID"]).Trim() : Convert.ToString(Guid.NewGuid()).ToUpper();// Assuming new policy, new ID is generated 
                     
-                    ActionLogger.Logger.WriteImportPolicyLog("Import Policy: importedPolicyID: " + importedPolicyID, true, agencyName);
+                    ActionLogger.Logger.WriteImportPolicyLog("Import Policy: importedPolicyID: " + importedID, true, agencyName);
                     Dictionary<string, string> errMsgPolicy = new Dictionary<string, string>();
 
                     string benefits_policyID = string.Empty;
@@ -5267,28 +5110,28 @@ namespace MyAgencyVault.BusinessLibrary
                     }
 
                     //Case if - ID column present but blank value
-                    if (Convert.ToString(LicID).ToUpper() == "A3E3FCEE-05B5-4D3A-9D62-E113AED72946")//Vanguard Benefit BG
-                    {
-                        if (string.IsNullOrEmpty(importedPolicyID))
-                        {
-                            importedPolicyID = Convert.ToString(Guid.NewGuid()).ToUpper(); //Nov 05, 2020- toupper() added as per BG request 
-                            ActionLogger.Logger.WriteImportPolicyLog("Import Policy: importedPolicyID Created as : " + importedPolicyID, true, agencyName);
-                        }
-                    }
-                    else
-                    {
+                    //if (Convert.ToString(LicID).ToUpper() == "A3E3FCEE-05B5-4D3A-9D62-E113AED72946")//Vanguard Benefit BG
+                    //{
+                    //    if (string.IsNullOrEmpty(importedPolicyID))
+                    //    {
+                    //        importedPolicyID = Convert.ToString(Guid.NewGuid()).ToUpper(); //Nov 05, 2020- toupper() added as per BG request 
+                    //        ActionLogger.Logger.WriteImportPolicyLog("Import Policy: importedPolicyID Created as : " + importedPolicyID, true, agencyName);
+                    //    }
+                    //}
+                    //else
+                    //{
                         if (string.IsNullOrEmpty(importedID))
                         {
                         errMsgPolicy.Add("Original Plan ID", "Original plan ID found missing");
                         string output = Newtonsoft.Json.JsonConvert.SerializeObject(errMsgPolicy);
                         ActionLogger.Logger.WriteImportPolicyLog("Import Policy: Original plan ID found null/blank, skipping record", true, agencyName);
-                        AddImportStatusToDB(importedPolicyID, false, false, benefits_policyID, agencyName);
+                        AddImportStatusToDB(importedID, false, false, benefits_policyID, agencyName);
                         errorCount++;
                         Benefits_ErrorMsg m = new Benefits_ErrorMsg(importedID, benefits_policyID, output);
                         errorList.Add(m);                
                         continue;
                         }
-                    }
+                    //}
 
 
 
@@ -5305,15 +5148,13 @@ namespace MyAgencyVault.BusinessLibrary
 
                     if (string.IsNullOrEmpty(clientName))
                     {
-                       // iterationError = true;
                         errMsgPolicy.Add("AccountName", "Account name found missing");
                         string output = Newtonsoft.Json.JsonConvert.SerializeObject(errMsgPolicy);
                         ActionLogger.Logger.WriteImportPolicyLog("Import Policy: Account name found null/blank, skipping record", true, agencyName);
-                        AddImportStatusToDB(importedPolicyID, false, false, benefits_policyID, agencyName);
+                        AddImportStatusToDB(importedID, false, false, benefits_policyID, agencyName);
                         errorCount++;
                         Benefits_ErrorMsg m = new Benefits_ErrorMsg(importedID, benefits_policyID, output);
                         errorList.Add(m);
-                        //detachObject(DataModel, objPolicy);
                         continue;
                     }
 
@@ -5325,9 +5166,8 @@ namespace MyAgencyVault.BusinessLibrary
 
                     if (Convert.ToString(LicID).ToUpper() == "A3E3FCEE-05B5-4D3A-9D62-E113AED72946")//Vanguard Benefit BG
                     {
-                        //isExisting = IsPolicyExistingWithPolicyID_New(importedPolicyID, agencyName);
-                        string CDPolicyID = dt.Columns.Contains("CDPolicyID") ? Convert.ToString(dt.Rows[i]["CDPolicyID"]) : "";
-                        policyID = CheckPolicyExistsForCaravus(importedID, CDPolicyID);
+                        string incomingCDPolicyID = dt.Columns.Contains("CDPolicyID") ? Convert.ToString(dt.Rows[i]["CDPolicyID"]) : "";
+                        policyID = CheckPolicyExistsForCaravus(importedID, incomingCDPolicyID);
                         if (policyID == Guid.Empty)
                         {
                             isExisting = false;
@@ -5340,7 +5180,7 @@ namespace MyAgencyVault.BusinessLibrary
                     }
                     else
                     {
-                        policyID = IsPolicyExistingWithImportID(importedPolicyID, LicID, agencyName);
+                        policyID = IsPolicyExistingWithImportID(importedID, LicID, agencyName);
                         if (policyID == Guid.Empty)
                         {
                             isExisting = false;
@@ -5352,30 +5192,8 @@ namespace MyAgencyVault.BusinessLibrary
                         }
                     }
 
-                    //Guid policyID;
-
-                    //if (Convert.ToString(LicID).ToUpper() == "A3E3FCEE-05B5-4D3A-9D62-E113AED72946")//Vanguard Benefit BG
-                    //{
-                    //    try
-                    //    {
-                    //        policyID = new Guid(importedPolicyID);
-                    //    }
-                    //    catch (Exception ex)
-                    //    {
-                    //        errMsgPolicy.Add("CDPolicyID", "Invalid CD PolicyID");
-                    //        string output = Newtonsoft.Json.JsonConvert.SerializeObject(errMsgPolicy);
-                    //        ActionLogger.Logger.WriteImportPolicyLog("Import Policy: Invalid CD PolicyID, skipping record" + ex.Message, true, agencyName);
-                    //        AddImportStatusToDB(importedPolicyID, false, false, benefits_policyID, agencyName);
-                    //        errorCount++;
-                    //        Benefits_ErrorMsg m = new Benefits_ErrorMsg(importedID, benefits_policyID, output);
-                    //        errorList.Add(m);
-                    //        //detachObject(DataModel, objPolicy);
-                    //        continue;
-                    //    }
-                    //}
-
-                    ActionLogger.Logger.WriteImportPolicyLog("Import Policy: policyID: " + importedPolicyID + ", benefits ID: " + benefits_policyID, true, agencyName);
-                    if (isExisting) // (policyID != Guid.Empty)
+                    ActionLogger.Logger.WriteImportPolicyLog("Import Policy: policyID: " + importedID + ", benefits ID: " + benefits_policyID, true, agencyName);
+                    if (isExisting)
                     {
                         objPolicy = (from p in DataModel.Policies where p.PolicyId == policyID select p).FirstOrDefault();
                         ActionLogger.Logger.WriteImportPolicyLog("Import Policy: Existing policy", true, agencyName);
@@ -5410,8 +5228,6 @@ namespace MyAgencyVault.BusinessLibrary
 
 
                     #region Fields that should be updated when blank or with new policy
-                    //try
-                    //{
 
                     bool isTrackPayment = false;
 
@@ -5431,7 +5247,7 @@ namespace MyAgencyVault.BusinessLibrary
 
                     objPolicy.SubmittedThrough = ""; //Not to be sent by benefits and to be left blank as per kevin Aug 17, 2017
 
-                    UpdateBenefitsOptionalFields(dt, i, importedPolicyID, benefits_policyID, isNewPolicy, ref objPolicy, ref errMsgPolicy, LicID, agencyName);
+                    UpdateBenefitsOptionalFields(dt, i, importedID, benefits_policyID, isNewPolicy, ref objPolicy, ref errMsgPolicy, LicID, agencyName);
 
                     ActionLogger.Logger.WriteImportPolicyLog("Import Policy: optional fields , to be filled when blanks init done : " + policyIDKey, true, agencyName);
 
@@ -5439,7 +5255,7 @@ namespace MyAgencyVault.BusinessLibrary
                     #region Payor
                     if (isNewPolicy || objPolicy.PayorId == null)
                     {
-                        DLinq.Payor py = UpdatePayorForBG(dt, i, importedPolicyID, benefits_policyID, isNewPolicy, DataModel, LicID, ref errMsgPolicy, agencyName);
+                        DLinq.Payor py = UpdatePayorForBG(dt, i, importedID, benefits_policyID, isNewPolicy, DataModel, LicID, ref errMsgPolicy, agencyName);
                         if (py != null)
                         {
                             objPolicy.PayorId = py.PayorId;
@@ -5451,7 +5267,7 @@ namespace MyAgencyVault.BusinessLibrary
                     #region Carrier
                     if (isNewPolicy || objPolicy.CarrierId == null)
                     {
-                        DLinq.Carrier carrer = UpdateCarrierForBG(dt, i, importedPolicyID, benefits_policyID, isNewPolicy, DataModel, LicID, ref errMsgPolicy, agencyName);
+                        DLinq.Carrier carrer = UpdateCarrierForBG(dt, i, importedID, benefits_policyID, isNewPolicy, DataModel, LicID, ref errMsgPolicy, agencyName);
                         if (carrer != null)
                         {
                             objPolicy.CarrierId = carrer.CarrierId;
@@ -5461,23 +5277,8 @@ namespace MyAgencyVault.BusinessLibrary
                     #endregion
 
                     #region Product
-                    UpdateCoverageForBG(dt, i, importedPolicyID, benefits_policyID, isNewPolicy, objPolicy, DataModel, LicID, ref errMsgPolicy, agencyName);
+                    UpdateCoverageForBG(dt, i, importedID, benefits_policyID, isNewPolicy, objPolicy, DataModel, LicID, ref errMsgPolicy, agencyName);
                     #endregion
-
-                    #region Product Type - Not to be sent by benefits
-                    /*Not to be sent by benefits 
-                             * if (isNewPolicy || string.IsNullOrEmpty(objPolicy.ProductType))
-                            {
-                                if (dt.Columns.Contains("Product_Type"))
-                                {
-                                    strProductType = Convert.ToString(dt.Rows[i]["Product_Type"]);
-                                    DLinq.CoverageNickName covName = (from p in DataModel.CoverageNickNames where p.NickName == strProductType select p).FirstOrDefault();
-                                    covNickName = (covName != null) ? covName.NickName : string.Empty; //to be used later in code, so kept separate
-                                    objPolicy.ProductType = (!string.IsNullOrEmpty(covNickName)) ? covNickName : strProductType;
-                                }
-                            }*/
-                    #endregion
-
 
                     #endregion
 
@@ -5563,9 +5364,7 @@ namespace MyAgencyVault.BusinessLibrary
                             objPolicy.SplitPercentage = splitPer == 0 ? 100 : splitPer;
                             ActionLogger.Logger.WriteImportPolicyLog("Import Policy - Split % read as : " + splitPer + ", set as: " + objPolicy.SplitPercentage, true, agencyName);
                         }
-                        //First check excel for any incoming schedule - if present , import
-                        //if (dt.Columns.Contains("Commissions - First Year %") && dt.Columns.Contains("Commissions - Renewal %"))
-                        //{
+
                         if (inSchedule.Mode == Mode.Standard && ((dt.Columns.Contains("Commissions - First Year %") || dt.Columns.Contains("CommissionsFirstYear")) && ((dt.Columns.Contains("Commissions - Renewal %") || dt.Columns.Contains("CommissionsRenewal")))))
                         {
                             string strInFirstYear = dt.Columns.Contains("Commissions - First Year %") ? Convert.ToString(dt.Rows[i]["Commissions - First Year %"]) : dt.Columns.Contains("CommissionsFirstYear") ? Convert.ToString(dt.Rows[i]["CommissionsFirstYear"]) : "0";
@@ -5661,14 +5460,13 @@ namespace MyAgencyVault.BusinessLibrary
                                             }
                                         }
 
-
                                         //Validation of the list 
                                         string errIncoming = ValidateIncomingSchedule(inSchedule.GradedSchedule, inSchedule.NonGradedSchedule, (inSchedule.CustomType == CustomMode.Graded), inSchedule.Mode.ToString(), inSchedule.ScheduleTypeId, agencyName);
                                         if (!string.IsNullOrEmpty(errIncoming))
                                         {
                                             errMsgPolicy.Add("IncomingSchedule", errIncoming);
                                             ActionLogger.Logger.WriteImportPolicyLog("Import Policy Exception: IncomingSchedule fields error : " + errIncoming, true, agencyName);
-                                            AddImportStatusToDB(importedPolicyID, isNewPolicy, false, benefits_policyID, agencyName);
+                                            AddImportStatusToDB(importedID, isNewPolicy, false, benefits_policyID, agencyName);
                                         }
 
                                     }
@@ -5676,21 +5474,21 @@ namespace MyAgencyVault.BusinessLibrary
                                     {
                                         errMsgPolicy.Add("IncomingSchedule", "Error adding Custom Schedule: " + ex.Message);
                                         ActionLogger.Logger.WriteImportPolicyLog("Import Policy Exception: IncomingSchedule fields missing ", true, agencyName);
-                                        AddImportStatusToDB(importedPolicyID, isNewPolicy, false, benefits_policyID, agencyName);
+                                        AddImportStatusToDB(importedID, isNewPolicy, false, benefits_policyID, agencyName);
                                     }
                                 }
                                 else
                                 {
                                     errMsgPolicy.Add("IncomingSchedule", "Custom Schedule list is missing");
                                     ActionLogger.Logger.WriteImportPolicyLog("Import Policy Exception: IncomingSchedule fields missing", true, agencyName);
-                                    AddImportStatusToDB(importedPolicyID, isNewPolicy, false, benefits_policyID, agencyName);
+                                    AddImportStatusToDB(importedID, isNewPolicy, false, benefits_policyID, agencyName);
                                 }
                             }
                             else
                             {
                                 errMsgPolicy.Add("IncomingSchedule", "Custom Schedule list is missing");
                                 ActionLogger.Logger.WriteImportPolicyLog("Import Policy Exception: IncomingSchedule fields missing", true, agencyName);
-                                AddImportStatusToDB(importedPolicyID, isNewPolicy, false, benefits_policyID, agencyName);
+                                AddImportStatusToDB(importedID, isNewPolicy, false, benefits_policyID, agencyName);
                             }
                         }
                         else //Lastly apply payor config if found 
@@ -5723,17 +5521,14 @@ namespace MyAgencyVault.BusinessLibrary
                     //try
                     //{
                     //Advance - Moved to update always as per Kevin - Aug 21, 2019
-                    UpdateBenefitsMandatoryFields(dt, i, importedPolicyID, benefits_policyID, isNewPolicy, ref objPolicy, ref errMsgPolicy, agencyName);
+                    UpdateBenefitsMandatoryFields(dt, i, importedID, benefits_policyID, isNewPolicy, ref objPolicy, ref errMsgPolicy, agencyName);
 
                     //Account Exec
-                    UpdateBenefitsAccountOwner(dt, i, importedPolicyID, benefits_policyID, isNewPolicy, AgentList.ToList<dynamic>(), ref objPolicy, ref errMsgPolicy, agencyName);
+                    UpdateBenefitsAccountOwner(dt, i, importedID, benefits_policyID, isNewPolicy, AgentList.ToList<dynamic>(), ref objPolicy, ref errMsgPolicy, agencyName);
 
                     //Term Date
                     ActionLogger.Logger.WriteImportPolicyLog("Import Policy: mandatory fields init done : " + policyIDKey, true, agencyName);
 
-
-                    //try
-                    //{
                     #region Outgoing Split
 
                     // Iscustom schedule
@@ -5760,7 +5555,7 @@ namespace MyAgencyVault.BusinessLibrary
                             {
                                 errMsgPolicy.Add("OutgoingScheduleDateType", "OutgoingScheduleDateType must be present for Custom outgoing schedule.");
                                 ActionLogger.Logger.WriteImportPolicyLog("OutgoingScheduleDateType must be present for Custom outgoing schedule", true, agencyName);
-                                AddImportStatusToDB(importedPolicyID, isNewPolicy, false, benefits_policyID, agencyName);
+                                AddImportStatusToDB(importedID, isNewPolicy, false, benefits_policyID, agencyName);
                             }
                         }
                     }
@@ -5787,7 +5582,6 @@ namespace MyAgencyVault.BusinessLibrary
                     if (dt.Columns.Contains("OutgoingSchedule"))
                     {
                         DataTable dtOutgoing = (dt.Rows[i]["OutgoingSchedule"] as DataTable);
-                        //ActionLogger.Logger.WriteImportPolicyLog("dtOutgoing: " + dtOutgoing.ToStringDump(), true, agencyName);
 
                         if (dtOutgoing != null)
                         {
@@ -5825,7 +5619,7 @@ namespace MyAgencyVault.BusinessLibrary
                                             errMsgPolicy.Add(errorKey, payeeName + " not available in the system");
                                         }
                                         ActionLogger.Logger.WriteImportPolicyLog("Import Policy exception:" + payeeName + " not available in the system ", true, agencyName);
-                                        AddImportStatusToDB(importedPolicyID, isNewPolicy, false, benefits_policyID, agencyName);
+                                        AddImportStatusToDB(importedID, isNewPolicy, false, benefits_policyID, agencyName);
                                     }
                                     else
                                     {
@@ -5835,7 +5629,7 @@ namespace MyAgencyVault.BusinessLibrary
                                             errMsgPolicy.Add(errorKey, payeeID + " not available in the system");
                                         }
                                         ActionLogger.Logger.WriteImportPolicyLog("Import Policy exception:" + payeeID + " not available in the system ", true, agencyName);
-                                        AddImportStatusToDB(importedPolicyID, isNewPolicy, false, benefits_policyID, agencyName);
+                                        AddImportStatusToDB(importedID, isNewPolicy, false, benefits_policyID, agencyName);
                                     }
                                 }
                                 else // Payee exists - add schedule 
@@ -5897,7 +5691,7 @@ namespace MyAgencyVault.BusinessLibrary
                                         ActionLogger.Logger.WriteImportPolicyLog("Import Policy: outgoing split exception : " + ex.Message, true, agencyName);
                                         errMsgPolicy.Add("Error reading outgoing schedule", ex.Message);
                                         ActionLogger.Logger.WriteImportPolicyLog("Import Policy exception:" + " An error ocurred while saving outgoing schedule in the system ", true, agencyName);
-                                        AddImportStatusToDB(importedPolicyID, isNewPolicy, false, benefits_policyID, agencyName);
+                                        AddImportStatusToDB(importedID, isNewPolicy, false, benefits_policyID, agencyName);
                                     }
 
                                 }
@@ -5910,27 +5704,17 @@ namespace MyAgencyVault.BusinessLibrary
                         ActionLogger.Logger.WriteImportPolicyLog("Import Policy: outgoing schedule received with values, updating : ", true, agencyName);
                         string invalidMsg = ValidateOutgoingSchedule(OutGoingField, LicID, objPolicy.IsCustomBasicSchedule, objPolicy.IsTieredSchedule, objPolicy.OriginalEffectiveDate, oldInScheduleExists, inSchedule, SettingsScheduleID, objPolicy.PolicyId, agencyName);
 
-                        if (!string.IsNullOrEmpty(invalidMsg) && !errMsgPolicy.ContainsKey(importedPolicyID))
+                        if (!string.IsNullOrEmpty(invalidMsg) && !errMsgPolicy.ContainsKey(importedID))
                         {
-                            //DLinq.Policy objPolicy = new DLinq.Policy();
                             ActionLogger.Logger.WriteImportPolicyLog("Import Policy: outgoing split error : " + invalidMsg, true, agencyName);
                             errMsgPolicy.Add("Outgoing split error", invalidMsg);
-                            AddImportStatusToDB(importedPolicyID, isNewPolicy, false, benefits_policyID, agencyName);
-                            //iterationError = true;
-                            //DataModel.Refresh(System.Data.Objects.RefreshMode.ClientWins, objPolicy);
-                            //objPolicy = null;
-                            //GC.Collect();
+                            AddImportStatusToDB(importedID, isNewPolicy, false, benefits_policyID, agencyName);
                             errorCount++;
-                            Benefits_ErrorMsg m = new Benefits_ErrorMsg(importedPolicyID, benefits_policyID, "Import Policy: outgoing split error : " + invalidMsg);
+                            Benefits_ErrorMsg m = new Benefits_ErrorMsg(importedID, benefits_policyID, "Import Policy: outgoing split error : " + invalidMsg);
                             errorList.Add(m);
                             detachObject(DataModel, objPolicy);
                             
                             continue;
-                            //objPolicy
-                            //foreach (DLinq.Policy x in objPolicy)
-                            //{
-                            //    x.Dispose();
-                            //}
                         }
                     }
                     else
@@ -5961,28 +5745,11 @@ namespace MyAgencyVault.BusinessLibrary
                     #endregion
 
                     #endregion
-                    //ActionLogger.Logger.WriteImportPolicyLog("Import Policy: outgoing split init done : " + policyIDKey, true,agencyName);
-                    //}
-                    //catch (Exception ex)
-                    //{
-                    //    errMsgPolicy.Add("ProducerName", "ProducerName not available in the system");
-                    //    //errorCount++;
-                    //    //Benefits_ErrorMsg m = new Benefits_ErrorMsg(importedPolicyID, benefits_policyID, "Producer1Name: " + ex.Message);
-                    //    //errorList.Add(m);
-                    //    ActionLogger.Logger.WriteImportPolicyLog("Import Policy exception: outgoing fields  : " + ex.Message, true,agencyName);
-                    //    AddImportStatusToDB(importedPolicyID, isNewPolicy, false, benefits_policyID, agencyName);
-                    //    //continue;
-
-                    //}
 
                     #region Track date - checked at last [after origin date found]
                     /* Not to be sent by benefits, poulated from agency's default track date so, no exception throw from here as well*/
                     if (isNewPolicy || objPolicy.TrackFromDate == null)
                     {
-
-                        //if (dt.Columns.Contains("Track_From"))
-                        //{
-                        //if (dt.Rows[i]["Track_From"] != null && !String.IsNullOrEmpty(Convert.ToString(dt.Rows[i]["Track_From"])))
                         if (dtTrack != null && dtTrack != DateTime.MinValue)
                         {
                             objPolicy.TrackFromDate = (objPolicy.OriginalEffectiveDate != null && objPolicy.OriginalEffectiveDate > dtTrack) ? objPolicy.OriginalEffectiveDate : dtTrack;
@@ -6009,7 +5776,7 @@ namespace MyAgencyVault.BusinessLibrary
                     try
                     {
                         //Save only when policy ID not present in error list
-                        if (errorList == null || (errorList != null && errorList.Count == 0) || (errorList != null && errorList.Count > 0 && errorList.Where(x => x.OriginalPlanID == importedPolicyID).ToList().Count == 0))
+                        if (errorList == null || (errorList != null && errorList.Count == 0) || (errorList != null && errorList.Count > 0 && errorList.Where(x => x.OriginalPlanID == importedID).ToList().Count == 0))
                         {
                             ActionLogger.Logger.WriteImportPolicyLog("Import Policy NO Error list found, starting save... ", true, agencyName);
                             #region Client
@@ -6055,29 +5822,10 @@ namespace MyAgencyVault.BusinessLibrary
                                 ActionLogger.Logger.WriteImportPolicyLog("Import Policy client ID:  " + objPolicy.PolicyClientId + ", insured:  " + objPolicy.Insured, true, agencyName);
 
                                 #region PolicyType calculation used here because PolicyType is calculated based on the values
-                                //if (isNewPolicy || string.IsNullOrEmpty(objPolicy.PolicyType))
-                                //{
+
                                 string PolicyType = "";
                                 try
                                 {
-                                    //seeA
-                                    //if (dt.Columns.Contains("NewBusiness")) //|| dt.Columns.Contains("New Business?"))
-                                    //{
-                                    //    string strTypeOfPolicy = Convert.ToString(dt.Rows[rowIndex]["NewBusiness"]); //dt.Columns.Contains("New?") ? Convert.ToString(dt.Rows[i]["New?"]) : (dt.Columns.Contains("New Business?") ? Convert.ToString(dt.Rows[i]["New Business?"]) : "");
-                                    //    objPolicy.PolicyType = (!string.IsNullOrEmpty(strTypeOfPolicy) && (strTypeOfPolicy.ToLower() == "rewrite" || strTypeOfPolicy.ToLower() == "replace")) ? "Replace" : "New";
-                                    //}
-                                    //else if (isNewPolicy)
-                                    //{
-                                    //    objPolicy.PolicyType = "New";
-                                    //}
-
-
-                                    //if(isNewPolicy)
-                                    //{
-                                    //    objPolicy.IsManuallyChanged = false;
-                                    //}
-
-
                                     objPolicy.IsManuallyChanged = isNewPolicy ? false : objPolicy.IsManuallyChanged;
 
                                     if (objPolicy.IsManuallyChanged == false)
@@ -6092,9 +5840,8 @@ namespace MyAgencyVault.BusinessLibrary
                                 {
                                     errMsgPolicy.Add("NewBusiness", ex.Message);
                                     ActionLogger.Logger.WriteImportPolicyLog("Import Policy Exception: New Business field  exception : " + ex.Message, true, agencyName);
-                                    AddImportStatusToDB(importedPolicyID, isNewPolicy, false, benefits_policyID, agencyName);
+                                    AddImportStatusToDB(importedID, isNewPolicy, false, benefits_policyID, agencyName);
                                 }
-                                //}
                             }
                             catch (Exception ex)
                             {
@@ -6104,15 +5851,13 @@ namespace MyAgencyVault.BusinessLibrary
                                 Benefits_ErrorMsg m = new Benefits_ErrorMsg(importedID, benefits_policyID, output);
                                 errorList.Add(m);
                                 ActionLogger.Logger.WriteImportPolicyLog("Import Policy exception: client : " + ex.Message, true, agencyName);
-                                AddImportStatusToDB(importedPolicyID, isNewPolicy, false, benefits_policyID, agencyName);
+                                AddImportStatusToDB(importedID, isNewPolicy, false, benefits_policyID, agencyName);
                                 detachObject(DataModel, objPolicy);
                                 continue;
                             }
 
 
                             #endregion
-                            //try
-                            //{
 
                             if (isNewPolicy)
                             {
@@ -6120,57 +5865,21 @@ namespace MyAgencyVault.BusinessLibrary
                                 DataModel.AddToPolicies(objPolicy);
                                 DataModel.SaveChanges();
                                 ActionLogger.Logger.WriteImportPolicyLog("Import Policy : policy saved successfully", true, agencyName);
-                                PolicyToLearnPost.AddLearnedAfterImport(objPolicy.PolicyId, "", covNickName, strProductType, importedID, agencyName);
-                                ActionLogger.Logger.WriteImportPolicyLog("Import Policy : learned fields saved successfully", true, agencyName);
-                                ActionLogger.Logger.WriteImportPolicyLog("Import Policy: Policy saved as new : " + policyIDKey, true, agencyName);
+                                
                                 PolicyToLearnPost.AddLearnedAfterImport(objPolicy.PolicyId, "", covNickName, strProductType, importedID, agencyName, benefits_policyID);
+                                ActionLogger.Logger.WriteImportPolicyLog("Import Policy : learned fields saved successfully", true, agencyName);
                             }
                             else
                             {
-                                if (
-                                    objPolicy.PolicyId.ToString().ToUpper() == "ACF11C55-3DD3-4776-B78B-0BE82304B9C4" ||
-                                    objPolicy.PolicyId.ToString().ToUpper() == "25213C08-D485-410E-BFFD-4DDEF866CDB9" ||
-                                    objPolicy.PolicyId.ToString().ToUpper() == "DE7BCF2A-C5C8-4BAE-BEB4-5A78811119A6" ||
-                                    objPolicy.PolicyId.ToString().ToUpper() == "64EDDE82-3A67-41B0-8B4E-486114F93FEB" ||
-                                    objPolicy.PolicyId.ToString().ToUpper() == "B893D3C4-0A39-4B2E-B34C-9E3600303EFA" ||
-                                    objPolicy.PolicyId.ToString().ToUpper() == "95B5A99D-DED7-4754-8853-E04147A69AAF"
-                                 )
-                                {
-                                    ActionLogger.Logger.WriteImportPolicyLog("data is updated with PolicyId= " + objPolicy.PolicyId, true, agencyName);
-                                }
+                                DataModel.SaveChanges();
 
-
-                                ActionLogger.Logger.WriteImportPolicyLog("isNewPolicy else", true, agencyName);
-                               
-                                    DataModel.SaveChanges();
-                               
-                                //DataModel.Refresh();
                                 ActionLogger.Logger.WriteImportPolicyLog("Import Policy : policy updated successfully", true, agencyName);
-                                //  AddUpdatePolicyHistory(objPolicy.PolicyId);
-                                ActionLogger.Logger.WriteImportPolicyLog("Import Policy : policy history updated successfully", true, agencyName);
-                                //Learned fields to update , once policy fields are updated 
+
                                 PolicyToLearnPost.AddLearnedAfterImport(objPolicy.PolicyId, "", covNickName, strProductType, importedID, agencyName, benefits_policyID);
 
                                 ActionLogger.Logger.WriteImportPolicyLog("Import Policy : learned fields saved successfully", true, agencyName);
-                                //   PolicyLearnedField.AddUpdateHistoryLearned(objPolicy.PolicyId);
-                                ActionLogger.Logger.WriteImportPolicyLog("Import Policy: Policy updated : " + policyIDKey, true, agencyName);
                             }
 
-                            /*    if (SettingsScheduleID != Guid.Empty)
-                                {
-                                    UpdatePolicySchedule(SettingsScheduleID, objPolicy.PolicyId, objPolicy.Advance, payorSchedule);
-                                }
-                                //Save Incoming and delete old 
-                                else if (inSchedule != null)
-                                {
-                                    //if (tempSched != null && tempSched.FirstYearPercentage == 0 && tempSched.RenewalPercentage == 0)
-                                    //{
-                                    //    PolicyToolIncommingShedule.DeleteSchedule(objPolicy.PolicyId); //If schedule occurs with 0 split, then delete before adding new
-                                    //    ActionLogger.Logger.WriteImportPolicyLog("Import Policy old schedule is deleted", true,agencyName);
-                                    //}
-                                    //inSchedule.AddUpdate();
-                                    ActionLogger.Logger.WriteImportPolicyLog("Incoming schedule added for the policy", true,agencyName);
-                                }*/
                             //Save Incoming 
                             if (SettingsScheduleID != Guid.Empty)
                             {
@@ -6199,16 +5908,6 @@ namespace MyAgencyVault.BusinessLibrary
                                 OutGoingPayment.AddUpdate(OutGoingField, agencyName, (bool)objPolicy.IsCustomBasicSchedule, (bool)objPolicy.IsTieredSchedule);
                                 ActionLogger.Logger.WriteImportPolicyLog("Outgoing schedule added for the policy", true, agencyName);
                             }
-                            else
-                            {
-                                if (isNewPolicy) //adding 100% to house under default schedule, when no schedule present for new policy
-                                {
-                                    ActionLogger.Logger.WriteImportPolicyLog("Outgoing schedule - New policy and no outgoing scheudle present, adding to house ", true, agencyName);
-                                    OutGoingField = CompleteOutgoingSchedule(null, objPolicy.PolicyId, LicID, agencyName);
-                                    OutGoingPayment.AddUpdate(OutGoingField, agencyName, false, false);
-                                    ActionLogger.Logger.WriteImportPolicyLog("Outgoing schedule added for the policy", true, agencyName);
-                                }
-                            }
 
                             if (isNewPolicy)
                                 addCount++;
@@ -6217,7 +5916,7 @@ namespace MyAgencyVault.BusinessLibrary
 
 
                             //Adding status in DB
-                            AddImportStatusToDB(importedPolicyID, isNewPolicy, true, benefits_policyID, agencyName);
+                            AddImportStatusToDB(importedID, isNewPolicy, true, benefits_policyID, agencyName);
 
 
                             //Add to idList
@@ -6244,7 +5943,7 @@ namespace MyAgencyVault.BusinessLibrary
                         string output = Newtonsoft.Json.JsonConvert.SerializeObject(errMsgPolicy);
                         Benefits_ErrorMsg m = new Benefits_ErrorMsg(importedID, benefits_policyID, output);
                         errorList.Add(m);
-                        AddImportStatusToDB(importedPolicyID, isNewPolicy, false, benefits_policyID, agencyName);
+                        AddImportStatusToDB(importedID, isNewPolicy, false, benefits_policyID, agencyName);
                     }
                 }
 
@@ -6253,11 +5952,6 @@ namespace MyAgencyVault.BusinessLibrary
                 objStatus.ErrorCount = errorCount;
                 objStatus.ErrorList = errorList;
                 objStatus.SuccessList = idList;
-
-                //if(errorCount > 0)
-                //{
-                //    ActionLogger.Logger.WriteImportPolicyLog("error: "+errorList.FirstOrDefault().Message, true,agencyName);
-                //}
 
                 return objStatus;
             }
